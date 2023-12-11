@@ -19,15 +19,34 @@ p {
 
 .top-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
-.h1-name {
+.page-title {
+  display: flex;
+  margin: 0;
+  padding: 0;
   margin-top: 2.5rem;
   margin-left: 2.5rem;
+}
+
+.h1-name {
   font-family: "Arial";
   font-size: 2.5rem;
+  margin: 0;
+}
+
+.name-link {
+  color: white;
+  margin-left: 1rem;
+  font-family: "Arial";
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.name-link:hover {
+  color: #496396;
 }
 
 .nav-top {
@@ -56,6 +75,10 @@ p {
 
 .nav-link:hover {
   background-color: #384c73;
+}
+
+.nav-link:active {
+  background-color: #1c2436;
 }
 
 footer {
@@ -154,6 +177,11 @@ main {
 
 .project-filter:hover {
   background-color: #384c73;
+  cursor: pointer;
+}
+
+.project-filter:active {
+  background-color: #1c2436;
 }
 
 .projects-container {
