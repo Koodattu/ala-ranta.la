@@ -4,78 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ala-Ranta.la Personal Portfolio Site</title>
+    <title>Ala-Ranta.la Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="top-container">
-      <div class="page-title">
-        <h1 class="h1-name">Juha</h1>
-        <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
-      </div>
-      <nav class="nav-top">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">About me</a>
-        <a class="nav-link" href="#">Contact</a>
-      </nav>
+    <div class="page-container">
+      <header class="top-header">
+        <div class="page-title">
+          <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
+          <h1 class="h1-name">Juha</h1>
+        </div>
+        <nav class="nav-top">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#experiences-header">Experience</a>
+          <a class="nav-link" href="#projects-header">Projects</a>
+        </nav>
+      </header>
+      <main>
+        <div class="main-content">
+          <div class="profile-content">
+            <h1 class="h1-info">👋 Hello there</h1>
+            <div class="info-content">
+              <div>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+              </div>
+            </div>
+            <img class="profile-picture" src="./assets/profile.png" alt="Profile picture" />
+          </div>
+          <div class="info-container skills-container">
+            <h1 class="h1-info">😂 Skillz</h1>
+            <div class="info-content">
+              <div>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+              </div>
+            </div>
+          </div>
+          <div class="experiences-container" id="experiences-header">
+            <div id="school-exp">
+              <h1 class="h1-info">🎓 Education</h1>
+              <div class="info-content">
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+              </div>
+            </div>
+            <div id="work-exp">
+              <h1 class="h1-info">💼 Work Experience</h1>
+              <div class="info-content">
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+              </div>
+            </div>
+          </div>
+          <div class="projects-container">
+            <h1 class="h1-projects" id="projects-header">📋 Projects</h1>
+            <div class="projects-filters">
+              <p>Filter projects:</p>
+              <button id="project-filter-all" class="project-filter project-filter-enabled">All</button>
+              <button id="project-filter-desktop" class="project-filter">Desktop</button>
+              <button id="project-filter-game" class="project-filter">Game</button>
+              <button id="project-filter-mobile" class="project-filter">Mobile</button>
+              <button id="project-filter-web" class="project-filter">Web</button>
+            </div>
+            <div class="filtered-projects">
+              <a>
+                <div class="project-container info-content">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                </div>
+              </a>
+              <a>
+                <div class="project-container info-content">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                </div>
+              </a>
+              <a>
+                <div class="project-container info-content">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                </div>
+              </a>
+              <a>
+                <div class="project-container info-content">
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="footer-content">
+          <p>Made with ☕️ and 🍆. View source code on</p>
+          <a href="https://github.com/">Github</a>
+        </div>
+      </footer>
     </div>
-    <main>
-      <div class="main-content">
-        <div class="profile-content">
-          <h1 class="h1-info">About Me</h1>
-          <div class="profile-container">
-            <div>
-              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-          <img class="profile-picture" src="assets/profile.png" alt="Profile picture" />
-        </div>
-        <div class="experience-content" id="school-exp">
-          <h1 class="h1-info">Education</h1>
-          <div class="experience-container">
-            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        <div class="experience-content" id="work-exp">
-          <h1 class="h1-info">Work Experience</h1>
-          <div class="experience-container">
-            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        <div class="projects-container">
-          <h1 class="h1-projects">Projects</h1>
-          <div class="projects-filters">
-            <p>Filter projects:</p>
-            <button class="project-filter">All</button>
-            <button class="project-filter">Desktop</button>
-            <button class="project-filter">Mobile</button>
-            <button class="project-filter">Web</button>
-          </div>
-          <div class="filtered-projects">
-            <div class="project-container">
-              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            </div>
-            <div class="project-container">
-              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            </div>
-            <div class="project-container">
-              <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div class="footer-content">
-        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-      </div>
-    </footer>
-    <script src="index.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

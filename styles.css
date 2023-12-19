@@ -2,6 +2,8 @@ body {
   background-color: #171c26;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
@@ -17,28 +19,26 @@ p {
   margin-right: 1rem;
 }
 
-.top-container {
+.page-container {
+  width: 75vw;
+  max-width: 900px;
+}
+
+.top-header {
+  background-color: #171c26;
+  padding-top: 1.5rem;
   display: flex;
+  align-items: end;
   justify-content: space-between;
 }
 
 .page-title {
   display: flex;
-  margin: 0;
-  padding: 0;
-  margin-top: 2.5rem;
-  margin-left: 2.5rem;
-}
-
-.h1-name {
-  font-family: "Arial";
-  font-size: 2.5rem;
-  margin: 0;
 }
 
 .name-link {
   color: white;
-  margin-left: 1rem;
+  margin-right: 0.75rem;
   font-family: "Arial";
   font-size: 2.5rem;
   text-decoration: none;
@@ -49,36 +49,36 @@ p {
   color: #496396;
 }
 
+.name-link:active {
+  color: #1c2436;
+}
+
+.h1-name {
+  font-family: "Arial";
+  font-size: 2.5rem;
+  margin: 0;
+}
+
 .nav-top {
   display: flex;
-  justify-content: end;
-  align-items: start;
-  height: 5vh;
-  padding: 0;
-  margin: 0;
-  width: fit-content;
+  margin-bottom: 0.25rem;
 }
 
 .nav-link {
-  height: 5vh;
-  width: 15vw;
-  max-width: 125px;
   color: white;
-  text-decoration: none;
-  font-size: large;
+  margin-right: 1rem;
   font-family: "Arial";
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .nav-link:hover {
-  background-color: #384c73;
+  color: #496396;
 }
 
 .nav-link:active {
-  background-color: #1c2436;
+  color: #1c2436;
 }
 
 footer {
@@ -91,25 +91,23 @@ footer {
 
 .footer-content {
   padding-right: 1rem;
-}
-
-main {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .main-content {
   margin-top: 10vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
   grid-template-areas:
-    "profile profile"
-    "school-exp work-exp"
-    "projects projects";
+    "profile"
+    "skills"
+    "experiences"
+    "projects";
   grid-gap: 3rem 2rem;
-  width: 75vw;
-  max-width: 900px;
+}
+
+.skills-container {
+  grid-area: skills;
 }
 
 .h1-info {
@@ -122,10 +120,8 @@ main {
   position: relative;
 }
 
-.profile-container {
-  padding: 5rem;
-  display: flex;
-  align-items: center;
+.info-content {
+  padding: 2rem;
   background-color: #1f2b42;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -141,11 +137,11 @@ main {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.experience-container {
-  padding: 5rem;
-  border-radius: 10px;
-  background-color: #1f2b42;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.experiences-container {
+  grid-area: experiences;
+  display: grid;
+  grid-template-areas: "school-exp work-exp";
+  grid-gap: 3rem 2rem;
 }
 
 #school-exp {
@@ -159,8 +155,7 @@ main {
 .projects-filters {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .project-filter {
@@ -176,12 +171,24 @@ main {
 }
 
 .project-filter:hover {
-  background-color: #384c73;
+  background-color: #466eb8;
   cursor: pointer;
 }
 
 .project-filter:active {
   background-color: #1c2436;
+}
+
+.project-filter-enabled {
+  background-color: #2d4269;
+}
+
+.project-filter-enabled:hover {
+  background-color: #466eb8;
+}
+
+.project-filter:active {
+  background-color: #263049;
 }
 
 .projects-container {
@@ -199,15 +206,23 @@ main {
 .filtered-projects {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .project-container {
-  padding: 5rem;
-  border-radius: 10px;
-  background-color: #1f2b42;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 40vw;
   margin-bottom: 2rem;
+}
+
+a:hover > div {
+  background-color: #2c3d5c;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1100px) {
+  .page-container {
+    width: 95vw;
+  }
+
+  .experiences-container {
+    grid-template-areas: "school-exp" "work-exp";
+  }
 }
