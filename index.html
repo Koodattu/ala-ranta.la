@@ -9,27 +9,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav class="nav-side">
-      <a class="nav-link" href="#">Home</a>
-      <a class="nav-link" href="#experiences-header">Skills</a>
-      <a class="nav-link" href="#experiences-header">Education</a>
-      <a class="nav-link" href="#experiences-header">Experience</a>
-      <a class="nav-link" href="#projects-header">Projects</a>
-    </nav>
-    <div class="page-container">
-      <header class="top-header">
-        <div class="page-title">
-          <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
-          <h1 class="h1-name">Juha</h1>
+    <header class="top-header">
+      <div class="top-content">
+        <div class="title-content">
+          <div class="page-title">
+            <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
+            <h1 class="h1-name">Juha</h1>
+          </div>
+          <div>
+            <button class="hamburger-button">☰</button>
+            <nav class="nav-top">
+              <a class="nav-link" href="#">CV</a>
+              <a class="nav-link" href="#">Blog</a>
+            </nav>
+          </div>
         </div>
-        <div id="hamburger-menu">
-          <button class="hamburger-button">☰</button>
-        </div>
-        <nav class="nav-top">
+      </div>
+      <div class="burger-nav-container">
+        <nav class="burger-nav-links">
           <a class="nav-link" href="#">CV</a>
           <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link light-text" href="#">Home</a>
+          <a class="nav-link light-text" href="#skills">Skills</a>
+          <a class="nav-link light-text" href="#education">Education</a>
+          <a class="nav-link light-text" href="#experience">Experience</a>
+          <a class="nav-link light-text" href="#projects">Projects</a>
         </nav>
-      </header>
+      </div>
+    </header>
+    <div class="page-container">
+      <div class="nav-side-container">
+        <nav class="nav-side">
+          <a class="nav-link light-text" href="#">Home</a>
+          <a class="nav-link light-text" href="#skills">Skills</a>
+          <a class="nav-link light-text" href="#education">Education</a>
+          <a class="nav-link light-text" href="#experience">Experience</a>
+          <a class="nav-link light-text" href="#projects">Projects</a>
+        </nav>
+      </div>
       <main>
         <div class="main-content">
           <div class="profile-content">
@@ -46,7 +63,7 @@
             </div>
             <img class="profile-picture" src="./assets/profile.png" alt="Profile picture" />
           </div>
-          <div class="info-container skills-container">
+          <div id="skills" class="info-container skills-container">
             <h1 class="h1-info">📖 Skills</h1>
             <div class="info-content">
               <div>
@@ -58,7 +75,7 @@
             </div>
           </div>
           <div class="experiences-container" id="experiences-header">
-            <div id="school-exp">
+            <div id="education">
               <h1 class="h1-info">🎓 Education</h1>
               <div class="info-content">
                 <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
@@ -69,7 +86,7 @@
                 <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
               </div>
             </div>
-            <div id="work-exp">
+            <div id="experience">
               <h1 class="h1-info">💼 Experience</h1>
               <div class="info-content">
                 <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
@@ -78,41 +95,43 @@
               </div>
             </div>
           </div>
-          <div class="projects-container">
-            <h1 class="h1-projects" id="projects-header">🚀 Projects</h1>
-            <div class="projects-filters">
-              <p>Filter projects:</p>
-              <button id="project-filter-all" class="project-filter project-filter-enabled">All</button>
-              <button id="project-filter-desktop" class="project-filter">Desktop</button>
-              <button id="project-filter-game" class="project-filter">Game</button>
-              <button id="project-filter-mobile" class="project-filter">Mobile</button>
-              <button id="project-filter-web" class="project-filter">Web</button>
-            </div>
-            <div class="filtered-projects">
-              <a>
-                <div class="project-container info-content">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                </div>
-              </a>
-              <a>
-                <div class="project-container info-content">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                </div>
-              </a>
-              <a>
-                <div class="project-container info-content">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                </div>
-              </a>
-              <a>
-                <div class="project-container info-content">
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                  <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                </div>
-              </a>
+          <div id="projects">
+            <div class="projects-container">
+              <h1 class="h1-projects" id="projects-header">🚀 Projects</h1>
+              <div class="projects-filters">
+                <p>Filter projects:</p>
+                <button id="project-filter-all" class="project-filter project-filter-enabled">All</button>
+                <button id="project-filter-desktop" class="project-filter">Desktop</button>
+                <button id="project-filter-game" class="project-filter">Game</button>
+                <button id="project-filter-mobile" class="project-filter">Mobile</button>
+                <button id="project-filter-web" class="project-filter">Web</button>
+              </div>
+              <div class="filtered-projects">
+                <a>
+                  <div class="project-container info-content">
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  </div>
+                </a>
+                <a>
+                  <div class="project-container info-content">
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  </div>
+                </a>
+                <a>
+                  <div class="project-container info-content">
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  </div>
+                </a>
+                <a>
+                  <div class="project-container info-content">
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
