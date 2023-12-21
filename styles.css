@@ -19,9 +19,33 @@ p {
   margin-right: 1rem;
 }
 
+.hamburger-button {
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  display: none;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.hamburger-button:hover {
+  background-color: #466eb8;
+}
+
+.hamburger-button:active {
+  background-color: #1c2436;
+}
+
 .page-container {
   width: 75vw;
   max-width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .top-header {
@@ -57,6 +81,13 @@ p {
   font-family: "Arial";
   font-size: 2.5rem;
   margin: 0;
+}
+
+.nav-side {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
 }
 
 .nav-top {
@@ -217,6 +248,11 @@ a:hover > div {
   cursor: pointer;
 }
 
+.github-image {
+  width: 24px;
+  height: 24px;
+}
+
 @media only screen and (max-width: 1100px) {
   .page-container {
     width: 95vw;
@@ -224,5 +260,17 @@ a:hover > div {
 
   .experiences-container {
     grid-template-areas: "school-exp" "work-exp";
+  }
+
+  .hamburger-button {
+    display: flex;
+  }
+
+  .nav-side {
+    display: none;
+  }
+
+  .nav-top {
+    display: none;
   }
 }

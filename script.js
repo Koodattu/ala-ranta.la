@@ -17,3 +17,8 @@ for (let filter of projectFilters) {
     buttonElement.classList.add("project-filter-enabled");
   });
 }
+
+document.querySelector(".hamburger-button").addEventListener("click", function () {
+  document.querySelector(".nav-links").style.display =
+    document.querySelector(".nav-links").style.display == "none" ? "block" : "none";
+});

@@ -9,16 +9,25 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <nav class="nav-side">
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#experiences-header">Skills</a>
+      <a class="nav-link" href="#experiences-header">Education</a>
+      <a class="nav-link" href="#experiences-header">Experience</a>
+      <a class="nav-link" href="#projects-header">Projects</a>
+    </nav>
     <div class="page-container">
       <header class="top-header">
         <div class="page-title">
           <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
           <h1 class="h1-name">Juha</h1>
         </div>
+        <div id="hamburger-menu">
+          <button class="hamburger-button">☰</button>
+        </div>
         <nav class="nav-top">
-          <a class="nav-link" href="#">Home</a>
-          <a class="nav-link" href="#experiences-header">Experience</a>
-          <a class="nav-link" href="#projects-header">Projects</a>
+          <a class="nav-link" href="#">CV</a>
+          <a class="nav-link" href="#">Blog</a>
         </nav>
       </header>
       <main>
@@ -38,7 +47,7 @@
             <img class="profile-picture" src="./assets/profile.png" alt="Profile picture" />
           </div>
           <div class="info-container skills-container">
-            <h1 class="h1-info">😂 Skillz</h1>
+            <h1 class="h1-info">📖 Skills</h1>
             <div class="info-content">
               <div>
                 <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
@@ -61,7 +70,7 @@
               </div>
             </div>
             <div id="work-exp">
-              <h1 class="h1-info">💼 Work Experience</h1>
+              <h1 class="h1-info">💼 Experience</h1>
               <div class="info-content">
                 <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
                 <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
@@ -70,7 +79,7 @@
             </div>
           </div>
           <div class="projects-container">
-            <h1 class="h1-projects" id="projects-header">📋 Projects</h1>
+            <h1 class="h1-projects" id="projects-header">🚀 Projects</h1>
             <div class="projects-filters">
               <p>Filter projects:</p>
               <button id="project-filter-all" class="project-filter project-filter-enabled">All</button>
@@ -110,8 +119,8 @@
       </main>
       <footer>
         <div class="footer-content">
-          <p>Made with ☕️ and 🍆. View source code on</p>
-          <a href="https://github.com/">Github</a>
+          <p>Made with ☕️ and 🍔. View source code on</p>
+          <a href="https://github.com/"><img class="github-image" src="/assets/github-mark.png" /></a>
         </div>
       </footer>
     </div>
