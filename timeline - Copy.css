@@ -1,6 +1,8 @@
 .box {
+  height: 630px;
   overflow: hidden;
-  padding: 0 0 0 50px;
+  padding: 10px 0 40px 60px;
+  margin: 0 10%;
 }
 
 .box ul {
@@ -23,12 +25,14 @@
 }
 
 .box ul li {
-  margin: 20px 0px 60px 60px;
+  margin: 20px 60px 60px;
   position: relative;
-  padding: 10px 0px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.3);
   color: #fff;
   border-radius: 10px;
   line-height: 20px;
+  width: 35%;
 }
 
 .box ul li > span {
@@ -49,7 +53,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #466eb8;
+  background: #ff6d6d;
   border: 2px solid #fff;
   position: absolute;
   left: -7.5px;
@@ -74,22 +78,23 @@
 }
 
 .box .name {
+  margin-top: 10px;
+  text-transform: capitalize;
   font-style: italic;
+  text-align: right;
+  margin-right: 20px;
 }
 
 .box .time span {
   position: absolute;
   left: -100px;
-  width: 60px;
-  color: #ffffff;
+  color: #fff;
   font-size: 80%;
   font-weight: bold;
-  text-align: right;
 }
 .box .time span:first-child {
-  top: -12px;
+  top: -16px;
 }
-
 .box .time span:last-child {
   top: 94%;
 }
