@@ -1,6 +1,5 @@
 .box {
   overflow: hidden;
-  padding: 0 0 0 50px;
 }
 
 .box ul {
@@ -25,10 +24,14 @@
 .box ul li {
   margin: 20px 0px 60px 60px;
   position: relative;
-  padding: 10px 0px;
+  padding: 30px 0px;
   color: #fff;
   border-radius: 10px;
   line-height: 20px;
+}
+
+.box ul li:last-child {
+  margin: 20px 0px 20px 60px;
 }
 
 .box ul li > span {
@@ -75,16 +78,15 @@
 
 .box .name {
   font-style: italic;
+  margin-bottom: 1em;
 }
 
 .box .time span {
   position: absolute;
-  left: -100px;
-  width: 60px;
+  left: -15px;
   color: #ffffff;
   font-size: 80%;
   font-weight: bold;
-  text-align: right;
 }
 .box .time span:first-child {
   top: -12px;
