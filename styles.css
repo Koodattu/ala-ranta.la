@@ -23,7 +23,6 @@ p {
 .hamburger-button {
   color: white;
   text-decoration: none;
-  font-size: large;
   display: none;
   justify-content: center;
   background-color: transparent;
@@ -53,7 +52,8 @@ p {
   background-color: #171c26;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-content {
@@ -76,6 +76,12 @@ p {
   display: flex;
 }
 
+.h1-name {
+  font-family: "Arial";
+  font-size: 2.5rem;
+  margin: 0;
+}
+
 .name-link {
   color: white;
   margin-right: 0.75rem;
@@ -93,12 +99,6 @@ p {
   color: #1c2436;
 }
 
-.h1-name {
-  font-family: "Arial";
-  font-size: 2.5rem;
-  margin: 0;
-}
-
 .nav-side-container {
   position: relative;
 }
@@ -107,7 +107,7 @@ p {
   position: fixed;
   display: flex;
   flex-direction: column;
-  transform: translate(-150%, 60%);
+  transform: translate(-120%, 60%);
   text-align: end;
 }
 
@@ -133,13 +133,12 @@ p {
   color: #1c2436;
 }
 
-.light-text {
+.burger-nav-link {
   font-weight: lighter;
-  margin-bottom: 0.5rem;
 }
 
 .burger-nav-links {
-  margin-top: 10rem;
+  margin-top: 2rem;
   display: flex;
 }
 
@@ -221,15 +220,15 @@ footer {
 }
 
 .project-filter {
-  padding: 1rem 2rem;
+  padding: 1em 2em;
   color: white;
   text-decoration: none;
   font-size: large;
   font-family: "Arial";
   display: flex;
-  justify-content: center;
   background-color: transparent;
   border: none;
+  align-items: center;
 }
 
 .project-filter:hover {
@@ -257,14 +256,6 @@ footer {
   grid-area: projects;
 }
 
-.h1-projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  font-family: "Arial";
-}
-
 .filtered-projects {
   display: flex;
   flex-direction: column;
@@ -284,8 +275,9 @@ a:hover > div {
   height: 24px;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 800px) {
   .page-container,
+  .title-content,
   .top-content {
     width: 95vw;
   }
@@ -316,5 +308,35 @@ a:hover > div {
     position: fixed;
     top: 0;
     z-index: 1;
+  }
+
+  .profile-picture {
+    width: 125px;
+    height: 125px;
+  }
+
+  .project-filter {
+    padding: 0.75em;
+    font-size: medium;
+  }
+
+  .burger-nav-link {
+    font-size: medium;
+  }
+
+  .h1-name {
+    font-family: "Arial";
+    font-size: 1.75rem;
+    margin: 0;
+  }
+
+  .name-link {
+    color: white;
+    margin-right: 0.5rem;
+    font-size: 1.75rem;
+  }
+
+  .hamburger-button {
+    font-size: 1.5rem;
   }
 }
