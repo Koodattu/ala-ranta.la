@@ -176,6 +176,10 @@ footer {
   margin-left: 1rem;
 }
 
+.h1-info-projects {
+  text-align: center;
+}
+
 .profile-content {
   grid-area: profile;
   position: relative;
@@ -202,6 +206,7 @@ footer {
   grid-area: experiences;
   display: grid;
   grid-template-areas: "school-exp work-exp";
+  grid-template-columns: 1fr 1fr;
   grid-gap: 3rem 2rem;
 }
 
