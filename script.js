@@ -17,8 +17,3 @@ for (let filter of projectFilters) {
     buttonElement.classList.add("project-filter-enabled");
   });
 }
-
-document.querySelector(".hamburger-button").addEventListener("click", function () {
-  document.querySelector(".burger-nav-container").style.display =
-    document.querySelector(".burger-nav-container").style.display == "none" ? "block" : "none";
-});

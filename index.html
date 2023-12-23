@@ -10,44 +10,17 @@
     <link rel="stylesheet" href="timeline.css" />
   </head>
   <body>
-    <header class="top-header">
-      <div class="top-content">
-        <div class="title-content">
-          <div class="page-title">
-            <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
-            <h1 class="h1-name">Juha</h1>
-          </div>
-          <div>
-            <button class="hamburger-button">☰</button>
-            <nav class="nav-top">
-              <a class="nav-link" href="#">CV</a>
-              <a class="nav-link" href="#">Blog</a>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <div class="burger-nav-container" style="display: none">
-        <nav class="burger-nav-links">
-          <a class="nav-link burger-nav-link" href="#">Home</a>
-          <a class="nav-link burger-nav-link" href="#skills">Skills</a>
-          <a class="nav-link burger-nav-link" href="#education">Education</a>
-          <a class="nav-link burger-nav-link" href="#experience">Experience</a>
-          <a class="nav-link burger-nav-link" href="#projects">Projects</a>
-          <a class="nav-link burger-nav-link" href="#">CV</a>
-          <a class="nav-link burger-nav-link" href="#">Blog</a>
-        </nav>
-      </div>
-    </header>
     <div class="page-container">
-      <div class="nav-side-container">
-        <nav class="nav-side">
-          <a class="nav-link light-text" href="#">Home</a>
-          <a class="nav-link light-text" href="#skills">Skills</a>
-          <a class="nav-link light-text" href="#education">Education</a>
-          <a class="nav-link light-text" href="#experience">Experience</a>
-          <a class="nav-link light-text" href="#projects">Projects</a>
+      <header class="top-header">
+        <div class="page-title">
+          <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
+          <h1 class="h1-name">Juha</h1>
+        </div>
+        <nav class="nav-top">
+          <a class="nav-link" href="#">CV</a>
+          <a class="nav-link" href="#">Blog</a>
         </nav>
-      </div>
+      </header>
       <main>
         <div class="main-content">
           <div class="profile-content">
@@ -62,7 +35,7 @@
                 <p>Lorem ipsum dolor sit amet</p>
               </div>
             </div>
-            <img class="profile-picture" src="./assets/profile.png" alt="Profile picture" />
+            <img class="profile-picture" src="./assets/profile.webp" alt="Profile picture" />
           </div>
           <div id="skills" class="info-container skills-container">
             <h1 class="h1-info">📖 Skills</h1>
@@ -83,9 +56,17 @@
                   <ul id="first-list">
                     <li>
                       <span></span>
-                      <div class="title">Tampere University</div>
-                      <div class="name">Master of Science</div>
-                      <div class="info">Lorem ipsum dolor sit amet</div>
+                      <div class="exp-info-logo">
+                        <div>
+                          <div class="title">Tampere University</div>
+                          <div class="name">Master of Science - Information Technology</div>
+                          <div class="info">
+                            Focusing on information-based web systems, designing software, production of software and
+                            project management.
+                          </div>
+                        </div>
+                        <img class="tuni-org-img" src="./assets/tuni2.webp" alt="Tampere University logo" />
+                      </div>
                       <div class="time">
                         <span>Present</span>
                         <span>Aug 2023</span>
@@ -93,9 +74,17 @@
                     </li>
                     <li>
                       <span></span>
-                      <div class="title">Seinäjoki University of Applied Sciences</div>
-                      <div class="name">Bachelor of Engineering</div>
-                      <div class="info">Lorem ipsum dolor sit amet</div>
+                      <div class="exp-info-logo">
+                        <div>
+                          <div class="title">Seinäjoki University of Applied Sciences</div>
+                          <div class="name">Bachelor of Engineering - Information Technology</div>
+                          <div class="info">
+                            Programming, data communications, embedded systems. Oriented in programming, mainly using
+                            C#. Also some python and web development.
+                          </div>
+                        </div>
+                        <img class="small-org-img" src="./assets/seamk.webp" alt="SeAMK logo" />
+                      </div>
                       <div class="time">
                         <span>May 2019</span>
                         <span>Sep 2015</span>
@@ -112,9 +101,18 @@
                   <ul id="first-list">
                     <li>
                       <span></span>
-                      <div class="title">Finn-Power Oy</div>
-                      <div class="name">Software Designer</div>
-                      <div class="info">Lorem ipsum dolor sit amet</div>
+                      <div class="exp-info-logo">
+                        <div>
+                          <div class="title">Finn-Power Oy</div>
+                          <div class="name">Software Designer</div>
+                          <div class="info">
+                            I specialized in Windows desktop application development using C#, .NET Framework, WinForms,
+                            and WPF. I also contributed to backend development, utilizing Windows Services, REST APIs,
+                            SQL, and ASP.NET Web API, and had exposure to web development with React and Typescript.
+                          </div>
+                        </div>
+                        <img class="small-org-img" src="./assets/prima-power.webp" alt="Prima Power logo" />
+                      </div>
                       <div class="time">
                         <span>Nov 2022</span>
                         <span>Apr 2018</span>
@@ -138,7 +136,26 @@
               <div class="filtered-projects">
                 <div class="project-container">
                   <a>
-                    <div class="info-content">
+                    <div class="project-content">
+                      <div class="project-information">
+                        <p>Title</p>
+                        <p>Year</p>
+                        <p>Description</p>
+                        <p>Tech</p>
+                        <p>Features</p>
+                        <p>Github repo link</p>
+                      </div>
+                      <img
+                        class="project-preview-image"
+                        src="https://camo.githubusercontent.com/33b3df6a6f0b9e1b25db332addc77578e23762b6284a01a662e6dc9edd0c2bf9/68747470733a2f2f692e696d6775722e636f6d2f746c336c6936732e706e67"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="project-container">
+                  <a>
+                    <div class="project-content">
                       <p>Lorem ipsum dolor sit amet</p>
                       <p>Lorem ipsum dolor sit amet</p>
                     </div>
@@ -146,15 +163,7 @@
                 </div>
                 <div class="project-container">
                   <a>
-                    <div class="info-content">
-                      <p>Lorem ipsum dolor sit amet</p>
-                      <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="project-container">
-                  <a>
-                    <div class="info-content">
+                    <div class="project-content">
                       <p>Lorem ipsum dolor sit amet</p>
                       <p>Lorem ipsum dolor sit amet</p>
                     </div>
@@ -168,7 +177,7 @@
       <footer>
         <div class="footer-content">
           <p>Made with ☕️ and 🍔. View source code on</p>
-          <a href="https://github.com/"><img class="github-image" src="/assets/github-mark.png" /></a>
+          <a href="https://github.com/"><img class="small-org-img" src="/assets/github.webp" /></a>
         </div>
       </footer>
     </div>
