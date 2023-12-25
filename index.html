@@ -12,16 +12,16 @@
   <body>
     <div class="page-container">
       <header class="top-header">
-        <a class="name-link" href="https://ala-ranta.la/">Ala-Ranta.la</a>
+        <a class="name-link" href="https://ala-ranta.la/"><h1 class="h1-name">Ala-Ranta.la</h1></a>
         <nav class="nav-top">
-          <a class="nav-link" href="#">CV</a>
+          <a class="nav-link" href="#">Projects</a>
           <a class="nav-link" href="#">Blog</a>
         </nav>
       </header>
       <main>
         <div class="main-content">
           <div class="profile-content">
-            <h1 class="h1-info">👋 Hello</h1>
+            <h2 class="h2-info">👋 Hello</h2>
             <div class="info-content">
               <div>
                 <p>Lorem ipsum dolor sit amet</p>
@@ -35,7 +35,7 @@
             <img class="profile-picture" src="./assets/profile.webp" alt="Profile picture" />
           </div>
           <div id="skills" class="info-container skills-container">
-            <h1 class="h1-info">📖 Skills</h1>
+            <h2 class="h2-info">📖 Skills</h2>
             <div class="info-content">
               <div>
                 <p>Lorem ipsum dolor sit amet</p>
@@ -46,7 +46,7 @@
             </div>
           </div>
           <div id="interests" class="info-container interests-container">
-            <h1 class="h1-info">🎳 Interests</h1>
+            <h2 class="h2-info">🎳 Interests</h2>
             <div class="info-content">
               <div>
                 <p>Lorem ipsum dolor sit amet</p>
@@ -57,7 +57,7 @@
             </div>
           </div>
           <div id="education">
-            <h1 class="h1-info">🎓 Education</h1>
+            <h2 class="h2-info">🎓 Education</h2>
             <div class="info-content">
               <div class="box">
                 <ul>
@@ -102,7 +102,7 @@
             </div>
           </div>
           <div id="experience">
-            <h1 class="h1-info">💼 Experience</h1>
+            <h2 class="h2-info">💼 Experience</h2>
             <div class="info-content">
               <div class="box">
                 <ul>
@@ -131,7 +131,7 @@
             </div>
           </div>
           <div class="projects-container">
-            <h1 class="h1-info-projects" id="projects-header">🚀 Projects</h1>
+            <h2 class="h2-info-projects" id="projects-header">🚀 Projects</h2>
             <div class="projects-filters">
               <button id="project-filter-all" class="project-filter project-filter-enabled">All</button>
               <button id="project-filter-desktop" class="project-filter">Desktop</button>
@@ -141,48 +141,112 @@
             </div>
             <div class="filtered-projects">
               <div class="project-container">
-                <a>
+                <button class="project-wrapper-button">
                   <div class="project-content">
+                    <img class="project-preview-image" src="./images/desktop-song-req-preview.png" alt="" />
                     <div class="project-information">
-                      <p>Twitch Song Request Desktop</p>
-                      <p>2023</p>
-                      <p>
+                      <h3>Twitch Song Request Desktop</h3>
+                      <p style="color: gray">2023</p>
+                      <p style="font-weight: bold">
                         A Windows desktop Twitch song request application with multi-platform support for song requests
                       </p>
-                      <p>Platform: Windows</p>
-                      <p>Tech: C#, WPF</p>
+                      <p>
+                        Platform:
+                        <span class="tech-tag windows-tag">Windows</span>
+                      </p>
+                      <p>
+                        Tech:
+                        <span class="tech-tag csharp-tag">C#</span>
+                        <span class="tech-tag wpf-tag">WPF</span>
+                      </p>
                       <p>Features:</p>
                       <ul class="project-features">
-                        <li>Multi-platform support</li>
-                        <li>Customizable UI</li>
-                        <li>Customizable song request commands</li>
-                        <li>Customizable song request</li>
+                        <li>Song requests are read from Twitch channel points redeem rewards</li>
+                        <li>Supports song requests from Spotify and Youtube</li>
+                        <li>Spotify songs are played via local Spotify installation</li>
+                        <li>Youtube videos are played inside application</li>
                       </ul>
-                      <p>Link: https://github.com/Koodattu/twitch-song-request-desktop</p>
+                      <p>
+                        Link:
+                        <a href="https://github.com/Koodattu/twitch-song-request-desktop">
+                          https://github.com/Koodattu/twitch-song-request-desktop
+                        </a>
+                      </p>
                     </div>
-                    <img
-                      class="project-preview-image"
-                      src="https://camo.githubusercontent.com/33b3df6a6f0b9e1b25db332addc77578e23762b6284a01a662e6dc9edd0c2bf9/68747470733a2f2f692e696d6775722e636f6d2f746c336c6936732e706e67"
-                      alt=""
-                    />
                   </div>
-                </a>
+                </button>
               </div>
               <div class="project-container">
-                <a>
+                <button class="project-wrapper-button">
                   <div class="project-content">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
+                    <img class="project-preview-image" src="./images/spotify-song-req-preview.webp" alt="" />
+                    <div class="project-information">
+                      <h3>Twitch Spotify Song Request</h3>
+                      <p style="color: gray">2023</p>
+                      <p style="font-weight: bold">
+                        A simple javascript and python script for Twitch Spotify song requests
+                      </p>
+                      <p>Platform: <span class="tech-tag web-tag">Web</span></p>
+                      <p>
+                        Tech:
+                        <span class="tech-tag javascript-tag">Javascript</span>
+                        <span class="tech-tag python-tag">Python</span>
+                      </p>
+                      <p>Features:</p>
+                      <ul class="project-features">
+                        <li>Python script for generating Twitch and Spotify access tokens</li>
+                        <li>HTML page with only Javascript which can be added to OBS as a browser source</li>
+                        <li>No hosting required after initial setup</li>
+                      </ul>
+                      <p>
+                        Link:
+                        <a href="https://github.com/Koodattu/twitch-spotify-song-request">
+                          https://github.com/Koodattu/twitch-spotify-song-request
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </a>
+                </button>
               </div>
               <div class="project-container">
-                <a>
+                <button class="project-wrapper-button">
                   <div class="project-content">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <p>Lorem ipsum dolor sit amet</p>
+                    <img class="project-preview-image" src="./images/lunch-app-preview.webp" alt="" />
+                    <div class="project-information">
+                      <h3>Staff Restaurant Lunch Menu App</h3>
+                      <p style="color: gray">2021</p>
+                      <p style="font-weight: bold">
+                        A lunch menu mobile application with frontend and backend for previous employer staff restaurant
+                      </p>
+                      <p>
+                        Platform:
+                        <span class="tech-tag mobile-tag">Mobile</span><span class="tech-tag backend-tag">Backend</span>
+                      </p>
+                      <p>
+                        Tech:
+                        <span class="tech-tag flutter-tag">Flutter</span>
+                        <span class="tech-tag dart-tag">Dart</span>
+                        <span class="tech-tag java-tag">Java</span>
+                        <span class="tech-tag spring-tag">Spring Boot</span>
+                        <span class="tech-tag sql-tag">PostgreSQL</span>
+                      </p>
+                      <p>Features:</p>
+                      <ul class="project-features">
+                        <li>Mobile frontend with Flutter and Dart, backend with Java Spring Boot</li>
+                        <li>
+                          Backend Fetches lunch menu weekly, saves to database, frontend requests menu with Rest Api
+                        </li>
+                        <li>Extra features like view menu history, vote on courses, stats about courses</li>
+                      </ul>
+                      <p>
+                        Link:
+                        <a href="https://github.com/Koodattu/lunch-menu-app">
+                          https://github.com/Koodattu/lunch-menu-app
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -190,7 +254,7 @@
       </main>
       <footer>
         <div class="footer-content">
-          <p>Made with ☕️ and 🍔. View source code on</p>
+          <p>Made with ☕️ and 🍪. View source code on</p>
           <a href="https://github.com/"><img class="small-org-img" src="/assets/github.webp" /></a>
         </div>
       </footer>
