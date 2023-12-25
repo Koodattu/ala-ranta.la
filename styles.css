@@ -37,10 +37,6 @@ p {
   justify-content: space-between;
 }
 
-.page-title {
-  display: flex;
-}
-
 .h1-name {
   font-family: "Arial";
   font-size: 2.5rem;
@@ -113,11 +109,12 @@ footer {
   margin-top: 5rem;
   display: grid;
   grid-template-areas:
-    "profile"
-    "skills"
-    "experiences"
-    "projects";
+    "profile profile"
+    "skills interests"
+    "education experience"
+    "projects projects";
   grid-gap: 3rem 2rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 .skills-container {
@@ -176,14 +173,6 @@ footer {
   width: 200px;
   height: 200px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.experiences-container {
-  grid-area: experiences;
-  display: grid;
-  grid-template-areas: "education experience";
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3rem 2rem;
 }
 
 #edutcation {
@@ -263,10 +252,15 @@ a:hover > div {
   filter: brightness(0) invert(1) saturate(0);
 }
 
+.project-features li {
+  color: white;
+  font-family: "Arial";
+}
+
 @media only screen and (max-width: 800px) {
   .page-container,
   .top-header {
-    width: 95vw;
+    width: 90vw;
   }
 
   .main-content {
@@ -297,11 +291,14 @@ a:hover > div {
 
   .main-content {
     grid-gap: 1em;
-  }
-
-  .experiences-container {
+    grid-template-areas:
+      "profile"
+      "skills"
+      "interests"
+      "education"
+      "experience"
+      "projects";
     grid-gap: 1em;
-    grid-template-areas: "education" "experience";
     grid-template-columns: 1fr;
   }
 
