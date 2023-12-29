@@ -151,147 +151,28 @@
               <button id="project-filter-mobile" class="project-filter">Mobile</button>
               <button id="project-filter-web" class="project-filter">Web</button>
             </div>
-            <div class="filtered-projects">
-              <div class="project-container">
-                <div class="project-content">
-                  <img class="project-preview-image" src="./images/desktop-song-req-preview.png" alt="" />
-                  <div class="project-information">
-                    <h3>Twitch Song Request Desktop</h3>
-                    <p style="color: gray">2023</p>
-                    <p style="font-weight: bold">
-                      A Windows desktop Twitch song request application with multi-platform support for song requests
-                    </p>
-                    <p>
-                      Platform:
-                      <span class="tech-tag windows-tag">Windows</span>
-                    </p>
-                    <p>
-                      Tech:
-                      <span class="tech-tag csharp-tag">C#</span>
-                      <span class="tech-tag wpf-tag">WPF</span>
-                    </p>
-                    <p>Features:</p>
-                    <ul class="project-features">
-                      <li>Song requests are read from Twitch channel points redeem rewards</li>
-                      <li>Supports song requests from Spotify and Youtube</li>
-                      <li>Spotify songs are played via local Spotify installation</li>
-                      <li>Youtube videos are played inside application</li>
-                    </ul>
-                    <p class="flex-center">
-                      Links:
-                      <a class="small-margin-left" href="https://github.com/Koodattu/twitch-song-request-desktop"
-                        ><img class="small-org-img" src="/assets/github.webp"
-                      /></a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="project-container">
-                <div class="project-content">
-                  <img class="project-preview-image" src="./images/spotify-song-req-preview.webp" alt="" />
-                  <div class="project-information">
-                    <h3>Twitch Spotify Song Request</h3>
-                    <p style="color: gray">2023</p>
-                    <p style="font-weight: bold">
-                      A simple javascript and python script for Twitch Spotify song requests
-                    </p>
-                    <p>Platform: <span class="tech-tag web-tag">Web</span></p>
-                    <p>
-                      Tech:
-                      <span class="tech-tag javascript-tag">Javascript</span>
-                      <span class="tech-tag python-tag">Python</span>
-                    </p>
-                    <p>Features:</p>
-                    <ul class="project-features">
-                      <li>Python script for generating Twitch and Spotify access tokens</li>
-                      <li>HTML page with only Javascript which can be added to OBS as a browser source</li>
-                      <li>No hosting required after initial setup</li>
-                    </ul>
-                    <p class="flex-center">
-                      Links:
-                      <a class="small-margin-left" href="https://github.com/Koodattu/twitch-spotify-song-request"
-                        ><img class="small-org-img" src="/assets/github.webp"
-                      /></a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="project-container">
-                <div class="project-content">
-                  <img class="project-preview-image" src="./images/lunch-app-preview.webp" alt="" />
-                  <div class="project-information">
-                    <h3>Staff Restaurant Lunch Menu App</h3>
-                    <p style="color: gray">2021</p>
-                    <p style="font-weight: bold">
-                      A lunch menu mobile application with frontend and backend for previous employer staff restaurant
-                    </p>
-                    <p>
-                      Platform:
-                      <span class="tech-tag mobile-tag">Mobile</span>
-                      <span class="tech-tag backend-tag">Backend</span>
-                    </p>
-                    <p>
-                      Tech:
-                      <span class="tech-tag flutter-tag">Flutter</span>
-                      <span class="tech-tag dart-tag">Dart</span>
-                      <span class="tech-tag java-tag">Java</span>
-                      <span class="tech-tag spring-tag">Spring Boot</span>
-                      <span class="tech-tag sql-tag">PostgreSQL</span>
-                    </p>
-                    <p>Features:</p>
-                    <ul class="project-features">
-                      <li>Mobile frontend with Flutter and Dart, backend with Java Spring Boot</li>
-                      <li>
-                        Backend Fetches lunch menu weekly, saves to database, frontend requests menu with Rest Api
-                      </li>
-                      <li>Extra features like view menu history, vote on courses, stats about courses</li>
-                    </ul>
-                    <p class="flex-center">
-                      Links:
-                      <a class="small-margin-left" href="https://github.com/Koodattu/lunch-menu-app"
-                        ><img class="small-org-img" src="/assets/github.webp"
-                      /></a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <template>
+            <div id="filtered-projects" class="filtered-projects">
+              <template id="project-template">
                 <div class="project-container">
                   <div class="project-content">
-                    <img class="project-preview-image" src="./images/lunch-app-preview.webp" alt="" />
+                    <img id="project-image" class="project-preview-image" />
                     <div class="project-information">
-                      <h3>Staff Restaurant Lunch Menu App</h3>
-                      <p style="color: gray">2021</p>
-                      <p style="font-weight: bold">
-                        A lunch menu mobile application with frontend and backend for previous employer staff restaurant
-                      </p>
-                      <p>
-                        Platform:
-                        <span class="tech-tag mobile-tag">Mobile</span>
-                        <span class="tech-tag backend-tag">Backend</span>
-                      </p>
-                      <p>
-                        Tech:
-                        <span class="tech-tag flutter-tag">Flutter</span>
-                        <span class="tech-tag dart-tag">Dart</span>
-                        <span class="tech-tag java-tag">Java</span>
-                        <span class="tech-tag spring-tag">Spring Boot</span>
-                        <span class="tech-tag sql-tag">PostgreSQL</span>
-                      </p>
+                      <h3 id="project-title"></h3>
+                      <p id="project-year" style="color: gray"></p>
+                      <p id="project-description" style="font-weight: bold"></p>
+                      <p id="project-platform">Platform:</p>
+                      <p id="project-tech">Tech:</p>
                       <p>Features:</p>
-                      <ul class="project-features">
-                        <li>Mobile frontend with Flutter and Dart, backend with Java Spring Boot</li>
-                        <li>
-                          Backend Fetches lunch menu weekly, saves to database, frontend requests menu with Rest Api
-                        </li>
-                        <li>Extra features like view menu history, vote on courses, stats about courses</li>
-                      </ul>
+                      <ul id="project-features" class="project-features"></ul>
                       <p class="flex-center">
                         Links:
-                        <a class="small-margin-left" href="https://github.com/Koodattu/lunch-menu-app">
+                        <a id="project-link" class="small-margin-left" href="https://github.com/Koodattu/">
                           <img class="small-org-img" src="/assets/github.webp" />
                         </a>
                       </p>
+                      <template id="tag-template">
+                        <span class="tech-tag"></span>
+                      </template>
                     </div>
                   </div>
                 </div>

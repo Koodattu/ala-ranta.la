@@ -61,12 +61,22 @@
   color: aquamarine;
 }
 
-.spring-tag {
+.spring-boot-tag {
   border-color: chartreuse;
   color: chartreuse;
 }
 
-.sql-tag {
+.postgresql-tag {
   border-color: aqua;
   color: aqua;
+}
+
+.android-tag {
+  border-color: forestgreen;
+  color: forestgreen;
+}
+
+.google-sheets-tag {
+  border-color: darkorange;
+  color: darkorange;
 }
