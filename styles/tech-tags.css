@@ -16,6 +16,11 @@
   color: lightgreen;
 }
 
+.desktop-tag {
+  border-color: lightsteelblue;
+  color: lightsteelblue;
+}
+
 .windows-tag {
   border-color: lightskyblue;
   color: lightskyblue;

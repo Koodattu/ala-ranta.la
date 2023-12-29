@@ -151,33 +151,7 @@
               <button id="project-filter-mobile" class="project-filter">Mobile</button>
               <button id="project-filter-web" class="project-filter">Web</button>
             </div>
-            <div id="filtered-projects" class="filtered-projects">
-              <template id="project-template">
-                <div class="project-container">
-                  <div class="project-content">
-                    <img id="project-image" class="project-preview-image" />
-                    <div class="project-information">
-                      <h3 id="project-title"></h3>
-                      <p id="project-year" style="color: gray"></p>
-                      <p id="project-description" style="font-weight: bold"></p>
-                      <p id="project-platform">Platform:</p>
-                      <p id="project-tech">Tech:</p>
-                      <p>Features:</p>
-                      <ul id="project-features" class="project-features"></ul>
-                      <p class="flex-center">
-                        Links:
-                        <a id="project-link" class="small-margin-left" href="https://github.com/Koodattu/">
-                          <img class="small-org-img" src="/assets/github.webp" />
-                        </a>
-                      </p>
-                      <template id="tag-template">
-                        <span class="tech-tag"></span>
-                      </template>
-                    </div>
-                  </div>
-                </div>
-              </template>
-            </div>
+            <div id="filtered-projects" class="filtered-projects"></div>
           </div>
         </div>
       </main>
@@ -192,6 +166,31 @@
         </div>
       </footer>
     </div>
+    <template id="project-template">
+      <div class="project-container">
+        <div class="project-content">
+          <img id="project-image" class="project-preview-image" />
+          <div class="project-information">
+            <h3 id="project-title"></h3>
+            <p id="project-year" style="color: gray"></p>
+            <p id="project-description" style="font-weight: bold"></p>
+            <p id="project-platform">Platform:</p>
+            <p id="project-tech">Tech:</p>
+            <p>Features:</p>
+            <ul id="project-features" class="project-features"></ul>
+            <p class="flex-center">
+              Links:
+              <a id="project-link" class="small-margin-left" href="https://github.com/Koodattu/">
+                <img class="small-org-img" src="/assets/github.webp" />
+              </a>
+            </p>
+            <template id="tag-template">
+              <span class="tech-tag"></span>
+            </template>
+          </div>
+        </div>
+      </div>
+    </template>
     <script src="script.js"></script>
   </body>
 </html>

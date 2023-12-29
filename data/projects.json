@@ -2,7 +2,7 @@
   {
     "title": "Twitch Song Request Desktop",
     "subtitle": "A Windows desktop Twitch song request application with multi-platform support for song requests",
-    "platform": ["Windows"],
+    "platform": ["Desktop", "Windows"],
     "tech": ["C#", "WPF"],
     "features": [
       "Song requests are read from Twitch channel points redeem rewards",
