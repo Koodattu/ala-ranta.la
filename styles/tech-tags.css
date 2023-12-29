@@ -1,0 +1,72 @@
+.tech-tag {
+  border: 2px solid;
+  border-radius: 8px;
+  margin: 4px 2px;
+  padding: 4px;
+  display: inline-block;
+}
+
+.wpf-tag {
+  border-color: lightcoral;
+  color: lightcoral;
+}
+
+.csharp-tag {
+  border-color: lightgreen;
+  color: lightgreen;
+}
+
+.windows-tag {
+  border-color: lightskyblue;
+  color: lightskyblue;
+}
+
+.web-tag {
+  border-color: lightseagreen;
+  color: lightseagreen;
+}
+
+.javascript-tag {
+  border-color: springgreen;
+  color: springgreen;
+}
+
+.python-tag {
+  border-color: magenta;
+  color: magenta;
+}
+
+.mobile-tag {
+  border-color: gold;
+  color: gold;
+}
+
+.backend-tag {
+  border-color: dodgerblue;
+  color: dodgerblue;
+}
+
+.flutter-tag {
+  border-color: chocolate;
+  color: chocolate;
+}
+
+.dart-tag {
+  border-color: cadetblue;
+  color: cadetblue;
+}
+
+.java-tag {
+  border-color: aquamarine;
+  color: aquamarine;
+}
+
+.spring-tag {
+  border-color: chartreuse;
+  color: chartreuse;
+}
+
+.sql-tag {
+  border-color: aqua;
+  color: aqua;
+}
