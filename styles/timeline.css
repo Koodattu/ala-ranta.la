@@ -1,6 +1,7 @@
 .box {
   overflow: hidden;
   font-family: "Arial";
+  padding: 1em;
 }
 
 .box ul {
@@ -31,6 +32,33 @@
   line-height: 20px;
 }
 
+.box ul li .hover-background {
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: -50px;
+  width: calc(100% + 65px);
+  height: calc(100% + 60px);
+  background-color: transparent;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.box ul li:hover .hover-background {
+  background-color: #8baaff15;
+}
+
+.box ul li div img {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.box ul li:hover div img {
+  transform: scale(1.2);
+  filter: none;
+}
+
 .box ul li:last-child {
   margin: 20px 0px 20px 40px;
 }
@@ -53,12 +81,13 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #466eb8;
+  background: rgb(45, 212, 191);
   border: 2px solid #fff;
   position: absolute;
   left: -7px;
 }
-
+/*rgba(45,212,191,.1);*/
+/*rgb(94 234 212 1);*/
 .box ul li > span:before {
   top: -10px;
 }
