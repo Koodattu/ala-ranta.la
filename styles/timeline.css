@@ -35,7 +35,7 @@
 .box ul li .hover-background {
   display: block;
   position: absolute;
-  top: -30px;
+  top: -25px;
   left: -50px;
   width: calc(100% + 65px);
   height: calc(100% + 60px);

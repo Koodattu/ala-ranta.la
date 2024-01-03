@@ -1,5 +1,5 @@
 body {
-  background-color: #171c26;
+  background-image: linear-gradient(to bottom, #1d2431, #171c26);
   margin: 0;
   padding: 0;
   display: flex;
@@ -20,12 +20,55 @@ h3 {
   margin: 0;
 }
 
+h4 {
+  color: white;
+  font-size: large;
+  font-family: "Arial";
+  margin: 0 0 0.5em 0;
+}
+
 p {
   color: white;
   font-size: medium;
   font-family: "Arial";
   margin: 0;
   margin-top: 0.5em;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: teal;
+  font-weight: bold;
+  font-size: medium;
+  font-family: "Arial";
+  text-decoration: none;
+}
+
+.hover-underline-animation:hover {
+  color: lightgreen;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: teal;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-red:after {
+  background-color: red;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .page-container {
@@ -38,7 +81,6 @@ p {
 
 .top-header {
   padding-top: 1.5rem;
-  background-color: #171c26;
   display: flex;
   flex-direction: row;
   align-items: end;
@@ -52,7 +94,7 @@ p {
 }
 
 .name-link {
-  color: white;
+  color: rgb(167, 167, 167);
   margin-right: 0.75rem;
   font-family: "Arial";
   font-size: 2.5rem;
@@ -61,7 +103,7 @@ p {
 }
 
 .name-link:hover {
-  color: #496396;
+  color: white;
 }
 
 .name-link:active {
@@ -74,7 +116,7 @@ p {
 }
 
 .nav-link {
-  color: white;
+  color: rgb(167, 167, 167);
   margin-left: 1rem;
   font-family: "Arial";
   font-size: 1.5rem;
@@ -83,7 +125,7 @@ p {
 }
 
 .nav-link:hover {
-  color: #496396;
+  color: white;
 }
 
 .nav-link:active {
@@ -118,7 +160,7 @@ footer {
   display: grid;
   grid-template-areas:
     "profile profile"
-    "skills interests"
+    "skills skills"
     "education experience"
     "projects projects";
   grid-gap: 3rem 2rem;
@@ -131,16 +173,20 @@ footer {
 
 .h2-info {
   font-family: "Arial";
-  margin: 0.25em;
+  margin: 0;
 }
 
-.h2-info-projects {
-  text-align: center;
+.bottom-margin {
+  margin: 0 0 0.5em 0;
 }
 
 .profile-content {
   grid-area: profile;
-  position: relative;
+}
+
+.skills-locker {
+  display: flex;
+  justify-content: space-between;
 }
 
 .info-content {
@@ -179,13 +225,12 @@ footer {
 }
 
 .profile-picture {
-  position: absolute;
-  top: 0;
-  right: 0;
+  float: right;
   border-radius: 50%;
   width: 200px;
   height: 200px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  shape-outside: circle();
 }
 
 #education {
@@ -316,7 +361,6 @@ footer {
     grid-template-areas:
       "profile"
       "skills"
-      "interests"
       "education"
       "experience"
       "projects";
