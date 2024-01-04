@@ -351,14 +351,14 @@ footer {
 }
 
 .small-org-img {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   filter: brightness(0) invert(1) saturate(0);
 }
 
 .tuni-org-img {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   filter: brightness(0) invert(1) saturate(0);
 }
 
