@@ -13,11 +13,14 @@
   <body>
     <div class="page-container">
       <header class="top-header">
-        <a class="name-link" href="https://ala-ranta.la/"><h1 class="h1-name">Ala-Ranta.la</h1></a>
+        <a class="name-link link-underline-animation link-underline-animation-rgb" href="https://ala-ranta.la/">
+          <h1 class="h1-name">Ala-Ranta.la</h1>
+        </a>
         <nav class="nav-top">
-          <a class="nav-link" href="#">About</a>
-          <a class="nav-link" href="#">Projects</a>
-          <a class="nav-link" href="#">Blog</a>
+          <a class="link-underline-animation link-underline-animation-white nav-link" href="#">CV</a>
+          <a class="link-underline-animation link-underline-animation-red nav-link" href="#">About</a>
+          <a class="link-underline-animation link-underline-animation-green nav-link" href="#">Projects</a>
+          <a class="link-underline-animation link-underline-animation-blue nav-link" href="#">Blog</a>
         </nav>
       </header>
       <main>
@@ -26,21 +29,49 @@
             <h2 class="h2-info bottom-margin">👋 Hello there</h2>
             <div>
               <img class="profile-picture" src="./assets/profile.webp" alt="Profile picture" />
+              <p>My name is Juha Ala-Rantala and I'm a Software Engineer based in Seinäjoki, Finland.</p>
               <p>
-                My name is Juha Ala-Rantala. I'm currently studying at Tampere University pursuing a Master's degree in
-                Information Technology, with a focus on web-based information systems. I have previously worked as a
-                software designer. I am a Bachelor of Engineering graduate from Seinäjoki University of Applied
-                Sciences.
+                I'm currently studying at
+                <a class="link-fill-animation" href="https://www.tuni.fi/" target="_blank"> Tampere University </a>
+                pursuing a
+                <a class="link-fill-animation" href="#education"> Master's degree </a>
+                in Information Technology, with a focus on web-based information systems. I am a
+                <a class="link-fill-animation" href="#education">Bachelor of Engineering</a>
+                in Information Technology graduate from
+                <a class="link-fill-animation" href="https://www.seamk.fi/" target="_blank">
+                  Seinäjoki University of Applied Sciences </a
+                >, where I focused on software development and received the max grade (five) for my
+                <a class="link-fill-animation" href="https://www.theseus.fi/handle/10024/168319" target="_blank"
+                  >thesis</a
+                >.
               </p>
-              <p>I worked in a door making company where I made doors</p>
               <p>
-                On my free time I like to eat in
-                <a class="hover-underline-animation" href="https://www.elcebo.fi/" target="_blank">El Cebo</a>.
+                I have almost
+                <a class="link-fill-animation" href="#experience">five years of experience</a>
+                working as a software engineer, designing user interfaces, developing internal tools and maintaining
+                existing products.
               </p>
+              <p>
+                On my free time I like to hang out with friends, play games, create content, work on my
+                <a class="link-fill-animation" href="#projects">side projects</a>
+                and order food from
+                <a class="link-fill-animation" href="https://www.elcebo.fi/" target="_blank">El Cebo</a>.
+              </p>
+              <div class="contact-links">
+                <a class="contact-link" href="https://github.com/Koodattu" target="_blank"
+                  ><img class="contact-image" src="./assets/github.webp"
+                /></a>
+                <a class="contact-link" href="https://www.linkedin.com/in/juha-ala-rantala/" target="_blank"
+                  ><img class="contact-image" src="./assets/linkedin.webp"
+                /></a>
+                <a class="contact-link" href="mailto:alarantala.juha@gmail.com"
+                  ><img class="contact-image" src="./assets/gmail.png"
+                /></a>
+              </div>
             </div>
           </div>
           <div id="skills" class="info-container skills-container">
-            <h2 class="h2-info bottom-margin">📖 Skills</h2>
+            <h2 class="h2-info bottom-margin">📚 Tech Stacks</h2>
             <div class="skills-locker">
               <div>
                 <h4>Language</h4>
@@ -89,10 +120,12 @@
                     <div>
                       <div class="title">Tampere University</div>
                       <div class="name">Master of Science - Information Technology</div>
+                      <div class="length">Est. 2 years</div>
                       <div class="info">
                         Focusing on information-based web systems, designing software, production of software and
                         project management.
                       </div>
+                      <div class="view-info">View more info and details ➚</div>
                     </div>
                     <img class="tuni-org-img" src="./assets/tuni3.webp" alt="Tampere University logo" />
                   </div>
@@ -108,10 +141,12 @@
                     <div>
                       <div class="title">Seinäjoki University of Applied Sciences</div>
                       <div class="name">Bachelor of Engineering - Information Technology</div>
+                      <div class="length">3 years 8 months</div>
                       <div class="info">
                         Programming, data communications, embedded systems. Oriented in programming, mainly using C#.
                         Also some python and web development.
                       </div>
+                      <div class="view-info">View more info and details ➚</div>
                     </div>
                     <img class="small-org-img" src="./assets/seamk.webp" alt="SeAMK logo" />
                   </div>
@@ -134,12 +169,14 @@
                     <div>
                       <div class="title">Prima Power / Finn-Power Oy</div>
                       <div class="name">Software Designer</div>
+                      <div class="length">4 years 8 months</div>
                       <div class="info">
                         I specialized in Windows desktop application development using C#, .NET Framework, WinForms, and
                         WPF with focus on internal tools and human-machine interfaces. I also contributed to backend
                         development, utilizing Windows Services, REST APIs, SQL, and ASP.NET Web API, and had some
                         exposure to web development with React and Typescript.
                       </div>
+                      <div class="view-info">View more info and details ➚</div>
                     </div>
                     <img class="small-org-img" src="./assets/prima-power.webp" alt="Prima Power logo" />
                   </div>
@@ -151,7 +188,7 @@
               </ul>
             </div>
           </div>
-          <div class="projects-container">
+          <div id="projects" class="projects-container">
             <h2 class="h2-info bottom-margin" id="projects-header">🚀 Projects</h2>
             <div id="filtered-projects" class="filtered-projects"></div>
           </div>

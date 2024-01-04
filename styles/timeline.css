@@ -59,6 +59,14 @@
   filter: none;
 }
 
+.box ul li div div .view-info {
+  transition: color 0.3s ease-in-out;
+}
+
+.box ul li:hover div div .view-info {
+  color: teal;
+}
+
 .box ul li:last-child {
   margin: 20px 0px 20px 40px;
 }
@@ -104,7 +112,20 @@
 
 .box .name {
   font-style: italic;
+  margin-bottom: 5px;
+}
+
+.box .length {
+  color: gray;
   margin-bottom: 1em;
+}
+
+.box .info {
+  margin-bottom: 2em;
+}
+
+.box .view-info {
+  font-size: 90%;
 }
 
 .box .time span {
