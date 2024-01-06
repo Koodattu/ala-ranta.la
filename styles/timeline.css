@@ -59,12 +59,33 @@
   filter: none;
 }
 
+.view-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.arrow-out {
+  margin: 0;
+  padding: 0;
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1) saturate(0);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
 .box ul li div div .view-info {
   transition: color 0.3s ease-in-out;
 }
 
 .box ul li:hover div div .view-info {
   color: teal;
+}
+
+.box ul li:hover .arrow-out {
+  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+  transform: rotate(-45deg);
 }
 
 .box ul li:last-child {

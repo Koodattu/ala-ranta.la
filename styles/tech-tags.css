@@ -6,82 +6,212 @@
   display: inline-block;
 }
 
-.wpf-tag {
-  border-color: lightcoral;
-  color: lightcoral;
+.desktop-tag {
+  border-color: #cc97f9;
+  color: #cc97f9;
 }
 
 .csharp-tag {
-  border-color: lightgreen;
-  color: lightgreen;
+  border-color: #a179dc;
+  color: #a179dc;
 }
 
-.desktop-tag {
-  border-color: lightsteelblue;
-  color: lightsteelblue;
+.dotnet-tag {
+  border-color: #512bd4;
+  color: #512bd4;
 }
 
-.windows-tag {
-  border-color: lightskyblue;
-  color: lightskyblue;
+.net-framework-tag {
+  border-color: #039dde;
+  color: #039dde;
 }
 
-.web-tag {
-  border-color: lightseagreen;
-  color: lightseagreen;
-}
-
-.javascript-tag {
-  border-color: springgreen;
-  color: springgreen;
-}
-
-.python-tag {
-  border-color: magenta;
-  color: magenta;
+.win-services-tag {
+  border-color: #c6feff;
+  color: #c6feff;
 }
 
 .mobile-tag {
-  border-color: gold;
-  color: gold;
-}
-
-.backend-tag {
-  border-color: dodgerblue;
-  color: dodgerblue;
+  border-color: #5fc9f9;
+  color: #5fc9f9;
 }
 
 .flutter-tag {
-  border-color: chocolate;
-  color: chocolate;
+  border-color: #31b9f6;
+  color: #31b9f6;
 }
 
 .dart-tag {
-  border-color: cadetblue;
-  color: cadetblue;
-}
-
-.java-tag {
-  border-color: aquamarine;
-  color: aquamarine;
-}
-
-.spring-boot-tag {
-  border-color: chartreuse;
-  color: chartreuse;
-}
-
-.postgresql-tag {
-  border-color: aqua;
-  color: aqua;
+  border-color: #00d2b8;
+  color: #00d2b8;
 }
 
 .android-tag {
-  border-color: forestgreen;
-  color: forestgreen;
+  border-color: #85c808;
+  color: #85c808;
 }
 
-.google-sheets-tag {
-  border-color: darkorange;
-  color: darkorange;
+.web-tag {
+  border-color: #f26529;
+  color: #f26529;
+}
+
+.html-tag {
+  border-color: #e44d25;
+  color: #e44d25;
+}
+
+.css-tag {
+  border-color: #2965f1;
+  color: #2965f1;
+}
+
+.javascript-tag {
+  border-color: #f0db4f;
+  color: #f0db4f;
+}
+
+.typescript-tag {
+  border-color: #0079ca;
+  color: #0079ca;
+}
+
+.react-tag {
+  border-color: #00d8ff;
+  color: #00d8ff;
+}
+
+.server-tag {
+  border-color: #57ae48;
+  color: #57ae48;
+}
+
+.spring-boot-tag {
+  border-color: #60b831;
+  color: #60b831;
+}
+
+.java-tag {
+  border-color: #5382a2;
+  color: #5382a2;
+}
+
+.sql-tag {
+  border-color: #dc7433;
+  color: #dc7433;
+}
+
+.postgresql-tag {
+  border-color: #336791;
+  color: #336791;
+}
+
+.sql-server-tag {
+  border-color: #dc2b27;
+  color: #dc2b27;
+}
+
+.nodejs-tag {
+  border-color: #73aa63;
+  color: #73aa63;
+}
+
+.mongodb-tag {
+  border-color: #429933;
+  color: #429933;
+}
+
+.game-tag {
+  border-color: #cccccc;
+  color: #cccccc;
+}
+
+.unity-tag {
+  border-color: #a6a6a6;
+  color: #a6a6a6;
+}
+
+.blender-tag {
+  border-color: #ea7600;
+  color: #ea7600;
+}
+
+.other-tag {
+  border-color: #ffe160;
+  color: #ffe160;
+}
+
+.python-tag {
+  border-color: #3c79a9;
+  color: #3c79a9;
+}
+
+.json-tag {
+  border-color: #a1a1a1;
+  color: #a1a1a1;
+}
+
+.xml-tag {
+  border-color: #feb543;
+  color: #feb543;
+}
+
+.tools-tag {
+  border-color: #6276e9;
+  color: #6276e9;
+}
+
+.lua-tag {
+  border-color: #000080;
+  color: #000080;
+}
+
+.vs-tag {
+  border-color: #a577db;
+  color: #a577db;
+}
+
+.vs-code-tag {
+  border-color: #3daaf2;
+  color: #3daaf2;
+}
+
+.intellij-idea-tag {
+  border-color: #e3396f;
+  color: #e3396f;
+}
+
+.android-studio-tag {
+  border-color: #92c755;
+  color: #92c755;
+}
+
+.github-tag {
+  border-color: #000000;
+  color: #000000;
+}
+
+.design-tag {
+  border-color: #fe315d;
+  color: #fe315d;
+}
+
+.photoshop-tag {
+  border-color: #31a8ff;
+  color: #31a8ff;
+}
+
+.premiere-tag {
+  border-color: #9999ff;
+  color: #9999ff;
+}
+
+.after-effects-tag {
+  border-color: #9999ff;
+  color: #9999ff;
+}
+
+.vegas-tag {
+  border-color: #1195cf;
+  color: #1195cf;
 }

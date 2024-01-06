@@ -2,8 +2,8 @@
   {
     "title": "Twitch Song Request Desktop",
     "subtitle": "A Windows desktop Twitch song request application with multi-platform support for song requests",
-    "platform": ["Desktop", "Windows"],
-    "tech": ["C#", "WPF"],
+    "platform": ["Desktop"],
+    "tech": ["C#", ".NET Framework"],
     "features": [
       "Song requests are read from Twitch channel points redeem rewards",
       "Supports song requests from Spotify and Youtube",
@@ -29,7 +29,7 @@
   {
     "title": "Staff Restaurant Lunch Menu App",
     "subtitle": "A lunch menu mobile application with frontend and backend for previous employer staff restaurant",
-    "platform": ["Mobile", "Backend"],
+    "platform": ["Mobile", "Server"],
     "tech": ["Flutter", "Dart", "Java", "Spring Boot", "PostgreSQL"],
     "features": [
       "Mobile frontend with Flutter and Dart, backend with Java Spring Boot",
@@ -56,7 +56,7 @@
     "title": "Tsumppi Coffee Shop",
     "subtitle": "An Android catalogue application for SeAMK student services coffee shop",
     "platform": ["Mobile"],
-    "tech": ["Java", "Android", "Google Sheets"],
+    "tech": ["Java", "Android"],
     "features": [
       "Coffee shop products catalogue and latest social media posts",
       "Catalogue data is fetched from google sheets",
