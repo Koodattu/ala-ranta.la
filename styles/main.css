@@ -235,8 +235,22 @@ footer {
 }
 
 .skills-locker {
+  display: grid;
+  grid-template-areas: "frontend-skills other-skills";
+  grid-gap: 1rem 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skills-locker-frontend {
   display: flex;
   justify-content: space-between;
+  grid-area: frontend-skills;
+}
+
+.skills-locker-other {
+  display: flex;
+  justify-content: space-between;
+  grid-area: other-skills;
 }
 
 .skills-column {
@@ -532,5 +546,10 @@ footer {
 
   .nav-link {
     font-size: 1.25rem;
+  }
+
+  .skills-locker {
+    grid-template-areas: "frontend-skills" "other-skills";
+    grid-template-columns: 1fr;
   }
 }
