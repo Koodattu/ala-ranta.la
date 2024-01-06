@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to bottom, #1d2431, #171c26);
+  background-image: linear-gradient(to bottom, #1d2431, #1d2431);
   margin: 0;
   padding: 0;
   display: flex;
@@ -22,14 +22,6 @@ h3 {
   font-size: x-large;
   font-family: "Arial";
   margin: 0;
-}
-
-h4 {
-  color: white;
-  font-size: large;
-  font-family: "Arial";
-  margin: 0 0 0.5em 0;
-  text-transform: uppercase;
 }
 
 p {
@@ -257,7 +249,7 @@ footer {
   margin-top: 1em;
   height: 48px;
   width: 48px;
-  transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out;
 }
 
 .skill-image-container {
@@ -269,6 +261,7 @@ footer {
   filter: none;
   cursor: pointer;
   opacity: 0.25;
+  filter: grayscale(100%);
 }
 
 .skill-image-container:hover .skill-image-text {
@@ -301,19 +294,26 @@ footer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.project-content {
-  position: relative;
+.project-container {
+  margin-bottom: 2rem;
   background-color: #1f2b42;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-decoration: none;
+}
+
+.project-content {
+  position: relative;
+  border-radius: 10px;
   overflow: hidden;
+  transition: box-shadow 0.25s ease-in-out;
 }
 
 .project-information {
   border-radius: 10px;
   padding: 2rem;
   position: relative;
-  background-image: linear-gradient(to right, #1f2b42 50%, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, #1d2431 33%, #1d2431bd 66%, rgba(0, 0, 0, 0));
+  transition: background-image 0.25s ease-in-out;
 }
 
 .project-preview-image {
@@ -325,8 +325,12 @@ footer {
   filter: blur(4px) opacity(0.75);
 }
 
-.project-information:hover {
-  background-image: linear-gradient(to right, #2f4163 50%, rgba(255, 255, 255, 0.1));
+.project-container:hover .project-content .project-information {
+  background-image: linear-gradient(to right, #232c3b 33%, #252e3fbd 66%, rgba(255, 255, 255, 0.1));
+}
+
+.project-container:hover .project-content {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .profile-picture {
@@ -387,16 +391,34 @@ footer {
 
 .projects-container {
   grid-area: projects;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view-project-details {
+  color: white;
+  font-family: Arial;
+  transition: color 0.3s ease-in-out;
+}
+
+.project-container:hover .view-project-details {
+  color: teal;
+}
+
+.view-project-details img {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.project-container:hover .view-project-details img {
+  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+  transform: rotate(-45deg);
 }
 
 .filtered-projects {
   display: flex;
   flex-direction: column;
   padding: 1em;
-}
-
-.project-container {
-  margin-bottom: 2rem;
 }
 
 .small-org-img {
@@ -412,8 +434,7 @@ footer {
 }
 
 .project-features {
-  margin: 0;
-  margin-top: 0.25em;
+  margin: 0.25em 0 1.5em 0;
 }
 
 .project-features li {
@@ -428,6 +449,37 @@ footer {
 
 .small-margin-left {
   margin-left: 0.5rem;
+}
+
+.view-all-projects {
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  font-family: "Arial";
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+  border: 2px solid;
+  padding: 0.5em;
+  border-radius: 10px;
+  border-color: #ffffff00;
+  transition: filter 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out,
+    color 0.25s ease-in-out;
+}
+
+.view-all-projects:hover {
+  background-color: #8baaff15;
+  cursor: pointer;
+  border-color: teal;
+  color: teal;
+}
+
+.view-all-projects img {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.view-all-projects:hover img {
+  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+  transform: rotate(-45deg);
 }
 
 @media only screen and (max-width: 800px) {

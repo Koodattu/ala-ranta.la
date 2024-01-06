@@ -6,6 +6,68 @@
   display: inline-block;
 }
 
+.h4-tech-tag {
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  font-family: "Arial";
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+  text-transform: uppercase;
+  border: 2px solid;
+  padding: 0.5em;
+  border-radius: 10px;
+  display: inline-block;
+  border-color: #ffffff00;
+  transition: filter 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out,
+    color 0.25s ease-in-out;
+}
+
+.h4-tech-tag:hover {
+  background-color: #8baaff15;
+  cursor: pointer;
+}
+
+.h4-desktop-tag:hover {
+  border-color: #cc97f9;
+  color: #cc97f9;
+}
+
+.h4-mobile-tag:hover {
+  border-color: #5fc9f9;
+  color: #5fc9f9;
+}
+
+.h4-web-tag:hover {
+  border-color: #f26529;
+  color: #f26529;
+}
+
+.h4-server-tag:hover {
+  border-color: #57ae48;
+  color: #57ae48;
+}
+
+.h4-game-tag:hover {
+  border-color: #cccccc;
+  color: #cccccc;
+}
+
+.h4-other-tag:hover {
+  border-color: #ffe160;
+  color: #ffe160;
+}
+
+.h4-tools-tag:hover {
+  border-color: #6276e9;
+  color: #6276e9;
+}
+
+.h4-design-tag:hover {
+  border-color: #fe315d;
+  color: #fe315d;
+}
+
 .desktop-tag {
   border-color: #cc97f9;
   color: #cc97f9;

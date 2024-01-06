@@ -25,13 +25,21 @@ for (let filter of projectFilters) {
   });
 }
 
-function addFilteredProjects(filter) {
+function addFilteredProjects(filter, limit = 0) {
   fetch("./data/projects.json")
     .then((response) => response.json())
     .then((jsonResponse) => {
+      var count = 0;
       for (let project of jsonResponse) {
+        count++;
+        if (limit > 0 && count > limit) {
+          break;
+        }
         const projectTemplate = document.getElementById("project-template");
         const projectClone = projectTemplate.content.cloneNode(true);
+
+        const projectContainer = projectClone.querySelector(".project-container");
+        projectContainer.href = "projects/" + project.title.toLowerCase().replaceAll(" ", "-");
 
         const projectImageElement = projectClone.querySelector("#project-image");
         projectImageElement.src = "./images/" + project.title.toLowerCase().replaceAll(" ", "-") + ".webp";
@@ -52,7 +60,7 @@ function addFilteredProjects(filter) {
           const tagClone = tagTemplate.content.cloneNode(true);
           const tagSpan = tagClone.querySelector("span");
           tagSpan.innerText = platform;
-          tagSpan.classList.add(platform.toLowerCase().replaceAll(" ", "-") + "-tag");
+          tagSpan.classList.add(platform.toLowerCase().replaceAll(" ", "-").replaceAll(".", "") + "-tag");
           projectPlatformElement.appendChild(tagClone);
         }
 
@@ -61,7 +69,9 @@ function addFilteredProjects(filter) {
           const tagClone = tagTemplate.content.cloneNode(true);
           const tagSpan = tagClone.querySelector("span");
           tagSpan.innerText = platform;
-          tagSpan.classList.add(platform.toLowerCase().replaceAll("#", "sharp").replaceAll(" ", "-") + "-tag");
+          tagSpan.classList.add(
+            platform.toLowerCase().replaceAll("#", "sharp").replaceAll(" ", "-").replaceAll(".", "") + "-tag"
+          );
           projectTechElement.appendChild(tagClone);
         }
 
@@ -72,8 +82,8 @@ function addFilteredProjects(filter) {
           projectFeaturesElement.appendChild(featureElement);
         }
 
-        const projectLinkElement = projectClone.querySelector("#project-link");
-        projectLinkElement.href = project.link;
+        //const projectLinkElement = projectClone.querySelector("#project-link");
+        //projectLinkElement.href = project.link;
 
         const projectsContainer = document.getElementById("filtered-projects");
         filter = filter.charAt(0).toUpperCase() + filter.slice(1);
@@ -84,4 +94,4 @@ function addFilteredProjects(filter) {
     });
 }
 
-addFilteredProjects("all");
+addFilteredProjects("all", 3);

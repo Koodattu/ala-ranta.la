@@ -48,6 +48,7 @@
 
 .box ul li:hover .hover-background {
   background-color: #8baaff15;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .box ul li div img {
@@ -84,8 +85,8 @@
 }
 
 .box ul li:hover .arrow-out {
-  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
   transform: rotate(-45deg);
+  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
 }
 
 .box ul li:last-child {
@@ -110,13 +111,11 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgb(45, 212, 191);
+  background: teal;
   border: 2px solid #fff;
   position: absolute;
   left: -7px;
 }
-/*rgba(45,212,191,.1);*/
-/*rgb(94 234 212 1);*/
 .box ul li > span:before {
   top: -10px;
 }
