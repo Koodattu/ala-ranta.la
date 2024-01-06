@@ -290,6 +290,10 @@ footer {
   transition: opacity 0.25s ease-in-out;
 }
 
+.small-padding {
+  padding: 1em;
+}
+
 .info-content {
   padding: 2rem;
   background-color: #1f2b42;
@@ -388,6 +392,7 @@ footer {
 .filtered-projects {
   display: flex;
   flex-direction: column;
+  padding: 1em;
 }
 
 .project-container {
