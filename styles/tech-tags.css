@@ -48,12 +48,12 @@
   color: #57ae48;
 }
 
-.h4-game-tag:hover {
+.h4-other-tag:hover {
   border-color: #cccccc;
   color: #cccccc;
 }
 
-.h4-other-tag:hover {
+.h4-data-tag:hover {
   border-color: #ffe160;
   color: #ffe160;
 }
@@ -178,12 +178,17 @@
   color: #73aa63;
 }
 
+.docker-tag {
+  border-color: #1d63ed;
+  color: #1d63ed;
+}
+
 .mongodb-tag {
   border-color: #429933;
   color: #429933;
 }
 
-.game-tag {
+.other-tag {
   border-color: #cccccc;
   color: #cccccc;
 }
@@ -198,7 +203,7 @@
   color: #ea7600;
 }
 
-.other-tag {
+.data-tag {
   border-color: #ffe160;
   color: #ffe160;
 }
@@ -253,6 +258,11 @@
   color: #000000;
 }
 
+.gitlab-tag {
+  border-color: #fc6d26;
+  color: #fc6d26;
+}
+
 .design-tag {
   border-color: #fe315d;
   color: #fe315d;
@@ -276,4 +286,10 @@
 .vegas-tag {
   border-color: #1195cf;
   color: #1195cf;
+}
+
+@media only screen and (max-width: 800px) {
+  .h4-tech-tag {
+    font-size: medium;
+  }
 }

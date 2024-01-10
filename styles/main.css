@@ -162,6 +162,7 @@ p {
 
 .nav-top {
   display: flex;
+  flex-direction: row;
   margin-bottom: 0.25rem;
 }
 
@@ -208,13 +209,13 @@ footer {
   margin-top: 5rem;
   display: grid;
   grid-template-areas:
-    "profile profile"
-    "skills skills"
-    "education education"
-    "experience experience"
-    "projects projects";
-  grid-gap: 3rem 2rem;
-  grid-template-columns: 1fr 1fr;
+    "profile"
+    "skills"
+    "education"
+    "experience"
+    "projects";
+  grid-gap: 3rem;
+  grid-template-columns: 1fr;
 }
 
 .skills-container {
@@ -236,27 +237,48 @@ footer {
 
 .skills-locker {
   display: grid;
-  grid-template-areas: "frontend-skills other-skills";
-  grid-gap: 1rem 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "desktop-ts mobile-ts web-ts server-ts data-ts other-ts tools-ts design-ts";
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.skills-locker-frontend {
-  display: flex;
-  justify-content: space-between;
-  grid-area: frontend-skills;
+#desktop-ts {
+  grid-area: desktop-ts;
 }
 
-.skills-locker-other {
-  display: flex;
-  justify-content: space-between;
-  grid-area: other-skills;
+#mobile-ts {
+  grid-area: mobile-ts;
+}
+
+#web-ts {
+  grid-area: web-ts;
+}
+
+#server-ts {
+  grid-area: server-ts;
+}
+
+#data-ts {
+  grid-area: data-ts;
+}
+
+#other-ts {
+  grid-area: other-ts;
+}
+
+#tools-ts {
+  grid-area: tools-ts;
+}
+
+#design-ts {
+  grid-area: design-ts;
 }
 
 .skills-column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .skill-image {
@@ -502,6 +524,10 @@ footer {
     width: 90vw;
   }
 
+  .top-header {
+    align-items: start;
+  }
+
   .main-content {
     margin-top: 4rem;
   }
@@ -542,6 +568,7 @@ footer {
 
   .nav-top {
     margin-bottom: 0.1em;
+    flex-direction: column;
   }
 
   .nav-link {
@@ -549,7 +576,14 @@ footer {
   }
 
   .skills-locker {
-    grid-template-areas: "frontend-skills" "other-skills";
-    grid-template-columns: 1fr;
+    grid-template-areas: "desktop-ts mobile-ts web-ts server-ts" "data-ts other-ts tools-ts design-ts";
+    grid-gap: 2rem 0.1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0;
+  }
+
+  .skill-image {
+    height: 36px;
+    width: 36px;
   }
 }
