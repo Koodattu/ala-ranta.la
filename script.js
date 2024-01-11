@@ -95,3 +95,45 @@ function addFilteredProjects(filter, limit = 0) {
 }
 
 addFilteredProjects("all", 3);
+
+function isElementNearMiddle(element) {
+  const elementRect = element.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // Calculate the middle of the screen
+  const middleOfScreen = windowHeight / 2;
+
+  // Check if the element's top or bottom is near the middle of the screen
+  return elementRect.top <= middleOfScreen && elementRect.bottom >= middleOfScreen;
+}
+
+function handleScroll() {
+  if (window.innerWidth <= 768) {
+    let elementInView = null;
+
+    elementsToObserve.forEach((element) => {
+      if (isElementNearMiddle(element)) {
+        elementInView = element;
+      }
+    });
+
+    // Remove the "hover-effect" class from all elements except the one in view
+    elementsToObserve.forEach((element) => {
+      if (element !== elementInView) {
+        element.classList.remove("hovered");
+      }
+    });
+
+    // Add the "hover-effect" class to the element in view
+    if (elementInView) {
+      elementInView.classList.add("hovered");
+    }
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+
+// Initial check on page load
+window.addEventListener("load", handleScroll);
+
+const elementsToObserve = document.querySelectorAll(".hoverable");

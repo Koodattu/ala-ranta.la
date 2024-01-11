@@ -1,7 +1,6 @@
 .box {
   overflow: hidden;
   font-family: "Arial";
-  padding: 1em;
 }
 
 .box ul {
@@ -167,4 +166,23 @@
 .exp-info-logo {
   justify-content: space-between;
   display: flex;
+}
+
+.box ul li.hovered .hover-background {
+  background-color: #8baaff15;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.box ul li.hovered div img {
+  transform: scale(1.2);
+  filter: none;
+}
+
+.box ul li.hovered .view-info {
+  color: teal;
+}
+
+.box ul li.hovered .arrow-out {
+  transform: rotate(-45deg);
+  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
 }

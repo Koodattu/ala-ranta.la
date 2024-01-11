@@ -454,7 +454,6 @@ footer {
 .filtered-projects {
   display: flex;
   flex-direction: column;
-  padding: 1em;
 }
 
 .small-org-img {
@@ -521,7 +520,7 @@ footer {
 @media only screen and (max-width: 800px) {
   .page-container,
   .top-header {
-    width: 90vw;
+    width: 95vw;
   }
 
   .top-header {
@@ -585,5 +584,9 @@ footer {
   .skill-image {
     height: 36px;
     width: 36px;
+  }
+
+  .small-padding {
+    padding: 0.5em;
   }
 }
