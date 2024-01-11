@@ -45,18 +45,8 @@
   text-decoration: none;
 }
 
-.box ul li:hover .hover-background {
-  background-color: #8baaff15;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
 .box ul li div img {
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-.box ul li:hover div img {
-  transform: scale(1.2);
-  filter: none;
 }
 
 .view-info {
@@ -77,15 +67,6 @@
 
 .box ul li div div .view-info {
   transition: color 0.3s ease-in-out;
-}
-
-.box ul li:hover div div .view-info {
-  color: teal;
-}
-
-.box ul li:hover .arrow-out {
-  transform: rotate(-45deg);
-  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
 }
 
 .box ul li:last-child {
@@ -185,4 +166,25 @@
 .box ul li.hovered .arrow-out {
   transform: rotate(-45deg);
   filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+}
+
+@media only screen and (min-width: 800px) {
+  .box ul li:hover .hover-background {
+    background-color: #8baaff15;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .box ul li:hover div img {
+    transform: scale(1.2);
+    filter: none;
+  }
+
+  .box ul li:hover div div .view-info {
+    color: teal;
+  }
+
+  .box ul li:hover .arrow-out {
+    transform: rotate(-45deg);
+    filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+  }
 }
