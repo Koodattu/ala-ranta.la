@@ -46,48 +46,6 @@ p {
   text-decoration: none;
 }
 
-.link-underline-animation:hover {
-  color: white;
-}
-
-.link-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 4px;
-  bottom: -8px;
-  left: 0;
-  background-color: teal;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.link-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.link-underline-animation-teal:after {
-  background-color: teal;
-}
-
-.link-underline-animation-red:after {
-  background-color: rgb(255, 65, 65);
-}
-
-.link-underline-animation-blue:after {
-  background-color: rgb(93, 255, 43);
-}
-
-.link-underline-animation-green:after {
-  background-color: rgb(18, 81, 255);
-}
-
-.link-underline-animation-rgb:after {
-  background-image: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(30, 250, 0, 1) 49%, rgba(4, 0, 255, 1) 100%);
-}
-
 .link-fill-animation {
   display: inline-block;
   position: relative;
@@ -96,29 +54,6 @@ p {
   font-size: normal;
   font-family: "Arial";
   text-decoration: none;
-}
-
-.link-fill-animation:hover {
-  color: white;
-}
-
-.link-fill-animation:after {
-  content: "";
-  position: absolute;
-  width: calc(100% + 4px);
-  transform: scaleX(0);
-  height: 20px;
-  bottom: 0px;
-  left: -2px;
-  background-color: teal;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-  z-index: -1;
-}
-
-.link-fill-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
 }
 
 .page-container {
@@ -152,10 +87,6 @@ p {
   font-weight: bold;
 }
 
-.name-link:hover {
-  color: white;
-}
-
 .name-link:active {
   color: #1c2436;
 }
@@ -184,15 +115,8 @@ p {
   transition: filter 0.25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 
-.contact-image:hover {
-  filter: none;
-  background-color: #8baaff15;
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
 footer {
-  margin-top: 10rem;
+  margin-top: 20rem;
   height: 5vh;
   justify-content: end;
   align-items: end;
@@ -282,36 +206,22 @@ footer {
 }
 
 .skill-image {
-  margin-top: 1em;
   height: 48px;
   width: 48px;
   transition: opacity 0.25s ease-in-out, filter 0.25s ease-in-out;
 }
 
 .skill-image-container {
+  margin-top: 1em;
   position: relative;
   text-align: center;
 }
 
-.skill-image-container:hover .skill-image {
-  filter: none;
-  cursor: pointer;
-  opacity: 0.25;
-  filter: grayscale(100%);
-}
-
-.skill-image-container:hover .skill-image-text {
-  filter: none;
-  cursor: pointer;
-  opacity: 1;
-}
-
 .skill-image-text {
-  white-space: nowrap;
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 75%);
+  transform: translate(-50%, -25%);
   font-family: "Arial";
   font-size: medium;
   color: white;
@@ -361,14 +271,6 @@ footer {
   filter: blur(4px) opacity(0.75);
 }
 
-.project-container:hover .project-content .project-information {
-  background-image: linear-gradient(to right, #232c3b 33%, #252e3fbd 66%, rgba(255, 255, 255, 0.1));
-}
-
-.project-container:hover .project-content {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .profile-picture {
   float: right;
   border-radius: 50%;
@@ -404,21 +306,12 @@ footer {
   align-items: center;
 }
 
-.project-filter:hover {
-  background-color: #466eb8;
-  cursor: pointer;
-}
-
 .project-filter:active {
   background-color: #1c2436;
 }
 
 .project-filter-enabled {
   background-color: #2d4269;
-}
-
-.project-filter-enabled:hover {
-  background-color: #466eb8;
 }
 
 .project-filter:active {
@@ -438,17 +331,8 @@ footer {
   transition: color 0.3s ease-in-out;
 }
 
-.project-container:hover .view-project-details {
-  color: teal;
-}
-
 .view-project-details img {
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-.project-container:hover .view-project-details img {
-  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
-  transform: rotate(-45deg);
 }
 
 .filtered-projects {
@@ -501,20 +385,138 @@ footer {
     color 0.25s ease-in-out;
 }
 
-.view-all-projects:hover {
-  background-color: #8baaff15;
-  cursor: pointer;
-  border-color: teal;
-  color: teal;
-}
-
 .view-all-projects img {
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-.view-all-projects:hover img {
-  filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
-  transform: rotate(-45deg);
+@media only screen and (min-width: 800px) {
+  .link-underline-animation:hover {
+    color: white;
+  }
+
+  .link-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background-color: teal;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .link-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .link-underline-animation-teal:after {
+    background-color: teal;
+  }
+
+  .link-underline-animation-red:after {
+    background-color: rgb(255, 65, 65);
+  }
+
+  .link-underline-animation-blue:after {
+    background-color: rgb(93, 255, 43);
+  }
+
+  .link-underline-animation-green:after {
+    background-color: rgb(18, 81, 255);
+  }
+
+  .link-underline-animation-rgb:after {
+    background-image: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(30, 250, 0, 1) 49%, rgba(4, 0, 255, 1) 100%);
+  }
+
+  .link-fill-animation:hover {
+    color: white;
+  }
+
+  .link-fill-animation:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    transform: scaleX(0);
+    height: 20px;
+    bottom: 0px;
+    left: -2px;
+    background-color: teal;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    z-index: -1;
+  }
+
+  .name-link:hover {
+    color: white;
+  }
+
+  .link-fill-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .contact-image:hover {
+    filter: none;
+    background-color: #8baaff15;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  .skill-image-container:hover .skill-image {
+    filter: none;
+    cursor: pointer;
+    opacity: 0.25;
+    filter: grayscale(100%);
+  }
+
+  .skill-image-container:hover .skill-image-text {
+    filter: none;
+    cursor: pointer;
+    opacity: 1;
+    background-color: #8baaff15;
+  }
+
+  .project-filter:hover {
+    background-color: #466eb8;
+    cursor: pointer;
+  }
+
+  .project-filter-enabled:hover {
+    background-color: #466eb8;
+  }
+
+  .project-container:hover .project-content .project-information {
+    background-image: linear-gradient(to right, #232c3b 33%, #252e3fbd 66%, rgba(255, 255, 255, 0.1));
+  }
+
+  .project-container:hover .project-content {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .project-container:hover .view-project-details {
+    color: teal;
+  }
+
+  .project-container:hover .view-project-details img {
+    filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+    transform: rotate(-45deg);
+  }
+
+  .view-all-projects:hover {
+    background-color: #8baaff15;
+    cursor: pointer;
+    border-color: teal;
+    color: teal;
+  }
+
+  .view-all-projects:hover img {
+    filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+    transform: rotate(-45deg);
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -528,7 +530,7 @@ footer {
   }
 
   .main-content {
-    margin-top: 4rem;
+    margin-top: 1em;
   }
 
   .profile-picture {
@@ -588,5 +590,48 @@ footer {
 
   .small-padding {
     padding: 0.5em;
+  }
+
+  .skill-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .skill-image-text {
+    position: static;
+    font-size: small;
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-container.hovered .project-content .project-information {
+    background-image: linear-gradient(to right, #232c3b 33%, #252e3fbd 66%, rgba(255, 255, 255, 0.1));
+  }
+
+  .project-container.hovered .project-content {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .project-container.hovered .view-project-details {
+    color: teal;
+  }
+
+  .project-container.hovered .view-project-details img {
+    filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+    transform: rotate(-45deg);
+  }
+
+  .view-all-projects.hovered {
+    background-color: #8baaff15;
+    cursor: pointer;
+    border-color: teal;
+    color: teal;
+  }
+
+  .view-all-projects.hovered img {
+    filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
+    transform: rotate(-45deg);
   }
 }

@@ -91,17 +91,18 @@ function addFilteredProjects(filter, limit = 0) {
           projectsContainer.appendChild(projectClone);
         }
       }
+      elementsToObserve = document.querySelectorAll(".hoverable");
     });
 }
 
 addFilteredProjects("all", 3);
 
-function isElementNearMiddle(element) {
+function isElementNearMiddle(element, leewayFactor = 0.2) {
   const elementRect = element.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
   // Calculate the middle of the screen
-  const middleOfScreen = windowHeight / 2;
+  const middleOfScreen = (windowHeight / 2) * (1 + leewayFactor);
 
   // Check if the element's top or bottom is near the middle of the screen
   return elementRect.top <= middleOfScreen && elementRect.bottom >= middleOfScreen;
@@ -112,7 +113,7 @@ function handleScroll() {
     let elementInView = null;
 
     elementsToObserve.forEach((element) => {
-      if (isElementNearMiddle(element)) {
+      if (isElementNearMiddle(element, 0.05)) {
         elementInView = element;
       }
     });
@@ -124,8 +125,15 @@ function handleScroll() {
       }
     });
 
+    const distanceToBottom = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
+
     // Add the "hover-effect" class to the element in view
-    if (elementInView) {
+    if (distanceToBottom === 0) {
+      // If you've scrolled to the bottom, highlight the last element
+      const lastElement = elementsToObserve[elementsToObserve.length - 1];
+      elementsToObserve[elementsToObserve.length - 2].classList.remove("hovered");
+      lastElement.classList.add("hovered");
+    } else if (elementInView) {
       elementInView.classList.add("hovered");
     }
   }
@@ -136,4 +144,4 @@ window.addEventListener("scroll", handleScroll);
 // Initial check on page load
 window.addEventListener("load", handleScroll);
 
-const elementsToObserve = document.querySelectorAll(".hoverable");
+let elementsToObserve = document.querySelectorAll(".hoverable");
