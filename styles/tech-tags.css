@@ -78,6 +78,11 @@
   color: #a179dc;
 }
 
+.cpp-tag {
+  border-color: #659ad2;
+  color: #659ad2;
+}
+
 .dotnet-tag {
   border-color: #512bd4;
   color: #512bd4;
@@ -261,6 +266,21 @@
 .gitlab-tag {
   border-color: #fc6d26;
   color: #fc6d26;
+}
+
+.git-tag {
+  border-color: #f05033;
+  color: #f05033;
+}
+
+.svn-tag {
+  border-color: #809cc9;
+  color: #809cc9;
+}
+
+.jira-tag {
+  border-color: #2684ff;
+  color: #2684ff;
 }
 
 .design-tag {
