@@ -222,7 +222,7 @@ footer {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -25%);
+  transform: translate(-50%, 0%);
   font-family: "Arial";
   font-size: medium;
   color: white;
@@ -470,7 +470,7 @@ footer {
   .skill-image-container:hover .skill-image {
     filter: none;
     cursor: pointer;
-    opacity: 0.25;
+    opacity: 0;
     filter: grayscale(100%);
   }
 
@@ -478,7 +478,7 @@ footer {
     filter: none;
     cursor: pointer;
     opacity: 1;
-    background-color: #8baaff15;
+    filter: contrast(200%);
   }
 
   .project-filter:hover {
