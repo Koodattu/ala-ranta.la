@@ -162,41 +162,25 @@ footer {
 
 .skills-locker {
   display: grid;
-  grid-template-areas: "desktop-ts mobile-ts web-ts server-ts data-ts other-ts tools-ts design-ts";
+  grid-template-areas: "languages-ts frontend-ts backend-ts other-ts";
   grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-#desktop-ts {
-  grid-area: desktop-ts;
+#languages-ts {
+  grid-area: languages-ts;
 }
 
-#mobile-ts {
-  grid-area: mobile-ts;
+#frontend-ts {
+  grid-area: frontend-ts;
 }
 
-#web-ts {
-  grid-area: web-ts;
-}
-
-#server-ts {
-  grid-area: server-ts;
-}
-
-#data-ts {
-  grid-area: data-ts;
+#backend-ts {
+  grid-area: backend-ts;
 }
 
 #other-ts {
   grid-area: other-ts;
-}
-
-#tools-ts {
-  grid-area: tools-ts;
-}
-
-#design-ts {
-  grid-area: design-ts;
 }
 
 .skills-column {
@@ -582,9 +566,7 @@ footer {
   }
 
   .skills-locker {
-    grid-template-areas: "desktop-ts mobile-ts web-ts server-ts" "data-ts other-ts tools-ts design-ts";
     grid-gap: 2rem 0.1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0;
   }
 
