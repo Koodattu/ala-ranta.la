@@ -361,12 +361,6 @@
 
 @media only screen and (max-width: 800px) {
   .h4-tech-tag {
-    font-size: medium;
-  }
-
-  .tech-tag.skill-image-text {
-    border: none;
-    margin: 4px 2px;
-    padding: 0px;
+    font-size: small;
   }
 }

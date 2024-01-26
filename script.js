@@ -1,27 +1,34 @@
-const projectFilters = document.getElementsByClassName("project-filter");
-for (let filter of projectFilters) {
-  const buttonElement = document.getElementById(filter.id);
+const changeSkillDisplayButtons = document.getElementsByClassName("change-skill-display");
+for (let button of changeSkillDisplayButtons) {
+  const buttonElement = document.getElementById(button.id);
   buttonElement.addEventListener("click", function () {
     // if already active, do nothing
-    if (buttonElement.classList.contains("project-filter-enabled")) {
+    if (buttonElement.classList.contains("change-skill-display-enabled")) {
       return;
     }
 
     // remove all active classes from buttons
-    for (let filter of projectFilters) {
-      const otherButtonElement = document.getElementById(filter.id);
-      otherButtonElement.classList.remove("project-filter-enabled");
+    for (let button of changeSkillDisplayButtons) {
+      const otherButtonElement = document.getElementById(button.id);
+      otherButtonElement.classList.remove("change-skill-display-enabled");
     }
 
     // add active class to clicked button
-    buttonElement.classList.add("project-filter-enabled");
+    buttonElement.classList.add("change-skill-display-enabled");
 
-    // remove all projects
-    const projectsContainer = document.getElementById("filtered-projects");
-    while (projectsContainer.firstChild) {
-      projectsContainer.removeChild(projectsContainer.firstChild);
+    // change display of skills depending on button clicked
+    const skillsDisplay = document.getElementById("skills-display");
+    skillsDisplay.classList.remove("skills-locker-category");
+    skillsDisplay.classList.remove("skills-locker-matrix");
+    skillsDisplay.classList.remove("skills-locker-tier-list");
+
+    if (buttonElement.id === "skill-display-category") {
+      skillsDisplay.classList.add("skills-locker-category");
+    } else if (buttonElement.id === "skill-display-matrix") {
+      skillsDisplay.classList.add("skills-locker-matrix");
+    } else if (buttonElement.id === "skill-display-tiered") {
+      skillsDisplay.classList.add("skills-locker-tier-list");
     }
-    addFilteredProjects(filter.id.replaceAll("project-filter-", ""));
   });
 }
 

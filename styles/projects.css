@@ -1,0 +1,45 @@
+.projects-filters {
+  display: flex;
+  justify-content: center;
+}
+
+.project-filter {
+  padding: 1em 2em;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  font-family: "Arial";
+  display: flex;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+}
+
+.project-filter:active {
+  background-color: #1c2436;
+}
+
+.project-filter-enabled {
+  background-color: #2d4269;
+}
+
+.project-filter:active {
+  background-color: #263049;
+}
+@media only screen and (min-width: 800px) {
+  .project-filter:hover {
+    background-color: #466eb8;
+    cursor: pointer;
+  }
+
+  .project-filter-enabled:hover {
+    background-color: #466eb8;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .project-filter {
+    padding: 0.75em;
+    font-size: medium;
+  }
+}
