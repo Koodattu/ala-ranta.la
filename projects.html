@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/timeline.css" />
     <link rel="stylesheet" href="/styles/tech-tags.css" />
+    <link rel="stylesheet" href="/styles/projects.css" />
   </head>
   <body>
     <div class="page-container">
@@ -29,15 +30,52 @@
       </header>
       <main>
         <div class="main-content">
-          <div class="projects-filters">
-            <button id="project-filter-all" class="project-filter project-filter-enabled">All</button>
-            <button id="project-filter-desktop" class="project-filter">Desktop</button>
-            <button id="project-filter-game" class="project-filter">Game</button>
-            <button id="project-filter-mobile" class="project-filter">Mobile</button>
-            <button id="project-filter-web" class="project-filter">Web</button>
+          <div class="project-filters">
+            <h2>Filter projects by tags</h2>
+            <div>
+              Filter style:
+              <input type="radio" id="one-match-filter" checked />
+              <label for="one-match-filter">Must contain at least one</label>
+              <input type="radio" id="all-matches-filter" />
+              <label for="all-matches-filter">Must contain all</label>
+            </div>
+            <div>
+              <button>Enable all</button>
+              <button>Disable all</button>
+            </div>
+            <div class="project-filters-platform">Platforms:</div>
+            <div class="project-filters-tech">Tech:</div>
           </div>
+          <div id="filtered-projects" class="filtered-projects"></div>
         </div>
       </main>
     </div>
+    <template id="project-template">
+      <a target="_blank" class="project-container hoverable">
+        <div class="project-content">
+          <img id="project-image" class="project-preview-image" />
+          <div class="project-information">
+            <h3 id="project-title"></h3>
+            <p id="project-year" style="color: gray"></p>
+            <p id="project-description" style="font-weight: bold"></p>
+            <p id="project-tags"></p>
+            <p>Features:</p>
+            <ul id="project-features" class="project-features"></ul>
+            <div class="view-info view-project-details">
+              <div>View more info and details</div>
+              <img class="arrow-out" src="/assets/right-arrow.webp" alt="Arrow" />
+            </div>
+            <template id="tag-template">
+              <span class="tech-tag"></span>
+            </template>
+          </div>
+        </div>
+      </a>
+    </template>
+    <template id="filter-tag-template">
+      <button class="project-filter tech-tag"></button>
+    </template>
+    <script src="scripts/projects.js"></script>
+    <script src="scripts/project-filters.js"></script>
   </body>
 </html>

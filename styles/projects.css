@@ -1,39 +1,29 @@
-.projects-filters {
+.project-filters {
+  color: whitesmoke;
+  font-family: Arial;
+}
+
+.projects-filters-platform {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.project-filter {
-  padding: 1em 2em;
-  color: white;
-  text-decoration: none;
-  font-size: large;
-  font-family: "Arial";
+.projects-filters-tech {
   display: flex;
-  background-color: transparent;
-  border: none;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.project-filter:active {
-  background-color: #1c2436;
+.filter-disabled {
+  background-color: rgb(71, 71, 71);
+  color: rgb(156, 156, 156);
 }
 
-.project-filter-enabled {
-  background-color: #2d4269;
-}
-
-.project-filter:active {
-  background-color: #263049;
-}
 @media only screen and (min-width: 800px) {
-  .project-filter:hover {
-    background-color: #466eb8;
+  div button.tech-tag:hover {
+    filter: brightness(200%) saturate(200%);
     cursor: pointer;
-  }
-
-  .project-filter-enabled:hover {
-    background-color: #466eb8;
   }
 }
 
