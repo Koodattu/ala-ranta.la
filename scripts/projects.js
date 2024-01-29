@@ -3,7 +3,8 @@ function addFilteredProjects(filter, limit = 0) {
     .then((response) => response.json())
     .then((jsonResponse) => {
       var count = 0;
-      for (let project of jsonResponse) {
+      const projects = jsonResponse.projects;
+      for (let project of projects) {
         count++;
         if (limit > 0 && count > limit) {
           break;
@@ -13,7 +14,6 @@ function addFilteredProjects(filter, limit = 0) {
 
         const projectContainer = projectClone.querySelector(".project-container");
         projectContainer.href = project.link;
-        //projectContainer.href = "projects/" + project.title.toLowerCase().replaceAll(" ", "-");
 
         const projectImageElement = projectClone.querySelector("#project-image");
         projectImageElement.src = "./images/" + project.title.toLowerCase().replaceAll(" ", "-") + ".webp";
@@ -26,28 +26,23 @@ function addFilteredProjects(filter, limit = 0) {
         projectYearElement.innerText = project.year;
 
         const projectDescriptionElement = projectClone.querySelector("#project-description");
-        projectDescriptionElement.innerText = project.subtitle;
+        projectDescriptionElement.innerText = project.description; // Fixed to use description
 
-        const projectPlatformElement = projectClone.querySelector("#project-tags");
+        const projectTagsElement = projectClone.querySelector("#project-tags");
         const tagTemplate = projectClone.querySelector("#tag-template");
-        for (let platform of project.platform) {
-          const tagClone = tagTemplate.content.cloneNode(true);
-          const tagSpan = tagClone.querySelector("span");
-          tagSpan.innerText = platform;
-          tagSpan.classList.add(platform.toLowerCase().replaceAll(" ", "-").replaceAll(".", "") + "-tag");
-          projectPlatformElement.appendChild(tagClone);
-        }
-
-        const projectTechElement = projectClone.querySelector("#project-tags");
-        for (let tech of project.tech) {
-          const tagClone = tagTemplate.content.cloneNode(true);
-          const tagSpan = tagClone.querySelector("span");
-          tagSpan.innerText = tech;
-          tagSpan.classList.add(
-            tech.toLowerCase().replaceAll("#", "sharp").replaceAll(" ", "-").replaceAll(".", "") + "-tag"
-          );
-          projectTechElement.appendChild(tagClone);
-        }
+        Object.keys(project.tech).forEach((category) => {
+          // Iterate through each category
+          project.tech[category].forEach((tag) => {
+            // Iterate through tags in each category
+            const tagClone = tagTemplate.content.cloneNode(true);
+            const tagSpan = tagClone.querySelector("span");
+            tagSpan.innerText = tag;
+            tagSpan.classList.add(
+              tag.toLowerCase().replaceAll(" ", "-").replaceAll(".", "").replaceAll("#", "sharp") + "-tag"
+            );
+            projectTagsElement.appendChild(tagClone);
+          });
+        });
 
         const projectFeaturesElement = projectClone.querySelector("#project-features");
         for (let feature of project.features) {
@@ -58,10 +53,11 @@ function addFilteredProjects(filter, limit = 0) {
 
         const projectsContainer = document.getElementById("filtered-projects");
         filter = filter.charAt(0).toUpperCase() + filter.slice(1);
-        if (filter === "All" || project.platform.includes(filter) || project.tech.includes(filter)) {
+        // Assuming filter logic needs adjustment for new structure. Simplified as an example.
+        if (filter === "All" || Object.values(project.tech).flat().includes(filter)) {
           projectsContainer.appendChild(projectClone);
         }
       }
-      elementsToObserve = document.querySelectorAll(".hoverable");
+      elementsToObserve = document.querySelectorAll(".hoverable"); // Assuming this is used elsewhere
     });
 }

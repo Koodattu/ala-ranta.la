@@ -5,7 +5,6 @@
   padding: 4px 10px;
   display: inline-block;
   z-index: 3;
-  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 .h4-tech-tag {
@@ -43,7 +42,7 @@
   background-color: rgba(101, 154, 210, 0.2);
 }
 
-.dotnet-tag {
+.net-tag {
   border-color: #512bd4;
   color: #512bd4;
   background-color: rgba(81, 43, 212, 0.2);
@@ -229,13 +228,13 @@
   background-color: rgba(0, 0, 128, 0.2);
 }
 
-.vs-tag {
+.visual-studio-tag {
   border-color: #a577db;
   color: #a577db;
   background-color: rgba(165, 119, 219, 0.2);
 }
 
-.vs-code-tag {
+.visual-studio-code-tag {
   border-color: #3daaf2;
   color: #3daaf2;
   background-color: rgba(61, 170, 242, 0.2);
@@ -311,6 +310,24 @@
   border-color: #1195cf;
   color: #1195cf;
   background-color: rgba(17, 149, 207, 0.2);
+}
+
+.google-sheets-tag {
+  border-color: rgba(29, 166, 102);
+  color: rgba(29, 166, 102);
+  background-color: rgba(29, 166, 102, 0.2);
+}
+
+.wpf-tag {
+  border-color: rgba(10, 125, 180);
+  color: rgba(10, 125, 180);
+  background-color: rgba(10, 125, 180, 0.2);
+}
+
+.github-pages-tag {
+  border-color: rgba(67, 128, 180, 255);
+  color: rgba(67, 128, 180, 255);
+  background-color: rgba(67, 128, 180, 0.2);
 }
 
 @media screen and (min-width: 800px) {

@@ -33,18 +33,16 @@
           <div class="project-filters">
             <h2>Filter projects by tags</h2>
             <div>
-              Filter style:
-              <input type="radio" id="one-match-filter" checked />
-              <label for="one-match-filter">Must contain at least one</label>
-              <input type="radio" id="all-matches-filter" />
-              <label for="all-matches-filter">Must contain all</label>
+              <button id="select-all-filter" class="project-filter tech-tag">Select all</button>
+              <button id="select-none-filter" class="project-filter tech-tag">Select none</button>
             </div>
-            <div>
-              <button>Enable all</button>
-              <button>Disable all</button>
+            <div class="project-filters-platform"><div>Platforms:</div></div>
+            <div class="project-filters-language">
+              <div>Languages:</div>
             </div>
-            <div class="project-filters-platform">Platforms:</div>
-            <div class="project-filters-tech">Tech:</div>
+            <div class="project-filters-frontend"><div>Frontend:</div></div>
+            <div class="project-filters-backend"><div>Backend:</div></div>
+            <div class="project-filters-tools"><div>Tools:</div></div>
           </div>
           <div id="filtered-projects" class="filtered-projects"></div>
         </div>

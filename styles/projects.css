@@ -20,6 +20,47 @@
   color: rgb(156, 156, 156);
 }
 
+#select-all-filter {
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.5),
+    rgba(255, 166, 0, 0.5),
+    rgba(255, 255, 0, 0.5),
+    rgba(0, 128, 0, 0.5),
+    rgba(0, 0, 255, 0.5),
+    rgba(76, 0, 130, 0.5),
+    rgba(238, 130, 238, 0.5)
+  );
+  color: white;
+  border-radius: 4px;
+}
+
+#select-none-filter {
+  border-radius: 4px;
+  background-color: rgba(110, 110, 110, 0.5);
+  color: rgb(255, 255, 255);
+}
+
+.filtered-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  transition: transform 0.5s ease;
+}
+
+.project-container {
+  display: block; /* Ensure this is set for initial state */
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* The .hidden class is used to animate the disappearance but not to remove from flow yet */
+.project-container.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
 @media only screen and (min-width: 800px) {
   div button.tech-tag:hover {
     filter: brightness(200%) saturate(200%);
