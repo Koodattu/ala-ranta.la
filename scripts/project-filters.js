@@ -7,11 +7,9 @@ function filterProjects() {
     let isVisible = Array.from(activeFilters).some((filter) => tags.includes(filter.textContent.toLowerCase()));
 
     if (isVisible || activeFilters.length === 0) {
-      project.style.display = "block"; // Ensure it's part of the layout
-      setTimeout(() => project.classList.remove("hidden"), 0); // Remove class with a slight delay to ensure display: block takes effect
+      project.style.display = "block";
     } else {
-      project.classList.add("hidden");
-      setTimeout(() => (project.style.display = "none"), 500); // Match delay to transition time
+      project.style.display = "none";
     }
   });
 }

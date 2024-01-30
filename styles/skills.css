@@ -336,6 +336,16 @@
 
   .skills-locker-tier-list {
     grid-gap: 0.05rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "expert-tag csharp-tag dotnet-tag vs-tag"
+      "advanced-tag java-tag photoshop-tag ."
+      "proficient-tag python-tag flutter-tag spring-tag"
+      "intermediate-tag javascript-tag dart-tag android-tag"
+      "intermediate-tag css-tag html-tag sql-tag"
+      "intermediate-tag sql-server-tag postgresql-tag jira-tag "
+      "intermediate-tag git-tag svn-tag ."
+      "novice-tag cpp-tag react-tag nodejs-tag"
+      "novice-tag mongodb-tag unity-tag .";
   }
 }
