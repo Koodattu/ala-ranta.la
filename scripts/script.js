@@ -58,17 +58,8 @@ function handleScroll() {
       }
     });
 
-    const distanceToBottom = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
-
     // Add the "hover-effect" class to the element in view
-    if (distanceToBottom === 0) {
-      // If you've scrolled to the bottom, highlight the last element
-      const lastElement = elementsToObserve[elementsToObserve.length - 1];
-      elementsToObserve[elementsToObserve.length - 2].classList.remove("hovered");
-      lastElement.classList.add("hovered");
-    } else if (elementInView) {
-      elementInView.classList.add("hovered");
-    }
+    elementInView.classList.add("hovered");
   }
 }
 
