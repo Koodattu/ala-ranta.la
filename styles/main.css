@@ -1,63 +1,3 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-image: linear-gradient(to bottom, #1d2431, #1d2431);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h2 {
-  color: white;
-  font-size: xx-large;
-  font-family: "Arial";
-}
-
-.h2-info {
-  font-family: "Arial";
-  align-self: self-start;
-  margin: 0;
-}
-
-h3 {
-  color: white;
-  font-size: x-large;
-  font-family: "Arial";
-}
-
-p {
-  color: white;
-  font-size: medium;
-  font-family: "Arial";
-  margin-top: 0.5em;
-}
-
-.nav-link {
-  margin-left: 1rem;
-}
-
-.link-underline-animation {
-  display: inline-block;
-  position: relative;
-  color: rgb(201, 201, 201);
-  font-weight: bold;
-  font-size: x-large;
-  font-family: "Arial";
-  text-decoration: none;
-}
-
-.link-fill-animation {
-  display: inline-block;
-  position: relative;
-  color: teal;
-  font-weight: bold;
-  font-size: normal;
-  font-family: "Arial";
-  text-decoration: none;
-}
-
 .page-container {
   width: 75vw;
   max-width: 900px;
@@ -66,108 +6,29 @@ p {
   flex-direction: column;
 }
 
-.top-header {
-  padding-top: 1.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  justify-content: space-between;
-}
-
-.h1-name {
-  font-family: "Arial";
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.name-link {
-  color: rgb(201, 201, 201);
-  margin-right: 0.75rem;
-  font-family: "Arial";
-  font-size: 2.5rem;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.name-link:active {
-  color: #1c2436;
-}
-
-.nav-top {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0.25rem;
-}
-
 .contact-links {
   display: flex;
   margin-top: 1em;
 }
 
-.contact-link {
-  margin-right: 1em;
-}
-
-.contact-image {
-  object-fit: cover;
-  width: 36px;
-  filter: brightness(0) invert(1) saturate(0);
-  padding: 0.5em;
-  border-radius: 10px;
-  transition: filter 0.25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
-}
-
-footer {
-  margin-top: 15rem;
-  height: 5vh;
-  justify-content: end;
-  align-items: end;
-  display: flex;
-}
-
-.footer-content {
-  padding-right: 1rem;
-  display: flex;
-  align-items: center;
-}
-
 .main-content {
-  margin-top: 5rem;
-  display: grid;
-  grid-template-areas:
-    "profile"
-    "skills"
-    "education"
-    "experience"
-    "projects";
-  grid-gap: 3rem;
-  grid-template-columns: 1fr;
-}
-
-.skills-container {
-  grid-area: skills;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.bottom-margin {
-  margin: 0 0 0.5em 0;
-}
-
-.profile-content {
-  grid-area: profile;
-}
-
-.small-padding {
-  padding: 1em;
+.info-container {
+  margin-top: 4em;
 }
 
 .info-content {
-  padding: 2rem;
-  background-color: #1f2b42;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1em;
+}
+
+.filtered-projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  padding: 1em;
 }
 
 .profile-picture {
@@ -179,40 +40,10 @@ footer {
   shape-outside: circle();
 }
 
-#education {
-  grid-area: education;
-}
-
-#experience {
-  grid-area: experience;
-}
-
-.projects-container {
-  grid-area: projects;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.small-org-img {
-  width: 36px;
-  height: 36px;
-  filter: brightness(0) invert(1) saturate(0);
-}
-
 .tuni-org-img {
   width: 40px;
   height: 40px;
   filter: brightness(0) invert(1) saturate(0);
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-}
-
-.small-margin-left {
-  margin-left: 0.5rem;
 }
 
 .view-all-projects {
@@ -242,52 +73,6 @@ footer {
 }
 
 @media only screen and (min-width: 800px) {
-  .link-underline-animation:hover {
-    color: white;
-  }
-
-  .link-underline-animation:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 4px;
-    bottom: -8px;
-    left: 0;
-    background-color: teal;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-
-  .link-underline-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  .link-underline-animation-teal:after {
-    background-color: teal;
-  }
-
-  .link-underline-animation-red:after {
-    background-color: rgb(255, 65, 65);
-  }
-
-  .link-underline-animation-blue:after {
-    background-color: rgb(93, 255, 43);
-  }
-
-  .link-underline-animation-green:after {
-    background-color: rgb(18, 81, 255);
-  }
-
-  .link-underline-animation-rgb:after {
-    background-image: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(30, 250, 0, 1) 49%, rgba(4, 0, 255, 1) 100%);
-  }
-
-  .link-fill-animation:hover {
-    color: white;
-  }
-
   .link-fill-animation:after {
     content: "";
     position: absolute;
@@ -302,20 +87,9 @@ footer {
     z-index: -1;
   }
 
-  .name-link:hover {
-    color: white;
-  }
-
   .link-fill-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
-
-  .contact-image:hover {
-    filter: none;
-    background-color: #8baaff15;
-    cursor: pointer;
-    transform: scale(1.1);
   }
 
   .view-all-projects:hover {
@@ -332,13 +106,8 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
-  .page-container,
-  .top-header {
+  .page-container {
     width: 95vw;
-  }
-
-  .top-header {
-    align-items: start;
   }
 
   .main-content {
@@ -348,57 +117,6 @@ footer {
   .profile-picture {
     width: 125px;
     height: 125px;
-  }
-
-  .h1-name {
-    font-family: "Arial";
-    font-size: 1.75rem;
-    margin: 0;
-  }
-
-  h2 {
-    color: white;
-    font-size: x-large;
-    font-family: "Arial";
-  }
-
-  .h2-info {
-    font-size: x-large;
-  }
-
-  .name-link {
-    color: white;
-    margin-right: 0.5rem;
-    font-size: 1.75rem;
-  }
-
-  .main-content {
-    grid-gap: 1em;
-    grid-template-areas:
-      "profile"
-      "skills"
-      "education"
-      "experience"
-      "projects";
-    grid-gap: 1em;
-    grid-template-columns: 1fr;
-  }
-
-  .nav-top {
-    margin-bottom: 0.1em;
-    flex-direction: column;
-  }
-
-  .nav-link {
-    font-size: 1.25rem;
-  }
-
-  .small-padding {
-    padding: 0.5em;
-  }
-
-  .bottom-margin {
-    margin: 0.5em 0 0.5em 0;
   }
 
   .view-all-projects {

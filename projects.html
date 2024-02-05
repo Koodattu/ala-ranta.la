@@ -6,60 +6,96 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Projects - Ala-Ranta.la Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/timeline.css" />
     <link rel="stylesheet" href="/styles/tech-tags.css" />
+    <link rel="stylesheet" href="/styles/main-common.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="stylesheet" href="/styles/projects-common.css" />
     <link rel="stylesheet" href="/styles/projects.css" />
   </head>
   <body>
-    <div class="page-container">
-      <header class="top-header">
-        <a class="name-link link-underline-animation link-underline-animation-rgb" href="/">
-          <h1 class="h1-name">Ala-Ranta.la</h1>
-        </a>
-        <nav class="nav-top">
-          <a
-            class="link-underline-animation link-underline-animation-teal nav-link"
-            href="/assets/Juha_Ala-Rantala_CV.pdf"
-            >CV</a
-          >
-          <!--<a class="link-underline-animation link-underline-animation-red nav-link" href="/about">About</a>-->
-          <a class="link-underline-animation link-underline-animation-green nav-link" href="/projects">Projects</a>
-          <!--<a class="link-underline-animation link-underline-animation-blue nav-link" href="/blog">Blog</a>-->
-        </nav>
-      </header>
-      <main>
-        <div class="main-content">
+    <div class="header-main-wrapper">
+      <div class="flex-column-center">
+        <header class="top-header">
+          <a class="name-link link-underline-animation link-underline-animation-rgb" href="/">
+            <h1 class="h1-name">_Ranta.la</h1>
+          </a>
+          <nav class="nav-top">
+            <a
+              class="link-underline-animation link-underline-animation-red nav-link"
+              href="/assets/Juha_Ala-Rantala_CV_FI.pdf"
+              >CV_FI</a
+            >
+            <a
+              class="link-underline-animation link-underline-animation-orange nav-link"
+              href="/assets/Juha_Ala-Rantala_CV_EN.pdf"
+              >CV_EN</a
+            >
+            <a class="link-underline-animation link-underline-animation-green nav-link" href="/about">About</a>
+            <a class="link-underline-animation link-underline-animation-cyan nav-link" href="/projects">Projects</a>
+            <a class="link-underline-animation link-underline-animation-blue nav-link" href="/blog">Blog</a>
+          </nav>
+        </header>
+        <main>
           <div class="top-content">
-            <div class="project-filters">
-              <h2>Filter projects by tags</h2>
-              <div>
-                <button id="select-all-filter" class="project-filter tech-tag">Select all</button>
-                <button id="select-none-filter" class="project-filter tech-tag">Select none</button>
+            <h2 class="h2-info" id="projects-header">🚀 All my projects</h2>
+            <div class="project-charts">
+              <div class="flex-column-center">
+                <h4>Platforms</h4>
+                <div id="platform-chart" class="chart"></div>
               </div>
-              <div class="project-filters-platform"><div>Platforms:</div></div>
-              <div class="project-filters-language">
-                <div>Languages:</div>
+              <div class="flex-column-center">
+                <h4>Languages</h4>
+                <div id="languages-chart" class="chart"></div>
               </div>
-              <div class="project-filters-frontend"><div>Frontend:</div></div>
-              <div class="project-filters-backend"><div>Backend:</div></div>
-              <div class="project-filters-tools"><div>Tools:</div></div>
+              <div class="flex-column-center">
+                <h4>Frontend</h4>
+                <div id="frontend-chart" class="chart"></div>
+              </div>
+              <div class="flex-column-center">
+                <h4>Backend</h4>
+                <div id="backend-chart" class="chart"></div>
+              </div>
+              <div class="flex-column-center">
+                <h4>Tools</h4>
+                <div id="tools-chart" class="chart"></div>
+              </div>
             </div>
-            <div class="filtered-project-info"></div>
+            <div class="project-filters">
+              <div class="title-filters">
+                <div class="title-button">
+                  <h3>Filter projects by tags</h3>
+                  <button id="select-none-filter" class="project-filter-all tech-tag small-margin-left">
+                    Reset filters
+                  </button>
+                </div>
+                <div>
+                  <div class="project-filters-platform"><div>Platforms:</div></div>
+                  <div class="project-filters-language">
+                    <div>Languages:</div>
+                  </div>
+                  <div class="project-filters-frontend"><div>Frontend:</div></div>
+                  <div class="project-filters-backend"><div>Backend:</div></div>
+                  <div class="project-filters-tools"><div>Tools:</div></div>
+                </div>
+              </div>
+              <div class="flex-column-center">
+                <h4>Visibility</h4>
+                <div id="visibility-chart" class="chart"></div>
+              </div>
+            </div>
           </div>
           <div id="filtered-projects" class="filtered-projects"></div>
-        </div>
-      </main>
+        </main>
+      </div>
       <footer>
-        <div class="footer-content">
-          <p class="flex-center">
-            Made with ☕️ and 🍪. All trademarks, logos and brand names are the property of their respective owners.
-            View source code on
-            <a class="small-margin-left" href="https://github.com/"
-              ><img class="small-org-img" src="/assets/github.webp"
-            /></a>
-          </p>
-        </div>
+        <span class="flex-center">
+          Made with ☕️ and 🍪. All trademarks, logos and brand names are the property of their respective owners. View
+          source code on
+          <a class="contact-link" href="https://github.com/Koodattu/ala-ranta.la" target="_blank"
+            ><img class="contact-image" src="/assets/github.webp"
+          /></a>
+        </span>
       </footer>
     </div>
     <template id="project-template">
@@ -85,8 +121,10 @@
       </a>
     </template>
     <template id="filter-tag-template">
-      <button class="project-filter tech-tag"></button>
+      <button class="project-filter tech-tag filter-disabled"></button>
     </template>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="scripts/chart-script.js"></script>
     <script src="scripts/projects.js"></script>
     <script src="scripts/project-filters.js"></script>
   </body>

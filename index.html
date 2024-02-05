@@ -6,34 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ala-Ranta.la Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/styles/main-common.css" />
     <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
     <link rel="stylesheet" href="/styles/timeline.css" />
     <link rel="stylesheet" href="/styles/tech-tags.css" />
     <link rel="stylesheet" href="/styles/skills.css" />
-    <link rel="stylesheet" href="/styles/projects.css" />
+    <link rel="stylesheet" href="/styles/projects-common.css" />
   </head>
   <body>
     <div class="page-container">
       <header class="top-header">
         <a class="name-link link-underline-animation link-underline-animation-rgb" href="/">
-          <h1 class="h1-name">Ala-Ranta.la</h1>
+          <h1 class="h1-name">_Ranta.la</h1>
         </a>
         <nav class="nav-top">
           <a
-            class="link-underline-animation link-underline-animation-teal nav-link"
-            href="/assets/Juha_Ala-Rantala_CV.pdf"
-            >CV</a
+            class="link-underline-animation link-underline-animation-red nav-link"
+            href="/assets/Juha_Ala-Rantala_CV_FI.pdf"
+            >CV_FI</a
           >
-          <!--<a class="link-underline-animation link-underline-animation-red nav-link" href="/about">About</a>-->
-          <a class="link-underline-animation link-underline-animation-green nav-link" href="/projects">Projects</a>
-          <!--<a class="link-underline-animation link-underline-animation-blue nav-link" href="/blog">Blog</a>-->
+          <a
+            class="link-underline-animation link-underline-animation-orange nav-link"
+            href="/assets/Juha_Ala-Rantala_CV_EN.pdf"
+            >CV_EN</a
+          >
+          <a class="link-underline-animation link-underline-animation-green nav-link" href="/about">About</a>
+          <a class="link-underline-animation link-underline-animation-cyan nav-link" href="/projects">Projects</a>
+          <a class="link-underline-animation link-underline-animation-blue nav-link" href="/blog">Blog</a>
         </nav>
       </header>
       <main>
         <div class="main-content">
-          <div class="profile-content">
+          <div class="info-container">
             <h2 class="h2-info">👋 Hello there</h2>
-            <div class="small-padding">
+            <div class="info-content">
               <img class="profile-picture" src="/assets/profile.webp" alt="Profile picture" />
               <p>My name is Juha Ala-Rantala and I'm a Software Engineer based in Seinäjoki, Finland.</p>
               <p>
@@ -53,7 +61,7 @@
                 developing internal tools and maintaining existing products.
               </p>
               <p>
-                On my free time I like to hang out with friends, play games, create content, work on my
+                On my free time I like to hang out with friends, go to the gym, play games, create content, work on my
                 <a class="link-fill-animation" href="#projects">side projects</a>
                 and order kebab from
                 <a class="link-fill-animation" href="https://www.elcebo.fi/" target="_blank">El Cebo</a>.
@@ -71,8 +79,8 @@
               </div>
             </div>
           </div>
-          <div id="skills" class="skills-container">
-            <h2 class="h2-info bottom-margin">🛠️ Tech</h2>
+          <div id="skills" class="info-container">
+            <h2 class="h2-info">🛠️ Tech</h2>
             <div class="skill-display-select">
               <button id="skill-display-category" class="change-skill-display change-skill-display-enabled">
                 By Category
@@ -80,7 +88,7 @@
               <button id="skill-display-matrix" class="change-skill-display">Skill Matrix</button>
               <button id="skill-display-tiered" class="change-skill-display">Tier List</button>
             </div>
-            <div id="skills-display" class="skills-locker-category small-padding">
+            <div id="skills-display" class="skills-locker-category">
               <h4 id="languages-tag" class="h4-tech-tag">Languages</h4>
               <h4 id="frontend-tag" class="h4-tech-tag">Frontend</h4>
               <h4 id="backend-tag" class="h4-tech-tag">Backend</h4>
@@ -119,7 +127,7 @@
 
               <a id="dotnet-tag" href="/projects?tags=dotnet" target="_blank" class="skill-image-container">
                 <img class="skill-image" src="/logos/dotnet.webp" alt=".NET" />
-                <div class="skill-image-text tech-tag dotnet-tag">.NET</div>
+                <div class="skill-image-text tech-tag net-tag">.NET</div>
               </a>
               <a id="flutter-tag" href="/projects?tags=flutter" target="_blank" class="skill-image-container">
                 <img class="skill-image" src="/logos/flutter.webp" alt="Flutter" />
@@ -193,9 +201,9 @@
               </a>
             </div>
           </div>
-          <div id="education">
-            <h2 class="h2-info bottom-margin">🎓 Education</h2>
-            <div class="box small-padding">
+          <div id="education" class="info-container">
+            <h2 class="h2-info">🎓 Education</h2>
+            <div class="box">
               <ul>
                 <li class="hoverable">
                   <a href="/education/tuni" class="hover-background"></a>
@@ -296,9 +304,9 @@
               </ul>
             </div>
           </div>
-          <div id="experience">
-            <h2 class="h2-info bottom-margin">💼 Experience</h2>
-            <div class="box small-padding">
+          <div id="experience" class="info-container">
+            <h2 class="h2-info">💼 Experience</h2>
+            <div class="box">
               <ul>
                 <li class="hoverable">
                   <a href="/experience/prima-power" class="hover-background"></a>
@@ -358,7 +366,7 @@
               </ul>
             </div>
           </div>
-          <div id="projects" class="projects-container">
+          <div id="projects" class="info-container">
             <div class="content-title">
               <h2 class="h2-info" id="projects-header">🚀 Projects</h2>
               <a href="/projects" class="view-info view-all-projects hoverable">
@@ -372,13 +380,13 @@
       </main>
       <footer>
         <div class="footer-content">
-          <p class="flex-center">
+          <span class="flex-center">
             Made with ☕️ and 🍪. All trademarks, logos and brand names are the property of their respective owners.
             View source code on
-            <a class="small-margin-left" href="https://github.com/"
-              ><img class="small-org-img" src="/assets/github.webp"
+            <a class="contact-link" href="https://github.com/Koodattu" target="_blank"
+              ><img class="contact-image" src="/assets/github.webp"
             /></a>
-          </p>
+          </span>
         </div>
       </footer>
     </div>
