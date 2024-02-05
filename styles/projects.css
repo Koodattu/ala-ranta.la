@@ -24,7 +24,10 @@ main {
 
 .project-charts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "languages-chart languages-chart frontend-chart frontend-chart backend-chart backend-chart"
+    ". platform-chart platform-chart tools-chart tools-chart .";
   grid-gap: 1rem;
   justify-items: center;
   margin-top: 2em;
@@ -32,12 +35,32 @@ main {
   width: 75vw;
 }
 
+#platform-chart-div {
+  grid-area: platform-chart;
+}
+
+#languages-chart-div {
+  grid-area: languages-chart;
+}
+
+#frontend-chart-div {
+  grid-area: frontend-chart;
+}
+
+#backend-chart-div {
+  grid-area: backend-chart;
+}
+
+#tools-chart-div {
+  grid-area: tools-chart;
+}
+
 .project-filters {
   margin-top: 1em;
   color: whitesmoke;
   font-family: Arial;
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: column;
   max-width: 900px;
   width: 75vw;
 }
@@ -73,11 +96,60 @@ main {
 }
 
 .filtered-projects {
-  margin-top: 2em;
+  margin-top: 1em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   grid-gap: 1rem;
   width: 95vw;
+}
+
+.collapsible {
+  margin-top: 1em;
+  background-color: #283244;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  align-self: start;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #181e29;
+}
+
+.collapsible:after {
+  content: "\002B";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.collapsible-content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #1d2431;
+}
+
+.categories-filters {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+#visible-projects {
+  margin-top: 1em;
 }
 
 @media only screen and (min-width: 800px) {
@@ -96,11 +168,28 @@ main {
     width: 95vw;
   }
 
+  .project-filters {
+    width: 95vw;
+  }
+
   .filtered-projects {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
 
   .project-filters {
     grid-template-columns: auto;
+  }
+
+  .project-charts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "languages-chart"
+      "frontend-chart"
+      "backend-chart"
+      "platform-chart"
+      "tools-chart";
+    grid-gap: 1rem;
+    width: 95vw;
   }
 }

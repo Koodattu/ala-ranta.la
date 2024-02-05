@@ -39,50 +39,52 @@
         <main>
           <div class="top-content">
             <h2 class="h2-info" id="projects-header">🚀 All my projects</h2>
-            <div class="project-charts">
-              <div class="flex-column-center">
-                <h4>Platforms</h4>
-                <div id="platform-chart" class="chart"></div>
-              </div>
-              <div class="flex-column-center">
-                <h4>Languages</h4>
-                <div id="languages-chart" class="chart"></div>
-              </div>
-              <div class="flex-column-center">
-                <h4>Frontend</h4>
-                <div id="frontend-chart" class="chart"></div>
-              </div>
-              <div class="flex-column-center">
-                <h4>Backend</h4>
-                <div id="backend-chart" class="chart"></div>
-              </div>
-              <div class="flex-column-center">
-                <h4>Tools</h4>
-                <div id="tools-chart" class="chart"></div>
+            <button class="collapsible">Click to reveal projects statistics</button>
+            <div class="collapsible-content">
+              <div class="project-charts">
+                <div id="platform-chart-div" class="flex-column-center">
+                  <h4>Platforms</h4>
+                  <div id="platform-chart" class="chart"></div>
+                </div>
+                <div id="languages-chart-div" class="flex-column-center">
+                  <h4>Languages</h4>
+                  <div id="languages-chart" class="chart"></div>
+                </div>
+                <div id="frontend-chart-div" class="flex-column-center">
+                  <h4>Frontend</h4>
+                  <div id="frontend-chart" class="chart"></div>
+                </div>
+                <div id="backend-chart-div" class="flex-column-center">
+                  <h4>Backend</h4>
+                  <div id="backend-chart" class="chart"></div>
+                </div>
+                <div id="tools-chart-div" class="flex-column-center">
+                  <h4>Tools</h4>
+                  <div id="tools-chart" class="chart"></div>
+                </div>
               </div>
             </div>
+
             <div class="project-filters">
-              <div class="title-filters">
-                <div class="title-button">
-                  <h3>Filter projects by tags</h3>
-                  <button id="select-none-filter" class="project-filter-all tech-tag small-margin-left">
-                    Reset filters
-                  </button>
-                </div>
-                <div>
-                  <div class="project-filters-platform"><div>Platforms:</div></div>
-                  <div class="project-filters-language">
-                    <div>Languages:</div>
-                  </div>
-                  <div class="project-filters-frontend"><div>Frontend:</div></div>
-                  <div class="project-filters-backend"><div>Backend:</div></div>
-                  <div class="project-filters-tools"><div>Tools:</div></div>
-                </div>
+              <div class="title-button">
+                <h3>Filter projects by tags</h3>
+                <button id="select-none-filter" class="project-filter-all tech-tag small-margin-left">
+                  Reset filters
+                </button>
               </div>
-              <div class="flex-column-center">
-                <h4>Visibility</h4>
-                <div id="visibility-chart" class="chart"></div>
+              <div class="categories-filters">
+                <div>Platforms:</div>
+                <div class="project-filters-platform"></div>
+                <div>Languages:</div>
+                <div class="project-filters-language"></div>
+                <div>Frontend:</div>
+                <div class="project-filters-frontend"></div>
+                <div>Backend:</div>
+                <div class="project-filters-backend"></div>
+                <div>Tools:</div>
+                <div class="project-filters-tools"></div>
               </div>
+              <div id="visible-projects">Currently showing x of y projects (z hidden)</div>
             </div>
           </div>
           <div id="filtered-projects" class="filtered-projects"></div>
