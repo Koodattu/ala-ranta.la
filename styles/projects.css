@@ -144,7 +144,7 @@ main {
 .categories-filters {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   align-items: center;
 }
 
