@@ -119,6 +119,15 @@ p {
   transition: filter 0.25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 
+.content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1em;
+  align-items: center;
+}
+
 @media only screen and (min-width: 800px) {
   .contact-image:hover {
     filter: none;

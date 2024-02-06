@@ -93,3 +93,5 @@ function calculateVisibleProjects() {
     visibleProjects.length + hiddenProjects.length
   } projects. (${hiddenProjects.length} hidden)`;
 }
+
+const currentUrl = window.location.href;

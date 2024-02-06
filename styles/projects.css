@@ -6,6 +6,7 @@ main {
 }
 
 .top-content {
+  margin-top: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,20 +101,17 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   grid-gap: 1rem;
-  width: 95vw;
+  width: auto;
 }
 
 .collapsible {
-  margin-top: 1em;
   background-color: #283244;
   color: white;
   cursor: pointer;
   padding: 12px;
   border: none;
-  text-align: left;
   outline: none;
   font-size: 15px;
-  align-self: start;
 }
 
 .active,
@@ -126,7 +124,7 @@ main {
   color: white;
   font-weight: bold;
   float: right;
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 .active:after {
@@ -144,7 +142,7 @@ main {
 .categories-filters {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
+  grid-gap: 0.1rem;
   align-items: center;
 }
 
@@ -191,5 +189,9 @@ main {
       "tools-chart";
     grid-gap: 1rem;
     width: 95vw;
+  }
+
+  .categories-filters {
+    grid-gap: 0.5rem;
   }
 }
