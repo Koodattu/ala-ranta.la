@@ -1,0 +1,10 @@
+main {
+  height: 50vh;
+  justify-content: center;
+  width: 95vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: Arial;
+}
