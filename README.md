@@ -12,6 +12,10 @@
 
 Static website hosted on github pages. Information about myself, my education and my work experience. In-depth information about my education and work experiences. Projects gallery and in-depth information about the projects.
 
+<div align="center">
+    <img src="https://i.imgur.com/5yB9Irs.png" alt="Logo" height="500">
+</div>
+
 ## Features
 
 - Information about myself, education, work experience, projects
