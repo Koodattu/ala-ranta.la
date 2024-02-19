@@ -39,7 +39,7 @@ Juha Ala-Rantala ([Koodattu](https://github.com/Koodattu/))
 
 ## Acknowledgments
 
-* [D3](https://d3js.org/)
+* [D3](https://d3js.org/) - For drawing charts
 
 ## License
 
