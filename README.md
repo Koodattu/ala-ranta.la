@@ -18,9 +18,6 @@ Static website hosted on github pages. Information about myself, my education an
 - In-depth information about educatio and work experience
 - Projects gallery and in-depth information about the projects
 
-* Static website written in plain HTML, CSS and JavaScript
-* Hosted on Github Pages
-
 ## Tech
 
 The website is implemented as a static website written in plain HTML, CSS and JavaScript. The website is hosted here on GitHub Pages in this repository. The projects.json is generated from my projects readme markdown file.
