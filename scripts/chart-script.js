@@ -53,6 +53,7 @@ const techTagColors = {
   "google sheets": "rgba(29, 166, 102)",
   wpf: "rgba(10, 125, 180)",
   "github pages": "rgba(67, 128, 180, 255)",
+  flask: "rgba(59,171,195, 255)",
 };
 
 document.addEventListener("DOMContentLoaded", function () {

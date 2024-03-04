@@ -30,6 +30,12 @@
   background-color: rgba(204, 151, 249, 0.2);
 }
 
+.flask-tag {
+  border-color: #3babc3;
+  color: #3babc3;
+  background-color: rgba(59, 171, 195, 0.2);
+}
+
 .csharp-tag {
   border-color: #a179dc;
   color: #a179dc;
