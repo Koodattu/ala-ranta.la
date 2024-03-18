@@ -105,7 +105,7 @@
   }
 
   .top-header {
-    align-items: start;
+    align-items: end;
   }
 
   .h1-name {
@@ -122,10 +122,9 @@
 
   .nav-top {
     margin-bottom: 0.1em;
-    flex-direction: column;
   }
 
   .nav-link {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }

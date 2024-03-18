@@ -58,8 +58,10 @@ function handleScroll() {
       }
     });
 
-    // Add the "hover-effect" class to the element in view
-    elementInView.classList.add("hovered");
+    if (elementInView) {
+      // Add the "hover-effect" class to the element in view
+      elementInView.classList.add("hovered");
+    }
   }
 }
 
