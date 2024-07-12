@@ -40,6 +40,14 @@
   shape-outside: circle();
 }
 
+.profile-picture-big {
+  float: right;
+  width: auto;
+  height: 397px;
+  shape-outside: url("/assets/big-photo.png");
+  shape-margin: 8px;
+}
+
 .tuni-org-img {
   width: 40px;
   height: 40px;
@@ -111,6 +119,11 @@
     height: 125px;
   }
 
+  .profile-picture-big {
+    width: 175px;
+    height: auto;
+  }
+
   .view-all-projects {
     font-size: small;
   }
@@ -125,5 +138,12 @@
   .view-all-projects.hovered img {
     filter: invert(32%) sepia(71%) saturate(891%) hue-rotate(140deg) brightness(98%) contrast(102%);
     transform: rotate(-45deg);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .profile-picture-big {
+    width: 125px;
+    height: auto;
   }
 }
