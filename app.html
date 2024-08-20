@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spin the Wheel</title>
+    <meta property="og:image" content="/assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/styles/main-common.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="stylesheet" href="/styles/not-found.css" />
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      text {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        pointer-events: none;
+        font-weight: bold;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #chart {
+        width: 800px;
+        height: 800px;
+      }
+      .popup {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .popup-content {
+        background-color: #272f47;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chart"></div>
+    <div id="customPopup" class="popup">
+      <div class="popup-content">
+        <h2 id="projectName">Custom Popup Title</h2>
+      </div>
+    </div>
+    <script>
+      var padding = { top: 0, right: 0, bottom: 0, left: 0 },
+        w = 800 - padding.left - padding.right,
+        h = 800 - padding.top - padding.bottom,
+        r = Math.min(w, h) / 2,
+        rotation = 0,
+        oldrotation = 0,
+        picked = 100000,
+        color = d3.scale.category20();
+
+      var data = [
+        { label: "Completed Projects" },
+        { label: "Personal Website" },
+        { label: "Fyralath Data Tracker" },
+        { label: "Twitch Song Request Desktop" },
+        { label: "Twitch Spotify Song Request" },
+        { label: "Staff Restaurant Lunch Menu App" },
+        { label: "Räccis SeAMK Food Royale" },
+        { label: "Tsumppi Coffee Shop" },
+        { label: "SeAMK Lukkari" },
+        { label: "SeAMK WinhaWille" },
+        { label: "SeAMK Ruoka" },
+        { label: "Actively Working On" },
+        { label: "SeAMK Ruoka Flutter" },
+        { label: "Potential Projects" },
+        { label: "Last Played Radio Stations Songs" },
+        { label: "WoW Mplus and Raid Tools and Stats" },
+        { label: "Nettiauto Data Stats Analysis" },
+        { label: "Hippos Data Stats Analysis" },
+        { label: "Quick Video Clip Trimmer" },
+        { label: "Automagic Video Highlight Clipper" },
+        { label: "Drink More Water Desktop" },
+        { label: "Friba Disc Golf Tracker" },
+        { label: "Drink More Water Mobile" },
+        { label: "Easy Calories Tracker" },
+        { label: "Healthy Body Mind Living" },
+        { label: "MaintenanceApp HuoltoApp" },
+        { label: "Lunch Places" },
+        { label: "Twitch Redeem Reward Stats" },
+        { label: "Company Website" },
+        { label: "Guess The Price" },
+        { label: "Partial Video Searcher using Subtitles" },
+        { label: "Diablo 4 Streams Leaderboard by Level" },
+        { label: "WoW Mplus Streams Catalogue" },
+        { label: "Weight Loss Helper" },
+        { label: "Vaarattu Discord Bot" },
+        { label: "WoW RaiderIO Discord Bot" },
+        { label: "Discord Channel Image Gallery and Downloader" },
+        { label: "Twitch Clips to Tiktoks Bulk Editor" },
+        { label: "Youtube Bulk Uploader" },
+        { label: "Twitch Broadcasts to Youtube Videos Exporter" },
+        { label: "WoW Trade and Services Addon" },
+        { label: "WoW Guild News Feed Addon" },
+        { label: "WoW Account Wide Great Vault Addon" },
+        { label: "Chrome Focus Search" },
+        { label: "Copydel" },
+        { label: "InttiApp - TJ laskuri" },
+        { label: "Popular Event Countdowns" },
+        { label: "Waifu Alarm Clock" },
+        { label: "Mario Kart 8 Deluxe Build Optimizer" },
+        { label: "Holy Smoke Website Rework" },
+        { label: "Automagic Social Media Videos" },
+        { label: "Reddit LSF Twitch ClipSync Website" },
+        { label: "Twitch Song Request Bot Website Version" },
+        { label: "Finnish Twitch Streams Website By Category" },
+        { label: "Alerts App" },
+        { label: "Multiple Marketplace Website" },
+        { label: "Kide App Event Ticket Bot" },
+        { label: "Pohjoinen Guild Website" },
+        { label: "Shyiez Lunch App" },
+        { label: "Stikide Electricity app" },
+        { label: "Twitch Random Clip Player" },
+        { label: "Vaarattu.tv website" },
+        { label: "WoW Trading Post Web" },
+        { label: "Local Files Organizer" },
+        { label: "Diablo Quick Guides" },
+        { label: "Diablo Item Compare" },
+        { label: "TV to TV" },
+        { label: "Salomaa Fitness App" },
+        { label: "Twitch Chat Bot" },
+        { label: "Raspberry Pi Indoor Air Tracking" },
+      ];
+      var svg = d3
+        .select("#chart")
+        .append("svg")
+        .data([data])
+        .attr("width", w + padding.left + padding.right)
+        .attr("height", h + padding.top + padding.bottom);
+      var container = svg
+        .append("g")
+        .attr("class", "chartholder")
+        .attr("transform", "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")");
+      var vis = container.append("g");
+
+      var pie = d3.layout
+        .pie()
+        .sort(null)
+        .value(function (d) {
+          return 1;
+        });
+      var arc = d3.svg.arc().outerRadius(r);
+      var arcs = vis.selectAll("g.slice").data(pie).enter().append("g").attr("class", "slice");
+
+      arcs
+        .append("path")
+        .attr("fill", function (d, i) {
+          return color(i);
+        })
+        .attr("d", function (d) {
+          return arc(d);
+        });
+      arcs
+        .append("text")
+        .attr("transform", function (d) {
+          d.innerRadius = 0;
+          d.outerRadius = r;
+          d.angle = (d.startAngle + d.endAngle) / 2;
+          return "rotate(" + ((d.angle * 180) / Math.PI - 90) + ")translate(" + (d.outerRadius - 10) + ")";
+        })
+        .attr("text-anchor", "end")
+        .text(function (d, i) {
+          return data[i].label;
+        });
+      function spin(d) {
+        var ps = 360 / data.length,
+          pieslice = Math.round(1440 / data.length),
+          rng = Math.floor(Math.random() * 1440 + 3600);
+
+        rotation = Math.round(rng / ps) * ps;
+
+        picked = Math.round(data.length - (rotation % 360) / ps);
+
+        rotation += 90 - Math.round(ps / 2);
+        vis
+          .transition()
+          .duration(3000)
+          .attrTween("transform", rotTween)
+          .each("end", function () {
+            var projectName = document.getElementById("projectName");
+            projectName.innerHTML = data[picked].label;
+            var popup = document.getElementById("customPopup");
+            popup.style.display = "block";
+          });
+      }
+      svg
+        .append("g")
+        .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + (h / 2 + padding.top) + ")")
+        .append("path")
+        .attr("d", "M-" + r * 0.3 + ",0L0," + r * 0.1 + "L0,-" + r * 0.1 + "Z")
+        .style({ fill: "black" });
+
+      function rotTween(to) {
+        var i = d3.interpolate(oldrotation % 360, rotation);
+        return function (t) {
+          return "rotate(" + i(t) + ")";
+        };
+      }
+
+      function getRandomNumbers() {
+        var array = new Uint16Array(1000);
+        var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+        if (window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function") {
+          window.crypto.getRandomValues(array);
+          console.log("works");
+        } else {
+          for (var i = 0; i < 1000; i++) {
+            array[i] = Math.floor(Math.random() * 100000) + 1;
+          }
+        }
+        return array;
+      }
+      document.addEventListener("DOMContentLoaded", (event) => {
+        spin();
+      });
+    </script>
+  </body>
+</html>
