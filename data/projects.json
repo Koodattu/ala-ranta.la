@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "title": "Voice Guided Imaging",
+      "description": "Showcasing live transcription, translation and imaging with generative AI models running locally",
+      "tech": {
+        "platform": ["Web", "Server"],
+        "languages": ["Python", "JavaScript"],
+        "frontend": ["HTML", "CSS"],
+        "backend": ["Flask"],
+        "tools": ["Visual Studio Code"]
+      },
+      "features": [
+        "Completely locally-hosted generative artificial intelligence models",
+        "Speech-to-text, translation and user action inferring",
+        "Image generation, editing existing images and video creation from image"
+      ],
+      "link": "https://github.com/Koodattu/voice-guided-imaging",
+      "year": 2024
+    },
+    {
       "title": "Fyr'alath Data Tracker",
       "description": "A full-stack app for tracking WoW patch 10.2 legendary weapon crafting cost and acquisition data",
       "tech": {
@@ -28,7 +46,7 @@
         "backend": ["Github Pages"],
         "tools": ["Visual Studio Code"]
       },
-      "features": ["Information about self", "Projects", "CV"],
+      "features": ["Information about myself", "Projects", "CV"],
       "link": "https://github.com/Koodattu/ala-ranta.la",
       "year": 2024
     },
