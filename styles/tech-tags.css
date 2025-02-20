@@ -336,6 +336,24 @@
   background-color: rgba(67, 128, 180, 0.2);
 }
 
+.language-tag {
+  border-color: rgba(69, 151, 228, 255);
+  color: rgba(69, 151, 228, 255);
+  background-color: rgba(69, 151, 228, 0.2);
+}
+
+.vision-tag {
+  border-color: rgba(135, 122, 206, 255);
+  color: rgba(135, 122, 206, 255);
+  background-color: rgba(135, 122, 206, 0.2);
+}
+
+.diffusion-tag {
+  border-color: rgba(198, 103, 126, 255);
+  color: rgba(198, 103, 126, 255);
+  background-color: rgba(198, 103, 126, 0.2);
+}
+
 @media screen and (min-width: 800px) {
   .h4-tech-tag:hover {
     background-color: #8baaff15;

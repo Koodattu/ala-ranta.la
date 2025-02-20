@@ -34,6 +34,7 @@ function populateFilterTags() {
       const frontends = new Set();
       const backends = new Set();
       const tools = new Set();
+      const genais = new Set();
 
       // Gather all unique tags
       jsonResponse.projects.forEach((project) => {
@@ -42,6 +43,7 @@ function populateFilterTags() {
         project.tech.frontend?.forEach((frontend) => frontends.add(frontend));
         project.tech.backend?.forEach((backend) => backends.add(backend));
         project.tech.tools?.forEach((tool) => tools.add(tool));
+        project.tech.genai?.forEach((genai) => genais.add(genai));
       });
 
       // Function to create and append tag buttons, now includes sorting
@@ -66,6 +68,7 @@ function populateFilterTags() {
       appendTags(".project-filters-frontend", frontends);
       appendTags(".project-filters-backend", backends);
       appendTags(".project-filters-tools", tools);
+      appendTags(".project-filters-genai", genais);
 
       // Add event listeners to each tag button
       projectFilterHandler();

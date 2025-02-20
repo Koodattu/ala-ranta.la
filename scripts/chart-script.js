@@ -54,13 +54,16 @@ const techTagColors = {
   wpf: "rgba(10, 125, 180)",
   "github pages": "rgba(67, 128, 180, 255)",
   flask: "rgba(59,171,195, 255)",
+  language: "#4597e4",
+  vision: "#887ace",
+  diffusion: "#c6677e",
 };
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch("data/projects.json")
     .then((response) => response.json())
     .then((json) => {
-      const categories = ["platform", "languages", "frontend", "backend", "tools"];
+      const categories = ["platform", "languages", "frontend", "backend", "tools", "genai"];
       const techCounts = {};
 
       // Initialize counters for each category

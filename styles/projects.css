@@ -25,10 +25,10 @@ main {
 
 .project-charts {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "languages-chart languages-chart frontend-chart frontend-chart backend-chart backend-chart"
-    ". platform-chart platform-chart tools-chart tools-chart .";
+    "languages-chart frontend-chart backend-chart"
+    "platform-chart tools-chart genai-chart";
   grid-gap: 1rem;
   justify-items: center;
   margin-top: 2em;
@@ -54,6 +54,10 @@ main {
 
 #tools-chart-div {
   grid-area: tools-chart;
+}
+
+#genai-chart-div {
+  grid-area: genai-chart;
 }
 
 .project-filters {

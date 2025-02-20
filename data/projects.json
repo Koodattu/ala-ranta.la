@@ -1,6 +1,44 @@
 {
   "projects": [
     {
+      "title": "Whats AI Assistant",
+      "description": "An AI-powered chatbot demo that integrates with WhatsApp using the Neonize (whatsmeow) framework, leveraging language models to generate responses",
+      "tech": {
+        "platform": ["Server"],
+        "languages": ["Python"],
+        "frontend": [],
+        "backend": [],
+        "tools": ["Visual Studio Code"],
+        "genai": ["Language", "Vision"]
+      },
+      "features": [
+        "Embedded directly in WhatsApp for seamless AI support",
+        "Handles multiple file types and images to enhance response accuracy",
+        "Leverages language models for context-aware and precise answers"
+      ],
+      "link": "https://github.com/Koodattu/koodattu-whats-ai-assistant",
+      "year": 2025
+    },
+    {
+      "title": "Voice AI Assistant Framework",
+      "description": "A comprehensive voice AI assistant framework that integrates speech-to-text, text-to-speech, and LLMs with memory management to enable interactive and context-aware conversations",
+      "tech": {
+        "platform": ["Server"],
+        "languages": ["Python"],
+        "frontend": [],
+        "backend": [],
+        "tools": ["Visual Studio Code"],
+        "genai": ["Language"]
+      },
+      "features": [
+        "Integrates speech recognition, conversational AI, and speech synthesis",
+        "Provides a flexible voice interface framework for building custom voice AI assistants",
+        "Goal is to integrate with various platforms and services to enable voice interactions"
+      ],
+      "link": "https://github.com/Koodattu/koodattu-voice-ai-assistant-framework",
+      "year": 2025
+    },
+    {
       "title": "Voice Guided Imaging",
       "description": "Showcasing live transcription, translation and imaging with generative AI models running locally",
       "tech": {
@@ -8,7 +46,8 @@
         "languages": ["Python", "JavaScript"],
         "frontend": ["HTML", "CSS"],
         "backend": ["Flask"],
-        "tools": ["Visual Studio Code"]
+        "tools": ["Visual Studio Code"],
+        "genai": ["Language", "Diffusion"]
       },
       "features": [
         "Completely locally-hosted generative artificial intelligence models",
