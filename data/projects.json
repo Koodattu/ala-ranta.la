@@ -16,7 +16,7 @@
         "Handles multiple file types and images to enhance response accuracy",
         "Leverages language models for context-aware and precise answers"
       ],
-      "link": "https://github.com/Koodattu/koodattu-whats-ai-assistant",
+      "link": "https://github.com/Koodattu/whats-ai-assistant",
       "year": 2025
     },
     {
@@ -35,7 +35,7 @@
         "Provides a flexible voice interface framework for building custom voice AI assistants",
         "Goal is to integrate with various platforms and services to enable voice interactions"
       ],
-      "link": "https://github.com/Koodattu/koodattu-voice-ai-assistant-framework",
+      "link": "https://github.com/Koodattu/voice-ai-assistant-framework",
       "year": 2025
     },
     {
