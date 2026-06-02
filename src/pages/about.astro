@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TechTag from "../components/TechTag.astro";
+import Timeline from "../components/Timeline.astro";
+import { education, experience, focusAreas, profile, skillGroups } from "../data/profile";
+---
+
+<BaseLayout
+  title={`About ${profile.name}`}
+  description="A short background on Juha Ala-Rantala's software engineering work, education, and technical interests."
+>
+  <main>
+    <section class="page-hero section-shell">
+      <p class="eyebrow">About</p>
+      <h1>{profile.name}</h1>
+      <p>
+        I am a software engineer from Seinäjoki, Finland. My work has moved through industrial desktop software,
+        university AI research, and now technology leadership at Clevoy Oy.
+      </p>
+    </section>
+
+    <section class="section-shell split-section">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Profile</p>
+        <h2>How I work</h2>
+      </div>
+      <div class="prose-block">
+        <p>
+          I care about building software that can survive contact with real users, real constraints, and real maintenance
+          work. I enjoy the full path from early product thinking to implementation, deployment, debugging, and iteration.
+        </p>
+        <p>
+          Recently my focus has been on full-stack product development and applied AI: language models, voice interfaces,
+          image workflows, local inference, and tools that make the technology useful instead of merely impressive.
+        </p>
+        <div class="focus-grid">
+          {focusAreas.map((area) => (
+            <article class="focus-card">
+              <h3>{area.title}</h3>
+              <p>{area.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell split-section">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Experience</p>
+        <h2>Work history</h2>
+      </div>
+      <Timeline items={experience} />
+    </section>
+
+    <section class="section-shell split-section">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Education</p>
+        <h2>Studies</h2>
+      </div>
+      <Timeline items={education} />
+    </section>
+
+    <section class="section-shell split-section">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Stack</p>
+        <h2>Technical range</h2>
+      </div>
+      <div class="skill-groups">
+        {skillGroups.map((group) => (
+          <section class="skill-group">
+            <h3>{group.title}</h3>
+            <div class="tag-list">
+              {group.skills.map((skill) => <TechTag tag={skill} />)}
+            </div>
+          </section>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

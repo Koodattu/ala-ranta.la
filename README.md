@@ -1,50 +1,66 @@
 <div align="center">
-    <br />
-    <img src="https://i.imgur.com/IIZ857m.png" alt="Logo" width="80" height="80">
+  <br />
+  <img src="public/assets/favicon.ico" alt="Ala-Ranta.la icon" width="64" height="64" />
 
-  <h3 align="center"><a href="https://ala-ranta.la/" target="_blank">Ala-Ranta.la</a></h3>
-  <h4 align="center">Personal website and digital portfolio</h4>
-    <br />
-    <br />
+  <h3><a href="https://ala-ranta.la/" target="_blank">Ala-Ranta.la</a></h3>
+  <p>Personal portfolio and writing by Juha Ala-Rantala.</p>
+  <br />
 </div>
 
-## Description
+## Overview
 
-Static website hosted on github pages. Information about myself, my education and my work experience. In-depth information about my education and work experiences. Projects gallery and in-depth information about the projects.
-
-<div align="center">
-    <img src="https://raw.githubusercontent.com/Koodattu/ala-ranta.la/refs/heads/main/images/preview.jpg" alt="Preview image" height="500">
-</div>
-
-## Features
-
-- Information about myself, education, work experience, projects
-- In-depth information about educatio and work experience
-- Projects gallery and in-depth information about the projects
+This repository contains the Astro version of my personal portfolio. The site is still fully static, but the source is now organized around reusable components, typed local data, and Markdown blog posts.
 
 ## Tech
 
-The website is implemented as a static website written in plain HTML, CSS and JavaScript. The website is hosted here on GitHub Pages in this repository. The projects.json is generated from my projects readme markdown file.
+- Framework: [Astro](https://astro.build/)
+- Content: Markdown blog posts in `src/content/blog`
+- Styling: plain CSS in `src/styles/global.css`
+- Hosting target: static hosting through GitHub Pages or Cloudflare Pages
+- Generated output: `dist/`
 
-- Platform: Web
-- Languages: JavaScript
-- Frontend: HTML, CSS
-- Backend: Github Pages
-- Tools: Visual Studio Code
+## Development
 
-## Version History
+```sh
+npm install
+npm run dev
+```
 
-* 0.0.1
-    * Working on first version
+## Build
 
-## Authors
+```sh
+npm run build
+npm run preview
+```
 
-Juha Ala-Rantala ([Koodattu](https://github.com/Koodattu/))
+The build generates static HTML, RSS, and sitemap files. Astro telemetry is disabled in npm scripts so local builds do not write outside the repository.
 
-## Acknowledgments
+## Writing Posts
 
-* [D3](https://d3js.org/) - Drawing charts
+Create a Markdown file in `src/content/blog`:
+
+```md
+---
+title: "Post title"
+description: "One sentence summary used for previews and SEO."
+pubDate: 2026-06-01
+tags: ["Astro", "Portfolio"]
+draft: false
+---
+
+Write the post in Markdown.
+```
+
+Files beginning with `_`, such as `_template.md`, are ignored by the blog collection.
+
+## Projects
+
+Project data lives in `src/data/projects.json`. Project index and detail pages are generated at build time so the content is available as static HTML.
+
+## Deployment
+
+The included GitHub Actions workflow builds the Astro site and deploys `dist/` to GitHub Pages when changes are pushed to `main`. The custom domain file lives in `public/CNAME` so it is included in the generated output.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` file for more information.
+Distributed under the MIT License. See `LICENSE` for more information.

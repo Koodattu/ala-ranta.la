@@ -1,0 +1,14 @@
+---
+import { slugify } from "../utils";
+
+interface Props {
+  tag: string;
+  href?: string;
+  muted?: boolean;
+}
+
+const { tag, href, muted = false } = Astro.props;
+const className = `tech-tag tag-${slugify(tag)}${muted ? " is-muted" : ""}`;
+---
+
+{href ? <a class={className} href={href}>{tag}</a> : <span class={className}>{tag}</span>}

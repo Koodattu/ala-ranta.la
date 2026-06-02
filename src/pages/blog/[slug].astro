@@ -1,0 +1,50 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TechTag from "../../components/TechTag.astro";
+import { formatDate } from "../../utils";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<"blog"> };
+const { Content } = await render(post);
+const image = post.data.heroImage ?? "/images/preview.jpg";
+const schema = {
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  author: { "@id": `${Astro.site}#person` },
+  publisher: { "@id": `${Astro.site}#person` },
+  image: new URL(image, Astro.site).toString(),
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  keywords: post.data.tags,
+};
+---
+
+<BaseLayout title={post.data.title} description={post.data.description} image={image} type="article" schema={schema}>
+  <main>
+    <article class="blog-post">
+      <header class="post-hero section-shell">
+        <p class="eyebrow">{formatDate(post.data.pubDate)}</p>
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>
+        <div class="tag-list">
+          {post.data.tags.map((tag) => <TechTag tag={tag} muted />)}
+        </div>
+      </header>
+
+      <div class="post-body section-shell">
+        <Content />
+      </div>
+    </article>
+  </main>
+</BaseLayout>

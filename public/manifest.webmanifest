@@ -1,0 +1,16 @@
+{
+  "name": "Ala-Ranta.la",
+  "short_name": "Ala-Ranta.la",
+  "description": "Portfolio and writing by Juha Ala-Rantala.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#0f1117",
+  "theme_color": "#2dd4bf",
+  "icons": [
+    {
+      "src": "/assets/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

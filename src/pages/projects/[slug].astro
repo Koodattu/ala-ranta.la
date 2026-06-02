@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TechTag from "../../components/TechTag.astro";
+import projectsData from "../../data/projects.json";
+import {
+  getProjectSlug,
+  getProjectTags,
+  projectImagePath,
+  slugify,
+  sortNewestProjects,
+  type Project,
+} from "../../utils";
+
+export function getStaticPaths() {
+  const projects = sortNewestProjects(projectsData.projects as Project[]);
+
+  return projects.map((project) => ({
+    params: { slug: getProjectSlug(project) },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: Project };
+const tags = getProjectTags(project);
+const image = projectImagePath(project);
+const schema = {
+  "@type": "CreativeWork",
+  name: project.title,
+  description: project.description,
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  image: new URL(image, Astro.site).toString(),
+  dateCreated: String(project.year),
+  creator: { "@id": `${Astro.site}#person` },
+  sameAs: project.link,
+  keywords: tags,
+};
+---
+
+<BaseLayout title={project.title} description={project.description} image={image} schema={schema}>
+  <main>
+    <article>
+      <header class="project-detail-hero section-shell">
+        <div>
+          <p class="eyebrow">{project.year}</p>
+          <h1>{project.title}</h1>
+          <p>{project.description}</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href={project.link} target="_blank" rel="noreferrer">Open source</a>
+            <a class="button" href="/projects/">All projects</a>
+          </div>
+        </div>
+        <img src={image} alt={`${project.title} preview`} />
+      </header>
+
+      <section class="section-shell split-section">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">Details</p>
+          <h2>What it does</h2>
+        </div>
+        <div class="prose-block">
+          <ul class="feature-list feature-list-large">
+            {project.features.map((feature) => <li>{feature}</li>)}
+          </ul>
+          <div class="tag-list">
+            {tags.map((tag) => <TechTag tag={tag} href={`/projects/?tag=${slugify(tag)}`} />)}
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</BaseLayout>

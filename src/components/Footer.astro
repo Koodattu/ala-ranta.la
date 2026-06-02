@@ -1,0 +1,17 @@
+---
+import { profile } from "../data/profile";
+---
+
+<footer class="site-footer">
+  <p>
+    Built as a static Astro site. Source code is available on
+    <a href={profile.repo} target="_blank" rel="noreferrer">GitHub</a>.
+  </p>
+  <nav aria-label="Footer links">
+    {profile.socials.map((social) => (
+      <a href={social.href} target={social.href.startsWith("http") ? "_blank" : undefined} rel={social.href.startsWith("http") ? "noreferrer" : undefined}>
+        {social.label}
+      </a>
+    ))}
+  </nav>
+</footer>

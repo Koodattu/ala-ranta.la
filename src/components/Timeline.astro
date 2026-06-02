@@ -1,0 +1,45 @@
+---
+import TechTag from "./TechTag.astro";
+
+interface TimelineItem {
+  organization: string;
+  role: string;
+  period: string;
+  logo: string;
+  url: string;
+  summary: string;
+  details: string[];
+  tags: string[];
+}
+
+interface Props {
+  items: TimelineItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<ol class="timeline-list">
+  {items.map((item) => (
+    <li class="timeline-item">
+      <div class="timeline-marker" aria-hidden="true"></div>
+      <div class="timeline-content">
+        <div class="timeline-heading">
+          <div>
+            <p class="timeline-period">{item.period}</p>
+            <h3>{item.role}</h3>
+            <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
+          </div>
+          <img src={item.logo} alt={`${item.organization} logo`} loading="lazy" />
+        </div>
+        <p>{item.summary}</p>
+        <ul class="feature-list">
+          {item.details.map((detail) => <li>{detail}</li>)}
+        </ul>
+        <div class="tag-list">
+          {item.tags.map((tag) => <TechTag tag={tag} muted />)}
+        </div>
+      </div>
+    </li>
+  ))}
+</ol>

@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+import TechTag from "./TechTag.astro";
+import { formatDate } from "../utils";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-card">
+  <p class="post-meta">{formatDate(post.data.pubDate)}</p>
+  <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
+  <p>{post.data.description}</p>
+  <div class="tag-list">
+    {post.data.tags.map((tag) => <TechTag tag={tag} muted />)}
+  </div>
+</article>
