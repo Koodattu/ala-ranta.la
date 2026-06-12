@@ -30,7 +30,7 @@ const { items } = Astro.props;
             <h3>{item.role}</h3>
             <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
           </div>
-          <img src={item.logo} alt={`${item.organization} logo`} loading="lazy" />
+          <img src={item.logo} alt={`${item.organization} logo`} width="44" height="44" loading="lazy" decoding="async" />
         </div>
         <p>{item.summary}</p>
         <ul class="feature-list">

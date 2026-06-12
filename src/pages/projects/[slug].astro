@@ -49,7 +49,12 @@ const schema = {
             <a class="button" href="/projects/">All projects</a>
           </div>
         </div>
-        <img src={image} alt={`${project.title} preview`} />
+        <img
+          src={image}
+          alt={`${project.title} preview`}
+          decoding="async"
+          style={`view-transition-name: vt-project-${getProjectSlug(project)};`}
+        />
       </header>
 
       <section class="section-shell split-section">

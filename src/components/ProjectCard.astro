@@ -21,7 +21,13 @@ const sourceLabel = project.link.includes("github.com") ? "Source" : "Project";
   data-tags={tags.map(slugify).join(" ")}
 >
   <a class="project-media" href={`/projects/${slug}/`} aria-label={`Read about ${project.title}`}>
-    <img src={projectImagePath(project)} alt={`${project.title} preview`} loading="lazy" />
+    <img
+      src={projectImagePath(project)}
+      alt={`${project.title} preview`}
+      loading="lazy"
+      decoding="async"
+      style={`view-transition-name: vt-project-${slug};`}
+    />
   </a>
   <div class="project-card-body">
     <div class="project-card-topline">

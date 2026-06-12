@@ -3,6 +3,7 @@ export const profile = {
   siteName: "Ala-Ranta.la",
   handle: "_Ranta.la",
   role: "Software engineer, CTO, and builder of practical AI products",
+  tagline: "CTO who still ships.",
   location: "Seinäjoki, Finland",
   email: "juha@ala-ranta.la",
   description:
@@ -32,6 +33,85 @@ export const focusAreas = [
   {
     title: "Pragmatic systems",
     text: "Keeping architecture understandable, costs visible, and delivery focused on the next useful improvement.",
+  },
+];
+
+export const currently = [
+  {
+    title: "CTO at Clevoy",
+    text: "Leading technology and building the platform end to end — mobile apps, backend services, infrastructure, and the admin tooling around them.",
+    href: "https://clevoy.io",
+    linkLabel: "clevoy.io",
+  },
+  {
+    title: "Applied AI in production",
+    text: "Language models, voice interfaces, vision, and local inference — shaped into features people actually use, not just demos.",
+    href: "/projects/?tag=language",
+    linkLabel: "AI projects",
+  },
+  {
+    title: "Open experiments",
+    text: "Voice assistant frameworks, a WhatsApp AI bot, imaging tools, and other public prototypes that test ideas in the open.",
+    href: "https://github.com/Koodattu",
+    linkLabel: "GitHub",
+  },
+];
+
+export const flagship = {
+  label: "Flagship",
+  title: "Clevoy platform",
+  role: "CTO and lead engineer",
+  status: "In production",
+  text: "The full platform behind Clevoy: mobile apps, backend services, infrastructure, and administrative tools — designed, built, deployed, and maintained end to end.",
+  hard: "The hard part is owning every layer at once: requirements, architecture, implementation, deployment, cost optimization, and iteration — with a small team and no room for software that only works in the demo.",
+  stack: ["Flutter", "Backend", "Infrastructure", "Product"],
+  href: "https://clevoy.io",
+  logo: "/assets/clevoy.webp",
+};
+
+export const principles = [
+  {
+    title: "Working software over polished prototypes",
+    text: "If it cannot survive real users, real data, and real maintenance, it is not done. I optimize for the version that ships and holds.",
+  },
+  {
+    title: "AI that earns its place",
+    text: "Models are a means, not the point. A feature ships when it solves a concrete user or business problem better than the boring alternative.",
+  },
+  {
+    title: "Architecture you can still explain in six months",
+    text: "Boring tools where boring is enough. Experimental work stays contained until it proves itself.",
+  },
+  {
+    title: "Visible costs, clear ownership",
+    text: "Small teams move fastest when everyone can see what things cost, who owns what, and what the next useful improvement is.",
+  },
+];
+
+export const careerSpine = [
+  {
+    year: "2015",
+    organization: "SeAMK",
+    text: "B.Eng in Information Technology — 4.24/5 GPA",
+    current: false,
+  },
+  {
+    year: "2018",
+    organization: "Prima Power",
+    text: "Industrial desktop software for sheet metal machinery",
+    current: false,
+  },
+  {
+    year: "2024",
+    organization: "Tampere University",
+    text: "Applied AI research at GPT Lab — M.Sc with a top-graded thesis",
+    current: false,
+  },
+  {
+    year: "Now",
+    organization: "Clevoy",
+    text: "CTO — product, platform, and infrastructure",
+    current: true,
   },
 ];
 
