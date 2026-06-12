@@ -1,16 +1,15 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PostCard from "../components/PostCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import TechTag from "../components/TechTag.astro";
-import Timeline from "../components/Timeline.astro";
-import { education, experience, focusAreas, profile, skillGroups } from "../data/profile";
+import { careerMilestones, currentWork, principles, profile, skillGroups } from "../data/profile";
 import projectsData from "../data/projects.json";
-import { sortNewestProjects, type Project } from "../utils";
+import { formatDate, sortNewestProjects, type Project } from "../utils";
 
 const projects = sortNewestProjects(projectsData.projects as Project[]);
 const featuredProjects = projects.slice(0, 4);
+const [flagshipProject, ...supportingProjects] = featuredProjects;
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
@@ -20,34 +19,50 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   <main>
     <section class="hero section-shell" aria-labelledby="intro-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Software engineer in {profile.location}</p>
+        <p class="hero-kicker">Software engineer in {profile.location}</p>
         <h1 id="intro-title">{profile.name}</h1>
+        <p class="hero-position">CTO who still ships.</p>
         <p class="hero-lede">
-          I build practical software products across mobile, backend, web, infrastructure, and applied AI. I like
-          systems that are understandable, useful, and maintainable after the first demo.
+          I build practical AI and software products across mobile, backend, web, and infrastructure. The goal is
+          working systems that stay understandable after the first demo.
         </p>
+        <ul class="hero-proof-list" aria-label="Current proof points">
+          <li>Technology leadership at Clevoy</li>
+          <li>Applied AI research background</li>
+          <li>Industrial software and product delivery</li>
+        </ul>
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button-primary" href="/projects/">View projects</a>
-          <a class="button" href="/blog/">Read writing</a>
-          <a class="button button-quiet" href={profile.cv.en}>CV</a>
+          <a class="button button-primary" href="/projects/">View selected work</a>
+          <a class="button" href={`mailto:${profile.email}`}>Email Juha</a>
+          <a class="button button-quiet" href={profile.cv.en}>Download CV</a>
         </div>
       </div>
 
       <div class="hero-visual reveal">
+        <div class="hero-system-map" aria-hidden="true">
+          <span class="system-chip chip-mobile">Mobile</span>
+          <span class="system-chip chip-ai">AI</span>
+          <span class="system-chip chip-users">Users</span>
+        </div>
         <img class="hero-photo" src="/assets/big-photo.png" alt="Portrait of Juha Ala-Rantala" />
       </div>
     </section>
 
-    <section class="section-shell compact-section" aria-labelledby="focus-title">
-      <div class="section-heading">
-        <p class="eyebrow">Focus</p>
-        <h2 id="focus-title">What I usually work on</h2>
+    <section class="section-shell compact-section current-section" aria-labelledby="current-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="section-label">Currently</p>
+          <h2 id="current-title">Where my attention is going now</h2>
+        </div>
+        <a class="text-link" href="/about/">Full background</a>
       </div>
-      <div class="focus-grid">
-        {focusAreas.map((area) => (
-          <article class="focus-card">
-            <h3>{area.title}</h3>
-            <p>{area.text}</p>
+      <div class="current-grid">
+        {currentWork.map((item) => (
+          <article class="current-card">
+            <p>{item.label}</p>
+            <h3>{item.title}</h3>
+            <span>{item.meta}</span>
+            <p>{item.text}</p>
           </article>
         ))}
       </div>
@@ -56,19 +71,46 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
     <section class="section-shell" aria-labelledby="projects-title">
       <div class="section-heading section-heading-row">
         <div>
-          <p class="eyebrow">Selected work</p>
-          <h2 id="projects-title">Projects with working code behind them</h2>
+          <p class="section-label">Selected work</p>
+          <h2 id="projects-title">Working code with product thinking behind it</h2>
+          <p>
+            A few public examples from AI experiments, full-stack tools, and software that had to be useful outside the
+            editor.
+          </p>
         </div>
         <a class="text-link" href="/projects/">All projects</a>
       </div>
-      <div class="project-grid featured-project-grid">
-        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      <div class="featured-work-grid">
+        {flagshipProject && <ProjectCard project={flagshipProject} variant="featured" />}
+        <div class="supporting-projects">
+          {supportingProjects.map((project) => <ProjectCard project={project} compact />)}
+        </div>
       </div>
     </section>
 
-    <section class="section-shell split-section" aria-labelledby="skills-title">
+    <section class="section-shell principles-section" aria-labelledby="principles-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="section-label">Principles</p>
+          <h2 id="principles-title">What I optimize for</h2>
+        </div>
+        <p>
+          The tools change, but these constraints keep the work grounded when product, engineering, and AI meet.
+        </p>
+      </div>
+      <div class="principles-list">
+        {principles.map((principle) => (
+          <article>
+            <h3>{principle.title}</h3>
+            <p>{principle.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-shell split-section tool-section" aria-labelledby="skills-title">
       <div class="section-heading sticky-heading">
-        <p class="eyebrow">Stack</p>
+        <p class="section-label">Stack</p>
         <h2 id="skills-title">Tools I reach for</h2>
         <p>
           The list changes over time, but the pattern is stable: use the boring tool when it is enough, and keep the
@@ -87,32 +129,61 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
       </div>
     </section>
 
-    <section class="section-shell split-section" aria-labelledby="experience-title">
-      <div class="section-heading sticky-heading">
-        <p class="eyebrow">Experience</p>
-        <h2 id="experience-title">Recent work</h2>
+    <section class="section-shell career-section" aria-labelledby="career-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="section-label">Career spine</p>
+          <h2 id="career-title">The through-line is ownership</h2>
+        </div>
+        <a class="text-link" href="/about/">About page</a>
       </div>
-      <Timeline items={experience} />
-    </section>
-
-    <section class="section-shell split-section" aria-labelledby="education-title">
-      <div class="section-heading sticky-heading">
-        <p class="eyebrow">Education</p>
-        <h2 id="education-title">Formal background</h2>
-      </div>
-      <Timeline items={education} />
+      <ol class="career-spine">
+        {careerMilestones.map((item) => (
+          <li>
+            <span>{item.year}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ol>
     </section>
 
     <section class="section-shell" aria-labelledby="writing-title">
       <div class="section-heading section-heading-row">
         <div>
-          <p class="eyebrow">Writing</p>
-          <h2 id="writing-title">Notes and longer-form posts</h2>
+          <p class="section-label">Writing</p>
+          <h2 id="writing-title">Notes from the workbench</h2>
         </div>
         <a class="text-link" href="/blog/">Blog archive</a>
       </div>
-      <div class="post-grid">
-        {posts.length > 0 ? posts.map((post) => <PostCard post={post} />) : <p>No published posts yet.</p>}
+      <div class="writing-list">
+        {
+          posts.length > 0 ? (
+            posts.map((post) => (
+              <a class="writing-row" href={`/blog/${post.id}/`}>
+                <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+                <span>{post.data.title}</span>
+                <p>{post.data.description}</p>
+              </a>
+            ))
+          ) : (
+            <p>No published posts yet.</p>
+          )
+        }
+      </div>
+    </section>
+
+    <section class="section-shell contact-section" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2 id="contact-title">Have a practical software or AI problem?</h2>
+          <p>
+            I am most useful when the work needs product judgment, implementation depth, and a path from prototype to
+            production.
+          </p>
+        </div>
+        <a class="button button-primary" href={`mailto:${profile.email}`}>Email Juha</a>
       </div>
     </section>
   </main>

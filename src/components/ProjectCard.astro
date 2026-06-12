@@ -5,16 +5,17 @@ import { getProjectSlug, getProjectTags, projectImagePath, slugify, type Project
 interface Props {
   project: Project;
   compact?: boolean;
+  variant?: "default" | "featured";
 }
 
-const { project, compact = false } = Astro.props;
+const { project, compact = false, variant = "default" } = Astro.props;
 const tags = getProjectTags(project);
 const slug = getProjectSlug(project);
 const sourceLabel = project.link.includes("github.com") ? "Source" : "Project";
 ---
 
 <article
-  class:list={["project-card", compact && "project-card-compact"]}
+  class:list={["project-card", compact && "project-card-compact", variant === "featured" && "project-card-featured"]}
   data-project-card
   data-title={project.title.toLowerCase()}
   data-description={project.description.toLowerCase()}

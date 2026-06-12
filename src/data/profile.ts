@@ -35,6 +35,69 @@ export const focusAreas = [
   },
 ];
 
+export const currentWork = [
+  {
+    label: "Now",
+    title: "CTO at Clevoy",
+    text: "Leading product and engineering across mobile apps, backend services, infrastructure, and administrative tools.",
+    meta: "Flutter / Backend / Infrastructure",
+  },
+  {
+    label: "Applied AI",
+    title: "Useful AI workflows",
+    text: "Building language, voice, vision, and local-model prototypes around concrete business and user problems.",
+    meta: "Language / Vision / Speech",
+  },
+  {
+    label: "Product systems",
+    title: "From idea to maintenance",
+    text: "Turning early concepts into deployed systems with clear ownership, visible costs, and room to iterate.",
+    meta: "Architecture / Delivery / Operations",
+  },
+];
+
+export const principles = [
+  {
+    title: "Build past the demo",
+    text: "The first working version matters, but the real test is whether the system can be debugged, changed, and trusted later.",
+  },
+  {
+    title: "Make AI practical",
+    text: "AI work should connect to a real workflow: language, vision, or speech used where it removes friction or opens a useful path.",
+  },
+  {
+    title: "Own the whole path",
+    text: "Good product engineering connects requirements, implementation, deployment, cost, support, and the next improvement.",
+  },
+  {
+    title: "Keep systems understandable",
+    text: "Architecture should make the next decision easier, not bury the team under abstractions that only made sense once.",
+  },
+];
+
+export const careerMilestones = [
+  {
+    year: "2018",
+    title: "Industrial software",
+    text: "Desktop applications, machine interfaces, diagnostics, and internal tools at Prima Power.",
+  },
+  {
+    year: "2024",
+    title: "Applied AI research",
+    text: "Language models, machine vision, optimization, reporting, and prototypes at Tampere University.",
+  },
+  {
+    year: "2026",
+    title: "Technology leadership",
+    text: "CTO ownership across product, architecture, infrastructure, and delivery at Clevoy.",
+  },
+  {
+    year: "Now",
+    title: "End-to-end product engineering",
+    text: "Practical software and AI systems that are useful before they are impressive.",
+  },
+];
+
 export const skillGroups = [
   {
     title: "Languages",
