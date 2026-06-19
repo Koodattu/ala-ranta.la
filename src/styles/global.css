@@ -984,6 +984,60 @@ dd {
   padding: 0.12em 0.34em;
 }
 
+.post-body pre {
+  overflow-x: auto;
+  margin: 1.4em 0;
+  padding: 18px;
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow-border);
+}
+
+.post-body pre code {
+  display: block;
+  min-width: max-content;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #d7deea;
+}
+
+.post-body blockquote {
+  margin: 1.4em 0;
+  padding: 4px 0 4px 18px;
+  border-left: 3px solid var(--accent);
+}
+
+.post-body blockquote p {
+  color: #d7deea;
+}
+
+.post-body img {
+  width: 100%;
+  margin: 1.6em 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow-border);
+}
+
+.post-body table {
+  width: 100%;
+  margin: 1.4em 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.post-body th,
+.post-body td {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.post-body th {
+  background: var(--panel);
+  color: var(--text);
+}
+
 .prose-block {
   max-width: 820px;
 }
