@@ -103,13 +103,34 @@ button {
   width: 100%;
   margin-inline: 0;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 20px;
   align-items: center;
   padding: 18px max(20px, calc((100% - var(--content)) / 2));
   background: color-mix(in srgb, var(--bg) 76%, transparent);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 0;
+  left: 0;
+  height: 72px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg) 76%, transparent),
+    color-mix(in srgb, var(--bg) 52%, transparent) 30%,
+    color-mix(in srgb, var(--bg) 22%, transparent) 68%,
+    transparent
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  mask-image: linear-gradient(to bottom, black 0, rgba(0, 0, 0, 0.78) 42%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0, rgba(0, 0, 0, 0.78) 42%, transparent 100%);
 }
 
 .brand,
@@ -133,11 +154,14 @@ button {
 .brand-text {
   font-size: clamp(1.12rem, 1.35vw, 1.28rem);
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .site-nav {
   justify-content: center;
   gap: 6px;
+  min-width: 0;
+  flex-wrap: nowrap;
 }
 
 .site-nav a,
@@ -154,7 +178,11 @@ button {
 
 .site-nav a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
   padding: 8px 11px;
+  white-space: nowrap;
 }
 
 .site-nav a:hover,
@@ -1307,21 +1335,7 @@ dd {
 
 @media (max-width: 980px) {
   .site-header {
-    grid-template-columns: 1fr auto;
-  }
-
-  .site-nav {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 2px;
-  }
-
-  .header-actions {
-    grid-column: 2;
-    grid-row: 1;
-    justify-content: end;
+    gap: 14px;
   }
 
   .project-detail-hero,
@@ -1393,7 +1407,7 @@ dd {
   }
 
   .site-header {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 10px;
     width: 100%;
     margin-inline: 0;
@@ -1674,21 +1688,28 @@ dd {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .site-header {
-    grid-template-columns: 1fr auto;
+    gap: 6px;
+    padding: 12px 10px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
   }
 
   .site-nav {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 2px;
+    gap: 0;
   }
 
-  .header-actions {
-    grid-column: 2;
-    grid-row: 1;
+  .site-nav a {
+    padding: 6px 5px;
+    font-size: 0.78rem;
+  }
+
+  .icon-link {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 0.8rem;
   }
 }
