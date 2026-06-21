@@ -33,6 +33,7 @@ const { items, compact = false } = Astro.props;
           </div>
           <img src={item.logo} alt={`${item.organization} logo`} loading="lazy" />
         </div>
+        {compact && <p>{item.summary}</p>}
         {!compact && (
           <>
             <p>{item.summary}</p>
