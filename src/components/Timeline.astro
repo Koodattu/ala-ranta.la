@@ -18,20 +18,27 @@ interface Props {
 }
 
 const { items, compact = false } = Astro.props;
+const getCompactPeriod = (period: string) => period.split(" - ")[0];
 ---
 
 <ol class:list={["timeline-list", compact && "timeline-list-compact"]}>
   {items.map((item) => (
     <li class="timeline-item">
+      {compact && <p class="timeline-date-rail">{getCompactPeriod(item.period)}</p>}
       <div class="timeline-marker" aria-hidden="true"></div>
       <div class="timeline-content">
         <div class="timeline-heading">
           <div>
-            <p class="timeline-period">{item.period}</p>
+            {!compact && <p class="timeline-period">{item.period}</p>}
             <h3>{item.role}</h3>
             <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
           </div>
-          <img src={item.logo} alt={`${item.organization} logo`} loading="lazy" />
+          <img
+            class:list={["timeline-logo", item.logo.includes("clevoy") && "timeline-logo-wide"]}
+            src={item.logo}
+            alt={`${item.organization} logo`}
+            loading="lazy"
+          />
         </div>
         {compact && <p>{item.summary}</p>}
         {!compact && (
