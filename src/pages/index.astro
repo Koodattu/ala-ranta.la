@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import TechTag from "../components/TechTag.astro";
-import { profile, skillGroups } from "../data/profile";
+import { education, experience, profile, skillGroups } from "../data/profile";
 import projectsData from "../data/projects.json";
 import { sortNewestProjects, type Project } from "../utils";
 
@@ -15,6 +15,21 @@ const supportingProjects = projects
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 1);
+const linkedinUrl = profile.socials.find((social) => social.label === "LinkedIn")?.href ?? "/";
+const proofGroups = [
+  {
+    label: "Current",
+    items: experience.slice(0, 1),
+  },
+  {
+    label: "Previously",
+    items: experience.slice(1),
+  },
+  {
+    label: "Education",
+    items: education,
+  },
+];
 
 const currentFocus = [
   {
@@ -89,23 +104,31 @@ const careerSpine = [
           that stay understandable, maintainable, and useful after the first demo.
         </p>
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button-primary" href="#selected-work">View selected work</a>
-          <a class="button" href={`mailto:${profile.email}`}>Email Juha</a>
-          <a class="button button-quiet" href={profile.cv.en}>Download CV</a>
+          <a class="button button-primary button-linkedin" href={linkedinUrl} target="_blank" rel="noreferrer">
+            <span>Connect on</span>
+            <img class="button-logo" src="/assets/linkedin.webp" alt="" />
+            <span>LinkedIn</span>
+          </a>
+          <a class="button" href="#selected-work">Selected work</a>
+          <a class="button button-quiet" href="/blog/">Read blog posts</a>
+          <a class="button button-quiet" href={`mailto:${profile.email}`}>Contact via Email</a>
+          <a class="button button-quiet" href={profile.cv.en}>View CV</a>
         </div>
         <dl class="hero-proof" aria-label="Background highlights">
-          <div>
-            <dt>Current</dt>
-            <dd>CTO at Clevoy</dd>
-          </div>
-          <div>
-            <dt>Background</dt>
-            <dd>Applied AI research</dd>
-          </div>
-          <div>
-            <dt>Range</dt>
-            <dd>Mobile to infrastructure</dd>
-          </div>
+          {proofGroups.map((group) => (
+            <div>
+              <dt>{group.label}</dt>
+              <dd>
+                <div class="proof-logo-list">
+                  {group.items.map((item) => (
+                    <a class="proof-logo" href={item.url} target="_blank" rel="noreferrer" aria-label={item.organization}>
+                      <img src={item.logo} alt="" loading="lazy" />
+                    </a>
+                  ))}
+                </div>
+              </dd>
+            </div>
+          ))}
         </dl>
       </div>
 

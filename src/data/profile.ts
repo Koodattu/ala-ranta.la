@@ -1,7 +1,7 @@
 export const profile = {
   name: "Juha Ala-Rantala",
   siteName: "Ala-Ranta.la",
-  handle: "_Ranta.la",
+  handle: "_Rantala",
   role: "Software engineer, CTO, and builder of practical AI products",
   location: "Seinäjoki, Finland",
   email: "juha@ala-ranta.la",
