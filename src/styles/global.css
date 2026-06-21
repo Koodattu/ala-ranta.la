@@ -48,11 +48,11 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
   background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, black 0, black 760px, transparent 1180px);
-  -webkit-mask-image: linear-gradient(to bottom, black 0, black 760px, transparent 1180px);
+  mask-image: linear-gradient(to bottom, black 0, black 560px, transparent 940px);
+  -webkit-mask-image: linear-gradient(to bottom, black 0, black 560px, transparent 940px);
 }
 
 img {
@@ -373,8 +373,13 @@ dd {
 
 .hero-proof > div {
   display: grid;
-  gap: 8px;
+  grid-template-columns: auto auto;
+  gap: 12px;
   align-items: center;
+}
+
+.hero-proof > div:last-child {
+  justify-self: end;
 }
 
 .hero-proof dt {
@@ -393,7 +398,7 @@ dd {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .proof-logo {
@@ -456,7 +461,7 @@ dd {
 .hero-portrait-panel::after {
   content: "";
   position: absolute;
-  inset: 24px -46px 0 26px;
+  inset: 24px -36px 0 -18px;
   border-radius: 18px;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
@@ -1338,7 +1343,7 @@ dd {
 
   .hero-portrait-panel::before,
   .hero-portrait-panel::after {
-    inset: 28px 0 0 38px;
+    inset: 28px 0 0 8px;
   }
 
   .hero-photo {
@@ -1479,7 +1484,7 @@ dd {
 
   .hero-proof {
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 22px;
+    gap: 18px;
   }
 
   .hero-portrait-panel {
@@ -1489,7 +1494,7 @@ dd {
 
   .hero-portrait-panel::before,
   .hero-portrait-panel::after {
-    inset: 20px 0 0 20px;
+    inset: 20px 0 0 4px;
   }
 
   .hero-photo {
@@ -1601,8 +1606,12 @@ dd {
   }
 
   .hero-proof > div {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
     gap: 8px;
+  }
+
+  .hero-proof > div:last-child {
+    justify-self: stretch;
   }
 
   .proof-logo-list {
@@ -1626,7 +1635,7 @@ dd {
 
   .hero-portrait-panel::before,
   .hero-portrait-panel::after {
-    inset: 16px 0 0 16px;
+    inset: 16px 0 0 0;
   }
 
   .hero-photo {
