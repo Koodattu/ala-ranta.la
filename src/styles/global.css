@@ -228,6 +228,10 @@ main {
   padding-top: 32px;
 }
 
+.compact-section .section-heading {
+  margin-bottom: 20px;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
@@ -576,6 +580,10 @@ dd {
   justify-content: space-between;
   gap: 28px;
   max-width: none;
+}
+
+.section-heading-row h2:last-child {
+  margin-bottom: 0;
 }
 
 .section-heading-row > p {
@@ -951,11 +959,6 @@ dd {
   margin-bottom: 0;
   font-size: 2.55rem;
   line-height: 1;
-}
-
-.timeline-preview-link {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .timeline-list {
@@ -1417,6 +1420,13 @@ dd {
 
 .contact-panel p:last-child {
   margin-bottom: 0;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
 }
 
 .site-footer {
