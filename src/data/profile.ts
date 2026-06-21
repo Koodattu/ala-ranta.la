@@ -63,7 +63,7 @@ export const experience = [
     organization: "Clevoy Oy",
     role: "Chief Technology Officer",
     period: "Jan 2026 - Present",
-    logo: "/assets/clevoy.webp",
+    logo: "/assets/clevoy_full.webp",
     url: "https://clevoy.io",
     summary:
       "Leading technology strategy and building a full-stack platform spanning mobile, backend, infrastructure, and administrative tools.",

@@ -16,20 +16,10 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 1);
 const linkedinUrl = profile.socials.find((social) => social.label === "LinkedIn")?.href ?? "/";
-const proofGroups = [
-  {
-    label: "Current",
-    items: experience.slice(0, 1),
-  },
-  {
-    label: "Previously",
-    items: experience.slice(1),
-  },
-  {
-    label: "Education",
-    items: education,
-  },
-];
+const currentLogo = experience[0];
+const previousLogos = [...experience.slice(1), ...education].filter(
+  (item, index, items) => items.findIndex((candidate) => candidate.organization === item.organization) === index,
+);
 
 const currentFocus = [
   {
@@ -104,31 +94,43 @@ const careerSpine = [
           that stay understandable, maintainable, and useful after the first demo.
         </p>
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="button button-primary button-linkedin" href={linkedinUrl} target="_blank" rel="noreferrer">
-            <span>Connect on</span>
-            <img class="button-logo" src="/assets/linkedin.webp" alt="" />
-            <span>LinkedIn</span>
-          </a>
-          <a class="button" href="#selected-work">Selected work</a>
-          <a class="button button-quiet" href="/blog/">Read blog posts</a>
-          <a class="button button-quiet" href={`mailto:${profile.email}`}>Contact via Email</a>
-          <a class="button button-quiet" href={profile.cv.en}>View CV</a>
+          <div class="hero-action-row hero-action-row-primary">
+            <a class="button button-primary" href="#selected-work">View selected work</a>
+            <a class="button button-linkedin" href={linkedinUrl} target="_blank" rel="noreferrer">
+              <span>Connect on</span>
+              <img class="button-logo" src="/assets/linkedin.webp" alt="" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div class="hero-action-row hero-action-row-secondary">
+            <a class="button button-quiet" href="/blog/">Read blog posts</a>
+            <a class="button button-quiet" href={`mailto:${profile.email}`}>Contact via Email</a>
+            <a class="button button-quiet" href={profile.cv.en}>View CV</a>
+          </div>
         </div>
         <dl class="hero-proof" aria-label="Background highlights">
-          {proofGroups.map((group) => (
-            <div>
-              <dt>{group.label}</dt>
-              <dd>
-                <div class="proof-logo-list">
-                  {group.items.map((item) => (
-                    <a class="proof-logo" href={item.url} target="_blank" rel="noreferrer" aria-label={item.organization}>
-                      <img src={item.logo} alt="" loading="lazy" />
-                    </a>
-                  ))}
-                </div>
-              </dd>
-            </div>
-          ))}
+          <div>
+            <dt>Current</dt>
+            <dd>
+              <div class="proof-logo-list">
+                <a class="proof-logo proof-logo-current" href={currentLogo.url} target="_blank" rel="noreferrer" aria-label={currentLogo.organization}>
+                  <img src={currentLogo.logo} alt="" loading="lazy" />
+                </a>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt>Previously</dt>
+            <dd>
+              <div class="proof-logo-list">
+                {previousLogos.map((item) => (
+                  <a class="proof-logo" href={item.url} target="_blank" rel="noreferrer" aria-label={item.organization}>
+                    <img src={item.logo} alt="" loading="lazy" />
+                  </a>
+                ))}
+              </div>
+            </dd>
+          </div>
         </dl>
       </div>
 
