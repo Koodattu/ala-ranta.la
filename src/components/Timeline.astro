@@ -18,41 +18,63 @@ interface Props {
 }
 
 const { items, compact = false } = Astro.props;
-const getCompactPeriod = (period: string) => period.split(" - ")[0];
+const getCompactDates = (period: string) => {
+  const [start, end = ""] = period.split(" - ");
+  return { start, end };
+};
 ---
 
 <ol class:list={["timeline-list", compact && "timeline-list-compact"]}>
-  {items.map((item) => (
-    <li class="timeline-item">
-      {compact && <p class="timeline-date-rail">{getCompactPeriod(item.period)}</p>}
-      <div class="timeline-marker" aria-hidden="true"></div>
-      <div class="timeline-content">
-        <div class="timeline-heading">
-          <div>
-            {!compact && <p class="timeline-period">{item.period}</p>}
-            <h3>{item.role}</h3>
-            <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
-          </div>
-          <img
-            class:list={["timeline-logo", item.logo.includes("clevoy") && "timeline-logo-wide"]}
-            src={item.logo}
-            alt={`${item.organization} logo`}
-            loading="lazy"
-          />
-        </div>
-        {compact && <p>{item.summary}</p>}
-        {!compact && (
+  {items.map((item) => {
+    const dates = getCompactDates(item.period);
+
+    return (
+      <li class="timeline-item">
+        {compact && (
           <>
-            <p>{item.summary}</p>
-            <ul class="feature-list">
-              {item.details.map((detail) => <li>{detail}</li>)}
-            </ul>
-            <div class="tag-list">
-              {item.tags.map((tag) => <TechTag tag={tag} muted />)}
-            </div>
+            <p class="timeline-date timeline-date-start">{dates.end}</p>
+            <p class="timeline-date timeline-date-end">{dates.start}</p>
           </>
         )}
-      </div>
-    </li>
-  ))}
+        <div class:list={["timeline-marker", compact && "timeline-marker-start"]} aria-hidden="true"></div>
+        {compact && <div class="timeline-marker timeline-marker-end" aria-hidden="true"></div>}
+        <div class="timeline-content">
+          <div class="timeline-heading">
+            <div>
+              {compact ? (
+                <div class="timeline-title-block">
+                  <h3>{item.role}</h3>
+                  <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
+                </div>
+              ) : (
+                <>
+                  <p class="timeline-period">{item.period}</p>
+                  <h3>{item.role}</h3>
+                  <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
+                </>
+              )}
+            </div>
+            <img
+              class:list={["timeline-logo", item.logo.includes("clevoy") && "timeline-logo-wide"]}
+              src={item.logo}
+              alt={`${item.organization} logo`}
+              loading="lazy"
+            />
+          </div>
+          {compact && <p>{item.summary}</p>}
+          {!compact && (
+            <>
+              <p>{item.summary}</p>
+              <ul class="feature-list">
+                {item.details.map((detail) => <li>{detail}</li>)}
+              </ul>
+              <div class="tag-list">
+                {item.tags.map((tag) => <TechTag tag={tag} muted />)}
+              </div>
+            </>
+          )}
+        </div>
+      </li>
+    );
+  })}
 </ol>
