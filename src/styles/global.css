@@ -100,12 +100,16 @@ button {
   position: sticky;
   top: 0;
   z-index: 20;
+  width: 100%;
+  margin-inline: 0;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 20px;
   align-items: center;
-  padding: 18px 0;
+  padding: 18px max(20px, calc((100% - var(--content)) / 2));
+  background: color-mix(in srgb, var(--bg) 76%, transparent);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .brand,
@@ -1391,7 +1395,9 @@ dd {
   .site-header {
     grid-template-columns: auto 1fr auto;
     gap: 10px;
-    padding: 14px 0;
+    width: 100%;
+    margin-inline: 0;
+    padding: 14px max(14px, calc((100% - var(--content)) / 2));
   }
 
   .site-nav {
