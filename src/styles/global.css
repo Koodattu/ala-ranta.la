@@ -710,8 +710,7 @@ dd {
 }
 
 .project-card h3 a,
-.post-card h3 a,
-.writing-item h3 a {
+.post-card h3 a {
   text-decoration: none;
 }
 
@@ -1120,6 +1119,7 @@ dd {
 
 .timeline-list-compact .timeline-heading h3 {
   margin-bottom: 4px;
+  color: var(--text);
   font-size: 1.14rem;
   line-height: 1.15;
 }
@@ -1260,15 +1260,38 @@ dd {
 
 .writing-item {
   display: grid;
-  grid-template-columns: 160px minmax(220px, 0.7fr) minmax(0, 1fr);
-  gap: 34px;
+  grid-template-columns: 145px minmax(220px, 0.68fr) minmax(0, 1fr);
+  gap: 22px;
   align-items: baseline;
-  padding: 22px 0;
+  padding: 15px 16px;
+  color: inherit;
+  text-decoration: none;
+  transition-property: background-color, box-shadow, color;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
+.writing-item + .writing-item {
+  border-top: 1px solid var(--border);
+}
+
+.writing-item:hover,
+.writing-item:focus-visible {
+  background: color-mix(in srgb, var(--panel-strong) 72%, transparent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.writing-item:hover h3,
+.writing-item:focus-visible h3 {
+  color: var(--accent);
 }
 
 .writing-item h3 {
   margin-bottom: 0;
   font-size: 1rem;
+  transition-property: color;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
 }
 
 .writing-item .post-meta {

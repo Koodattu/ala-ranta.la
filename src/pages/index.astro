@@ -14,7 +14,7 @@ const supportingProjects = projects
   .filter((project) => ["Whats AI Assistant", "Fyr'alath Data Tracker", "Personal Website"].includes(project.title));
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 1);
+  .slice(0, 3);
 const linkedinUrl = profile.socials.find((social) => social.label === "LinkedIn")?.href ?? "/";
 const currentLogo = experience[0];
 const previousLogos = [...experience.slice(1), ...education].filter(
@@ -141,6 +141,33 @@ const currentFocus = [
       </div>
     </section>
 
+    <section class="section-shell" aria-labelledby="writing-title">
+      <div class="section-heading section-heading-row">
+        <div>
+          <p class="eyebrow">Writing</p>
+          <h2 id="writing-title">Notes from the workbench</h2>
+        </div>
+        <a class="text-link" href="/blog/">Blog archive</a>
+      </div>
+      {
+        posts.length > 0 ? (
+          <div class="writing-row">
+            {posts.map((post) => (
+              <a class="writing-item" href={`/blog/${post.id}/`}>
+                <p class="post-meta">
+                  {post.data.pubDate.toLocaleDateString("en", { year: "numeric", month: "long", day: "numeric" })}
+                </p>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p>No published posts yet.</p>
+        )
+      }
+    </section>
+
     <section class="section-shell timeline-preview-section" aria-label="Background preview">
       <div class="timeline-preview-list">
         <section class="timeline-preview" aria-labelledby="work-history-preview-title">
@@ -161,33 +188,6 @@ const currentFocus = [
       <div class="timeline-preview-link">
         <a class="text-link" href="/about/">Full background</a>
       </div>
-    </section>
-
-    <section class="section-shell" aria-labelledby="writing-title">
-      <div class="section-heading section-heading-row">
-        <div>
-          <p class="eyebrow">Writing</p>
-          <h2 id="writing-title">Notes from the workbench</h2>
-        </div>
-        <a class="text-link" href="/blog/">Blog archive</a>
-      </div>
-      {
-        posts.length > 0 ? (
-          <div class="writing-row">
-            {posts.map((post) => (
-              <article class="writing-item">
-                <p class="post-meta">
-                  {post.data.pubDate.toLocaleDateString("en", { year: "numeric", month: "long", day: "numeric" })}
-                </p>
-                <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
-                <p>{post.data.description}</p>
-              </article>
-            ))}
-          </div>
-        ) : (
-          <p>No published posts yet.</p>
-        )
-      }
     </section>
 
     <section class="section-shell contact-section" aria-labelledby="contact-title">
