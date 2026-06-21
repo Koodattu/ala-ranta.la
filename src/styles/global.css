@@ -51,8 +51,8 @@ body::before {
     linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
   background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, black 0, black 560px, transparent 940px);
-  -webkit-mask-image: linear-gradient(to bottom, black 0, black 560px, transparent 940px);
+  mask-image: linear-gradient(to bottom, black 0, black 360px, transparent 680px);
+  -webkit-mask-image: linear-gradient(to bottom, black 0, black 360px, transparent 680px);
 }
 
 img {
