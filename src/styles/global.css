@@ -149,6 +149,7 @@ button {
 .brand,
 .site-nav,
 .header-actions,
+.language-switcher,
 .hero-actions,
 .tag-list,
 .project-card-topline,
@@ -227,6 +228,46 @@ button {
   min-width: 42px;
   min-height: 40px;
   box-shadow: var(--shadow-border);
+}
+
+.header-actions {
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.language-switcher {
+  min-height: 40px;
+  padding: 2px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--panel-strong) 88%, transparent);
+  box-shadow: var(--shadow-border);
+}
+
+.language-switcher a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 36px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1;
+  text-decoration: none;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
+.language-switcher a:hover {
+  color: var(--text);
+}
+
+.language-switcher a[aria-current="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
 main {

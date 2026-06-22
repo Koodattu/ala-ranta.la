@@ -1,30 +1,65 @@
 ---
 import { profile } from "../data/profile";
 
+interface Props {
+  lang?: "en" | "fi";
+}
+
+const { lang = "en" } = Astro.props;
 const pathname = Astro.url.pathname;
 
+const headerCopy = {
+  en: {
+    navLabel: "Primary navigation",
+    actionsLabel: "Header actions",
+    languageLabel: "Language",
+    homeLabel: "Home",
+    projectsLabel: "Projects",
+    blogLabel: "Blog",
+    aboutLabel: "About",
+    homeAria: `${profile.siteName} home`,
+    cvAria: "Download English CV",
+  },
+  fi: {
+    navLabel: "Päänavigaatio",
+    actionsLabel: "Yläosan toiminnot",
+    languageLabel: "Kieli",
+    homeLabel: "Etusivu",
+    projectsLabel: "Projektit",
+    blogLabel: "Blogi",
+    aboutLabel: "Tietoa",
+    homeAria: `${profile.siteName} etusivu`,
+    cvAria: "Lataa suomenkielinen CV",
+  },
+};
+
+const copy = headerCopy[lang];
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/projects/", label: "Projects" },
-  { href: "/blog/", label: "Blog" },
-  { href: "/about/", label: "About" },
+  { href: lang === "fi" ? "/fi/" : "/", label: copy.homeLabel },
+  { href: "/projects/", label: copy.projectsLabel },
+  { href: "/blog/", label: copy.blogLabel },
+  { href: "/about/", label: copy.aboutLabel },
 ];
 
 const isActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
 ---
 
 <header class="site-header">
-  <a class="brand" href="/" aria-label={`${profile.siteName} home`}>
+  <a class="brand" href={lang === "fi" ? "/fi/" : "/"} aria-label={copy.homeAria}>
     <span class="brand-text">{profile.handle}</span>
   </a>
-  <nav class="site-nav" aria-label="Primary navigation">
+  <nav class="site-nav" aria-label={copy.navLabel}>
     {navItems.map((item) => (
       <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
         {item.label}
       </a>
     ))}
   </nav>
-  <div class="header-actions">
-    <a class="icon-link" href={profile.cv.en} aria-label="Download English CV">CV</a>
+  <div class="header-actions" aria-label={copy.actionsLabel}>
+    <nav class="language-switcher" aria-label={copy.languageLabel}>
+      <a href="/?lang=en" data-language-choice="en" aria-current={lang === "en" ? "true" : undefined}>EN</a>
+      <a href="/fi/" data-language-choice="fi" aria-current={lang === "fi" ? "true" : undefined}>FI</a>
+    </nav>
+    <a class="icon-link" href={profile.cv[lang]} aria-label={copy.cvAria}>CV</a>
   </div>
 </header>

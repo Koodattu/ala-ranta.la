@@ -11,6 +11,10 @@ interface Props {
   type?: string;
   noIndex?: boolean;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  lang?: "en" | "fi";
+  alternates?: { lang: string; href: string }[];
+  xDefaultHref?: string;
+  enableLocaleRedirect?: boolean;
 }
 
 const {
@@ -20,11 +24,16 @@ const {
   type = "website",
   noIndex = false,
   schema = [],
+  lang = "en",
+  alternates = [],
+  xDefaultHref,
+  enableLocaleRedirect = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const imageUrl = new URL(image, Astro.site).toString();
 const pageTitle = title.includes(profile.name) ? title : `${title} - ${profile.siteName}`;
+const absoluteHref = (href: string) => new URL(href, Astro.site).toString();
 
 const defaultSchema = [
   {
@@ -55,7 +64,7 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -63,6 +72,10 @@ const jsonLd = {
     <meta name="description" content={description} />
     {noIndex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
+    {alternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.lang} href={absoluteHref(alternate.href)} />
+    ))}
+    {xDefaultHref && <link rel="alternate" hreflang="x-default" href={absoluteHref(xDefaultHref)} />}
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="alternate" type="application/rss+xml" title={`${profile.siteName} RSS`} href="/rss.xml" />
@@ -76,13 +89,59 @@ const jsonLd = {
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    {enableLocaleRedirect && (
+      <script is:inline>
+        (() => {
+          if (window.location.pathname !== "/") return;
+
+          const params = new URLSearchParams(window.location.search);
+          const requestedLanguage = params.get("lang");
+
+          try {
+            if (requestedLanguage === "en" || requestedLanguage === "fi") {
+              window.localStorage.setItem("preferredLanguage", requestedLanguage);
+            }
+
+            const preferredLanguage = window.localStorage.getItem("preferredLanguage");
+            if (preferredLanguage === "en") {
+              if (requestedLanguage === "en") {
+                window.history.replaceState({}, "", "/");
+              }
+              return;
+            }
+
+            if (preferredLanguage === "fi") {
+              window.location.replace("/fi/");
+              return;
+            }
+          } catch {
+            return;
+          }
+
+          const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+          if (languages.some((language) => language?.toLowerCase().startsWith("fi"))) {
+            window.location.replace("/fi/");
+          }
+        })();
+      </script>
+    )}
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
   </head>
   <body>
-    <Header />
+    <Header lang={lang} />
     <slot />
-    <Footer />
+    <Footer lang={lang} />
     <script>
+      document.querySelectorAll("[data-language-choice]").forEach((link) => {
+        link.addEventListener("click", () => {
+          try {
+            window.localStorage.setItem("preferredLanguage", link.getAttribute("data-language-choice") ?? "");
+          } catch {
+            // Ignore storage failures and keep the link as a normal navigation control.
+          }
+        });
+      });
+
       const revealables = document.querySelectorAll("[data-reveal], [data-reveal-group]");
 
       if ("IntersectionObserver" in window) {
