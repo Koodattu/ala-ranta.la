@@ -1934,11 +1934,18 @@ dd {
 
   .hero {
     grid-template-columns: minmax(0, 1fr) minmax(104px, 32vw);
-    gap: 14px 12px;
+    gap: 10px 12px;
     padding-bottom: 32px;
   }
 
+  .hero .eyebrow {
+    margin-bottom: 0;
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+
   .hero h1 {
+    margin-bottom: 4px;
     font-size: clamp(2rem, 9.8vw, 2.55rem);
   }
 
@@ -1963,10 +1970,14 @@ dd {
     gap: 8px;
   }
 
-  .hero-action-row-primary,
-  .hero-action-row-secondary {
+  .hero-action-row-primary {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-action-row-secondary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .hero-action-row-primary .button,
@@ -1974,45 +1985,58 @@ dd {
     min-width: 0;
   }
 
-  .hero-action-row-secondary .button:first-child {
-    grid-column: 1 / -1;
-  }
-
   .hero-actions .button {
     min-height: 42px;
-    padding-inline: 9px;
-    font-size: 0.84rem;
+    gap: 5px;
+    padding-inline: 5px;
+    font-size: 0.74rem;
+    line-height: 1.05;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-actions .button-logo {
+    width: 16px;
+    height: 16px;
   }
 
   .hero-proof {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 10px;
     margin-top: 20px;
     padding-top: 16px;
   }
 
   .hero-proof > div {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 8px;
+    grid-template-columns: auto auto;
+    gap: 6px;
   }
 
   .hero-proof > div:last-child {
-    justify-self: stretch;
+    justify-self: end;
+  }
+
+  .hero-proof dt {
+    font-size: 0.68rem;
   }
 
   .proof-logo-list {
-    gap: 14px;
+    gap: 8px;
   }
 
   .proof-logo {
-    min-width: 34px;
-    min-height: 36px;
+    min-width: 28px;
+    min-height: 34px;
     padding: 2px 0;
   }
 
   .proof-logo img {
-    max-width: 84px;
-    max-height: 23px;
+    max-width: 64px;
+    max-height: 21px;
+  }
+
+  .proof-logo-current img {
+    max-width: 66px;
   }
 
   .timeline-list-compact .timeline-item {
@@ -2095,5 +2119,52 @@ dd {
 @media (max-width: 360px) {
   .header-actions .icon-link {
     display: none;
+  }
+
+  .hero-actions,
+  .hero-action-row {
+    gap: 6px;
+  }
+
+  .hero-actions .button {
+    min-height: 40px;
+    gap: 3px;
+    padding-inline: 3px;
+    font-size: 0.68rem;
+  }
+
+  .hero-actions .button-logo {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hero-proof {
+    gap: 8px;
+  }
+
+  .hero-proof > div {
+    gap: 5px;
+  }
+
+  .hero-proof dt {
+    font-size: 0.62rem;
+  }
+
+  .proof-logo-list {
+    gap: 5px;
+  }
+
+  .proof-logo {
+    min-width: 24px;
+    min-height: 30px;
+  }
+
+  .proof-logo img {
+    max-width: 48px;
+    max-height: 18px;
+  }
+
+  .proof-logo-current img {
+    max-width: 55px;
   }
 }
