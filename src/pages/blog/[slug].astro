@@ -33,7 +33,7 @@ const schema = {
 <BaseLayout title={post.data.title} description={post.data.description} image={image} type="article" schema={schema}>
   <main>
     <article class="blog-post">
-      <header class="post-hero section-shell">
+      <header class="post-hero section-shell reveal">
         <p class="eyebrow">{formatDate(post.data.pubDate)}</p>
         <h1>{post.data.title}</h1>
         <p>{post.data.description}</p>
@@ -42,7 +42,7 @@ const schema = {
         </div>
       </header>
 
-      <div class="post-body section-shell">
+      <div class="post-body section-shell" data-reveal>
         <Content />
       </div>
     </article>

@@ -3,6 +3,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TechTag from "../components/TechTag.astro";
 import Timeline from "../components/Timeline.astro";
 import { education, experience, focusAreas, profile, skillGroups } from "../data/profile";
+
+const principles = [
+  {
+    title: "Build past the demo",
+    text: "The first working version matters, but the real test is whether the system can be debugged, changed, and trusted later.",
+  },
+  {
+    title: "Make AI practical",
+    text: "AI work should connect to a real workflow: language, vision, or speech used where it removes friction or opens a useful path.",
+  },
+  {
+    title: "Own the whole path",
+    text: "Good product engineering connects requirements, implementation, deployment, cost, support, and the next improvement.",
+  },
+  {
+    title: "Keep systems understandable",
+    text: "Architecture should make the next decision easier, not bury the team under abstractions that only made sense once.",
+  },
+];
+
+const careerSpine = [
+  {
+    year: "2018",
+    title: "Industrial software",
+    text: "Desktop applications, machine interfaces, diagnostics, and internal tools at Prima Power.",
+  },
+  {
+    year: "2024",
+    title: "Applied AI research",
+    text: "Language models, machine vision, optimization, reporting, and prototypes at Tampere University.",
+  },
+  {
+    year: "2026",
+    title: "Technology leadership",
+    text: "CTO ownership across product, architecture, infrastructure, and delivery at Clevoy.",
+  },
+  {
+    year: "Now",
+    title: "End-to-end product engineering",
+    text: "Practical software and AI systems that are useful before they are impressive.",
+  },
+];
 ---
 
 <BaseLayout
@@ -10,7 +52,7 @@ import { education, experience, focusAreas, profile, skillGroups } from "../data
   description="A short background on Juha Ala-Rantala's software engineering work, education, and technical interests."
 >
   <main>
-    <section class="page-hero section-shell">
+    <section class="page-hero section-shell reveal">
       <p class="eyebrow">About</p>
       <h1>{profile.name}</h1>
       <p>
@@ -20,11 +62,11 @@ import { education, experience, focusAreas, profile, skillGroups } from "../data
     </section>
 
     <section class="section-shell split-section">
-      <div class="section-heading sticky-heading">
+      <div class="section-heading sticky-heading" data-reveal>
         <p class="eyebrow">Profile</p>
         <h2>How I work</h2>
       </div>
-      <div class="prose-block">
+      <div class="prose-block" data-reveal-group>
         <p>
           I care about building software that can survive contact with real users, real constraints, and real maintenance
           work. I enjoy the full path from early product thinking to implementation, deployment, debugging, and iteration.
@@ -45,7 +87,7 @@ import { education, experience, focusAreas, profile, skillGroups } from "../data
     </section>
 
     <section class="section-shell split-section">
-      <div class="section-heading sticky-heading">
+      <div class="section-heading sticky-heading" data-reveal>
         <p class="eyebrow">Experience</p>
         <h2>Work history</h2>
       </div>
@@ -53,26 +95,68 @@ import { education, experience, focusAreas, profile, skillGroups } from "../data
     </section>
 
     <section class="section-shell split-section">
-      <div class="section-heading sticky-heading">
+      <div class="section-heading sticky-heading" data-reveal>
         <p class="eyebrow">Education</p>
         <h2>Studies</h2>
       </div>
       <Timeline items={education} />
     </section>
 
-    <section class="section-shell split-section">
-      <div class="section-heading sticky-heading">
-        <p class="eyebrow">Stack</p>
-        <h2>Technical range</h2>
+    <section class="section-shell principles-section" aria-labelledby="principles-title">
+      <div class="section-heading section-heading-row" data-reveal>
+        <div>
+          <p class="eyebrow">How I work</p>
+          <h2 id="principles-title">What I optimize for</h2>
+        </div>
+        <p>
+          The tools change, but these constraints keep the work grounded when product, engineering, and AI meet.
+        </p>
       </div>
-      <div class="skill-groups">
+      <div class="principles-grid" data-reveal-group>
+        {principles.map((principle) => (
+          <article class="principle-item">
+            <h3>{principle.title}</h3>
+            <p>{principle.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-shell split-section" aria-labelledby="skills-title">
+      <div class="section-heading sticky-heading" data-reveal>
+        <p class="eyebrow">Stack</p>
+        <h2 id="skills-title">Tools I reach for</h2>
+        <p>
+          The list changes over time, but the pattern is stable: use the boring tool when it is enough, and keep the
+          experimental work contained until it proves itself.
+        </p>
+      </div>
+      <div class="skill-groups" data-reveal-group>
         {skillGroups.map((group) => (
-          <section class="skill-group">
-            <h3>{group.title}</h3>
+          <section class="skill-group" aria-labelledby={`skill-${group.title.toLowerCase()}`}>
+            <h3 id={`skill-${group.title.toLowerCase()}`}>{group.title}</h3>
             <div class="tag-list">
               {group.skills.map((skill) => <TechTag tag={skill} />)}
             </div>
           </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-shell" aria-labelledby="career-title">
+      <div class="section-heading section-heading-row" data-reveal>
+        <div>
+          <p class="eyebrow">Career spine</p>
+          <h2 id="career-title">The through-line is ownership</h2>
+        </div>
+      </div>
+      <div class="career-spine" data-reveal-group>
+        {careerSpine.map((item) => (
+          <article class="career-step">
+            <p class="career-year">{item.year}</p>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
         ))}
       </div>
     </section>

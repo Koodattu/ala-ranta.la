@@ -1,12 +1,11 @@
 export const profile = {
   name: "Juha Ala-Rantala",
   siteName: "Ala-Ranta.la",
-  handle: "_Ranta.la",
+  handle: "_Rantala",
   role: "Software engineer, CTO, and builder of practical AI products",
   location: "Seinäjoki, Finland",
   email: "juha@ala-ranta.la",
-  description:
-    "Personal portfolio of Juha Ala-Rantala, a software engineer from Finland working across full-stack products, mobile apps, systems, and applied AI.",
+  description: "Personal portfolio of Juha Ala-Rantala, a software engineer from Finland working across full-stack products, mobile apps, systems, and applied AI.",
   repo: "https://github.com/Koodattu/ala-ranta.la",
   image: "/assets/profile.webp",
   cv: {
@@ -60,13 +59,12 @@ export const skillGroups = [
 
 export const experience = [
   {
-    organization: "Clevoy Oy",
+    organization: "Clevoy",
     role: "Chief Technology Officer",
     period: "Jan 2026 - Present",
-    logo: "/assets/clevoy.webp",
+    logo: "/assets/clevoy_full.webp",
     url: "https://clevoy.io",
-    summary:
-      "Leading technology strategy and building a full-stack platform spanning mobile, backend, infrastructure, and administrative tools.",
+    summary: "Leading technology strategy and building a full-stack platform spanning mobile, backend, infrastructure, and administrative tools.",
     details: [
       "Owns architecture and implementation across SaaS, B2B, and B2C product surfaces.",
       "Works from requirements and stakeholder planning through deployment, cost optimization, maintenance, and iteration.",
@@ -79,8 +77,7 @@ export const experience = [
     period: "Jun 2024 - Dec 2025",
     logo: "/assets/tuni.webp",
     url: "https://www.tuni.fi/en",
-    summary:
-      "Worked on the GPT Lab Seinäjoki project, researching applications of large language models and applied AI for local companies.",
+    summary: "Worked on the GPT Lab Seinäjoki project, researching applications of large language models and applied AI for local companies.",
     details: [
       "Built prototypes involving language models, machine vision, optimization, and software engineering workflows.",
       "Contributed to research, reporting, communication, and event organization.",
@@ -88,13 +85,12 @@ export const experience = [
     tags: ["Python", "AI", "Language models", "Vision", "Flask"],
   },
   {
-    organization: "Prima Power / Finn-Power Oy",
+    organization: "Prima Power",
     role: "Software Designer",
     period: "Apr 2018 - Nov 2022",
     logo: "/assets/prima-power.webp",
     url: "https://www.primapower.com/en",
-    summary:
-      "Developed Windows desktop applications, internal tools, machine interfaces, and parametrization workflows.",
+    summary: "Developed Windows desktop applications, internal tools, machine interfaces, and parametrization workflows.",
     details: [
       "Built C#, .NET Framework, WinForms, and WPF applications for industrial software environments.",
       "Improved testing, diagnostics, installation, and internal productivity tooling.",
@@ -110,12 +106,8 @@ export const education = [
     period: "Aug 2023 - Dec 2025",
     logo: "/assets/tuni.webp",
     url: "https://www.tuni.fi/en",
-    summary:
-      "Focused on large-scale software development, software production processes, project management, and information-based web systems.",
-    details: [
-      "Completed a master's thesis with the maximum grade.",
-      "Studied software process, project management, and web system design from an industry-oriented perspective.",
-    ],
+    summary: "Focused on large-scale software development, software production processes, project management, and information-based web systems.",
+    details: ["Completed a master's thesis with the maximum grade.", "Studied software process, project management, and web system design from an industry-oriented perspective."],
     tags: ["Software production", "Project management", "Web systems"],
   },
   {
@@ -124,12 +116,8 @@ export const education = [
     period: "Sep 2015 - May 2019",
     logo: "/assets/seamk.webp",
     url: "https://www.seamk.fi/en",
-    summary:
-      "Specialized in programming and software development while building practical mobile and desktop applications.",
-    details: [
-      "Graduated with a weighted GPA of 4.24 on a 0-5 scale.",
-      "Received the maximum grade for the bachelor's thesis.",
-    ],
+    summary: "Specialized in programming and software development while building practical mobile and desktop applications.",
+    details: ["Graduated with a weighted GPA of 4.24 on a 0-5 scale.", "Received the maximum grade for the bachelor's thesis."],
     tags: ["Software development", "Mobile apps", "Desktop apps"],
   },
 ];
