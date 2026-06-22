@@ -24,7 +24,7 @@ const getCompactDates = (period: string) => {
 };
 ---
 
-<ol class:list={["timeline-list", compact && "timeline-list-compact"]}>
+<ol class:list={["timeline-list", compact && "timeline-list-compact"]} data-reveal-group>
   {items.map((item) => {
     const dates = getCompactDates(item.period);
 

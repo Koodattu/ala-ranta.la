@@ -52,7 +52,7 @@ const careerSpine = [
   description="A short background on Juha Ala-Rantala's software engineering work, education, and technical interests."
 >
   <main>
-    <section class="page-hero section-shell">
+    <section class="page-hero section-shell reveal">
       <p class="eyebrow">About</p>
       <h1>{profile.name}</h1>
       <p>
@@ -62,11 +62,11 @@ const careerSpine = [
     </section>
 
     <section class="section-shell split-section">
-      <div class="section-heading sticky-heading">
+      <div class="section-heading sticky-heading" data-reveal>
         <p class="eyebrow">Profile</p>
         <h2>How I work</h2>
       </div>
-      <div class="prose-block">
+      <div class="prose-block" data-reveal-group>
         <p>
           I care about building software that can survive contact with real users, real constraints, and real maintenance
           work. I enjoy the full path from early product thinking to implementation, deployment, debugging, and iteration.
@@ -87,7 +87,7 @@ const careerSpine = [
     </section>
 
     <section class="section-shell split-section">
-      <div class="section-heading sticky-heading">
+      <div class="section-heading sticky-heading" data-reveal>
         <p class="eyebrow">Experience</p>
         <h2>Work history</h2>
       </div>
@@ -95,7 +95,7 @@ const careerSpine = [
     </section>
 
     <section class="section-shell split-section">
-      <div class="section-heading sticky-heading">
+      <div class="section-heading sticky-heading" data-reveal>
         <p class="eyebrow">Education</p>
         <h2>Studies</h2>
       </div>
@@ -103,7 +103,7 @@ const careerSpine = [
     </section>
 
     <section class="section-shell principles-section" aria-labelledby="principles-title">
-      <div class="section-heading section-heading-row">
+      <div class="section-heading section-heading-row" data-reveal>
         <div>
           <p class="eyebrow">How I work</p>
           <h2 id="principles-title">What I optimize for</h2>
@@ -112,7 +112,7 @@ const careerSpine = [
           The tools change, but these constraints keep the work grounded when product, engineering, and AI meet.
         </p>
       </div>
-      <div class="principles-grid">
+      <div class="principles-grid" data-reveal-group>
         {principles.map((principle) => (
           <article class="principle-item">
             <h3>{principle.title}</h3>
@@ -123,7 +123,7 @@ const careerSpine = [
     </section>
 
     <section class="section-shell split-section" aria-labelledby="skills-title">
-      <div class="section-heading sticky-heading">
+      <div class="section-heading sticky-heading" data-reveal>
         <p class="eyebrow">Stack</p>
         <h2 id="skills-title">Tools I reach for</h2>
         <p>
@@ -131,7 +131,7 @@ const careerSpine = [
           experimental work contained until it proves itself.
         </p>
       </div>
-      <div class="skill-groups">
+      <div class="skill-groups" data-reveal-group>
         {skillGroups.map((group) => (
           <section class="skill-group" aria-labelledby={`skill-${group.title.toLowerCase()}`}>
             <h3 id={`skill-${group.title.toLowerCase()}`}>{group.title}</h3>
@@ -144,13 +144,13 @@ const careerSpine = [
     </section>
 
     <section class="section-shell" aria-labelledby="career-title">
-      <div class="section-heading section-heading-row">
+      <div class="section-heading section-heading-row" data-reveal>
         <div>
           <p class="eyebrow">Career spine</p>
           <h2 id="career-title">The through-line is ownership</h2>
         </div>
       </div>
-      <div class="career-spine">
+      <div class="career-spine" data-reveal-group>
         {careerSpine.map((item) => (
           <article class="career-step">
             <p class="career-year">{item.year}</p>

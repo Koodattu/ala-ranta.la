@@ -13,14 +13,14 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
   description="Technical notes, project write-ups, and longer-form posts by Juha Ala-Rantala."
 >
   <main>
-    <section class="page-hero section-shell">
+    <section class="page-hero section-shell reveal">
       <p class="eyebrow">Blog</p>
       <h1>Technical notes and project write-ups</h1>
       <p>Markdown posts are compiled into static pages with RSS and sitemap entries generated at build time.</p>
     </section>
 
     <section class="section-shell">
-      <div class="post-grid">
+      <div class="post-grid" data-reveal-group>
         {posts.length > 0 ? posts.map((post) => <PostCard post={post} />) : <p>No published posts yet.</p>}
       </div>
     </section>

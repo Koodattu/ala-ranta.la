@@ -13,7 +13,7 @@ const tags = getUniqueTags(projects);
   description="A collection of software projects by Juha Ala-Rantala, including full-stack apps, AI experiments, desktop tools, mobile apps, and static websites."
 >
   <main>
-    <section class="page-hero section-shell">
+    <section class="page-hero section-shell reveal">
       <p class="eyebrow">Projects</p>
       <h1>Software projects, experiments, and shipped tools</h1>
       <p>
@@ -23,7 +23,7 @@ const tags = getUniqueTags(projects);
     </section>
 
     <section class="section-shell">
-      <div class="project-tools" data-project-tools>
+      <div class="project-tools" data-project-tools data-reveal>
         <label class="search-field">
           <span>Search projects</span>
           <input type="search" name="project-search" placeholder="Search title, description, or tag" autocomplete="off" />
@@ -37,7 +37,7 @@ const tags = getUniqueTags(projects);
         <p class="result-count" data-result-count>{projects.length} projects</p>
       </div>
 
-      <div class="project-grid" data-project-grid>
+      <div class="project-grid" data-project-grid data-reveal-group>
         {projects.map((project) => <ProjectCard project={project} />)}
       </div>
     </section>
