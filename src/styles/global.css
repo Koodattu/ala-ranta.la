@@ -1911,6 +1911,22 @@ dd {
 }
 
 @media (max-width: 520px) {
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .header-actions {
+    justify-self: end;
+  }
+
   .site-nav a {
     padding-inline: 7px;
     font-size: 0.82rem;
@@ -2073,5 +2089,11 @@ dd {
     min-width: 40px;
     min-height: 40px;
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-actions .icon-link {
+    display: none;
   }
 }
