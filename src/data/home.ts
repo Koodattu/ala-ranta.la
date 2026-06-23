@@ -36,6 +36,13 @@ type HomeCopy = {
     eyebrow: string;
     title: string;
     all: string;
+    spotlight: Record<
+      string,
+      {
+        meta: string;
+        paragraphs?: string[];
+      }
+    >;
     cardLabels: {
       source: string;
       project: string;
@@ -114,6 +121,24 @@ const en: HomeCopy = {
     eyebrow: "Selected work",
     title: "Product-minded code that ships",
     all: "All projects",
+    spotlight: {
+      "AI Workshop Playground": {
+        meta: "AI coding workspace",
+        paragraphs: [
+          "A workshop-ready playground where participants describe web ideas in natural language and get editable HTML, CSS, and JavaScript with a live preview.",
+          "Built for teaching and events: AI chat, Monaco editing, session access, and usage limits stay in one focused workspace.",
+        ],
+      },
+      "WoW Guild Progress Tracker": {
+        meta: "Raid analytics platform",
+      },
+      "Unity 3D AI Assistant": {
+        meta: "3D voice assistant",
+      },
+      "Voice Guided Imaging": {
+        meta: "Voice image workflow",
+      },
+    },
     cardLabels: {
       source: "Source",
       project: "Project",
@@ -195,6 +220,24 @@ const fi: HomeCopy = {
     eyebrow: "Valikoidut työt",
     title: "Tuotelähtöistä koodia tuotantoon",
     all: "Kaikki projektit",
+    spotlight: {
+      "AI Workshop Playground": {
+        meta: "Tekoälypohjainen koodaustyötila",
+        paragraphs: [
+          "Workshop-käyttöön rakennettu ympäristö, jossa osallistujat kuvaavat web-idean luonnollisella kielellä ja saavat muokattavaa HTML-, CSS- ja JavaScript-koodia live-esikatselulla.",
+          "Opetusta ja tapahtumia varten rakennettu kokonaisuus: tekoälychat, Monaco-editori, sessiopääsy ja käyttörajat pysyvät samassa työtilassa.",
+        ],
+      },
+      "WoW Guild Progress Tracker": {
+        meta: "Raid-analytiikka-alusta",
+      },
+      "Unity 3D AI Assistant": {
+        meta: "3D-puheavustaja",
+      },
+      "Voice Guided Imaging": {
+        meta: "Puheohjattu kuvatyönkulku",
+      },
+    },
     cardLabels: {
       source: "Lähdekoodi",
       project: "Projekti",
@@ -204,6 +247,42 @@ const fi: HomeCopy = {
       technologies: "teknologiat",
     },
     translations: {
+      "AI Workshop Playground": {
+        description:
+          "Workshop-käyttöön rakennettu tekoälypohjainen koodausympäristö, jossa luonnollisen kielen web-ideat muuttuvat muokattavaksi koodiksi live-esikatselulla",
+        features: [
+          "Yhdistää tekoälychatin, Monaco-koodieditorin ja live-esikatselun samaan työtilaan",
+          "Lisää workshop-sessiot kirjautumisella, käyttörajoilla ja opetustilanteisiin sopivalla käyttöönotolla",
+          "Tuottaa muokattavaa HTML-, CSS- ja JavaScript-koodia luonnollisen kielen pyynnöistä",
+        ],
+      },
+      "WoW Guild Progress Tracker": {
+        description:
+          "Full-stack-seurantatyökalu World of Warcraft -raidien etenemiseen: killalistat, WarcraftLogs-analytiikka, yhteisön veikkaukset ja live-tapahtumat",
+        features: [
+          "Seuraa useita kiltoja eri raid-tiereissä etenemislistojen avulla",
+          "Yhdistää WarcraftLogs-, Raider.IO-, Battle.net- ja Twitch-dataa",
+          "Sisältää veikkauskilpailut, kiltaprofiilit ja raid-suoritusten analytiikan",
+        ],
+      },
+      "Unity 3D AI Assistant": {
+        description:
+          "Unityllä rakennettu 3D-tekoälyavustaja, jossa Ready Player Me -avatar keskustelee puheella, vastaa äänellä, luo kuvia ja pelaa webcamia hyödyntäviä minipelejä",
+        features: [
+          "Käyttää push-to-talk-puheohjausta, puhuttuja vastauksia ja animoituja avatar-eleitä",
+          "Tukee kuvien luontia ja muokkausta keskustelun kautta",
+          "Sisältää webcamilla toimivan kivi-paperi-sakset-pelin ja monikieliset keskustelut",
+        ],
+      },
+      "Voice Guided Imaging": {
+        description:
+          "Selainpohjainen tekoälykuvatyökalu, jossa kuvia luodaan ja muokataan puhekomennoilla paikallisten ja pilvipohjaisten käsittelytilojen avulla",
+        features: [
+          "Tukee push-to-talk-komentoja kuvien luontiin ja muokkaukseen",
+          "Ohjaa työn joko pilvipalveluihin tai paikalliseen inferenssitaustaan",
+          "Sisältää sessiorajat, pysyvät galleriat ja jonotuksen etenemispäivitykset",
+        ],
+      },
       "Voice AI Assistant Framework": {
         description:
           "Kattava puheavustajan runko, joka yhdistää puheentunnistuksen, puhesynteesin ja kielimallit muistinhallintaan vuorovaikutteisia, kontekstitietoisia keskusteluja varten",

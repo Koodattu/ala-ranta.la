@@ -307,6 +307,7 @@ main {
 
 .eyebrow,
 .project-card-topline,
+.project-card-kicker,
 .post-meta,
 .timeline-period,
 .card-label,
@@ -672,6 +673,9 @@ dd {
 }
 
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
   color: var(--accent);
   font-weight: 800;
 }
@@ -724,8 +728,8 @@ dd {
 
 .work-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr);
+  gap: 16px;
   align-items: stretch;
 }
 
@@ -736,11 +740,12 @@ dd {
 
 .supporting-work {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .project-card {
   overflow: hidden;
+  background: color-mix(in srgb, var(--panel) 96%, transparent);
   transition-property: opacity, translate, box-shadow, background-color;
   transition-duration: 180ms;
   transition-timing-function: ease;
@@ -753,6 +758,22 @@ dd {
 
 .project-card[hidden] {
   display: none;
+}
+
+.project-card-link {
+  display: block;
+  min-height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.project-card-selected:hover h3 {
+  color: var(--accent);
 }
 
 .project-media {
@@ -768,6 +789,7 @@ dd {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   outline: 1px solid rgba(255, 255, 255, 0.1);
   outline-offset: -1px;
   transition-property: scale;
@@ -780,10 +802,34 @@ dd {
 }
 
 .lead-work .project-media {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 7.6;
+}
+
+.lead-work .project-card {
+  min-height: 100%;
+}
+
+.lead-work .project-card h3 {
+  max-width: 720px;
+  margin-bottom: 14px;
+  font-size: 1.34rem;
+  transition-property: color;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
+.lead-work .project-card-copy {
+  max-width: 760px;
+}
+
+.lead-work .project-card-copy p {
+  font-size: 1.04rem;
 }
 
 .project-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 22px;
 }
 
@@ -794,7 +840,17 @@ dd {
 
 .project-card-topline a {
   color: var(--accent);
+  font-size: 0.72rem;
   text-decoration: none;
+}
+
+.project-card .project-card-kicker {
+  margin-bottom: 12px;
+}
+
+.project-card-copy {
+  display: grid;
+  gap: 12px;
 }
 
 .project-card h3 a,
@@ -843,7 +899,19 @@ dd {
 
 .supporting-work .project-card {
   display: grid;
-  grid-template-columns: 148px minmax(0, 1fr);
+  grid-template-columns: minmax(132px, 0.38fr) minmax(0, 1fr);
+  min-height: 176px;
+}
+
+.supporting-work .project-card-selected {
+  display: block;
+  min-height: auto;
+}
+
+.supporting-work .project-card-selected .project-card-link {
+  display: grid;
+  grid-template-columns: minmax(132px, 0.38fr) minmax(0, 1fr);
+  min-height: 176px;
 }
 
 .supporting-work .project-media {
@@ -852,20 +920,30 @@ dd {
 }
 
 .supporting-work .project-card-body {
-  padding: 18px;
+  justify-content: center;
+  padding: 18px 20px;
 }
 
 .supporting-work .project-card h3 {
   margin-bottom: 8px;
-  font-size: 1rem;
+  font-size: 1.08rem;
+  transition-property: color;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
 }
 
-.supporting-work .project-card p {
+.supporting-work .project-card-kicker {
+  margin-bottom: 10px;
+  font-size: 0.72rem;
+}
+
+.supporting-work .project-card-copy {
+  gap: 0;
+}
+
+.supporting-work .project-card-copy p {
   font-size: 0.92rem;
-}
-
-.supporting-work .tag-list {
-  margin-top: 12px;
+  line-height: 1.5;
 }
 
 .tag-list {
@@ -1876,13 +1954,12 @@ dd {
     grid-template-columns: 118px minmax(0, 1fr);
   }
 
-  .supporting-work .project-card-body {
-    padding: 14px;
+  .supporting-work .project-card-selected .project-card-link {
+    grid-template-columns: 118px minmax(0, 1fr);
   }
 
-  .supporting-work .project-card p,
-  .supporting-work .tag-list {
-    display: none;
+  .supporting-work .project-card-body {
+    padding: 14px;
   }
 
   .principles-grid {
@@ -2155,6 +2232,10 @@ dd {
   }
 
   .supporting-work .project-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .supporting-work .project-card-selected .project-card-link {
     grid-template-columns: 96px minmax(0, 1fr);
   }
 

@@ -1,6 +1,62 @@
 {
   "projects": [
     {
+      "title": "AI Workshop Playground",
+      "description": "A workshop-ready AI coding playground where participants turn natural-language web ideas into editable code with a live preview",
+      "tech": {
+        "platform": ["Web", "Server"],
+        "languages": ["TypeScript", "JavaScript"],
+        "frontend": ["Next.js", "React", "Tailwind CSS", "Monaco Editor"],
+        "backend": ["Node.js", "MongoDB"],
+        "tools": ["Docker"],
+        "genai": ["Language"]
+      },
+      "features": [
+        "Pairs AI chat, Monaco code editor, and live preview in one workspace",
+        "Adds workshop sessions with authentication, usage limits, and classroom-friendly setup",
+        "Generates editable HTML, CSS, and JavaScript from natural-language prompts"
+      ],
+      "link": "https://github.com/Koodattu/ai-workshop-playground",
+      "year": 2026
+    },
+    {
+      "title": "WoW Guild Progress Tracker",
+      "description": "A full-stack tracker for World of Warcraft raid progression with guild leaderboards, WarcraftLogs analytics, community predictions, and live event data",
+      "tech": {
+        "platform": ["Web", "Server"],
+        "languages": ["TypeScript"],
+        "frontend": ["Next.js", "React", "Tailwind CSS"],
+        "backend": ["Express", "Node.js", "MongoDB"],
+        "tools": ["Docker", "Nginx"]
+      },
+      "features": [
+        "Tracks multiple guilds across raid tiers with progression leaderboards",
+        "Aggregates WarcraftLogs, Raider.IO, Battle.net, and Twitch data",
+        "Adds prediction competitions, guild profiles, and raid performance analytics"
+      ],
+      "link": "https://github.com/Koodattu/wow-guild-progress-tracker",
+      "year": 2025
+    },
+    {
+      "title": "Unity 3D AI Assistant",
+      "description": "A Unity-based 3D AI assistant with a Ready Player Me avatar, voice conversation, speech output, image generation, and webcam-powered mini games",
+      "tech": {
+        "platform": ["Desktop", "Game"],
+        "languages": ["C#"],
+        "frontend": ["Unity"],
+        "backend": [],
+        "tools": ["Unity"],
+        "genai": ["Language", "Speech", "Vision", "Image"]
+      },
+      "features": [
+        "Uses push-to-talk voice input with spoken responses and animated avatar gestures",
+        "Supports image generation and editing through conversation",
+        "Includes webcam-based Rock-Paper-Scissors and multilingual conversations"
+      ],
+      "link": "https://github.com/Koodattu/unity-3d-ai-assistant",
+      "year": 2025
+    },
+    {
       "title": "Whats AI Assistant",
       "description": "An AI-powered chatbot demo that integrates with WhatsApp using the Neonize (whatsmeow) framework, leveraging language models to generate responses",
       "tech": {
@@ -40,19 +96,19 @@
     },
     {
       "title": "Voice Guided Imaging",
-      "description": "Showcasing live transcription, translation and imaging with generative AI models running locally",
+      "description": "A web-based AI imaging platform for creating and editing images from voice commands with local and cloud processing modes",
       "tech": {
         "platform": ["Web", "Server"],
         "languages": ["Python", "JavaScript"],
         "frontend": ["HTML", "CSS"],
-        "backend": ["Flask"],
+        "backend": ["Flask", "Ollama"],
         "tools": ["Visual Studio Code"],
-        "genai": ["Language", "Diffusion"]
+        "genai": ["Language", "Speech", "Diffusion"]
       },
       "features": [
-        "Completely locally-hosted generative artificial intelligence models",
-        "Speech-to-text, translation and user action inferring",
-        "Image generation, editing existing images and video creation from image"
+        "Supports push-to-talk commands for image generation and editing",
+        "Routes work between cloud services and local inference backends",
+        "Includes session limits, persistent galleries, and queue progress updates"
       ],
       "link": "https://github.com/Koodattu/voice-guided-imaging",
       "year": 2024
