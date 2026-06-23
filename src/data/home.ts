@@ -74,10 +74,10 @@ const en: HomeCopy = {
   lang: "en",
   description: profile.description,
   hero: {
-    eyebrow: `Software engineer in ${profile.location}`,
-    statement: "Practical software, from product idea to production system.",
+    eyebrow: `CTO at Clevoy · software engineer in ${profile.location}`,
+    statement: "I build product software from rough idea to working system.",
     lede:
-      "I work across mobile, backend, web, infrastructure, and applied AI. Currently CTO at Clevoy, building systems that stay understandable, maintainable, and useful after the first demo.",
+      'Currently leading product and engineering at Clevoy. Before that: industrial software, AI research, local-model prototypes, and a long trail of side projects that usually start with "what if this existed?"',
     actionsLabel: "Primary actions",
     selectedWork: "View selected work",
     linkedinPrefix: "Connect on",
@@ -95,13 +95,13 @@ const en: HomeCopy = {
     items: [
       {
         label: "Clevoy",
-        title: "CTO and product engineering",
-        text: "Leading the product and engineering work behind Clevoy: mobile apps, backend services, infrastructure, and internal tools.",
+        title: "Product and engineering ownership",
+        text: "Setting technical direction while staying close to the build: product architecture, apps, backend services, infrastructure, and admin tooling.",
       },
       {
         label: "Side projects",
-        title: "Small products, shipped end to end",
-        text: "Keeping a rotating set of experiments alive across AI tools, utilities, games, automation, and public writeups.",
+        title: "A long trail of experiments",
+        text: "AI tools, Twitch bots, game utilities, food apps, trackers, workshop demos, and small products built because the idea would not leave me alone.",
       },
       {
         label: "Applied AI",
@@ -155,10 +155,10 @@ const fi: HomeCopy = {
   description:
     "Juha Ala-Rantalan henkilökohtainen portfolio. Ohjelmistokehittäjä Suomesta, joka työskentelee full-stack-tuotteiden, mobiilisovellusten, järjestelmien ja soveltavan tekoälyn parissa.",
   hero: {
-    eyebrow: "Ohjelmistokehittäjä Seinäjoella",
-    statement: "Käytännön ohjelmistoja ideasta tuotantoon.",
+    eyebrow: "CTO Clevoylla · ohjelmistokehittäjä Seinäjoella",
+    statement: "Rakennan tuoteohjelmistoja karkeasta ideasta toimivaksi järjestelmäksi.",
     lede:
-      "Työskentelen mobiilin, backendin, webin, infrastruktuurin ja soveltavan tekoälyn parissa. Tällä hetkellä olen Clevoyn CTO ja rakennan järjestelmiä, jotka pysyvät ymmärrettävinä, ylläpidettävinä ja hyödyllisinä myös ensimmäisen demon jälkeen.",
+      'Johdan tällä hetkellä Clevoyn tuotetta ja teknologiaa. Sitä ennen: teollisuusohjelmistoja, tekoälytutkimusta, paikallismalliprototyyppejä ja pitkä jono sivuprojekteja, jotka alkavat yleensä kysymyksestä "entä jos tällainen olisi olemassa?"',
     actionsLabel: "Ensisijaiset toiminnot",
     selectedWork: "Katso valikoituja töitä",
     linkedinPrefix: "Ota yhteyttä",
@@ -176,13 +176,13 @@ const fi: HomeCopy = {
     items: [
       {
         label: "Clevoy",
-        title: "CTO ja tuotekehitys",
-        text: "Johdan Clevoyn tuotteen ja teknologian kehitystä mobiilisovelluksista backend-palveluihin, infrastruktuuriin ja sisäisiin työkaluihin.",
+        title: "Tuotteen ja teknologian omistajuus",
+        text: "Vien teknistä suuntaa eteenpäin pysyen lähellä toteutusta: tuotearkkitehtuuri, sovellukset, backend-palvelut, infrastruktuuri ja hallintatyökalut.",
       },
       {
         label: "Sivuprojektit",
-        title: "Pieniä tuotteita loppuun asti",
-        text: "Pidän käynnissä vaihtuvaa joukkoa kokeiluja tekoälytyökaluista hyötysovelluksiin, peleihin, automaatioon ja julkisiin kirjoituksiin.",
+        title: "Pitkä jono kokeiluja",
+        text: "Tekoälytyökaluja, Twitch-botteja, pelityökaluja, ruoka-appeja, dataseurantaa, workshop-demoja ja pieniä tuotteita, koska idea ei jättänyt rauhaan.",
       },
       {
         label: "Soveltava tekoäly",
