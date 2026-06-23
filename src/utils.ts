@@ -11,6 +11,17 @@ export type Project = {
   year: number;
 };
 
+export type BackgroundItem = {
+  organization: string;
+  role: string;
+  period: string;
+  logo: string;
+  url: string;
+  summary: string;
+  details: string[];
+  tags: string[];
+};
+
 export const slugify = (value: string) =>
   value
     .toLowerCase()
@@ -20,6 +31,8 @@ export const slugify = (value: string) =>
     .replace(/^-+|-+$/g, "");
 
 export const getProjectSlug = (project: Project) => project.slug ?? slugify(project.title);
+
+export const getBackgroundSlug = (item: Pick<BackgroundItem, "organization">) => slugify(item.organization);
 
 export const assetPath = (path: string) => encodeURI(path).replaceAll("'", "%27");
 

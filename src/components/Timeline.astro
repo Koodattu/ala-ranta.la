@@ -1,19 +1,9 @@
 ---
 import TechTag from "./TechTag.astro";
-
-interface TimelineItem {
-  organization: string;
-  role: string;
-  period: string;
-  logo: string;
-  url: string;
-  summary: string;
-  details: string[];
-  tags: string[];
-}
+import { getBackgroundSlug, type BackgroundItem } from "../utils";
 
 interface Props {
-  items: TimelineItem[];
+  items: BackgroundItem[];
   compact?: boolean;
 }
 
@@ -44,13 +34,13 @@ const getCompactDates = (period: string) => {
               {compact ? (
                 <div class="timeline-title-block">
                   <h3>{item.role}</h3>
-                  <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
+                  <a href={`/about/${getBackgroundSlug(item)}/`}>{item.organization}</a>
                 </div>
               ) : (
                 <>
                   <p class="timeline-period">{item.period}</p>
                   <h3>{item.role}</h3>
-                  <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
+                  <a href={`/about/${getBackgroundSlug(item)}/`}>{item.organization}</a>
                 </>
               )}
             </div>

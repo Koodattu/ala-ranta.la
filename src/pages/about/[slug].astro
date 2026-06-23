@@ -1,0 +1,131 @@
+---
+import TechTag from "../../components/TechTag.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { education, experience, profile } from "../../data/profile";
+import { getBackgroundSlug, type BackgroundItem } from "../../utils";
+
+type BackgroundKind = "company" | "school";
+type BackgroundEntry = BackgroundItem & { kind: BackgroundKind };
+type BackgroundGroup = {
+  slug: string;
+  organization: string;
+  logo: string;
+  url: string;
+  kinds: BackgroundKind[];
+  items: BackgroundEntry[];
+};
+
+export function getStaticPaths() {
+  const backgroundItems: BackgroundEntry[] = [
+    ...experience.map((item) => ({ ...item, kind: "company" as const })),
+    ...education.map((item) => ({ ...item, kind: "school" as const })),
+  ];
+  const groups = new Map<string, BackgroundGroup>();
+
+  for (const item of backgroundItems) {
+    const slug = getBackgroundSlug(item);
+    const group = groups.get(slug);
+
+    if (group) {
+      group.items.push(item);
+
+      if (!group.kinds.includes(item.kind)) {
+        group.kinds.push(item.kind);
+      }
+
+      continue;
+    }
+
+    groups.set(slug, {
+      slug,
+      organization: item.organization,
+      logo: item.logo,
+      url: item.url,
+      kinds: [item.kind],
+      items: [item],
+    });
+  }
+
+  return [...groups.values()].map((group) => ({
+    params: { slug: group.slug },
+    props: { group },
+  }));
+}
+
+const { group } = Astro.props as { group: BackgroundGroup };
+const isCompany = group.kinds.includes("company");
+const isSchool = group.kinds.includes("school");
+const categoryLabel = isCompany && isSchool ? "Workplace and school" : isSchool ? "School" : "Company";
+const heroSummary =
+  group.items.length === 1
+    ? group.items[0].summary
+    : `My background with ${group.organization} includes both work and studies: ${group.items
+        .map((item) => item.role)
+        .join("; ")}.`;
+const description = `Background page for ${profile.name}'s ${categoryLabel.toLowerCase()} experience at ${group.organization}.`;
+const schema = {
+  "@type": isSchool && !isCompany ? "CollegeOrUniversity" : "Organization",
+  name: group.organization,
+  url: group.url,
+  logo: new URL(group.logo, Astro.site).toString(),
+};
+---
+
+<BaseLayout title={group.organization} description={description} image={group.logo} schema={schema}>
+  <main>
+    <article>
+      <header class="about-detail-hero section-shell">
+        <div class="reveal">
+          <p class="eyebrow">{categoryLabel}</p>
+          <h1>{group.organization}</h1>
+          <p>{heroSummary}</p>
+          <ul class="about-detail-meta" aria-label={`${group.organization} background summary`}>
+            {group.items.map((item) => (
+              <li>{item.period}</li>
+            ))}
+          </ul>
+          <div class="hero-actions">
+            <div class="hero-action-row">
+              <a class="button button-primary" href={group.url} target="_blank" rel="noreferrer">Official site</a>
+              <a class="button" href="/about/">Back to about</a>
+            </div>
+          </div>
+        </div>
+        <div class="about-detail-logo-card" aria-hidden="true">
+          <img
+            class:list={["about-detail-logo", group.logo.includes("clevoy") && "about-detail-logo-wide"]}
+            src={group.logo}
+            alt=""
+          />
+        </div>
+      </header>
+
+      <section class="section-shell split-section">
+        <div class="section-heading sticky-heading" data-reveal>
+          <p class="eyebrow">Background</p>
+          <h2>{group.items.length > 1 ? "Roles and studies" : "Role"}</h2>
+        </div>
+        <div class="background-entry-list" data-reveal-group>
+          {group.items.map((item) => (
+            <article class="background-entry">
+              <div class="background-entry-header">
+                <div>
+                  <p class="timeline-period">{item.kind === "company" ? "Work" : "Education"}</p>
+                  <h3>{item.role}</h3>
+                </div>
+                <p class="background-entry-period">{item.period}</p>
+              </div>
+              <p>{item.summary}</p>
+              <ul class="feature-list">
+                {item.details.map((detail) => <li>{detail}</li>)}
+              </ul>
+              <div class="tag-list">
+                {item.tags.map((tag) => <TechTag tag={tag} muted />)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </article>
+  </main>
+</BaseLayout>

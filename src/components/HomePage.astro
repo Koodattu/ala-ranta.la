@@ -6,7 +6,7 @@ import Timeline from "./Timeline.astro";
 import { homeCopy, localizedEducation, localizedExperience, type Locale } from "../data/home";
 import { education, experience, profile } from "../data/profile";
 import projectsData from "../data/projects.json";
-import { sortNewestProjects, type Project } from "../utils";
+import { getBackgroundSlug, sortNewestProjects, type Project } from "../utils";
 
 interface Props {
   locale?: Locale;
@@ -71,7 +71,7 @@ const alternates = [
             <dt>{copy.hero.current}</dt>
             <dd>
               <div class="proof-logo-list">
-                <a class="proof-logo proof-logo-current" href={currentLogo.url} target="_blank" rel="noreferrer" aria-label={currentLogo.organization}>
+                <a class="proof-logo proof-logo-current" href={`/about/${getBackgroundSlug(currentLogo)}/`} aria-label={currentLogo.organization}>
                   <img src={currentLogo.logo} alt="" loading="lazy" />
                 </a>
               </div>
@@ -82,7 +82,7 @@ const alternates = [
             <dd>
               <div class="proof-logo-list">
                 {previousLogos.map((item) => (
-                  <a class="proof-logo" href={item.url} target="_blank" rel="noreferrer" aria-label={item.organization}>
+                  <a class="proof-logo" href={`/about/${getBackgroundSlug(item)}/`} aria-label={item.organization}>
                     <img src={item.logo} alt="" loading="lazy" />
                   </a>
                 ))}
