@@ -91,22 +91,22 @@ const en: HomeCopy = {
   },
   focus: {
     eyebrow: "Current focus",
-    title: "Where the work is going now",
+    title: "Current work",
     items: [
       {
-        label: "Now",
-        title: "CTO at Clevoy",
-        text: "Leading product and engineering across mobile apps, backend services, infrastructure, and internal tools.",
+        label: "Clevoy",
+        title: "CTO and product engineering",
+        text: "Leading the product and engineering work behind Clevoy: mobile apps, backend services, infrastructure, and internal tools.",
+      },
+      {
+        label: "Side projects",
+        title: "Small products, shipped end to end",
+        text: "Keeping a rotating set of experiments alive across AI tools, utilities, games, automation, and public writeups.",
       },
       {
         label: "Applied AI",
-        title: "Useful AI workflows",
-        text: "Building language, voice, vision, and local-model prototypes around concrete product and business problems.",
-      },
-      {
-        label: "Product systems",
-        title: "From idea to maintenance",
-        text: "Turning early concepts into deployed systems with clear ownership, visible costs, and room to iterate.",
+        title: "AI that earns its place",
+        text: "Testing language, voice, vision, and local-model workflows against real product problems, not demos built around the model.",
       },
     ],
   },
@@ -172,22 +172,22 @@ const fi: HomeCopy = {
   },
   focus: {
     eyebrow: "Nykyinen fokus",
-    title: "Mihin työ suuntautuu nyt",
+    title: "Nykyinen työ",
     items: [
       {
-        label: "Nyt",
-        title: "CTO Clevoylla",
-        text: "Johdan tuotetta ja teknologiaa mobiilisovelluksista backend-palveluihin, infrastruktuuriin ja sisäisiin työkaluihin.",
+        label: "Clevoy",
+        title: "CTO ja tuotekehitys",
+        text: "Johdan Clevoyn tuotteen ja teknologian kehitystä mobiilisovelluksista backend-palveluihin, infrastruktuuriin ja sisäisiin työkaluihin.",
+      },
+      {
+        label: "Sivuprojektit",
+        title: "Pieniä tuotteita loppuun asti",
+        text: "Pidän käynnissä vaihtuvaa joukkoa kokeiluja tekoälytyökaluista hyötysovelluksiin, peleihin, automaatioon ja julkisiin kirjoituksiin.",
       },
       {
         label: "Soveltava tekoäly",
-        title: "Hyödylliset tekoälytyönkulut",
-        text: "Rakennan kieli-, puhe-, kuva- ja paikallismalliprototyyppejä konkreettisiin tuote- ja liiketoimintaongelmiin.",
-      },
-      {
-        label: "Tuotejärjestelmät",
-        title: "Ideasta ylläpitoon",
-        text: "Vien varhaisia konsepteja tuotantoon järjestelmiksi, joissa omistajuus, kustannukset ja jatkokehitys pysyvät näkyvinä.",
+        title: "Tekoäly, joka ansaitsee paikkansa",
+        text: "Testaan kieli-, puhe-, kuva- ja paikallismallityönkulkuja todellisia tuoteongelmia vasten, en mallin ympärille rakennettuina demoina.",
       },
     ],
   },
