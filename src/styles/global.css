@@ -913,6 +913,18 @@ dd {
   gap: 12px;
 }
 
+[data-language-copy="fi"] {
+  display: none;
+}
+
+html[data-preferred-language="fi"] [data-language-copy="en"] {
+  display: none;
+}
+
+html[data-preferred-language="fi"] [data-language-copy="fi"] {
+  display: inline;
+}
+
 [data-project-description-lang="fi"] {
   display: none;
 }
