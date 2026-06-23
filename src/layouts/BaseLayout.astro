@@ -94,32 +94,42 @@ const jsonLd = {
         (() => {
           if (window.location.pathname !== "/") return;
 
+          const getSupportedLanguage = (language) => {
+            const baseLanguage = language?.toLowerCase().split("-")[0];
+            return baseLanguage === "en" || baseLanguage === "fi" ? baseLanguage : undefined;
+          };
+
           const params = new URLSearchParams(window.location.search);
-          const requestedLanguage = params.get("lang");
+          const requestedLanguage = getSupportedLanguage(params.get("lang"));
+
+          if (requestedLanguage) {
+            try {
+              window.localStorage.setItem("preferredLanguage", requestedLanguage);
+            } catch {
+              // Continue with this page-load preference even if storage is unavailable.
+            }
+          }
+
+          let preferredLanguage;
 
           try {
-            if (requestedLanguage === "en" || requestedLanguage === "fi") {
-              window.localStorage.setItem("preferredLanguage", requestedLanguage);
-            }
-
-            const preferredLanguage = window.localStorage.getItem("preferredLanguage");
-            if (preferredLanguage === "en") {
-              if (requestedLanguage === "en") {
-                window.history.replaceState({}, "", "/");
-              }
-              return;
-            }
-
-            if (preferredLanguage === "fi") {
-              window.location.replace("/fi/");
-              return;
-            }
+            preferredLanguage = getSupportedLanguage(window.localStorage.getItem("preferredLanguage"));
           } catch {
-            return;
+            preferredLanguage = undefined;
           }
 
           const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
-          if (languages.some((language) => language?.toLowerCase().startsWith("fi"))) {
+          const detectedLanguage = languages.map(getSupportedLanguage).find(Boolean);
+          const selectedLanguage = requestedLanguage ?? preferredLanguage ?? detectedLanguage ?? "en";
+
+          if (selectedLanguage === "en") {
+            if (requestedLanguage === "en") {
+              window.history.replaceState({}, "", "/");
+            }
+            return;
+          }
+
+          if (selectedLanguage === "fi") {
             window.location.replace("/fi/");
           }
         })();
