@@ -749,9 +749,11 @@ dd {
 }
 
 .project-list {
+  --project-list-gap: clamp(48px, 7vw, 86px);
+
   display: flex;
   flex-direction: column;
-  gap: clamp(48px, 7vw, 86px);
+  gap: var(--project-list-gap);
   max-width: 1120px;
   margin-inline: auto;
 }
@@ -985,6 +987,27 @@ dd {
   background: transparent;
   box-shadow: none;
   translate: 0 0;
+}
+
+.project-list .project-card + .project-card::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--project-list-gap) * -0.5);
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--border) 72%, transparent) 14%,
+    color-mix(in srgb, var(--border-strong) 76%, transparent) 50%,
+    color-mix(in srgb, var(--border) 72%, transparent) 86%,
+    transparent
+  );
+}
+
+.project-list .project-card:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .project-list .project-card:hover {
@@ -2070,6 +2093,10 @@ dd {
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
+  }
+
+  .project-list .project-card:nth-child(even) {
+    flex-direction: column;
   }
 
   .project-list .project-media {
