@@ -309,7 +309,6 @@ main {
 .project-card-topline,
 .post-meta,
 .timeline-period,
-.card-label,
 .career-year {
   margin: 0 0 6px;
   color: var(--accent);
@@ -736,10 +735,6 @@ dd {
 .post-card h3,
 .skill-group h3 {
   color: var(--text);
-}
-
-.card-label {
-  color: var(--accent);
 }
 
 .project-grid {

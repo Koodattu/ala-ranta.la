@@ -27,7 +27,6 @@ type HomeCopy = {
     eyebrow: string;
     title: string;
     items: {
-      label: string;
       title: string;
       text: string;
     }[];
@@ -82,8 +81,7 @@ const en: HomeCopy = {
   hero: {
     eyebrow: `CTO at Clevoy · software engineer in ${profile.location}`,
     statement: "I build product software from rough idea to working system.",
-    lede:
-      'Currently leading product and engineering at Clevoy. Before that: industrial software, AI research, local-model prototypes, and a long trail of side projects that usually start with "what if this existed?"',
+    lede: 'Currently leading product and engineering at Clevoy. Before that: industrial software, AI research, local-model prototypes, and a long trail of side projects that usually start with "what if this existed?"',
     actionsLabel: "Primary actions",
     selectedWork: "View selected work",
     linkedinPrefix: "Connect on",
@@ -100,18 +98,15 @@ const en: HomeCopy = {
     title: "Current work",
     items: [
       {
-        label: "Clevoy",
-        title: "Product and engineering ownership",
+        title: "Product and engineering ownership at Clevoy",
         text: "Setting technical direction while staying close to the build: product architecture, apps, backend services, infrastructure, and admin tooling.",
       },
       {
-        label: "Side projects",
-        title: "A long trail of experiments",
+        title: "A long trail of side project experiments",
         text: "AI tools, Twitch bots, game utilities, food apps, trackers, workshop demos, and small products built because the idea would not leave me alone.",
       },
       {
-        label: "Applied AI",
-        title: "AI that earns its place",
+        title: "Applied AI that earns its place",
         text: "Testing language, voice, vision, and local-model workflows against real product problems, not demos built around the model.",
       },
     ],
@@ -157,8 +152,7 @@ const en: HomeCopy = {
   contact: {
     eyebrow: "Contact",
     title: "Want to talk about a practical software or AI problem?",
-    text:
-      "I am most useful when the work needs product judgment, implementation depth, and a path from prototype to production.",
+    text: "I am most useful when the work needs product judgment, implementation depth, and a path from prototype to production.",
     email: "Email Juha",
     linkedin: "LinkedIn",
     actionsLabel: "Contact actions",
@@ -174,8 +168,7 @@ const fi: HomeCopy = {
   hero: {
     eyebrow: "CTO Clevoylla · ohjelmistokehittäjä Seinäjoella",
     statement: "Rakennan tuoteohjelmistoja karkeasta ideasta toimivaksi järjestelmäksi.",
-    lede:
-      'Johdan tällä hetkellä Clevoyn tuotetta ja teknologiaa. Sitä ennen: teollisuusohjelmistoja, tekoälytutkimusta, paikallismalliprototyyppejä ja pitkä jono sivuprojekteja, jotka alkavat yleensä kysymyksestä "entä jos tällainen olisi olemassa?"',
+    lede: 'Johdan tällä hetkellä Clevoyn tuotetta ja teknologiaa. Sitä ennen: teollisuusohjelmistoja, tekoälytutkimusta, paikallismalliprototyyppejä ja pitkä jono sivuprojekteja, jotka alkavat yleensä kysymyksestä "entä jos tällainen olisi olemassa?"',
     actionsLabel: "Ensisijaiset toiminnot",
     selectedWork: "Katso valikoituja töitä",
     linkedinPrefix: "Ota yhteyttä",
@@ -192,18 +185,15 @@ const fi: HomeCopy = {
     title: "Nykyinen työ",
     items: [
       {
-        label: "Clevoy",
-        title: "Tuotteen ja teknologian omistajuus",
+        title: "Tuotteen ja teknologian omistajuus Clevoylla",
         text: "Vien teknistä suuntaa eteenpäin pysyen lähellä toteutusta: tuotearkkitehtuuri, sovellukset, backend-palvelut, infrastruktuuri ja hallintatyökalut.",
       },
       {
-        label: "Sivuprojektit",
-        title: "Pitkä jono kokeiluja",
+        title: "Pitkä jono sivuprojektikokeiluja",
         text: "Tekoälytyökaluja, Twitch-botteja, pelityökaluja, ruoka-appeja, dataseurantaa, workshop-demoja ja pieniä tuotteita, koska idea ei jättänyt rauhaan.",
       },
       {
-        label: "Soveltava tekoäly",
-        title: "Tekoäly, joka ansaitsee paikkansa",
+        title: "Soveltava tekoäly, joka ansaitsee paikkansa",
         text: "Testaan kieli-, puhe-, kuva- ja paikallismallityönkulkuja todellisia tuoteongelmia vasten, en mallin ympärille rakennettuina demoina.",
       },
     ],
@@ -233,8 +223,7 @@ const fi: HomeCopy = {
     },
     translations: {
       "AI Workshop Playground": {
-        description:
-          "Workshop-käyttöön rakennettu tekoälypohjainen koodausympäristö, jossa luonnollisen kielen web-ideat muuttuvat muokattavaksi koodiksi live-esikatselulla",
+        description: "Workshop-käyttöön rakennettu tekoälypohjainen koodausympäristö, jossa luonnollisen kielen web-ideat muuttuvat muokattavaksi koodiksi live-esikatselulla",
         features: [
           "Yhdistää tekoälychatin, Monaco-koodieditorin ja live-esikatselun samaan työtilaan",
           "Lisää workshop-sessiot kirjautumisella, käyttörajoilla ja opetustilanteisiin sopivalla käyttöönotolla",
@@ -242,8 +231,7 @@ const fi: HomeCopy = {
         ],
       },
       "WoW Guild Progress Tracker": {
-        description:
-          "Full-stack-seurantatyökalu World of Warcraft -raidien etenemiseen: killalistat, WarcraftLogs-analytiikka, yhteisön veikkaukset ja live-tapahtumat",
+        description: "Full-stack-seurantatyökalu World of Warcraft -raidien etenemiseen: killalistat, WarcraftLogs-analytiikka, yhteisön veikkaukset ja live-tapahtumat",
         features: [
           "Seuraa useita kiltoja eri raid-tiereissä etenemislistojen avulla",
           "Yhdistää WarcraftLogs-, Raider.IO-, Battle.net- ja Twitch-dataa",
@@ -260,8 +248,7 @@ const fi: HomeCopy = {
         ],
       },
       "Voice Guided Imaging": {
-        description:
-          "Selainpohjainen tekoälykuvatyökalu, jossa kuvia luodaan ja muokataan puhekomennoilla paikallisten ja pilvipohjaisten käsittelytilojen avulla",
+        description: "Selainpohjainen tekoälykuvatyökalu, jossa kuvia luodaan ja muokataan puhekomennoilla paikallisten ja pilvipohjaisten käsittelytilojen avulla",
         features: [
           "Tukee push-to-talk-komentoja kuvien luontiin ja muokkaukseen",
           "Ohjaa työn joko pilvipalveluihin tai paikalliseen inferenssitaustaan",
@@ -278,12 +265,10 @@ const fi: HomeCopy = {
         ],
       },
       "Whats AI Assistant": {
-        description:
-          "WhatsAppiin integroitava tekoälychatbot-demo, joka käyttää Neonize (whatsmeow) -kehystä ja kielimalleja vastausten tuottamiseen",
+        description: "WhatsAppiin integroitava tekoälychatbot-demo, joka käyttää Neonize (whatsmeow) -kehystä ja kielimalleja vastausten tuottamiseen",
       },
       "Fyr'alath Data Tracker": {
-        description:
-          "Full-stack-sovellus WoW:n patch 10.2:n legendaarisen aseen valmistuskustannusten ja hankintadatan seurantaan",
+        description: "Full-stack-sovellus WoW:n patch 10.2:n legendaarisen aseen valmistuskustannusten ja hankintadatan seurantaan",
       },
       "Personal Website": {
         description: "Henkilökohtainen verkkosivusto, jossa on CV sekä tietoa minusta ja projekteistani",
@@ -306,8 +291,7 @@ const fi: HomeCopy = {
   contact: {
     eyebrow: "Yhteys",
     title: "Haluatko puhua käytännön ohjelmisto- tai tekoälyongelmasta?",
-    text:
-      "Olen hyödyllisimmilläni, kun työ vaatii tuoteajattelua, syvää toteutusosaamista ja polun prototyypistä tuotantoon.",
+    text: "Olen hyödyllisimmilläni, kun työ vaatii tuoteajattelua, syvää toteutusosaamista ja polun prototyypistä tuotantoon.",
     email: "Lähetä sähköpostia",
     linkedin: "LinkedIn",
     actionsLabel: "Yhteydenottotavat",
@@ -323,22 +307,19 @@ export const localizedExperience = {
       ...experience[0],
       role: "Teknologiajohtaja",
       period: "1/2026 - Nyt",
-      summary:
-        "Johdan teknologiastrategiaa ja rakennan full-stack-alustaa, joka kattaa mobiilin, backendin, infrastruktuurin ja hallintatyökalut.",
+      summary: "Johdan teknologiastrategiaa ja rakennan full-stack-alustaa, joka kattaa mobiilin, backendin, infrastruktuurin ja hallintatyökalut.",
     },
     {
       ...experience[1],
       role: "Tutkimusassistentti",
       period: "6/2024 - 12/2025",
-      summary:
-        "Työskentelin GPT Lab Seinäjoki -projektissa ja tutkin suurten kielimallien sekä soveltavan tekoälyn käyttötapoja paikallisille yrityksille.",
+      summary: "Työskentelin GPT Lab Seinäjoki -projektissa ja tutkin suurten kielimallien sekä soveltavan tekoälyn käyttötapoja paikallisille yrityksille.",
     },
     {
       ...experience[2],
       role: "Ohjelmistosuunnittelija",
       period: "4/2018 - 11/2022",
-      summary:
-        "Kehitin Windows-työpöytäsovelluksia, sisäisiä työkaluja, käyttöliittymiä ja parametrointityönkulkuja.",
+      summary: "Kehitin Windows-työpöytäsovelluksia, sisäisiä työkaluja, käyttöliittymiä ja parametrointityönkulkuja.",
     },
   ],
 };
@@ -350,15 +331,13 @@ export const localizedEducation = {
       ...education[0],
       role: "Tekniikan maisteri - tietotekniikka",
       period: "8/2023 - 12/2025",
-      summary:
-        "Painotus laajamittaisessa ohjelmistokehityksessä, ohjelmistotuotannon prosesseissa, projektinhallinnassa ja tietopohjaisissa web-järjestelmissä.",
+      summary: "Painotus laajamittaisessa ohjelmistokehityksessä, ohjelmistotuotannon prosesseissa, projektinhallinnassa ja tietopohjaisissa web-järjestelmissä.",
     },
     {
       ...education[1],
       role: "Insinööri (AMK) - tietotekniikka",
       period: "9/2015 - 5/2019",
-      summary:
-        "Erikoistuin ohjelmointiin ja ohjelmistokehitykseen rakentamalla käytännön mobiili- ja työpöytäsovelluksia.",
+      summary: "Erikoistuin ohjelmointiin ja ohjelmistokehitykseen rakentamalla käytännön mobiili- ja työpöytäsovelluksia.",
     },
   ],
 };
