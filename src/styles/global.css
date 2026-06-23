@@ -1687,9 +1687,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 }
 
 .about-photo-card:hover {
-  z-index: 5;
   opacity: 1;
-  filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.42));
 }
 
 .about-photo-card:hover img {
