@@ -752,7 +752,7 @@ dd {
   display: flex;
   flex-direction: column;
   gap: clamp(48px, 7vw, 86px);
-  max-width: 1080px;
+  max-width: 1120px;
   margin-inline: auto;
 }
 
@@ -984,8 +984,8 @@ dd {
 }
 
 .project-list .project-media {
-  flex: 0 0 clamp(280px, 38vw, 440px);
-  width: clamp(280px, 38vw, 440px);
+  flex: 0 0 clamp(340px, 45vw, 520px);
+  width: clamp(340px, 45vw, 520px);
   aspect-ratio: 16 / 10;
   border-radius: 18px;
   box-shadow:
@@ -1007,9 +1007,10 @@ dd {
 }
 
 .project-list .project-card-content {
-  flex: 1;
+  align-self: stretch;
+  flex: 1 1 0;
   min-width: 0;
-  max-width: 590px;
+  max-width: 520px;
 }
 
 .project-list .project-card-body {
@@ -1019,7 +1020,8 @@ dd {
 .project-list .project-card-topline {
   width: auto;
   margin-bottom: 12px;
-  color: var(--faint);
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
 }
 
 .project-list .project-card h3 {
@@ -1047,41 +1049,42 @@ dd {
 }
 
 .project-list .project-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  width: auto;
-  margin-top: 22px;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 390px);
+  margin-top: auto;
+  padding: 22px 0 0;
   background: transparent;
   box-shadow: none;
 }
 
 .project-list .project-action,
 .project-list .project-action:first-child {
-  justify-content: flex-start;
-  min-width: 58px;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
   min-height: 40px;
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--panel-strong) 70%, transparent);
+  box-shadow: var(--shadow-border);
   color: var(--accent);
   font-size: 0.82rem;
-  text-align: left;
+  text-align: center;
 }
 
 .project-list .project-action:hover,
 .project-list .project-action:first-child:hover {
-  background: transparent;
-  box-shadow: none;
+  background: color-mix(in srgb, var(--accent) 14%, var(--panel-strong));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 44%, transparent);
   color: var(--text);
 }
 
 .project-list .project-action.is-placeholder,
 .project-list .project-action.is-placeholder:hover {
-  background: transparent;
-  box-shadow: none;
+  background: color-mix(in srgb, var(--bg) 36%, transparent);
+  box-shadow: var(--shadow-border);
   color: color-mix(in srgb, var(--faint) 72%, transparent);
 }
 
