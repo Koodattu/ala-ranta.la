@@ -1,11 +1,12 @@
-export type ProjectTech = Record<string, string[]>;
-
 export type Project = {
+  slug?: string;
   title: string;
   description: string;
-  tech: ProjectTech;
   features: string[];
-  link: string;
+  source: string;
+  blog?: string;
+  demo?: string;
+  image?: string;
   year: number;
 };
 
@@ -17,20 +18,12 @@ export const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-export const getProjectSlug = (project: Project) => slugify(project.title);
-
-export const getProjectTags = (project: Project) =>
-  Object.values(project.tech)
-    .flat()
-    .filter(Boolean);
+export const getProjectSlug = (project: Project) => project.slug ?? slugify(project.title);
 
 export const assetPath = (path: string) => encodeURI(path).replaceAll("'", "%27");
 
-export const getUniqueTags = (projects: Project[]) =>
-  Array.from(new Set(projects.flatMap(getProjectTags))).sort((a, b) => a.localeCompare(b));
-
 export const projectImagePath = (project: Project) =>
-  assetPath(`/images/${project.title.toLowerCase().replaceAll(" ", "-")}.webp`);
+  assetPath(project.image ?? `/images/${project.title.toLowerCase().replaceAll(" ", "-")}.webp`);
 
 export const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("en", {
@@ -40,4 +33,7 @@ export const formatDate = (date: Date) =>
   }).format(date);
 
 export const sortNewestProjects = (projects: Project[]) =>
-  [...projects].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+  projects
+    .map((project, index) => ({ project, index }))
+    .sort((a, b) => b.project.year - a.project.year || a.index - b.index)
+    .map(({ project }) => project);

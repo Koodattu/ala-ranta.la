@@ -2,278 +2,325 @@
   "projects": [
     {
       "title": "AI Workshop Playground",
-      "description": "A workshop-ready AI coding playground where participants turn natural-language web ideas into editable code with a live preview",
-      "tech": {
-        "platform": ["Web", "Server"],
-        "languages": ["TypeScript", "JavaScript"],
-        "frontend": ["Next.js", "React", "Tailwind CSS", "Monaco Editor"],
-        "backend": ["Node.js", "MongoDB"],
-        "tools": ["Docker"],
-        "genai": ["Language"]
-      },
+      "description": "Workshop IDE where participants describe web ideas in English or Finnish and receive editable HTML, CSS, and JavaScript with a live preview and admin-controlled usage limits.",
       "features": [
-        "Pairs AI chat, Monaco code editor, and live preview in one workspace",
-        "Adds workshop sessions with authentication, usage limits, and classroom-friendly setup",
-        "Generates editable HTML, CSS, and JavaScript from natural-language prompts"
+        "Streams generated HTML, CSS, and JavaScript into a Monaco editor",
+        "Pairs an AI chat workflow with instant live preview",
+        "Adds workshop sessions, passwords, and usage limits for classroom use"
       ],
-      "link": "https://github.com/Koodattu/ai-workshop-playground",
+      "source": "https://github.com/Koodattu/ai-workshop-playground",
+      "blog": "",
+      "demo": "https://playground.koodattu.dev",
+      "image": "/images/ai-workshop-playground.webp",
+      "year": 2026
+    },
+    {
+      "title": "Vaarattu's Twitch AI Chat Bot",
+      "description": "Gemini-powered Twitch bot with personality, conversation memory, ad detection, language detection, and live screenshot analysis.",
+      "features": [
+        "Responds to Twitch chat with a channel-specific AI personality",
+        "Stores conversation context for more coherent stream interactions",
+        "Uses OCR, FFmpeg, and Streamlink for ad detection and screenshot analysis"
+      ],
+      "source": "https://github.com/Koodattu/ai-vaarabot-ttv",
+      "blog": "",
+      "demo": "",
+      "image": "/images/vaarattu-twitch-ai-chat-bot.jpg",
       "year": 2026
     },
     {
       "title": "WoW Guild Progress Tracker",
-      "description": "A full-stack tracker for World of Warcraft raid progression with guild leaderboards, WarcraftLogs analytics, community predictions, and live event data",
-      "tech": {
-        "platform": ["Web", "Server"],
-        "languages": ["TypeScript"],
-        "frontend": ["Next.js", "React", "Tailwind CSS"],
-        "backend": ["Express", "Node.js", "MongoDB"],
-        "tools": ["Docker", "Nginx"]
-      },
+      "description": "Real-time World of Warcraft raid progression dashboard that combines WarcraftLogs, Blizzard, Raider.IO, and Twitch data for guild rankings and analytics.",
       "features": [
         "Tracks multiple guilds across raid tiers with progression leaderboards",
         "Aggregates WarcraftLogs, Raider.IO, Battle.net, and Twitch data",
         "Adds prediction competitions, guild profiles, and raid performance analytics"
       ],
-      "link": "https://github.com/Koodattu/wow-guild-progress-tracker",
+      "source": "https://github.com/Koodattu/wow-guild-progress-tracker",
+      "blog": "",
+      "demo": "https://suomiwow.vaarattu.tv",
+      "image": "/images/wow-guild-progress-tracker.webp",
+      "year": 2025
+    },
+    {
+      "title": "WCL VOD Review",
+      "description": "Warcraft Logs VOD review tool that syncs combat events with Twitch or YouTube recordings so raid leads can jump to exact moments.",
+      "features": [
+        "Synchronizes Warcraft Logs reports with VOD timestamps",
+        "Lets users jump from deaths and boss events to the matching video moment",
+        "Includes manual sync controls and Battle.net boss assets"
+      ],
+      "source": "https://github.com/Koodattu/wcl-vod-review",
+      "blog": "",
+      "demo": "",
+      "image": "/images/wcl-vod-review.png",
+      "year": 2025
+    },
+    {
+      "title": "Generative Imagining",
+      "description": "Bilingual AI image platform for students that creates and edits images from natural language with moderation and usage controls.",
+      "features": [
+        "Supports English and Finnish image prompts without requiring accounts",
+        "Uses Gemini-backed prompt handling for image creation and editing",
+        "Gives educators moderation and usage-limit controls"
+      ],
+      "source": "https://github.com/Koodattu/generative-imagining",
+      "blog": "",
+      "demo": "https://imagine.koodattu.dev",
+      "image": "/images/generative-imagining.png",
+      "year": 2025
+    },
+    {
+      "title": "Vaarattu.TV",
+      "description": "Twitch analytics platform that tracks chat, watch time, emotes, and redemptions while generating AI-written viewer biographies.",
+      "features": [
+        "Tracks watch time, emotes, channel points, and chat activity",
+        "Generates Finnish viewer biographies from stream behavior",
+        "Runs as a self-hosted, containerized multi-service application"
+      ],
+      "source": "https://github.com/Koodattu/vaarattu.tv",
+      "blog": "",
+      "demo": "https://vaarattu.tv",
+      "image": "/images/vaarattu-tv.png",
       "year": 2025
     },
     {
       "title": "Unity 3D AI Assistant",
-      "description": "A Unity-based 3D AI assistant with a Ready Player Me avatar, voice conversation, speech output, image generation, and webcam-powered mini games",
-      "tech": {
-        "platform": ["Desktop", "Game"],
-        "languages": ["C#"],
-        "frontend": ["Unity"],
-        "backend": [],
-        "tools": ["Unity"],
-        "genai": ["Language", "Speech", "Vision", "Image"]
-      },
+      "description": "Voice-controlled Unity avatar that combines natural conversation, speech output, image generation, and webcam-driven mini games.",
       "features": [
         "Uses push-to-talk voice input with spoken responses and animated avatar gestures",
         "Supports image generation and editing through conversation",
         "Includes webcam-based Rock-Paper-Scissors and multilingual conversations"
       ],
-      "link": "https://github.com/Koodattu/unity-3d-ai-assistant",
+      "source": "https://github.com/Koodattu/unity-3d-ai-assistant",
+      "blog": "",
+      "demo": "",
+      "image": "/images/unity-3d-ai-assistant.webp",
       "year": 2025
     },
     {
-      "title": "Whats AI Assistant",
-      "description": "An AI-powered chatbot demo that integrates with WhatsApp using the Neonize (whatsmeow) framework, leveraging language models to generate responses",
-      "tech": {
-        "platform": ["Server"],
-        "languages": ["Python"],
-        "frontend": [],
-        "backend": [],
-        "tools": ["Visual Studio Code"],
-        "genai": ["Language", "Vision"]
-      },
+      "title": "GPT-Lab Score Keeper",
+      "description": "Mobile-friendly scoring and leaderboard app for multi-sport team events, with PIN-protected admin tools and live spectator updates.",
       "features": [
-        "Embedded directly in WhatsApp for seamless AI support",
-        "Handles multiple file types and images to enhance response accuracy",
-        "Leverages language models for context-aware and precise answers"
+        "Tracks individual and team scoring across multiple sports",
+        "Updates spectator views with a lightweight polling loop",
+        "Includes PIN-protected admin tools for team setup and scoring"
       ],
-      "link": "https://github.com/Koodattu/whats-ai-assistant",
+      "source": "https://github.com/Koodattu/gpt-lab-score-keeper",
+      "blog": "",
+      "demo": "",
+      "image": "/images/gpt-lab-score-keeper.png",
+      "year": 2025
+    },
+    {
+      "slug": "whats-ai-assistant",
+      "title": "WhatsApp AI Assistant",
+      "description": "WhatsApp chatbot proof of concept using Neonize, long-term context, document processing, image generation, and multimodal AI.",
+      "features": [
+        "Integrates language models directly into WhatsApp through Neonize",
+        "Supports image generation, audio transcription, and document processing",
+        "Stores longer-running conversation context in a local database"
+      ],
+      "source": "https://github.com/Koodattu/whats-ai-assistant",
+      "blog": "",
+      "demo": "",
+      "image": "/images/whats-ai-assistant.webp",
       "year": 2025
     },
     {
       "title": "Voice AI Assistant Framework",
-      "description": "A comprehensive voice AI assistant framework that integrates speech-to-text, text-to-speech, and LLMs with memory management to enable interactive and context-aware conversations",
-      "tech": {
-        "platform": ["Server"],
-        "languages": ["Python"],
-        "frontend": [],
-        "backend": [],
-        "tools": ["Visual Studio Code"],
-        "genai": ["Language"]
-      },
+      "description": "Python voice assistant framework that wires speech recognition, text-to-speech, language models, and memory into reusable conversation workflows.",
       "features": [
         "Integrates speech recognition, conversational AI, and speech synthesis",
-        "Provides a flexible voice interface framework for building custom voice AI assistants",
-        "Goal is to integrate with various platforms and services to enable voice interactions"
+        "Provides a flexible voice interface framework for custom assistants",
+        "Keeps memory management separate from platform-specific integrations"
       ],
-      "link": "https://github.com/Koodattu/voice-ai-assistant-framework",
+      "source": "https://github.com/Koodattu/voice-ai-assistant-framework",
+      "blog": "",
+      "demo": "",
+      "image": "/images/voice-ai-assistant-framework.webp",
       "year": 2025
     },
     {
+      "title": "Aihio Digital Demo App",
+      "description": "Flutter demo app that presents AI-powered marketing analytics, social management, revenue dashboards, and a Gemini assistant for business users.",
+      "features": [
+        "Visualizes revenue, SEO, and marketing performance in a mobile dashboard",
+        "Aggregates social media workflows into a single demo experience",
+        "Includes an AI marketing assistant powered by Gemini"
+      ],
+      "source": "https://github.com/Koodattu/aihio-digital-demo",
+      "blog": "",
+      "demo": "",
+      "image": "/images/aihio-digital-demo.png",
+      "year": 2024
+    },
+    {
       "title": "Voice Guided Imaging",
-      "description": "A web-based AI imaging platform for creating and editing images from voice commands with local and cloud processing modes",
-      "tech": {
-        "platform": ["Web", "Server"],
-        "languages": ["Python", "JavaScript"],
-        "frontend": ["HTML", "CSS"],
-        "backend": ["Flask", "Ollama"],
-        "tools": ["Visual Studio Code"],
-        "genai": ["Language", "Speech", "Diffusion"]
-      },
+      "description": "Voice-controlled image generation and editing platform that routes prompts between cloud models and local inference with queue and gallery support.",
       "features": [
         "Supports push-to-talk commands for image generation and editing",
         "Routes work between cloud services and local inference backends",
         "Includes session limits, persistent galleries, and queue progress updates"
       ],
-      "link": "https://github.com/Koodattu/voice-guided-imaging",
+      "source": "https://github.com/Koodattu/voice-guided-imaging",
+      "blog": "",
+      "demo": "https://imagen.koodattu.dev",
+      "image": "/images/voice-guided-imaging.webp",
+      "year": 2024
+    },
+    {
+      "title": "SDX Restaurant Menus",
+      "description": "Cross-platform Sodexo lunch menu app for Finland with favorites, location-aware restaurant sorting, and current or upcoming menus.",
+      "features": [
+        "Shows menus for 100+ Sodexo restaurants across Finland",
+        "Supports favorites, restaurant type filters, and upcoming menus",
+        "Uses automated metadata updates for location-aware sorting"
+      ],
+      "source": "https://github.com/Koodattu/sodexo-flutter-lunch-app",
+      "blog": "",
+      "demo": "https://sdx.koodattu.dev",
+      "image": "/images/sdx-restaurant-menus.png",
       "year": 2024
     },
     {
       "title": "Fyr'alath Data Tracker",
-      "description": "A full-stack app for tracking WoW patch 10.2 legendary weapon crafting cost and acquisition data",
-      "tech": {
-        "platform": ["Web", "Server"],
-        "languages": ["Python", "JavaScript"],
-        "frontend": ["HTML", "CSS"],
-        "backend": ["Flask", "MongoDB", "Github Pages"],
-        "tools": ["Visual Studio Code"]
-      },
+      "description": "World of Warcraft analytics dashboard tracking Fyr'alath crafting costs, regional price history, and legendary acquisition trends.",
       "features": [
-        "Shows current price craft legendary weapon per region and individual material prices",
-        "Shows price history of total price to craft per region",
-        "Shows acquisition data, daily and cumulative and per class"
+        "Tracks price-to-craft data across World of Warcraft regions",
+        "Visualizes material prices and regional price history",
+        "Shows daily and cumulative acquisition trends by class"
       ],
-      "link": "https://github.com/Koodattu/fyralath-data-tracker",
+      "source": "https://github.com/Koodattu/fyralath-data-tracker",
+      "blog": "",
+      "demo": "https://fyralath.koodattu.dev",
+      "image": "/images/fyr'alath-data-tracker.webp",
       "year": 2024
     },
     {
       "title": "Personal Website",
-      "description": "Personal website with CV and information about myself and my projects",
-      "tech": {
-        "platform": ["Web"],
-        "languages": ["JavaScript"],
-        "frontend": ["HTML", "CSS"],
-        "backend": ["Github Pages"],
-        "tools": ["Visual Studio Code"]
-      },
-      "features": ["Information about myself", "Projects", "CV"],
-      "link": "https://github.com/Koodattu/ala-ranta.la",
+      "description": "Static Astro portfolio for CV, work history, projects, writing, and structured content without a backend.",
+      "features": [
+        "Shows professional background, CV links, selected work, and project pages",
+        "Generates blog posts, RSS, sitemap, and project pages as static HTML",
+        "Keeps the site fast, local, and simple to maintain"
+      ],
+      "source": "https://github.com/Koodattu/ala-ranta.la",
+      "blog": "/blog/portfolio-v2/",
+      "demo": "https://ala-ranta.la/",
+      "image": "/images/personal-website.webp",
       "year": 2024
     },
     {
       "title": "Twitch Song Request Desktop",
-      "description": "A Windows desktop Twitch song request application with multi-platform support for song requests",
-      "tech": {
-        "platform": ["Desktop"],
-        "languages": ["C#"],
-        "frontend": ["WPF", ".NET"],
-        "tools": ["Visual Studio"]
-      },
+      "description": "Windows Twitch song-request app that reads Channel Point redemptions and plays Spotify or YouTube requests with refund handling.",
       "features": [
-        "Song requests are read from Twitch channel points redeem rewards",
-        "Supports song requests from Spotify and Youtube",
-        "Spotify songs are played via local Spotify installation",
-        "Youtube videos are played inside application"
+        "Reads song requests from Twitch Channel Point reward redemptions",
+        "Supports Spotify playback and an integrated YouTube player",
+        "Handles unavailable requests with automatic point refunds"
       ],
-      "link": "https://github.com/Koodattu/twitch-song-request-desktop",
+      "source": "https://github.com/Koodattu/twitch-song-request-desktop",
+      "blog": "",
+      "demo": "",
+      "image": "/images/twitch-song-request-desktop.webp",
       "year": 2023
     },
     {
       "title": "Twitch Spotify Song Request",
-      "description": "A simple javascript and python script for Twitch Spotify song requests",
-      "tech": {
-        "platform": ["Web"],
-        "languages": ["Python", "JavaScript"],
-        "frontend": ["HTML", "CSS"],
-        "tools": ["Visual Studio Code"]
-      },
+      "description": "OBS browser-source song request script that connects Twitch Channel Points to Spotify without hosting after setup.",
       "features": [
-        "Python script for generating Twitch and Spotify access tokens",
-        "HTML page with only Javascript which can be added to OBS as a browser source",
-        "No hosting required after initial setup"
+        "Uses Python only for initial Twitch and Spotify token generation",
+        "Runs the request UI as a local HTML browser source in OBS",
+        "Searches Spotify, manages playback, and reports failed requests in chat"
       ],
-      "link": "https://github.com/Koodattu/twitch-spotify-song-request",
+      "source": "https://github.com/Koodattu/twitch-spotify-song-request",
+      "blog": "",
+      "demo": "",
+      "image": "/images/twitch-spotify-song-request.webp",
       "year": 2023
     },
     {
       "title": "Staff Restaurant Lunch Menu App",
-      "description": "A lunch menu mobile application with frontend and backend for previous employer staff restaurant",
-      "tech": {
-        "platform": ["Mobile", "Server"],
-        "languages": ["Dart", "Java"],
-        "frontend": ["Flutter"],
-        "backend": ["Spring Boot", "PostgreSQL"],
-        "tools": ["IntelliJ IDEA", "Visual Studio Code"]
-      },
+      "description": "Flutter and Spring Boot staff restaurant app that parses menu documents, stores history, and supports voting and course stats.",
       "features": [
-        "Mobile frontend with Flutter and Dart, backend with Java Spring Boot",
-        "Backend Fetches lunch menu weekly, saves to database, frontend requests menu with Rest Api",
-        "Extra features like view menu history, vote on courses, stats about courses"
+        "Parses weekly menu documents through a Java Spring Boot backend",
+        "Stores menu data and history in PostgreSQL",
+        "Adds Flutter mobile views, course voting, and menu statistics"
       ],
-      "link": "https://github.com/Koodattu/lunch-menu-app",
+      "source": "https://github.com/Koodattu/lunch-menu-app",
+      "blog": "",
+      "demo": "",
+      "image": "/images/staff-restaurant-lunch-menu-app.webp",
       "year": 2021
     },
     {
       "title": "Räccis SeAMK Food Royale",
-      "description": "An Android lunch menu mobile application for a friend",
-      "tech": {
-        "platform": ["Mobile"],
-        "languages": ["Java"],
-        "frontend": ["Android"],
-        "tools": ["Android Studio"]
-      },
+      "description": "Android app for comparing two SeAMK-area restaurant menus side by side using Sodexo API data and Eventti HTML scraping.",
       "features": [
-        "Displays two restaurants daily lunch menu side by side",
-        "Fetches Sodexo lunch menu with rest api in Json",
-        "Scrapes Eventti lunch menu from website html"
+        "Displays two daily restaurant menus side by side",
+        "Fetches Sodexo lunch menus from an API",
+        "Scrapes Eventti menu content from HTML"
       ],
-      "link": "https://github.com/Koodattu/jere-food-royale-android",
+      "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/jere-food-royale-android",
+      "blog": "",
+      "demo": "",
+      "image": "/images/räccis-seamk-food-royale.webp",
       "year": 2018
     },
     {
       "title": "Tsumppi Coffee Shop",
-      "description": "An Android catalogue application for SeAMK student services coffee shop",
-      "tech": {
-        "platform": ["Mobile"],
-        "languages": ["Java"],
-        "frontend": ["Android"],
-        "backend": ["Google Sheets"],
-        "tools": ["Android Studio"]
-      },
+      "description": "Android catalogue for the SeAMK student coffee shop with product data from Google Sheets and social posts from Facebook and Instagram.",
       "features": [
-        "Coffee shop products catalogue and latest social media posts",
-        "Catalogue data is fetched from google sheets",
-        "Latest social media posts are fetched from Facebook and Instagram"
+        "Shows coffee shop products in a mobile catalogue",
+        "Fetches catalogue data from Google Sheets",
+        "Aggregates recent social media posts from Facebook and Instagram"
       ],
-      "link": "https://github.com/Koodattu/tsumppi-coffee-shop",
+      "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/tsumppi-coffee-shop",
+      "blog": "",
+      "demo": "",
+      "image": "/images/tsumppi-coffee-shop.webp",
       "year": 2017
     },
     {
       "title": "SeAMK Lukkari",
-      "description": "An Android timetable mobile application for SeAMK students",
-      "tech": {
-        "platform": ["Mobile"],
-        "languages": ["Java"],
-        "frontend": ["Android"],
-        "tools": ["Android Studio"]
-      },
+      "description": "Android timetable app for SeAMK students with personalized schedules, room search, and campus lunch menus.",
       "features": [
-        "Displays a student group's daily, weekly and period timetable",
-        "Create your own timetable, view other student group's timetables, search for an empty room",
-        "See weekly lunch menus from student restaurants"
+        "Shows daily, weekly, and period timetables for student groups",
+        "Supports custom study baskets and empty-room search",
+        "Includes weekly lunch menus from student restaurants"
       ],
-      "link": "https://github.com/Koodattu/SeAMK-Lukkari",
+      "source": "https://github.com/Koodattu/SeAMK-Lukkari",
+      "blog": "",
+      "demo": "",
+      "image": "/images/seamk-lukkari.webp",
       "year": 2017
     },
     {
       "title": "SeAMK WinhaWille",
-      "description": "An Android study registry mobile application for SeAMK students",
-      "tech": {
-        "platform": ["Mobile"],
-        "languages": ["Java"],
-        "frontend": ["Android"],
-        "tools": ["Android Studio"]
-      },
-      "features": ["See your GPA and student credits", "See all your completed courses and grades"],
-      "link": "https://github.com/Koodattu/seamk-winhawille",
-      "year": 2016
+      "description": "Android study registry client that scrapes WinhaWille data to show GPA, credits, completed courses, and grades.",
+      "features": [
+        "Shows GPA and accumulated student credits",
+        "Lists completed courses and grades",
+        "Parses study registry data from campus portal HTML"
+      ],
+      "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/seamk-winhawille",
+      "blog": "",
+      "demo": "",
+      "image": "/images/seamk-winhawille.webp",
+      "year": 2017
     },
     {
       "title": "SeAMK Ruoka",
-      "description": "An Android lunch menu mobile application for SeAMK students",
-      "tech": {
-        "platform": ["Mobile"],
-        "languages": ["Java"],
-        "frontend": ["Android"],
-        "tools": ["Android Studio"]
-      },
-      "features": ["See weekly lunch menus from student restaurants"],
-      "link": "https://github.com/Koodattu/seamk-ruoka",
+      "description": "Android lunch menu app that uses restaurant APIs and JSON data to show weekly SeAMK student restaurant menus.",
+      "features": [
+        "Displays weekly lunch menus from SeAMK student restaurants",
+        "Fetches restaurant data through REST API calls",
+        "Parses JSON menu data into a simple mobile view"
+      ],
+      "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/seamk-ruoka",
+      "blog": "",
+      "demo": "",
+      "image": "/images/seamk-ruoka.webp",
       "year": 2016
     }
   ]

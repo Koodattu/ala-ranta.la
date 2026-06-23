@@ -1,12 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import TechTag from "../../components/TechTag.astro";
 import projectsData from "../../data/projects.json";
 import {
   getProjectSlug,
-  getProjectTags,
   projectImagePath,
-  slugify,
   sortNewestProjects,
   type Project,
 } from "../../utils";
@@ -21,8 +18,12 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props as { project: Project };
-const tags = getProjectTags(project);
 const image = projectImagePath(project);
+const actions = [
+  { label: "Source", href: project.source, external: true, className: "button button-primary" },
+  { label: "Blog", href: project.blog, external: false, className: "button" },
+  { label: "Demo", href: project.demo, external: true, className: "button" },
+];
 const schema = {
   "@type": "CreativeWork",
   name: project.title,
@@ -31,8 +32,7 @@ const schema = {
   image: new URL(image, Astro.site).toString(),
   dateCreated: String(project.year),
   creator: { "@id": `${Astro.site}#person` },
-  sameAs: project.link,
-  keywords: tags,
+  sameAs: [project.source, project.demo].filter(Boolean),
 };
 ---
 
@@ -45,7 +45,22 @@ const schema = {
           <h1>{project.title}</h1>
           <p>{project.description}</p>
           <div class="hero-actions">
-            <a class="button button-primary" href={project.link} target="_blank" rel="noreferrer">Open source</a>
+            <div class="hero-action-row">
+              {actions.map((action) =>
+                action.href ? (
+                  <a
+                    class={action.className}
+                    href={action.href}
+                    target={action.external ? "_blank" : undefined}
+                    rel={action.external ? "noreferrer" : undefined}
+                  >
+                    {action.label}
+                  </a>
+                ) : (
+                  <span class={`${action.className} is-disabled`} aria-disabled="true">{action.label}</span>
+                )
+              )}
+            </div>
             <a class="button" href="/projects/">All projects</a>
           </div>
         </div>
@@ -61,9 +76,6 @@ const schema = {
           <ul class="feature-list feature-list-large">
             {project.features.map((feature) => <li>{feature}</li>)}
           </ul>
-          <div class="tag-list">
-            {tags.map((tag) => <TechTag tag={tag} href={`/projects/?tag=${slugify(tag)}`} />)}
-          </div>
         </div>
       </section>
     </article>

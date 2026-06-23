@@ -44,11 +44,10 @@ type HomeCopy = {
     >;
     cardLabels: {
       source: string;
-      project: string;
+      blog: string;
+      demo: string;
       readAbout: string;
       preview: string;
-      features: string;
-      technologies: string;
     };
     translations: Record<string, Partial<Pick<Project, "description" | "features">>>;
   };
@@ -130,11 +129,10 @@ const en: HomeCopy = {
     },
     cardLabels: {
       source: "Source",
-      project: "Project",
+      blog: "Blog",
+      demo: "Demo",
       readAbout: "Read about",
       preview: "preview",
-      features: "features",
-      technologies: "technologies",
     },
     translations: {},
   },
@@ -218,11 +216,10 @@ const fi: HomeCopy = {
     },
     cardLabels: {
       source: "Lähdekoodi",
-      project: "Projekti",
+      blog: "Blogi",
+      demo: "Demo",
       readAbout: "Lue projektista",
       preview: "esikatselu",
-      features: "ominaisuudet",
-      technologies: "teknologiat",
     },
     translations: {
       "AI Workshop Playground": {
