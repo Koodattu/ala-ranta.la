@@ -1374,7 +1374,7 @@ dd {
   display: grid;
   grid-template-columns: 145px minmax(220px, 0.68fr) minmax(0, 1fr);
   gap: 22px;
-  align-items: baseline;
+  align-items: center;
   padding: 15px 16px;
   color: inherit;
   text-decoration: none;
