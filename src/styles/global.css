@@ -275,6 +275,17 @@ button {
   color: var(--accent-ink);
 }
 
+html[data-preferred-language] .language-switcher a[aria-current="true"] {
+  background: transparent;
+  color: var(--muted);
+}
+
+html[data-preferred-language="en"] .language-switcher a[data-language-choice="en"],
+html[data-preferred-language="fi"] .language-switcher a[data-language-choice="fi"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
 main {
   overflow: hidden;
 }
@@ -900,6 +911,18 @@ dd {
 .project-detail-description {
   display: grid;
   gap: 12px;
+}
+
+[data-project-description-lang="fi"] {
+  display: none;
+}
+
+html[data-preferred-language="fi"] [data-project-description-lang="en"] {
+  display: none;
+}
+
+html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
+  display: block;
 }
 
 .project-detail-description {

@@ -42,6 +42,17 @@ const navItems = [
 ];
 
 const isActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
+const languageHref = (targetLang: "en" | "fi") => {
+  if (pathname === "/") {
+    return targetLang === "fi" ? "/fi/" : "/?lang=en";
+  }
+
+  if (pathname === "/fi/") {
+    return targetLang === "en" ? "/?lang=en" : "/fi/";
+  }
+
+  return `${pathname}?lang=${targetLang}`;
+};
 ---
 
 <header class="site-header">
@@ -57,8 +68,8 @@ const isActive = (href: string) => href === "/" ? pathname === "/" : pathname.st
   </nav>
   <div class="header-actions" aria-label={copy.actionsLabel}>
     <nav class="language-switcher" aria-label={copy.languageLabel}>
-      <a href="/?lang=en" data-language-choice="en" aria-current={lang === "en" ? "true" : undefined}>EN</a>
-      <a href="/fi/" data-language-choice="fi" aria-current={lang === "fi" ? "true" : undefined}>FI</a>
+      <a href={languageHref("en")} data-language-choice="en" aria-current={lang === "en" ? "true" : undefined}>EN</a>
+      <a href={languageHref("fi")} data-language-choice="fi" aria-current={lang === "fi" ? "true" : undefined}>FI</a>
     </nav>
     <a class="icon-link" href={profile.cv[lang]} aria-label={copy.cvAria}>CV</a>
   </div>

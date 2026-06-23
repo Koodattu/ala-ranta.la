@@ -80,6 +80,41 @@ const jsonLd = {
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="alternate" type="application/rss+xml" title={`${profile.siteName} RSS`} href="/rss.xml" />
     <meta name="theme-color" content="#2dd4bf" />
+    <script is:inline>
+      (() => {
+        const getSupportedLanguage = (language) => {
+          const baseLanguage = language?.toLowerCase().split("-")[0];
+          return baseLanguage === "en" || baseLanguage === "fi" ? baseLanguage : undefined;
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const requestedLanguage = getSupportedLanguage(params.get("lang"));
+        const pageLanguage = getSupportedLanguage(document.documentElement.lang);
+
+        if (requestedLanguage || pageLanguage === "fi") {
+          try {
+            window.localStorage.setItem("preferredLanguage", requestedLanguage ?? pageLanguage);
+          } catch {
+            // Keep the in-memory preference if storage is unavailable.
+          }
+        }
+
+        let preferredLanguage;
+
+        try {
+          preferredLanguage = getSupportedLanguage(window.localStorage.getItem("preferredLanguage"));
+        } catch {
+          preferredLanguage = undefined;
+        }
+
+        const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+        const detectedLanguage = languages.map(getSupportedLanguage).find(Boolean);
+        const selectedLanguage =
+          requestedLanguage ?? preferredLanguage ?? (pageLanguage === "fi" ? "fi" : detectedLanguage) ?? pageLanguage ?? "en";
+
+        document.documentElement.dataset.preferredLanguage = selectedLanguage;
+      })();
+    </script>
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={type} />
@@ -142,13 +177,33 @@ const jsonLd = {
     <slot />
     <Footer lang={lang} />
     <script>
+      const syncPreferredLanguage = (language: string | undefined) => {
+        if (language !== "en" && language !== "fi") return;
+
+        document.documentElement.dataset.preferredLanguage = language;
+
+        document.querySelectorAll("[data-language-choice]").forEach((link) => {
+          if (link.getAttribute("data-language-choice") === language) {
+            link.setAttribute("aria-current", "true");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      syncPreferredLanguage(document.documentElement.dataset.preferredLanguage);
+
       document.querySelectorAll("[data-language-choice]").forEach((link) => {
         link.addEventListener("click", () => {
+          const selectedLanguage = link.getAttribute("data-language-choice") ?? undefined;
+
           try {
-            window.localStorage.setItem("preferredLanguage", link.getAttribute("data-language-choice") ?? "");
+            window.localStorage.setItem("preferredLanguage", selectedLanguage ?? "");
           } catch {
             // Ignore storage failures and keep the link as a normal navigation control.
           }
+
+          syncPreferredLanguage(selectedLanguage);
         });
       });
 

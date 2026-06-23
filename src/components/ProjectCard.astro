@@ -30,9 +30,6 @@ const {
 } = Astro.props;
 const slug = getProjectSlug(project);
 const selectedParagraphs = selectedWork?.paragraphs ?? [project.description];
-const projectDescriptions = [project.description, project.descriptionFi].filter(
-  (description): description is string => Boolean(description),
-);
 const actions = [
   { label: labels.source, href: project.source, external: true, ariaLabel: `Open ${project.title} source on GitHub` },
   { label: labels.blog, href: project.blog, external: false, ariaLabel: `Read the ${project.title} blog post` },
@@ -79,7 +76,8 @@ const actions = [
             </div>
             <h3>{project.title}</h3>
             <div class="project-card-description">
-              {projectDescriptions.map((description) => <p>{description}</p>)}
+              <p data-project-description-lang="en">{project.description}</p>
+              {project.descriptionFi && <p data-project-description-lang="fi">{project.descriptionFi}</p>}
             </div>
           </div>
           <div class="project-card-actions" aria-label={`${project.title} links`}>

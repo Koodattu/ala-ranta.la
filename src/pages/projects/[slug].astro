@@ -19,9 +19,6 @@ export function getStaticPaths() {
 
 const { project } = Astro.props as { project: Project };
 const image = projectImagePath(project);
-const projectDescriptions = [project.description, project.descriptionFi].filter(
-  (description): description is string => Boolean(description),
-);
 const actions = [
   { label: "Source", href: project.source, external: true, className: "button button-primary" },
   { label: "Blog", href: project.blog, external: false, className: "button" },
@@ -47,7 +44,8 @@ const schema = {
           <p class="eyebrow">{project.year}</p>
           <h1>{project.title}</h1>
           <div class="project-detail-description">
-            {projectDescriptions.map((description) => <p>{description}</p>)}
+            <p data-project-description-lang="en">{project.description}</p>
+            {project.descriptionFi && <p data-project-description-lang="fi">{project.descriptionFi}</p>}
           </div>
           <div class="hero-actions">
             <div class="hero-action-row">
