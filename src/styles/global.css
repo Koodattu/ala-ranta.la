@@ -339,10 +339,6 @@ h1 {
   font-size: 4.8rem;
 }
 
-.accent-word {
-  color: var(--accent);
-}
-
 .hero h1 {
   font-size: clamp(2.6rem, 5.3vw, 5.1rem);
   white-space: nowrap;
@@ -1868,8 +1864,8 @@ dd {
   }
 
   .hero-lede,
-  .page-hero p,
-  .project-detail-hero > div > p,
+  .page-hero p:not(.eyebrow),
+  .project-detail-hero > div > p:not(.eyebrow),
   .post-hero > p {
     font-size: 1.04rem;
   }
