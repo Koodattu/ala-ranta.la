@@ -2058,6 +2058,10 @@ dd {
     grid-template-columns: 1fr;
   }
 
+  .project-list-shell {
+    padding-top: 28px;
+  }
+
   .project-list {
     gap: 54px;
   }
