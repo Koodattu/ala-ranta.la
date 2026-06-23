@@ -21,8 +21,8 @@ const projects = sortNewestProjects(projectsData.projects as Project[]);
       </p>
     </section>
 
-    <section class="section-shell">
-      <div class="project-grid" data-project-grid data-reveal-group>
+    <section class="section-shell project-list-shell">
+      <div class="project-list" data-project-list data-reveal-group>
         {projects.map((project) => <ProjectCard project={project} />)}
       </div>
     </section>
