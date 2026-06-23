@@ -1057,10 +1057,7 @@ dd {
 }
 
 .project-list .project-card:hover .project-media {
-  box-shadow:
-    0 28px 74px rgba(0, 0, 0, 0.34),
-    0 0 0 1px rgba(255, 255, 255, 0.22),
-    0 0 0 4px color-mix(in srgb, var(--accent) 24%, transparent);
+  box-shadow: 0 28px 74px rgba(0, 0, 0, 0.34);
 }
 
 .project-list .project-card:hover .project-media img {
