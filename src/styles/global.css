@@ -764,6 +764,7 @@ dd {
 }
 
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -796,6 +797,20 @@ dd {
 }
 
 .project-card-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.project-card-main-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card-main-link:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
@@ -878,7 +893,6 @@ dd {
   gap: 12px;
 }
 
-.project-card h3 a,
 .post-card h3 a {
   text-decoration: none;
 }
@@ -892,6 +906,8 @@ dd {
 }
 
 .project-card-actions {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
@@ -982,11 +998,6 @@ dd {
   aspect-ratio: 16 / 10;
   border-radius: 18px;
   box-shadow: 0 20px 52px rgba(0, 0, 0, 0.22);
-}
-
-.project-list .project-media:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 5px;
 }
 
 .project-list .project-media img {
