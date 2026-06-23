@@ -1592,6 +1592,127 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   font-size: 3.4rem;
 }
 
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(440px, 0.75fr);
+  gap: clamp(30px, 4.6vw, 56px);
+  align-items: center;
+}
+
+.about-hero-copy {
+  min-width: 0;
+}
+
+.about-hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(360px, 36vw, 460px);
+}
+
+.about-photo-stack {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 520px);
+  height: clamp(360px, 37vw, 480px);
+}
+
+.about-photo-card {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: clamp(184px, 18vw, 244px);
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  filter: drop-shadow(0 22px 26px rgba(0, 0, 0, 0.34));
+  transform-origin: 50% 92%;
+  transition-property: transform, filter, opacity;
+  transition-duration: 260ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.about-photo-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
+  outline: 0;
+  filter: brightness(1) contrast(1) saturate(1);
+  transition-property: filter;
+  transition-duration: 260ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.about-photo-card-left {
+  z-index: 2;
+  width: clamp(206px, 20vw, 264px);
+  transform: translateX(-104%) translateY(8px) rotate(-5.5deg);
+}
+
+.about-photo-card-center {
+  z-index: 4;
+  width: clamp(220px, 22vw, 286px);
+  transform: translateX(-50%) translateY(-10px) rotate(1deg);
+}
+
+.about-photo-card-right {
+  z-index: 1;
+  width: clamp(206px, 20vw, 264px);
+  transform: translateX(4%) translateY(12px) rotate(6deg);
+}
+
+.about-photo-stack:has(.about-photo-card:hover) .about-photo-card:not(:hover) {
+  opacity: 0.82;
+  filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.26));
+}
+
+.about-photo-stack:has(.about-photo-card-left:hover) .about-photo-card-center {
+  transform: translateX(-34%) translateY(-10px) rotate(1deg);
+}
+
+.about-photo-stack:has(.about-photo-card-left:hover) .about-photo-card-right {
+  transform: translateX(16%) translateY(14px) rotate(7deg);
+}
+
+.about-photo-stack:has(.about-photo-card-center:hover) .about-photo-card-left {
+  transform: translateX(-116%) translateY(12px) rotate(-7.5deg);
+}
+
+.about-photo-stack:has(.about-photo-card-center:hover) .about-photo-card-right {
+  transform: translateX(18%) translateY(14px) rotate(7.5deg);
+}
+
+.about-photo-stack:has(.about-photo-card-right:hover) .about-photo-card-left {
+  transform: translateX(-116%) translateY(10px) rotate(-7deg);
+}
+
+.about-photo-stack:has(.about-photo-card-right:hover) .about-photo-card-center {
+  transform: translateX(-64%) translateY(-10px) rotate(1deg);
+}
+
+.about-photo-card:hover {
+  z-index: 5;
+  opacity: 1;
+  filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.42));
+}
+
+.about-photo-card:hover img {
+  filter: brightness(1.08) contrast(1.04) saturate(1.04);
+}
+
+.about-photo-card-left:hover {
+  transform: translateX(-114%) translateY(-8px) rotate(-7.5deg) scale(1.08);
+}
+
+.about-photo-card-center:hover {
+  transform: translateX(-50%) translateY(-30px) rotate(1deg) scale(1.08);
+}
+
+.about-photo-card-right:hover {
+  transform: translateX(16%) translateY(-8px) rotate(7.5deg) scale(1.08);
+}
+
 .about-detail-hero,
 .project-detail-hero {
   display: grid;
@@ -2013,8 +2134,23 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 
   .project-detail-hero,
   .about-detail-hero,
+  .about-hero,
   .split-section {
     grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    gap: 28px;
+  }
+
+  .about-hero-visual {
+    justify-content: center;
+    min-height: 360px;
+  }
+
+  .about-photo-stack {
+    width: min(100%, 420px);
+    height: 360px;
   }
 
   .work-grid {
@@ -2135,6 +2271,36 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 
   .section-shell {
     padding: 54px 0;
+  }
+
+  .about-hero {
+    padding-top: 60px;
+    padding-bottom: 36px;
+  }
+
+  .about-hero-visual {
+    min-height: 320px;
+  }
+
+  .about-photo-stack {
+    width: min(100%, 360px);
+    height: 315px;
+  }
+
+  .about-photo-card {
+    width: clamp(150px, 39vw, 190px);
+  }
+
+  .about-photo-card-left {
+    width: clamp(158px, 42vw, 204px);
+  }
+
+  .about-photo-card-center {
+    width: clamp(172px, 47vw, 218px);
+  }
+
+  .about-photo-card-right {
+    width: clamp(158px, 42vw, 204px);
   }
 
   .timeline-preview-list {
@@ -2422,6 +2588,66 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
     grid-template-columns: minmax(0, 1fr) minmax(104px, 32vw);
     gap: 10px 12px;
     padding-bottom: 32px;
+  }
+
+  .about-hero {
+    padding-top: 46px;
+  }
+
+  .about-hero-visual {
+    min-height: 270px;
+  }
+
+  .about-photo-stack {
+    height: 274px;
+  }
+
+  .about-photo-card {
+    width: 134px;
+  }
+
+  .about-photo-card-left {
+    width: 138px;
+    transform: translateX(-102%) translateY(8px) rotate(-5deg);
+  }
+
+  .about-photo-card-center {
+    width: 154px;
+    transform: translateX(-50%) translateY(-8px) rotate(1deg);
+  }
+
+  .about-photo-card-right {
+    width: 138px;
+    transform: translateX(4%) translateY(10px) rotate(5.5deg);
+  }
+
+  .about-photo-stack:has(.about-photo-card-left:hover) .about-photo-card-center {
+    transform: translateX(-34%) translateY(-8px) rotate(1deg);
+  }
+
+  .about-photo-stack:has(.about-photo-card-center:hover) .about-photo-card-left,
+  .about-photo-stack:has(.about-photo-card-right:hover) .about-photo-card-left {
+    transform: translateX(-112%) translateY(10px) rotate(-7deg);
+  }
+
+  .about-photo-stack:has(.about-photo-card-center:hover) .about-photo-card-right {
+    transform: translateX(16%) translateY(12px) rotate(7deg);
+  }
+
+  .about-photo-stack:has(.about-photo-card-right:hover) .about-photo-card-center {
+    transform: translateX(-62%) translateY(-8px) rotate(1deg);
+  }
+
+  .about-photo-card-left:hover {
+    transform: translateX(-112%) translateY(-4px) rotate(-7deg) scale(1.06);
+  }
+
+  .about-photo-card-center:hover {
+    transform: translateX(-50%) translateY(-22px) rotate(1deg) scale(1.06);
+  }
+
+  .about-photo-card-right:hover {
+    transform: translateX(14%) translateY(-4px) rotate(7.5deg) scale(1.06);
   }
 
   .site-header::after {

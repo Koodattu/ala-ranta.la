@@ -52,13 +52,28 @@ const careerSpine = [
   description="A short background on Juha Ala-Rantala's software engineering work, education, and technical interests."
 >
   <main>
-    <section class="page-hero section-shell reveal">
-      <p class="eyebrow">About</p>
-      <h1>{profile.name}</h1>
-      <p>
-        I am a software engineer from Seinäjoki, Finland. My work has moved through industrial desktop software,
-        university AI research, and now technology leadership at Clevoy Oy.
-      </p>
+    <section class="page-hero about-hero section-shell reveal">
+      <div class="about-hero-copy">
+        <p class="eyebrow">About</p>
+        <h1>{profile.name}</h1>
+        <p>
+          I am a software engineer from Seinäjoki, Finland. My work has moved through industrial desktop software,
+          university AI research, and now technology leadership at Clevoy Oy.
+        </p>
+      </div>
+      <div class="about-hero-visual" aria-hidden="true">
+        <div class="about-photo-stack">
+          <div class="about-photo-card about-photo-card-left">
+            <img src="/assets/ucs_profile.webp" alt="" decoding="async" />
+          </div>
+          <div class="about-photo-card about-photo-card-center">
+            <img src="/assets/big-photo.png" alt="" decoding="async" />
+          </div>
+          <div class="about-photo-card about-photo-card-right">
+            <img src="/assets/farming_profile.png" alt="" decoding="async" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section-shell split-section">
