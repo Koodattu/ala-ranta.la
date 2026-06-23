@@ -39,7 +39,6 @@ type HomeCopy = {
     spotlight: Record<
       string,
       {
-        meta: string;
         paragraphs?: string[];
       }
     >;
@@ -119,25 +118,18 @@ const en: HomeCopy = {
   },
   projects: {
     eyebrow: "Selected work",
-    title: "Product-minded code that ships",
-    all: "All projects",
+    title: "Side projects, carried through",
+    all: "View all projects",
     spotlight: {
       "AI Workshop Playground": {
-        meta: "AI coding workspace",
         paragraphs: [
           "A workshop-ready playground where participants describe web ideas in natural language and get editable HTML, CSS, and JavaScript with a live preview.",
           "Built for teaching and events: AI chat, Monaco editing, session access, and usage limits stay in one focused workspace.",
         ],
       },
-      "WoW Guild Progress Tracker": {
-        meta: "Raid analytics platform",
-      },
-      "Unity 3D AI Assistant": {
-        meta: "3D voice assistant",
-      },
-      "Voice Guided Imaging": {
-        meta: "Voice image workflow",
-      },
+      "WoW Guild Progress Tracker": {},
+      "Unity 3D AI Assistant": {},
+      "Voice Guided Imaging": {},
     },
     cardLabels: {
       source: "Source",
@@ -218,25 +210,18 @@ const fi: HomeCopy = {
   },
   projects: {
     eyebrow: "Valikoidut työt",
-    title: "Tuotelähtöistä koodia tuotantoon",
-    all: "Kaikki projektit",
+    title: "Sivuprojekteja loppuun asti",
+    all: "Katso kaikki projektit",
     spotlight: {
       "AI Workshop Playground": {
-        meta: "Tekoälypohjainen koodaustyötila",
         paragraphs: [
           "Workshop-käyttöön rakennettu ympäristö, jossa osallistujat kuvaavat web-idean luonnollisella kielellä ja saavat muokattavaa HTML-, CSS- ja JavaScript-koodia live-esikatselulla.",
           "Opetusta ja tapahtumia varten rakennettu kokonaisuus: tekoälychat, Monaco-editori, sessiopääsy ja käyttörajat pysyvät samassa työtilassa.",
         ],
       },
-      "WoW Guild Progress Tracker": {
-        meta: "Raid-analytiikka-alusta",
-      },
-      "Unity 3D AI Assistant": {
-        meta: "3D-puheavustaja",
-      },
-      "Voice Guided Imaging": {
-        meta: "Puheohjattu kuvatyönkulku",
-      },
+      "WoW Guild Progress Tracker": {},
+      "Unity 3D AI Assistant": {},
+      "Voice Guided Imaging": {},
     },
     cardLabels: {
       source: "Lähdekoodi",

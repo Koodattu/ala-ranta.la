@@ -6,7 +6,6 @@ interface Props {
   project: Project;
   compact?: boolean;
   selectedWork?: {
-    meta?: string;
     paragraphs?: string[];
   };
   labels?: {
@@ -57,7 +56,6 @@ const selectedParagraphs = selectedWork?.paragraphs ?? [project.description];
           />
         </span>
         <div class="project-card-body">
-          {selectedWork.meta && <p class="project-card-kicker">{selectedWork.meta}</p>}
           <h3>{project.title}</h3>
           <div class="project-card-copy">
             {selectedParagraphs.map((paragraph) => <p>{paragraph}</p>)}
