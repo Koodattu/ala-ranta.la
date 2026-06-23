@@ -100,11 +100,18 @@ const alternates = [
     </section>
 
     <section class="section-shell compact-section" aria-labelledby="focus-title">
-      <div class="section-heading section-heading-row" data-reveal>
+      <div class="section-heading section-heading-row section-heading-action-row" data-reveal>
         <div>
           <p class="eyebrow">{copy.focus.eyebrow}</p>
           <h2 id="focus-title">{copy.focus.title}</h2>
         </div>
+        <a class="text-link text-link-outbound" href="/about/">
+          <span>{copy.focus.about}</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17 17 7" />
+            <path d="M9 7h8v8" />
+          </svg>
+        </a>
       </div>
       <div class="focus-grid focus-grid-current" data-reveal-group>
         {copy.focus.items.map((area) => (
@@ -143,7 +150,13 @@ const alternates = [
           <p class="eyebrow">{copy.writing.eyebrow}</p>
           <h2 id="writing-title">{copy.writing.title}</h2>
         </div>
-        <a class="text-link" href="/blog/">{copy.writing.archive}</a>
+        <a class="text-link text-link-outbound" href="/blog/">
+          <span>{copy.writing.archive}</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17 17 7" />
+            <path d="M9 7h8v8" />
+          </svg>
+        </a>
       </div>
       {
         posts.length > 0 ? (

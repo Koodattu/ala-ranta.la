@@ -26,6 +26,7 @@ type HomeCopy = {
   focus: {
     eyebrow: string;
     title: string;
+    about: string;
     items: {
       title: string;
       text: string;
@@ -96,6 +97,7 @@ const en: HomeCopy = {
   focus: {
     eyebrow: "Current focus",
     title: "Where my time goes",
+    about: "Read more about me",
     items: [
       {
         title: "Product and engineering ownership at Clevoy",
@@ -114,7 +116,7 @@ const en: HomeCopy = {
   projects: {
     eyebrow: "Selected work",
     title: "Side projects, carried through",
-    all: "View all projects",
+    all: "See all projects",
     spotlight: {
       "AI Workshop Playground": {
         paragraphs: [
@@ -139,7 +141,7 @@ const en: HomeCopy = {
   writing: {
     eyebrow: "Writing",
     title: "Notes from the workbench",
-    archive: "Blog archive",
+    archive: "View blog archive",
     empty: "No published posts yet.",
   },
   timeline: {
@@ -183,6 +185,7 @@ const fi: HomeCopy = {
   focus: {
     eyebrow: "Nykyinen fokus",
     title: "Mihin aikani menee",
+    about: "Lue lisää minusta",
     items: [
       {
         title: "Tuotteen ja teknologian omistajuus Clevoylla",
@@ -278,7 +281,7 @@ const fi: HomeCopy = {
   writing: {
     eyebrow: "Kirjoitukset",
     title: "Muistiinpanoja työn ääreltä",
-    archive: "Blogiarkisto",
+    archive: "Selaa blogiarkistoa",
     empty: "Ei julkaistuja kirjoituksia vielä.",
   },
   timeline: {
