@@ -288,7 +288,7 @@ main {
 }
 
 .compact-section .section-heading {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .hero {
@@ -311,7 +311,7 @@ main {
 .timeline-period,
 .card-label,
 .career-year {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 800;
@@ -647,7 +647,7 @@ dd {
 
 .section-heading {
   max-width: 760px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .section-heading p {
