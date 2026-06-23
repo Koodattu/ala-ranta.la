@@ -245,8 +245,7 @@ button {
   min-height: 40px;
   padding: 2px;
   border-radius: 8px;
-  background: color-mix(in srgb, var(--panel-strong) 88%, transparent);
-  box-shadow: var(--shadow-border);
+  background: transparent;
 }
 
 .language-switcher a {
@@ -261,7 +260,7 @@ button {
   font-weight: 850;
   line-height: 1;
   text-decoration: none;
-  transition-property: background-color, color, box-shadow;
+  transition-property: background-color, color;
   transition-duration: 160ms;
   transition-timing-function: ease;
 }
@@ -271,8 +270,8 @@ button {
 }
 
 .language-switcher a[aria-current="true"] {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text);
 }
 
 html[data-preferred-language] .language-switcher a[aria-current="true"] {
@@ -282,8 +281,8 @@ html[data-preferred-language] .language-switcher a[aria-current="true"] {
 
 html[data-preferred-language="en"] .language-switcher a[data-language-choice="en"],
 html[data-preferred-language="fi"] .language-switcher a[data-language-choice="fi"] {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text);
 }
 
 main {
