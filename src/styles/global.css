@@ -374,6 +374,7 @@ dd {
 .hero-lede,
 .page-hero p:not(.eyebrow),
 .project-detail-hero > div > p:not(.eyebrow),
+.project-detail-description p,
 .post-hero > p {
   max-width: 760px;
   color: #d7deea;
@@ -895,11 +896,22 @@ dd {
   gap: 12px;
 }
 
+.project-card-description,
+.project-detail-description {
+  display: grid;
+  gap: 12px;
+}
+
+.project-detail-description {
+  max-width: 760px;
+}
+
 .post-card h3 a {
   text-decoration: none;
 }
 
 .project-card p,
+.project-detail-description p,
 .focus-card p,
 .principle-item p,
 .writing-item p,
@@ -2050,6 +2062,7 @@ dd {
   .hero-lede,
   .page-hero p:not(.eyebrow),
   .project-detail-hero > div > p:not(.eyebrow),
+  .project-detail-description p,
   .post-hero > p {
     font-size: 1.04rem;
   }

@@ -2,7 +2,8 @@
   "projects": [
     {
       "title": "AI Workshop Playground",
-      "description": "Workshop IDE where participants describe web ideas in English or Finnish and receive editable HTML, CSS, and JavaScript with a live preview and admin-controlled usage limits.",
+      "description": "AI Workshop Playground is a workshop-ready web IDE where participants describe a website idea in English or Finnish and watch AI stream editable HTML, CSS, and JavaScript into a Monaco editor. It turns a classroom AI demo into a controlled teaching tool with live preview, templates, sandboxed execution, admin passwords, and usage limits.",
+      "descriptionFi": "AI Workshop Playground on workshop-käyttöön rakennettu web-IDE, jossa osallistuja kuvaa sivuidean englanniksi tai suomeksi ja tekoäly kirjoittaa muokattavaa HTML-, CSS- ja JavaScript-koodia Monaco-editoriin. Kiinnostavaa siinä on se, että tekoälydemo on viety opetustilanteeseen sopivaksi työkaluksi: mukana ovat live-esikatselu, pohjat, eristetty suoritus, hallinnan salasanat ja käyttörajat.",
       "features": [
         "Streams generated HTML, CSS, and JavaScript into a Monaco editor",
         "Pairs an AI chat workflow with instant live preview",
@@ -16,7 +17,8 @@
     },
     {
       "title": "Vaarattu's Twitch AI Chat Bot",
-      "description": "Gemini-powered Twitch bot with personality, conversation memory, ad detection, language detection, and live screenshot analysis.",
+      "description": "Vaarattu's Twitch AI Chat Bot is a Gemini-powered chat bot that answers when mentioned, keeps per-user conversation context, detects language, and gives the channel a playful AI personality. Beyond simple chat replies, it can capture stream screenshots, wait out pre-roll ads, search the web, scrape pages, and use OCR and stream tools to reason about what is happening live.",
+      "descriptionFi": "Vaarattu's Twitch AI Chat Bot on Gemini-pohjainen Twitch-botti, joka vastaa mainittaessa, säilyttää käyttäjäkohtaisen keskustelukontekstin, tunnistaa kielen ja tuo kanavalle leikkisän tekoälypersoonan. Pelkkien chat-vastausten lisäksi se voi ottaa striimikuvia, odottaa mainoskatkojen ohi, hakea verkosta, lukea sivuja ja käyttää OCR- sekä striimityökaluja live-tilanteen ymmärtämiseen.",
       "features": [
         "Responds to Twitch chat with a channel-specific AI personality",
         "Stores conversation context for more coherent stream interactions",
@@ -30,7 +32,8 @@
     },
     {
       "title": "WoW Guild Progress Tracker",
-      "description": "Real-time World of Warcraft raid progression dashboard that combines WarcraftLogs, Blizzard, Raider.IO, and Twitch data for guild rankings and analytics.",
+      "description": "WoW Guild Progress Tracker is a full-stack raid progression platform for World of Warcraft guilds, combining Warcraft Logs, Battle.net, Raider.IO, and Twitch data into live rankings and guild profiles. It turns scattered raid data into a community hub with boss timelines, pull counts, prediction games, tier lists, live events, and stream visibility.",
+      "descriptionFi": "WoW Guild Progress Tracker on full-stack-seurantapalvelu World of Warcraft -kiltojen raid-etenemiselle, jossa Warcraft Logs-, Battle.net-, Raider.IO- ja Twitch-data yhdistyvät live-rankingeiksi ja kiltaprofiileiksi. Se muuttaa hajallaan olevan raid-datan yhteisösivustoksi, jossa näkyvät bossien aikajanat, pullimäärät, veikkauskilpailut, tier-listat, live-tapahtumat ja käynnissä olevat striimit.",
       "features": [
         "Tracks multiple guilds across raid tiers with progression leaderboards",
         "Aggregates WarcraftLogs, Raider.IO, Battle.net, and Twitch data",
@@ -44,7 +47,8 @@
     },
     {
       "title": "WCL VOD Review",
-      "description": "Warcraft Logs VOD review tool that syncs combat events with Twitch or YouTube recordings so raid leads can jump to exact moments.",
+      "description": "WCL VOD Review synchronizes Warcraft Logs combat reports with Twitch or YouTube VODs so raid teams can click from deaths, boss casts, and other log events to the exact video moment. It solves a real review pain point by keeping the combat timeline and footage together, with manual sync controls, boss assets, zoomable timelines, and click-to-seek analysis.",
+      "descriptionFi": "WCL VOD Review synkronoi Warcraft Logs -taisteluraportit Twitch- tai YouTube-tallenteisiin, jotta raid-tiimi voi hypätä kuolemista, bossin loitsuista ja muista logitapahtumista suoraan oikeaan videohetkeen. Se ratkaisee käytännön review-ongelman pitämällä taisteluaikajanan ja videon yhdessä, mukana manuaalinen synkronointi, bossikuvat, zoomattava aikajana ja klikkauksella tapahtuva videohaku.",
       "features": [
         "Synchronizes Warcraft Logs reports with VOD timestamps",
         "Lets users jump from deaths and boss events to the matching video moment",
@@ -58,7 +62,8 @@
     },
     {
       "title": "Generative Imagining",
-      "description": "Bilingual AI image platform for students that creates and edits images from natural language with moderation and usage controls.",
+      "description": "Generative Imagining is a bilingual AI image platform for creating, editing, organizing, and sharing images from natural-language prompts without user accounts. Its focus is educational use: password-based access, content moderation, galleries, usage limits, and admin monitoring make image generation easier to run safely in classrooms and workshops.",
+      "descriptionFi": "Generative Imagining on kaksikielinen tekoälykuvapalvelu, jossa kuvia voi luoda, muokata, järjestää ja jakaa luonnollisen kielen kehotteilla ilman käyttäjätilejä. Painopiste on opetuskäytössä: salasanapohjainen pääsy, sisällön moderointi, galleriat, käyttörajat ja hallintanäkymä helpottavat kuvageneroinnin turvallista käyttöä luokissa ja workshopeissa.",
       "features": [
         "Supports English and Finnish image prompts without requiring accounts",
         "Uses Gemini-backed prompt handling for image creation and editing",
@@ -72,7 +77,8 @@
     },
     {
       "title": "Vaarattu.TV",
-      "description": "Twitch analytics platform that tracks chat, watch time, emotes, and redemptions while generating AI-written viewer biographies.",
+      "description": "Vaarattu.TV is a self-hosted Twitch analytics and community platform that records chat, watch time, redemptions, emote usage, stream sessions, and viewer activity for one channel. What makes it stand out is the community layer on top of the data: leaderboards, moderator search tools, stream history, multi-platform emote stats, and automatically generated Finnish viewer biographies.",
+      "descriptionFi": "Vaarattu.TV on itse hostattu Twitch-analytiikka- ja yhteisöalusta, joka tallentaa yhden kanavan chatin, katseluajan, lunastukset, emotejen käytön, striimisessiot ja katsoja-aktiivisuuden. Sen erottaa tavallisesta analytiikasta datan päälle rakennettu yhteisökerros: leaderboardit, moderaattorien hakutyökalut, striimihistoria, usean emote-alustan tilastot ja automaattisesti generoidut suomenkieliset katsojabiografiat.",
       "features": [
         "Tracks watch time, emotes, channel points, and chat activity",
         "Generates Finnish viewer biographies from stream behavior",
@@ -86,7 +92,8 @@
     },
     {
       "title": "Unity 3D AI Assistant",
-      "description": "Voice-controlled Unity avatar that combines natural conversation, speech output, image generation, and webcam-driven mini games.",
+      "description": "Unity 3D AI Assistant turns a Ready Player Me avatar into a voice-driven AI companion inside Unity, with speech recognition, spoken responses, lip sync, animations, and multilingual conversation. It is interesting as a prototype because it combines several AI modalities in one embodied interface: chat, image generation and editing, web search, text-to-speech, and webcam-based Rock-Paper-Scissors.",
+      "descriptionFi": "Unity 3D AI Assistant muuttaa Ready Player Me -avatarin puheohjatuksi tekoälykumppaniksi Unityssä, mukana puheentunnistus, puhutut vastaukset, huulisynkka, animaatiot ja monikielinen keskustelu. Prototyyppinä se on kiinnostava, koska se yhdistää samaan keholliseen käyttöliittymään useita tekoälymuotoja: chatin, kuvien luonnin ja muokkauksen, web-haun, puhesynteesin ja webcamilla pelattavan kivi-paperi-sakset-pelin.",
       "features": [
         "Uses push-to-talk voice input with spoken responses and animated avatar gestures",
         "Supports image generation and editing through conversation",
@@ -100,13 +107,14 @@
     },
     {
       "title": "GPT-Lab Score Keeper",
-      "description": "Mobile-friendly scoring and leaderboard app for multi-sport team events, with PIN-protected admin tools and live spectator updates.",
+      "description": "GPT-Lab Score Keeper is a mobile-first scoreboard for team events where organizers need to create teams, score several sports quickly, and show live individual and team leaderboards. Its practical event focus is the interesting part: touch-friendly scoring, simple admin protection, three-second spectator updates, Docker deployment, and data storage light enough to run locally on event hardware.",
+      "descriptionFi": "GPT-Lab Score Keeper on mobiililähtöinen tulostaulu tiimitapahtumiin, joissa järjestäjien pitää luoda joukkueet, pisteyttää useita lajeja nopeasti ja näyttää henkilökohtaiset sekä joukkuekohtaiset leaderboardit livenä. Kiinnostavaa siinä on käytännön tapahtumafokus: kosketusystävällinen pisteytys, kevyt admin-suojaus, kolmen sekunnin välein päivittyvät katsomonäkymät, Docker-käyttöönotto ja paikalliselle tapahtumalaitteistolle riittävän kevyt tallennus.",
       "features": [
         "Tracks individual and team scoring across multiple sports",
         "Updates spectator views with a lightweight polling loop",
         "Includes PIN-protected admin tools for team setup and scoring"
       ],
-      "source": "https://github.com/Koodattu/gpt-lab-score-keeper",
+      "source": "https://github.com/Koodattu/TUNI-Projects/tree/main/gpt-lab-score-keeper",
       "blog": "",
       "demo": "",
       "image": "/images/gpt-lab-score-keeper.png",
@@ -115,7 +123,8 @@
     {
       "slug": "whats-ai-assistant",
       "title": "WhatsApp AI Assistant",
-      "description": "WhatsApp chatbot proof of concept using Neonize, long-term context, document processing, image generation, and multimodal AI.",
+      "description": "WhatsApp AI Assistant is a proof-of-concept chatbot that brings LLM workflows directly into WhatsApp through Neonize and Whatsmeow, with QR authentication and persistent SQLite conversation context. It goes beyond text replies by handling scenarios, link scraping, PDF and DOCX extraction, image analysis, audio transcription, text-to-speech, web search, and image generation inside normal chat.",
+      "descriptionFi": "WhatsApp AI Assistant on proof of concept -chatbot, joka tuo LLM-työnkulut suoraan WhatsAppiin Neonizen ja Whatsmeow'n kautta, mukana QR-tunnistautuminen ja pysyvä SQLite-keskustelukonteksti. Se ei rajoitu tekstivastauksiin, vaan tukee skenaarioita, linkkien lukemista, PDF- ja DOCX-poimintaa, kuva-analyysia, äänen litterointia, puhesynteesiä, web-hakua ja kuvagenerointia tavallisen chatin sisällä.",
       "features": [
         "Integrates language models directly into WhatsApp through Neonize",
         "Supports image generation, audio transcription, and document processing",
@@ -129,13 +138,14 @@
     },
     {
       "title": "Voice AI Assistant Framework",
-      "description": "Python voice assistant framework that wires speech recognition, text-to-speech, language models, and memory into reusable conversation workflows.",
+      "description": "Voice AI Assistant Framework is a local-first Python framework for building spoken AI assistants from separate speech-to-text, language-model, state, orchestration, and text-to-speech modules. The pieces are swappable: RealtimeSTT and Whisper input, Ollama JSON-mode reasoning, short-term memory, silence-aware conversation modes, and Finnish TTS backends such as Piper or F5-TTS can be combined for experiments.",
+      "descriptionFi": "Voice AI Assistant Framework on paikalliseen ajoon painottuva Python-runko puhuvien tekoälyavustajien rakentamiseen erillisistä puheentunnistus-, kielimalli-, tila-, orkestrointi- ja puhesynteesimoduuleista. Osia voi vaihtaa kokeilujen mukaan: RealtimeSTT- ja Whisper-syöte, Ollaman JSON-tila, lyhytkestoinen muisti, hiljaisuuden huomioivat keskustelutilat sekä suomenkieliset Piper- ja F5-TTS-taustat.",
       "features": [
         "Integrates speech recognition, conversational AI, and speech synthesis",
         "Provides a flexible voice interface framework for custom assistants",
         "Keeps memory management separate from platform-specific integrations"
       ],
-      "source": "https://github.com/Koodattu/voice-ai-assistant-framework",
+      "source": "https://github.com/Koodattu/TUNI-Projects/tree/main/voice-ai-assistant-framework",
       "blog": "",
       "demo": "",
       "image": "/images/voice-ai-assistant-framework.webp",
@@ -143,7 +153,8 @@
     },
     {
       "title": "Aihio Digital Demo App",
-      "description": "Flutter demo app that presents AI-powered marketing analytics, social management, revenue dashboards, and a Gemini assistant for business users.",
+      "description": "Aihio Digital Demo App is a Flutter showcase for an AI-assisted marketing product, presenting revenue, SEO, social media, campaign, and customer-engagement views in a polished mobile dashboard. It makes abstract AI marketing promises concrete through a Gemini-powered assistant, strategic insights, and business-friendly analytics screens.",
+      "descriptionFi": "Aihio Digital Demo App on Flutterilla rakennettu esittelysovellus tekoälyavusteiselle markkinointituotteelle, jossa liikevaihto-, SEO-, some-, kampanja- ja asiakasvuorovaikutusnäkymät on koottu viimeisteltyyn mobiilidashboardiin. Se tekee abstrakteista tekoälymarkkinoinnin lupauksista konkreettisia Gemini-avustajan, strategisten oivallusten ja yrityskäyttöön sopivien analytiikkanäkymien avulla.",
       "features": [
         "Visualizes revenue, SEO, and marketing performance in a mobile dashboard",
         "Aggregates social media workflows into a single demo experience",
@@ -157,7 +168,8 @@
     },
     {
       "title": "Voice Guided Imaging",
-      "description": "Voice-controlled image generation and editing platform that routes prompts between cloud models and local inference with queue and gallery support.",
+      "description": "Voice Guided Imaging is a voice-controlled AI image generation and editing platform with a lightweight web relay, a heavier inference backend, and cloud or local processing modes. It treats image creation as a full workflow: push-to-talk prompts, session limits, persistent galleries, queue positions, progress updates, partial previews, and image-history visualization.",
+      "descriptionFi": "Voice Guided Imaging on puheohjattu tekoälykuvien luonti- ja muokkausalusta, jossa on kevyt web-välityspalvelin, raskaampi inferenssitausta sekä pilvi- ja paikalliset käsittelytilat. Se käsittelee kuvien luonnin kokonaisena työnkulkuna: push-to-talk-kehotteet, sessiorajat, pysyvät galleriat, jonosijainnit, etenemispäivitykset, osittaiset esikatselut ja kuvahistorian visualisointi.",
       "features": [
         "Supports push-to-talk commands for image generation and editing",
         "Routes work between cloud services and local inference backends",
@@ -171,7 +183,8 @@
     },
     {
       "title": "SDX Restaurant Menus",
-      "description": "Cross-platform Sodexo lunch menu app for Finland with favorites, location-aware restaurant sorting, and current or upcoming menus.",
+      "description": "SDX Restaurant Menus is a cross-platform Flutter app for browsing daily and weekly menus from more than 100 Sodexo restaurants across Finland. It pairs live menu data with practical discovery features: smart search, favorites, restaurant-type filters, location-aware sorting, upcoming menus, and automated scripts that keep restaurant metadata fresh.",
+      "descriptionFi": "SDX Restaurant Menus on monialustainen Flutter-sovellus, jolla voi selata yli sadan suomalaisen Sodexo-ravintolan päivä- ja viikkoruokalistoja. Se yhdistää ajantasaisen menudatan käytännöllisiin hakutoimintoihin: älyhakuun, suosikkeihin, ravintolatyyppien suodatukseen, sijaintipohjaiseen järjestykseen, tuleviin ruokalistoihin ja automaattisiin skripteihin, jotka pitävät ravintolametadatan ajan tasalla.",
       "features": [
         "Shows menus for 100+ Sodexo restaurants across Finland",
         "Supports favorites, restaurant type filters, and upcoming menus",
@@ -185,7 +198,8 @@
     },
     {
       "title": "Fyr'alath Data Tracker",
-      "description": "World of Warcraft analytics dashboard tracking Fyr'alath crafting costs, regional price history, and legendary acquisition trends.",
+      "description": "Fyr'alath Data Tracker is a World of Warcraft dashboard for tracking the crafting cost and acquisition trends of the Fyr'alath legendary axe across regions. It combines auction-house price history, material breakdowns, Raider.IO character discovery, Blizzard achievement data, and Chart.js visualizations into a focused player-economy analytics tool.",
+      "descriptionFi": "Fyr'alath Data Tracker on World of Warcraft -dashboard, joka seuraa Fyr'alath-legendaarisen kirveen valmistuskustannuksia ja hankintatrendejä eri alueilla. Se yhdistää huutokauppahintojen historian, materiaalierittelyt, Raider.IO:n hahmolöydökset, Blizzardin achievement-datan ja Chart.js-visualisoinnit tarkaksi pelaajatalouden analytiikkatyökaluksi.",
       "features": [
         "Tracks price-to-craft data across World of Warcraft regions",
         "Visualizes material prices and regional price history",
@@ -199,7 +213,8 @@
     },
     {
       "title": "Personal Website",
-      "description": "Static Astro portfolio for CV, work history, projects, writing, and structured content without a backend.",
+      "description": "Personal Website is the static Astro portfolio that powers this site, organizing CV links, work history, project pages, writing, RSS, and sitemap generation without a backend. It keeps the maintenance model simple while still using reusable components, typed local data, Markdown content, SEO metadata, and a GitHub Pages deployment workflow.",
+      "descriptionFi": "Personal Website on staattinen Astro-portfolio, joka pyörittää tätä sivustoa ja kokoaa CV-linkit, työhistorian, projektisivut, kirjoitukset, RSS-syötteen ja sivukartan ilman backendia. Se pitää ylläpidon yksinkertaisena, mutta hyödyntää silti uudelleenkäytettäviä komponentteja, tyypitettyä paikallista dataa, Markdown-sisältöä, SEO-metatietoja ja GitHub Pages -julkaisutyönkulkua.",
       "features": [
         "Shows professional background, CV links, selected work, and project pages",
         "Generates blog posts, RSS, sitemap, and project pages as static HTML",
@@ -213,7 +228,8 @@
     },
     {
       "title": "Twitch Song Request Desktop",
-      "description": "Windows Twitch song-request app that reads Channel Point redemptions and plays Spotify or YouTube requests with refund handling.",
+      "description": "Twitch Song Request Desktop is a Windows WPF app that turns Twitch Channel Point redemptions into Spotify or YouTube song requests for a stream. It packages the whole streamer workflow into a desktop tool: Twitch account setup, reward creation, Spotify integration, embedded YouTube playback, bot chat replies, playback-device control, and automatic point refunds when a request cannot be played.",
+      "descriptionFi": "Twitch Song Request Desktop on Windowsille tehty WPF-sovellus, joka muuttaa Twitchin Channel Point -lunastukset Spotify- tai YouTube-biisipyyntöiksi striimiä varten. Se paketoi koko striimaajan työnkulun työpöytätyökaluksi: Twitch-tilien asetukset, rewardin luonti, Spotify-integraatio, sisäinen YouTube-soitin, botin chat-vastaukset, toistolaitteen hallinta ja automaattiset pistepalautukset, jos pyyntöä ei voi soittaa.",
       "features": [
         "Reads song requests from Twitch Channel Point reward redemptions",
         "Supports Spotify playback and an integrated YouTube player",
@@ -227,7 +243,8 @@
     },
     {
       "title": "Twitch Spotify Song Request",
-      "description": "OBS browser-source song request script that connects Twitch Channel Points to Spotify without hosting after setup.",
+      "description": "Twitch Spotify Song Request is a lightweight OBS browser-source script that connects Twitch Channel Point redemptions to a Spotify queue without needing a hosted backend after setup. Its minimal deployment model is the clever part: Python is only used to generate initial OAuth tokens, while the local HTML and JavaScript handle Twitch events, Spotify search, queueing, chat replies, token refresh, and failed-request refunds.",
+      "descriptionFi": "Twitch Spotify Song Request on kevyt OBS:n browser source -skripti, joka yhdistää Twitchin Channel Point -lunastukset Spotify-jonoon ilman erillistä hostattua backendia käyttöönoton jälkeen. Sen oivallus on minimaalinen käyttöönotto: Pythonia käytetään vain alkuperäisten OAuth-tokenien luomiseen, kun taas paikallinen HTML ja JavaScript hoitavat Twitch-tapahtumat, Spotify-haun, jonotuksen, chat-vastaukset, tokenien päivityksen ja epäonnistuneiden pyyntöjen palautukset.",
       "features": [
         "Uses Python only for initial Twitch and Spotify token generation",
         "Runs the request UI as a local HTML browser source in OBS",
@@ -241,7 +258,8 @@
     },
     {
       "title": "Staff Restaurant Lunch Menu App",
-      "description": "Flutter and Spring Boot staff restaurant app that parses menu documents, stores history, and supports voting and course stats.",
+      "description": "Staff Restaurant Lunch Menu App is a Flutter and Spring Boot application for publishing a staff restaurant's weekly menus, history, and course voting. The backend watches a Word document in Google Drive, parses menu updates into PostgreSQL, exposes them through a REST API, and gives the mobile app bilingual views with voting and historical statistics.",
+      "descriptionFi": "Staff Restaurant Lunch Menu App on Flutter- ja Spring Boot -sovellus henkilöstöravintolan viikkoruokalistojen, historian ja annosäänestyksen julkaisuun. Backend seuraa Google Drivessa olevaa Word-dokumenttia, parsii muutokset PostgreSQL-tietokantaan, tarjoaa datan REST-rajapinnan kautta ja mahdollistaa mobiilisovelluksessa kaksikieliset näkymät, äänestykset ja historiatilastot.",
       "features": [
         "Parses weekly menu documents through a Java Spring Boot backend",
         "Stores menu data and history in PostgreSQL",
@@ -255,7 +273,8 @@
     },
     {
       "title": "Räccis SeAMK Food Royale",
-      "description": "Android app for comparing two SeAMK-area restaurant menus side by side using Sodexo API data and Eventti HTML scraping.",
+      "description": "Räccis SeAMK Food Royale is a small Android lunch-menu app built to compare two SeAMK-area restaurants side by side. Its value is in the practical data stitching: it pulls Sodexo menus from JSON APIs, scrapes Eventti menu HTML, and presents both daily menus in one quick mobile view for students choosing where to eat.",
+      "descriptionFi": "Räccis SeAMK Food Royale on pieni Android-lounaslistasovellus, joka rakennettiin kahden SeAMK-alueen ravintolan vertailuun rinnakkain. Sen arvo on käytännöllisessä datan yhdistelyssä: sovellus hakee Sodexon ruokalistat JSON-rajapinnoista, parsii Eventin menut HTML-sivulta ja näyttää molemmat päivän lounaat yhdessä nopeassa mobiilinäkymässä opiskelijoille, jotka valitsevat ruokapaikkaa.",
       "features": [
         "Displays two daily restaurant menus side by side",
         "Fetches Sodexo lunch menus from an API",
@@ -269,7 +288,8 @@
     },
     {
       "title": "Tsumppi Coffee Shop",
-      "description": "Android catalogue for the SeAMK student coffee shop with product data from Google Sheets and social posts from Facebook and Instagram.",
+      "description": "Tsumppi Coffee Shop is an Android catalogue app for the SeAMK student services coffee shop, built when there was no official mobile app for browsing its products. As an early service app, it combines Google Sheets as a lightweight catalogue backend with Facebook and Instagram post feeds, giving students one place to check products and updates.",
+      "descriptionFi": "Tsumppi Coffee Shop on Android-katalogisovellus SeAMKin opiskelijapalveluiden kahvilalle, rakennettu aikana jolloin tuotteiden selaamiseen ei ollut virallista mobiilisovellusta. Varhaisena palvelusovelluksena se yhdistää Google Sheetsin kevyenä katalogitaustana Facebook- ja Instagram-julkaisuihin, jolloin opiskelijat näkevät tuotteet ja päivitykset yhdestä paikasta.",
       "features": [
         "Shows coffee shop products in a mobile catalogue",
         "Fetches catalogue data from Google Sheets",
@@ -283,7 +303,8 @@
     },
     {
       "title": "SeAMK Lukkari",
-      "description": "Android timetable app for SeAMK students with personalized schedules, room search, and campus lunch menus.",
+      "description": "SeAMK Lukkari is an Android timetable app for Seinäjoki University of Applied Sciences students, built before an official mobile timetable existed. It wrapped Peppi timetable APIs into a practical student tool with weekly schedules, study baskets, group and room lookup, empty-room search, lunch menus, and partial English and Finnish support.",
+      "descriptionFi": "SeAMK Lukkari on Android-lukujärjestyssovellus Seinäjoen ammattikorkeakoulun opiskelijoille, rakennettu ennen virallisen mobiililukujärjestyksen olemassaoloa. Se paketoi Pepin lukujärjestysrajapinnat käytännölliseksi opiskelijatyökaluksi, jossa ovat viikkoaikataulut, opintokori, ryhmä- ja huonehaut, tyhjien huoneiden haku, lounaslistat sekä osittainen englannin- ja suomenkielinen tuki.",
       "features": [
         "Shows daily, weekly, and period timetables for student groups",
         "Supports custom study baskets and empty-room search",
@@ -297,7 +318,8 @@
     },
     {
       "title": "SeAMK WinhaWille",
-      "description": "Android study registry client that scrapes WinhaWille data to show GPA, credits, completed courses, and grades.",
+      "description": "SeAMK WinhaWille is an Android study-registry client for SeAMK students that scraped the campus WinhaWille portal to show GPA, credits, completed courses, and grades. As a student-built utility, it turned a web-only registry into a focused mobile view for the information students checked most often.",
+      "descriptionFi": "SeAMK WinhaWille on Android-opintorekisterisovellus SeAMK-opiskelijoille, joka parsi kampuksen WinhaWille-portaalia ja näytti keskiarvon, opintopisteet, suoritetut kurssit ja arvosanat. Opiskelijan rakentamana hyötysovelluksena se muutti vain webissä toimineen rekisterin kohdennetuksi mobiilinäkymäksi tiedoille, joita opiskelijat tarkistivat useimmin.",
       "features": [
         "Shows GPA and accumulated student credits",
         "Lists completed courses and grades",
@@ -311,7 +333,8 @@
     },
     {
       "title": "SeAMK Ruoka",
-      "description": "Android lunch menu app that uses restaurant APIs and JSON data to show weekly SeAMK student restaurant menus.",
+      "description": "SeAMK Ruoka is an Android lunch-menu app for SeAMK students, built before there was an official mobile lunch menu experience. It focuses on one daily need: fetching Sodexo restaurant data through REST and JSON and showing weekly student restaurant menus in a simple mobile interface.",
+      "descriptionFi": "SeAMK Ruoka on Android-lounaslistasovellus SeAMK-opiskelijoille, rakennettu ennen virallista mobiilia lounaslistakokemusta. Se keskittyy yhteen päivittäiseen tarpeeseen: Sodexon ravintoladatan hakemiseen REST- ja JSON-rajapinnoista sekä opiskelijaravintoloiden viikkolistojen näyttämiseen yksinkertaisessa mobiilikäyttöliittymässä.",
       "features": [
         "Displays weekly lunch menus from SeAMK student restaurants",
         "Fetches restaurant data through REST API calls",
