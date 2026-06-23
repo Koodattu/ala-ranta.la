@@ -1921,11 +1921,31 @@ dd {
 
   .header-actions {
     justify-self: end;
+    gap: 6px;
   }
 
   .site-nav a {
     padding-inline: 7px;
     font-size: 0.82rem;
+  }
+
+  .language-switcher {
+    min-height: 38px;
+    border-radius: 7px;
+  }
+
+  .language-switcher a {
+    min-width: 31px;
+    min-height: 34px;
+    border-radius: 5px;
+    font-size: 0.72rem;
+  }
+
+  .icon-link {
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 7px;
+    font-size: 0.74rem;
   }
 
   .hero {
@@ -2129,10 +2149,24 @@ dd {
     font-size: 0.78rem;
   }
 
+  .header-actions {
+    gap: 4px;
+  }
+
+  .language-switcher {
+    min-height: 36px;
+  }
+
+  .language-switcher a {
+    min-width: 29px;
+    min-height: 32px;
+    font-size: 0.7rem;
+  }
+
   .icon-link {
-    min-width: 40px;
-    min-height: 40px;
-    font-size: 0.8rem;
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 0.72rem;
   }
 }
 
