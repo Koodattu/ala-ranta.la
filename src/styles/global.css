@@ -979,9 +979,9 @@ dd {
 
 .project-list .project-card {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
   align-items: center;
-  gap: clamp(24px, 5vw, 60px);
+  gap: clamp(24px, 4.5vw, 52px);
   overflow: visible;
   border-radius: 18px;
   background: transparent;
@@ -1004,6 +1004,10 @@ dd {
     color-mix(in srgb, var(--border) 72%, transparent) 86%,
     transparent
   );
+}
+
+.project-list .project-card:nth-child(even) {
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
 }
 
 .project-list .project-card:nth-child(even) .project-media {
@@ -1038,6 +1042,9 @@ dd {
   aspect-ratio: 16 / 10;
   border-radius: 18px;
   box-shadow: 0 20px 52px rgba(0, 0, 0, 0.22);
+  transition-property: box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
 }
 
 .project-list .project-media img {
@@ -1049,8 +1056,15 @@ dd {
   transition-timing-function: ease;
 }
 
+.project-list .project-card:hover .project-media {
+  box-shadow:
+    0 28px 74px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.22),
+    0 0 0 4px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
 .project-list .project-card:hover .project-media img {
-  filter: brightness(1.06) saturate(1.04);
+  filter: brightness(1.14) saturate(1.16) contrast(1.02);
 }
 
 .project-list .project-card-content {
