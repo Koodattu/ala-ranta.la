@@ -18,12 +18,10 @@ const projects = sortNewestProjects(projectsData.projects as Project[]).map((pro
   ...project,
   ...copy.projects.translations[project.title],
 }));
-const leadProject = projects.find((project) => project.title === "AI Workshop Playground") ?? projects[0];
-const supportingProjectTitles = ["WoW Guild Progress Tracker", "Unity 3D AI Assistant", "Voice Guided Imaging"];
-const supportingProjects = projects
-  .filter((project) => project.title !== leadProject.title)
-  .filter((project) => supportingProjectTitles.includes(project.title))
-  .sort((a, b) => supportingProjectTitles.indexOf(a.title) - supportingProjectTitles.indexOf(b.title));
+const selectedWorkProjectTitles = ["WoW Guild Progress Tracker", "Unity 3D AI Assistant", "Voice Guided Imaging"];
+const selectedWorkProjects = projects
+  .filter((project) => selectedWorkProjectTitles.includes(project.title))
+  .sort((a, b) => selectedWorkProjectTitles.indexOf(a.title) - selectedWorkProjectTitles.indexOf(b.title));
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
@@ -134,14 +132,9 @@ const alternates = [
         </a>
       </div>
       <div class="work-grid" data-reveal-group>
-        <div class="lead-work">
-          <ProjectCard project={leadProject} labels={copy.projects.cardLabels} selectedWork={copy.projects.spotlight[leadProject.title]} />
-        </div>
-        <div class="supporting-work">
-          {supportingProjects.map((project) => (
-            <ProjectCard project={project} labels={copy.projects.cardLabels} compact selectedWork={copy.projects.spotlight[project.title]} />
-          ))}
-        </div>
+        {selectedWorkProjects.map((project) => (
+          <ProjectCard project={project} labels={copy.projects.cardLabels} selectedWork={copy.projects.spotlight[project.title]} />
+        ))}
       </div>
     </section>
 
