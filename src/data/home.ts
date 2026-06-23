@@ -95,7 +95,7 @@ const en: HomeCopy = {
   },
   focus: {
     eyebrow: "Current focus",
-    title: "Current work",
+    title: "Where my time goes",
     items: [
       {
         title: "Product and engineering ownership at Clevoy",
@@ -182,7 +182,7 @@ const fi: HomeCopy = {
   },
   focus: {
     eyebrow: "Nykyinen fokus",
-    title: "Nykyinen työ",
+    title: "Mihin aikani menee",
     items: [
       {
         title: "Tuotteen ja teknologian omistajuus Clevoylla",
