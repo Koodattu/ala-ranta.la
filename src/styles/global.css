@@ -805,6 +805,7 @@ dd {
   flex-direction: column;
   flex: 1;
   min-width: 0;
+  padding-block: 10px;
 }
 
 .project-media {
@@ -823,13 +824,6 @@ dd {
   object-position: center top;
   outline: 1px solid rgba(255, 255, 255, 0.1);
   outline-offset: -1px;
-  transition-property: scale;
-  transition-duration: 220ms;
-  transition-timing-function: ease;
-}
-
-.project-card:hover .project-media img {
-  scale: 1.03;
 }
 
 .work-grid .project-card {
@@ -971,15 +965,14 @@ dd {
   align-items: center;
   gap: clamp(24px, 5vw, 60px);
   overflow: visible;
-  border-radius: 0;
+  border-radius: 18px;
   background: transparent;
   box-shadow: none;
   translate: 0 0;
 }
 
 .project-list .project-card:hover {
-  background: transparent;
-  box-shadow: none;
+  background: color-mix(in srgb, var(--panel-strong) 48%, transparent);
   translate: 0 0;
 }
 
@@ -988,9 +981,7 @@ dd {
   width: clamp(340px, 45vw, 520px);
   aspect-ratio: 16 / 10;
   border-radius: 18px;
-  box-shadow:
-    var(--shadow-border),
-    0 20px 52px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.22);
 }
 
 .project-list .project-media:focus-visible {
@@ -1000,10 +991,15 @@ dd {
 
 .project-list .project-media img {
   border-radius: inherit;
+  filter: brightness(1) saturate(1);
+  outline: none;
+  transition-property: filter;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
 }
 
 .project-list .project-card:hover .project-media img {
-  scale: 1.025;
+  filter: brightness(1.06) saturate(1.04);
 }
 
 .project-list .project-card-content {
@@ -1029,16 +1025,6 @@ dd {
   margin-bottom: 14px;
   font-size: clamp(1.75rem, 3vw, 2.45rem);
   line-height: 1.02;
-}
-
-.project-list .project-card h3 a {
-  transition-property: color;
-  transition-duration: 160ms;
-  transition-timing-function: ease;
-}
-
-.project-list .project-card h3 a:hover {
-  color: var(--accent);
 }
 
 .project-list .project-card p {
@@ -1068,23 +1054,23 @@ dd {
   padding: 0 12px;
   border-radius: 6px;
   background: color-mix(in srgb, var(--panel-strong) 70%, transparent);
-  box-shadow: var(--shadow-border);
+  box-shadow: none;
   color: var(--accent);
   font-size: 0.82rem;
   text-align: center;
+  transition-property: scale, background-color, color;
 }
 
 .project-list .project-action:hover,
 .project-list .project-action:first-child:hover {
   background: color-mix(in srgb, var(--accent) 14%, var(--panel-strong));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 44%, transparent);
   color: var(--text);
 }
 
 .project-list .project-action.is-placeholder,
 .project-list .project-action.is-placeholder:hover {
   background: color-mix(in srgb, var(--bg) 36%, transparent);
-  box-shadow: var(--shadow-border);
+  box-shadow: none;
   color: color-mix(in srgb, var(--faint) 72%, transparent);
 }
 
