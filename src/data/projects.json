@@ -1,6 +1,48 @@
 {
   "projects": [
     {
+      "slug": "trepo-analytics",
+      "title": "TREPO Research Analytics",
+      "description": "TREPO Research Analytics is a local Python analytics toolkit for exploring Tampere University's TREPO open repository. It scrapes recent submissions, enriches each publication with accepted dates, download counts, and optional OpenAI title-interest ratings, then serves the results through CLI reports and a Flask dashboard for rankings, charts, search, filters, and random discovery picks.",
+      "descriptionFi": "TREPO Research Analytics on paikallinen Python-pohjainen analytiikkatyökalu Tampereen yliopiston TREPO-julkaisuarkiston tutkimiseen. Se kerää uudet julkaisut, täydentää niihin hyväksymispäivät, latausmäärät ja valinnaiset OpenAI-pohjaiset kiinnostavuusarviot, ja näyttää tulokset komentoriviraportteina sekä Flask-dashboardina rankingien, kaavioiden, haun, suodattimien ja satunnaisten löytöjen selaamiseen.",
+      "features": [
+        "Scrapes TREPO submissions into SQLite with resumable progress",
+        "Enriches works with accepted dates, download counts, and optional title-interest ratings",
+        "Serves reports and a Flask dashboard with charts, rankings, filters, and discovery views"
+      ],
+      "featuresFi": [
+        "Kerää TREPO-julkaisut SQLiteen jatkettavalla etenemisellä",
+        "Täydentää töihin hyväksymispäivät, latausmäärät ja valinnaiset otsikoiden kiinnostavuusarviot",
+        "Tarjoaa raportit ja Flask-dashboardin kaavioilla, rankingeilla, suodattimilla ja löytönäkymillä"
+      ],
+      "source": "https://github.com/Koodattu/trepo-analytics",
+      "blog": "",
+      "demo": "https://trepo.koodattu.dev",
+      "image": "/images/trepo-analytics.png",
+      "year": 2026
+    },
+    {
+      "slug": "niilo22-dev",
+      "title": "Niilo22.dev",
+      "description": "Niilo22.dev is a data pipeline and web application for building a searchable archive of Niilo22 YouTube videos. It fetches YouTube metadata, downloads media with yt-dlp, transcribes Finnish speech with faster-whisper into word-level timestamps, imports transcript chunks into PostgreSQL, and serves a Next.js and Fastify search UI that links to exact video moments.",
+      "descriptionFi": "Niilo22.dev on dataputki ja web-sovellus Niilo22:n YouTube-videoiden hakukelpoisen arkiston rakentamiseen. Se hakee YouTube-metadatan, lataa median yt-dlp:llä, litteroi suomenkielisen puheen faster-whisperillä sanatason aikaleimoiksi, vie tekstikatkelmat PostgreSQL:ään ja tarjoaa Next.js- ja Fastify-pohjaisen hakukäyttöliittymän, joka linkittää suoraan oikeisiin videohetkiin.",
+      "features": [
+        "Downloads channel metadata and media, then transcribes Finnish speech with word-level timestamps",
+        "Imports videos and transcript chunks into PostgreSQL for full-text and fuzzy search",
+        "Ships a Next.js frontend and Fastify API with Docker Compose deployment support"
+      ],
+      "featuresFi": [
+        "Lataa kanavan metadatan ja median sekä litteroi suomenkielisen puheen sanatason aikaleimoilla",
+        "Vie videot ja tekstikatkelmat PostgreSQL:ään kokoteksti- ja sumeaa hakua varten",
+        "Sisältää Next.js-frontin ja Fastify-rajapinnan Docker Compose -käyttöönotolla"
+      ],
+      "source": "https://github.com/Koodattu/niilo22-dev",
+      "blog": "",
+      "demo": "",
+      "image": "/images/niilo22-dev.png",
+      "year": 2026
+    },
+    {
       "title": "AI Workshop Playground",
       "description": "AI Workshop Playground is a workshop-ready web IDE where participants describe a website idea in English or Finnish and watch AI stream editable HTML, CSS, and JavaScript into a Monaco editor. It turns a classroom AI demo into a controlled teaching tool with live preview, templates, sandboxed execution, admin passwords, and usage limits.",
       "descriptionFi": "AI Workshop Playground on workshop-käyttöön rakennettu web-IDE, jossa osallistuja kuvaa sivuidean englanniksi tai suomeksi ja tekoäly kirjoittaa muokattavaa HTML-, CSS- ja JavaScript-koodia Monaco-editoriin. Kiinnostavaa siinä on se, että tekoälydemo on viety opetustilanteeseen sopivaksi työkaluksi: mukana ovat live-esikatselu, pohjat, eristetty suoritus, hallinnan salasanat ja käyttörajat.",
