@@ -424,15 +424,17 @@ dd {
   white-space: nowrap;
   text-decoration: none;
   scale: 1;
-  translate: 0 0;
-  transition-property: scale, translate, background-color, box-shadow, color;
+  transition-property: scale, background-color, box-shadow, color;
   transition-duration: 160ms;
   transition-timing-function: ease;
 }
 
 .button:hover {
-  box-shadow: var(--shadow-border-hover);
-  translate: 0 -2px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--panel-strong));
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 42%, transparent),
+    0 14px 34px rgba(0, 0, 0, 0.22);
+  color: var(--text);
 }
 
 .button:active {
@@ -454,6 +456,10 @@ dd {
 
 .button-primary:hover {
   background: #36e0cb;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, #36e0cb 42%, transparent),
+    0 16px 38px rgba(45, 212, 191, 0.18);
+  color: var(--accent-ink);
 }
 
 .button-quiet {
@@ -462,6 +468,14 @@ dd {
 
 .button-linkedin {
   background: color-mix(in srgb, var(--panel-strong) 92%, transparent);
+}
+
+.hero-actions .button:hover {
+  box-shadow: var(--shadow-border);
+}
+
+.hero-actions .button-primary:hover {
+  box-shadow: none;
 }
 
 .button-logo {
@@ -523,15 +537,13 @@ dd {
   padding: 4px 0;
   border-radius: 8px;
   scale: 1;
-  translate: 0 0;
-  transition-property: scale, translate, opacity, filter;
+  transition-property: scale, opacity, filter;
   transition-duration: 160ms;
   transition-timing-function: ease;
 }
 
 .proof-logo:hover {
   filter: brightness(1.12);
-  translate: 0 -2px;
 }
 
 .proof-logo:active {
@@ -789,13 +801,29 @@ dd {
 }
 
 .project-card:hover {
-  box-shadow: var(--shadow-border-hover);
-  translate: 0 -3px;
+  background: color-mix(in srgb, var(--panel-strong) 58%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 22px 56px rgba(0, 0, 0, 0.26);
 }
 
-.project-card-selected,
-.project-card-selected:hover {
+.project-card-selected {
   box-shadow: none;
+}
+
+.work-grid .project-card-selected:hover {
+  background: color-mix(in srgb, var(--panel-strong) 62%, transparent);
+  box-shadow: none;
+}
+
+.work-grid .project-card-selected .project-card-body {
+  transition-property: background-color;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+.work-grid .project-card-selected:hover .project-card-body {
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
 }
 
 .project-card[hidden] {
@@ -853,6 +881,17 @@ dd {
   object-position: center top;
   outline: 1px solid rgba(255, 255, 255, 0.1);
   outline-offset: -1px;
+}
+
+.project-media img {
+  filter: brightness(1) saturate(1);
+  transition-property: filter;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+.project-card:hover .project-media img {
+  filter: brightness(1.1) saturate(1.12) contrast(1.02);
 }
 
 .work-grid .project-card {
