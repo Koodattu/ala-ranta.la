@@ -2908,6 +2908,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
     grid-row: 1;
     justify-self: end;
     align-self: end;
+    min-height: 0;
     font-size: 0.78rem;
     white-space: nowrap;
   }
