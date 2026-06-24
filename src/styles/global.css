@@ -732,14 +732,18 @@ dd {
   translate: 2px -2px;
 }
 
-.focus-grid,
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
 .post-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
-.focus-card,
 .post-card,
 .project-card,
 .skill-group,
@@ -750,16 +754,27 @@ dd {
   box-shadow: var(--shadow-border);
 }
 
-.focus-card,
 .post-card,
 .skill-group,
 .timeline-content {
   padding: 22px;
 }
 
+.focus-card {
+  min-width: 0;
+  padding: clamp(18px, 2.2vw, 26px) clamp(24px, 3vw, 34px);
+}
+
 .focus-card:first-child {
-  background: color-mix(in srgb, #17333a 72%, var(--panel));
-  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.2);
+  padding-left: 0;
+}
+
+.focus-card:last-child {
+  padding-right: 0;
+}
+
+.focus-card + .focus-card {
+  border-left: 1px solid var(--border);
 }
 
 .focus-card h3,
@@ -1636,6 +1651,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 .timeline-list-compact .timeline-content {
   grid-column: 3;
   padding: 16px 18px;
+  box-shadow: none;
 }
 
 .timeline-list-compact .timeline-heading {
@@ -2293,6 +2309,15 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   .post-grid,
   .skill-groups {
     grid-template-columns: 1fr;
+  }
+
+  .focus-card {
+    padding: 20px 0;
+  }
+
+  .focus-card + .focus-card {
+    border-top: 1px solid var(--border);
+    border-left: 0;
   }
 
   .timeline-preview {
