@@ -92,7 +92,7 @@
     },
     {
       "title": "Unity 3D AI Assistant",
-      "description": "Unity 3D AI Assistant turns a Ready Player Me avatar into a voice-driven AI companion inside Unity, with speech recognition, spoken responses, lip sync, animations, and multilingual conversation. It is interesting as a prototype because it combines several AI modalities in one embodied interface: chat, image generation and editing, web search, text-to-speech, and webcam-based Rock-Paper-Scissors.",
+      "description": "Unity 3D AI Assistant turns a Ready Player Me avatar into a voice-driven AI companion inside Unity, with speech recognition, spoken responses, lip sync, animations, and multilingual conversation. It it combines several AI modalities in one embodied interface: chat, image generation and editing, web search, text-to-speech, and webcam-based Rock-Paper-Scissors.",
       "descriptionFi": "Unity 3D AI Assistant muuttaa Ready Player Me -avatarin puheohjatuksi tekoälykumppaniksi Unityssä, mukana puheentunnistus, puhutut vastaukset, huulisynkka, animaatiot ja monikielinen keskustelu. Prototyyppinä se on kiinnostava, koska se yhdistää samaan keholliseen käyttöliittymään useita tekoälymuotoja: chatin, kuvien luonnin ja muokkauksen, web-haun, puhesynteesin ja webcamilla pelattavan kivi-paperi-sakset-pelin.",
       "features": [
         "Uses push-to-talk voice input with spoken responses and animated avatar gestures",
@@ -275,11 +275,7 @@
       "title": "Räccis SeAMK Food Royale",
       "description": "Räccis SeAMK Food Royale is a small Android lunch-menu app built to compare two SeAMK-area restaurants side by side. Its value is in the practical data stitching: it pulls Sodexo menus from JSON APIs, scrapes Eventti menu HTML, and presents both daily menus in one quick mobile view for students choosing where to eat.",
       "descriptionFi": "Räccis SeAMK Food Royale on pieni Android-lounaslistasovellus, joka rakennettiin kahden SeAMK-alueen ravintolan vertailuun rinnakkain. Sen arvo on käytännöllisessä datan yhdistelyssä: sovellus hakee Sodexon ruokalistat JSON-rajapinnoista, parsii Eventin menut HTML-sivulta ja näyttää molemmat päivän lounaat yhdessä nopeassa mobiilinäkymässä opiskelijoille, jotka valitsevat ruokapaikkaa.",
-      "features": [
-        "Displays two daily restaurant menus side by side",
-        "Fetches Sodexo lunch menus from an API",
-        "Scrapes Eventti menu content from HTML"
-      ],
+      "features": ["Displays two daily restaurant menus side by side", "Fetches Sodexo lunch menus from an API", "Scrapes Eventti menu content from HTML"],
       "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/jere-food-royale-android",
       "blog": "",
       "demo": "",
@@ -320,11 +316,7 @@
       "title": "SeAMK WinhaWille",
       "description": "SeAMK WinhaWille is an Android study-registry client for SeAMK students that scraped the campus WinhaWille portal to show GPA, credits, completed courses, and grades. As a student-built utility, it turned a web-only registry into a focused mobile view for the information students checked most often.",
       "descriptionFi": "SeAMK WinhaWille on Android-opintorekisterisovellus SeAMK-opiskelijoille, joka parsi kampuksen WinhaWille-portaalia ja näytti keskiarvon, opintopisteet, suoritetut kurssit ja arvosanat. Opiskelijan rakentamana hyötysovelluksena se muutti vain webissä toimineen rekisterin kohdennetuksi mobiilinäkymäksi tiedoille, joita opiskelijat tarkistivat useimmin.",
-      "features": [
-        "Shows GPA and accumulated student credits",
-        "Lists completed courses and grades",
-        "Parses study registry data from campus portal HTML"
-      ],
+      "features": ["Shows GPA and accumulated student credits", "Lists completed courses and grades", "Parses study registry data from campus portal HTML"],
       "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/seamk-winhawille",
       "blog": "",
       "demo": "",

@@ -47,6 +47,7 @@ type HomeCopy = {
       blog: string;
       demo: string;
       readAbout: string;
+      readMore: string;
       preview: string;
     };
     translations: Record<string, Partial<Pick<Project, "description" | "features">>>;
@@ -134,6 +135,7 @@ const en: HomeCopy = {
       blog: "Blog",
       demo: "Demo",
       readAbout: "Read about",
+      readMore: "Read more",
       preview: "preview",
     },
     translations: {},
@@ -223,6 +225,7 @@ const fi: HomeCopy = {
       blog: "Blogi",
       demo: "Demo",
       readAbout: "Lue projektista",
+      readMore: "Lue lisää",
       preview: "esikatselu",
     },
     translations: {

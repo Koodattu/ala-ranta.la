@@ -998,6 +998,21 @@ dd {
   padding: 18px 14px 18px;
 }
 
+.work-grid .project-card-selected .project-card-read-more {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.work-grid .project-card-selected:hover .project-card-read-more,
+.work-grid .project-card-selected:focus-within .project-card-read-more {
+  color: var(--accent);
+}
+
+.work-grid .project-card-selected:hover .project-card-read-more svg,
+.work-grid .project-card-selected:focus-within .project-card-read-more svg {
+  translate: 2px 0;
+}
+
 .work-grid .project-card-selected .project-card-topline {
   margin-bottom: 8px;
   color: var(--accent);

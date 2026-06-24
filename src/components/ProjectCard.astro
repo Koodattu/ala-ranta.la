@@ -12,6 +12,7 @@ interface Props {
     blog: string;
     demo: string;
     readAbout: string;
+    readMore: string;
     preview: string;
   };
 }
@@ -25,6 +26,7 @@ const {
     blog: "Blog",
     demo: "Demo",
     readAbout: "Read about",
+    readMore: "Read more",
     preview: "preview",
   },
 } = Astro.props;
@@ -59,6 +61,13 @@ const actions = [
           <div class="project-card-copy">
             {selectedParagraphs.map((paragraph) => <p>{paragraph}</p>)}
           </div>
+          <span class="timeline-read-more project-card-read-more" aria-hidden="true">
+            <span>{labels.readMore}</span>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </span>
         </div>
       </a>
     ) : (
