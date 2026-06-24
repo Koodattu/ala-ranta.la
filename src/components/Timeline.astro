@@ -17,6 +17,8 @@ const getCompactDates = (period: string) => {
 <ol class:list={["timeline-list", compact && "timeline-list-compact"]} data-reveal-group>
   {items.map((item) => {
     const dates = getCompactDates(item.period);
+    const slug = getBackgroundSlug(item);
+    const detailHref = `/about/${slug}/`;
 
     return (
       <li class="timeline-item">
@@ -28,19 +30,20 @@ const getCompactDates = (period: string) => {
         )}
         <div class:list={["timeline-marker", compact && "timeline-marker-start"]} aria-hidden="true"></div>
         {compact && <div class="timeline-marker timeline-marker-end" aria-hidden="true"></div>}
-        <div class="timeline-content">
+        <div class="timeline-content timeline-content-clickable">
+          <a class="timeline-card-link" href={detailHref} aria-label={`Read more about ${item.organization}`}></a>
           <div class="timeline-heading">
             <div>
               {compact ? (
                 <div class="timeline-title-block">
                   <h3>{item.role}</h3>
-                  <a href={`/about/${getBackgroundSlug(item)}/`}>{item.organization}</a>
+                  <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
                 </div>
               ) : (
                 <>
                   <p class="timeline-period">{item.period}</p>
                   <h3>{item.role}</h3>
-                  <a href={`/about/${getBackgroundSlug(item)}/`}>{item.organization}</a>
+                  <a href={item.url} target="_blank" rel="noreferrer">{item.organization}</a>
                 </>
               )}
             </div>

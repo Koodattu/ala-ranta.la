@@ -760,6 +760,32 @@ dd {
   padding: 22px;
 }
 
+.timeline-content {
+  position: relative;
+  transition-property: background-color, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+.timeline-content-clickable {
+  cursor: pointer;
+}
+
+.timeline-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.timeline-card-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .focus-card {
   min-width: 0;
   padding: clamp(18px, 2.2vw, 26px) clamp(24px, 3vw, 34px);
@@ -1554,6 +1580,9 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 }
 
 .timeline-heading a {
+  display: inline-flex;
+  position: relative;
+  z-index: 2;
   color: var(--accent);
   font-weight: 800;
 }
@@ -1668,7 +1697,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 }
 
 .timeline-list-compact .timeline-title-block a {
-  display: block;
+  width: fit-content;
 }
 
 .timeline-list-compact .timeline-heading img {
@@ -1689,6 +1718,11 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 .timeline-list-compact .timeline-content > p {
   margin-bottom: 0;
   max-width: 840px;
+}
+
+.timeline-content-clickable:hover,
+.timeline-content-clickable:focus-within {
+  background: color-mix(in srgb, var(--accent) 8%, var(--panel-strong));
 }
 
 .page-hero,
