@@ -1,5 +1,6 @@
 ---
 import TechTag from "../../components/TechTag.astro";
+import DetailBackNav from "../../components/DetailBackNav.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { education, experience, profile } from "../../data/profile";
 import { getBackgroundSlug, type BackgroundItem } from "../../utils";
@@ -73,6 +74,7 @@ const schema = {
 
 <BaseLayout title={group.organization} description={description} image={group.logo} schema={schema}>
   <main>
+    <DetailBackNav sectionHref="/about/" sectionLabel="Back to about" ariaLabel="Background navigation" />
     <article>
       <header class="about-detail-hero section-shell">
         <div class="reveal">
@@ -87,7 +89,6 @@ const schema = {
           <div class="hero-actions">
             <div class="hero-action-row">
               <a class="button button-primary" href={group.url} target="_blank" rel="noreferrer">Official site</a>
-              <a class="button" href="/about/">Back to about</a>
             </div>
           </div>
         </div>

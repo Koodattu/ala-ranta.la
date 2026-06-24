@@ -441,7 +441,8 @@ dd {
   scale: 0.96;
 }
 
-.button.is-disabled {
+.button.is-disabled,
+.button:disabled {
   background: transparent;
   box-shadow: var(--shadow-border);
   color: var(--faint);
@@ -468,6 +469,54 @@ dd {
 
 .button-linkedin {
   background: color-mix(in srgb, var(--panel-strong) 92%, transparent);
+}
+
+.detail-back-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 34px;
+  padding-bottom: 0;
+}
+
+.detail-back-nav .button {
+  background: transparent;
+  box-shadow: none;
+  color: var(--muted);
+}
+
+.detail-back-nav .button:hover {
+  background: color-mix(in srgb, var(--panel-strong) 58%, transparent);
+  box-shadow: none;
+  color: var(--text);
+}
+
+.detail-back-nav .button:disabled {
+  background: transparent;
+  box-shadow: none;
+  color: var(--faint);
+}
+
+.detail-back-nav + article .about-detail-hero,
+.detail-back-nav + article .project-detail-hero {
+  padding-top: 42px;
+}
+
+.detail-previous-button {
+  min-width: 154px;
+}
+
+.button-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
 .hero-actions .button:hover,
@@ -2609,6 +2658,17 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 
   .section-shell {
     padding: 54px 0;
+  }
+
+  .detail-back-nav {
+    gap: 8px;
+    padding-top: 24px;
+    padding-bottom: 0;
+  }
+
+  .detail-back-nav + article .about-detail-hero,
+  .detail-back-nav + article .project-detail-hero {
+    padding-top: 34px;
   }
 
   .about-hero {

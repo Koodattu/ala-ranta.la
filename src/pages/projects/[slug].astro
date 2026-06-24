@@ -1,4 +1,5 @@
 ---
+import DetailBackNav from "../../components/DetailBackNav.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import projectsData from "../../data/projects.json";
 import {
@@ -38,6 +39,7 @@ const schema = {
 
 <BaseLayout title={project.title} description={project.description} image={image} schema={schema}>
   <main>
+    <DetailBackNav sectionHref="/projects/" sectionLabel="Back to projects" ariaLabel="Project navigation" />
     <article>
       <header class="project-detail-hero section-shell">
         <div class="reveal">
@@ -64,7 +66,6 @@ const schema = {
                 )
               )}
             </div>
-            <a class="button" href="/projects/">All projects</a>
           </div>
         </div>
         <img src={image} alt={`${project.title} preview`} style={`view-transition-name: vt-project-${getProjectSlug(project)};`} />

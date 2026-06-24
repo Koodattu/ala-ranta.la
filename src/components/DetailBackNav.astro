@@ -1,0 +1,33 @@
+---
+interface Props {
+  sectionHref: string;
+  sectionLabel: string;
+  ariaLabel: string;
+}
+
+const { sectionHref, sectionLabel, ariaLabel } = Astro.props;
+---
+
+<nav class="detail-back-nav section-shell" aria-label={ariaLabel}>
+  <button class="button button-quiet detail-previous-button" type="button" data-previous-page disabled>
+    <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19 12H5" />
+      <path d="M12 19l-7-7 7-7" />
+    </svg>
+    Back to previous
+  </button>
+  <a class="button button-quiet" href={sectionHref}>{sectionLabel}</a>
+</nav>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-previous-page]").forEach((button) => {
+    if (!document.referrer) {
+      button.setAttribute("aria-disabled", "true");
+      return;
+    }
+
+    button.disabled = false;
+    button.removeAttribute("aria-disabled");
+    button.addEventListener("click", () => window.history.back());
+  });
+</script>
