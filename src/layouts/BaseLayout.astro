@@ -189,6 +189,14 @@ const jsonLd = {
             link.removeAttribute("aria-current");
           }
         });
+
+        document.querySelectorAll("[data-language-aria-en][data-language-aria-fi]").forEach((element) => {
+          const localizedLabel = element.getAttribute(`data-language-aria-${language}`);
+
+          if (localizedLabel) {
+            element.setAttribute("aria-label", localizedLabel);
+          }
+        });
       };
 
       syncPreferredLanguage(document.documentElement.dataset.preferredLanguage);
