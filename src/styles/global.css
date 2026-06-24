@@ -1952,7 +1952,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   padding: 15px 16px;
   color: inherit;
   text-decoration: none;
-  transition-property: opacity, translate, background-color, box-shadow, color;
+  transition-property: opacity, translate, background-color, color;
   transition-duration: 160ms;
   transition-timing-function: ease;
 }
@@ -1964,12 +1964,6 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 .writing-item:hover,
 .writing-item:focus-visible {
   background: color-mix(in srgb, var(--panel-strong) 72%, transparent);
-  box-shadow: inset 3px 0 0 var(--accent);
-}
-
-.writing-item:hover h3,
-.writing-item:focus-visible h3 {
-  color: var(--accent);
 }
 
 .writing-item h3 {
