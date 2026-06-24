@@ -1200,76 +1200,6 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   margin-bottom: 0;
 }
 
-.project-card-actions {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  width: 100%;
-  margin-top: auto;
-  padding: 10px;
-  background: color-mix(in srgb, var(--panel-strong) 72%, var(--panel));
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.07);
-}
-
-.project-action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  min-height: 42px;
-  padding: 0 10px;
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--bg) 28%, var(--panel-strong));
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.11);
-  color: #eaf1fb;
-  font-size: 0.78rem;
-  font-weight: 850;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-  scale: 1;
-  transition-property: scale, background-color, box-shadow, color;
-  transition-duration: 160ms;
-  transition-timing-function: ease;
-}
-
-.project-action:hover {
-  background: color-mix(in srgb, var(--accent) 16%, var(--panel-strong));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 48%, transparent);
-}
-
-.project-action:active {
-  scale: 0.96;
-}
-
-.project-action:first-child {
-  background: var(--accent);
-  box-shadow: none;
-  color: var(--accent-ink);
-}
-
-.project-action:first-child:hover {
-  background: #36e0cb;
-}
-
-.project-action.is-placeholder {
-  background: color-mix(in srgb, var(--bg) 36%, transparent);
-  box-shadow: var(--shadow-border);
-  color: var(--faint);
-  cursor: default;
-}
-
-.project-action.is-placeholder:hover {
-  background: color-mix(in srgb, var(--bg) 36%, transparent);
-  box-shadow: var(--shadow-border);
-}
-
-.project-action.is-placeholder:active {
-  scale: 1;
-}
-
 .project-list .project-card {
   display: grid;
   grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
@@ -1319,8 +1249,8 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   align-items: flex-end;
 }
 
-.project-list .project-card:nth-child(even) .project-card-actions {
-  margin-left: auto;
+.project-list .project-card:nth-child(even) .project-card-read-more {
+  align-self: flex-end;
 }
 
 .project-list .project-card:hover {
@@ -1392,44 +1322,20 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   line-height: 1.65;
 }
 
-.project-list .project-card-actions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  width: min(100%, 390px);
+.project-card:hover .project-card-read-more,
+.project-card:focus-within .project-card-read-more {
+  color: var(--accent);
+}
+
+.project-card:hover .project-card-read-more svg,
+.project-card:focus-within .project-card-read-more svg {
+  translate: 2px 0;
+}
+
+.project-list .project-card-read-more {
+  align-self: flex-start;
   margin-top: auto;
   padding: 22px 0 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.project-list .project-action,
-.project-list .project-action:first-child {
-  justify-content: center;
-  width: 100%;
-  min-width: 0;
-  min-height: 40px;
-  padding: 0 12px;
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--panel-strong) 70%, transparent);
-  box-shadow: none;
-  color: var(--accent);
-  font-size: 0.82rem;
-  text-align: center;
-  transition-property: scale, background-color, color;
-}
-
-.project-list .project-action:hover,
-.project-list .project-action:first-child:hover {
-  background: color-mix(in srgb, var(--accent) 14%, var(--panel-strong));
-  color: var(--text);
-}
-
-.project-list .project-action.is-placeholder,
-.project-list .project-action.is-placeholder:hover {
-  background: color-mix(in srgb, var(--bg) 36%, transparent);
-  box-shadow: none;
-  color: color-mix(in srgb, var(--faint) 72%, transparent);
 }
 
 .feature-list {
@@ -2937,8 +2843,8 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
     align-items: flex-start;
   }
 
-  .project-list .project-card:nth-child(even) .project-card-actions {
-    margin-left: 0;
+  .project-list .project-card:nth-child(even) .project-card-read-more {
+    align-self: flex-start;
   }
 
   .project-list .project-media {
@@ -2955,9 +2861,8 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
     font-size: clamp(1.55rem, 7vw, 2.1rem);
   }
 
-  .project-list .project-card-actions {
-    gap: 8px 14px;
-    margin-top: 18px;
+  .project-list .project-card-read-more {
+    padding-top: 18px;
   }
 
   .principles-grid {

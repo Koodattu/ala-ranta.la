@@ -32,11 +32,6 @@ const {
 } = Astro.props;
 const slug = getProjectSlug(project);
 const selectedParagraphs = selectedWork?.paragraphs ?? [project.description];
-const actions = [
-  { label: labels.source, href: project.source, external: true, ariaLabel: `Open ${project.title} source on GitHub` },
-  { label: labels.blog, href: project.blog, external: false, ariaLabel: `Read the ${project.title} blog post` },
-  { label: labels.demo, href: project.demo, external: true, ariaLabel: `Open the ${project.title} live demo` },
-];
 ---
 
 <article
@@ -92,25 +87,13 @@ const actions = [
               {project.descriptionFi && <p data-project-description-lang="fi">{project.descriptionFi}</p>}
             </div>
           </div>
-          <div class="project-card-actions" aria-label={`${project.title} links`}>
-            {actions.map((action) =>
-              action.href ? (
-                <a
-                  class="project-action"
-                  href={action.href}
-                  target={action.external ? "_blank" : undefined}
-                  rel={action.external ? "noreferrer" : undefined}
-                  aria-label={action.ariaLabel}
-                >
-                  {action.label}
-                </a>
-              ) : (
-                <span class="project-action is-placeholder" aria-disabled="true" aria-label={`${action.label} placeholder for ${project.title}`}>
-                  {action.label}
-                </span>
-              )
-            )}
-          </div>
+          <span class="timeline-read-more project-card-read-more" aria-hidden="true">
+            <span>{labels.readMore}</span>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </span>
         </div>
       </>
     )
