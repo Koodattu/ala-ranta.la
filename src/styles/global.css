@@ -1680,7 +1680,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 .timeline-list-compact .timeline-content {
   grid-column: 3;
   padding: 16px 18px;
-  border-radius: 0;
+  border-radius: 8px;
   background: transparent;
   box-shadow: none;
 }
