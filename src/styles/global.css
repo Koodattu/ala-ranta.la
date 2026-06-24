@@ -2083,7 +2083,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   top: -22px;
   left: 0;
   margin-bottom: 0;
-  color: var(--faint);
+  color: var(--accent);
 }
 
 .writing-item-description {
