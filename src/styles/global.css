@@ -783,9 +783,11 @@ dd {
 }
 
 .work-grid {
+  --work-grid-column-gap: 36px;
+
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 0;
+  column-gap: var(--work-grid-column-gap);
   row-gap: 36px;
   align-items: stretch;
 }
@@ -810,7 +812,6 @@ dd {
 
 .project-card-selected,
 .project-card-selected:hover {
-  background: transparent;
   box-shadow: none;
   overflow: visible;
 }
@@ -889,18 +890,22 @@ dd {
 }
 
 .work-grid .project-card-selected {
-  padding-inline: 28px;
-  border-left: 1px solid var(--border);
   border-radius: 0;
+  background: transparent;
 }
 
-.work-grid .project-card-selected:first-child {
-  padding-left: 0;
-  border-left: 0;
+.work-grid .project-card-selected:hover {
+  background: color-mix(in srgb, var(--panel-strong) 48%, transparent);
 }
 
-.work-grid .project-card-selected:last-child {
-  padding-right: 0;
+.work-grid .project-card-selected + .project-card-selected::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--work-grid-column-gap) * -0.5);
+  width: 1px;
+  background: var(--border);
 }
 
 .work-grid .project-card-selected .project-card-link {
@@ -909,6 +914,7 @@ dd {
 }
 
 .work-grid .project-card-selected .project-media {
+  height: 232px;
   aspect-ratio: 16 / 10;
   border-radius: 18px;
   box-shadow: 0 20px 52px rgba(0, 0, 0, 0.22);
@@ -2223,21 +2229,17 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   }
 
   .work-grid {
+    --work-grid-column-gap: 32px;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .work-grid .project-card-selected {
-    padding-inline: 24px;
+  .work-grid .project-card-selected + .project-card-selected::before {
+    display: none;
   }
 
-  .work-grid .project-card-selected:nth-child(odd) {
-    padding-left: 0;
-    border-left: 0;
-  }
-
-  .work-grid .project-card-selected:nth-child(even) {
-    padding-right: 0;
-    border-left: 1px solid var(--border);
+  .work-grid .project-card-selected:nth-child(even)::before {
+    display: block;
   }
 
   .hero {
@@ -2521,11 +2523,12 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
     row-gap: 34px;
   }
 
-  .work-grid .project-card-selected,
-  .work-grid .project-card-selected:nth-child(even),
-  .work-grid .project-card-selected:nth-child(odd) {
-    padding-inline: 0;
-    border-left: 0;
+  .work-grid .project-card-selected:nth-child(even)::before {
+    display: none;
+  }
+
+  .work-grid .project-card-selected .project-media {
+    height: clamp(220px, 58vw, 280px);
   }
 
   .project-list-shell {
