@@ -167,10 +167,10 @@ const en: HomeCopy = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Want to talk about a practical software or AI problem?",
-    text: "I am most useful when the work needs product judgment, implementation depth, and a path from prototype to production.",
-    email: "Email Juha",
-    linkedin: "LinkedIn",
+    title: "Say hello, share an idea, or connect.",
+    text: "I am always happy to hear from people who build things, study technology, work with AI, or just want to trade ideas. Email works best; LinkedIn is good too. If you are in Seinäjoki, coffee or a burger also works.",
+    email: "Email me",
+    linkedin: "Connect on LinkedIn",
     actionsLabel: "Contact actions",
   },
 };
@@ -315,10 +315,10 @@ const fi: HomeCopy = {
   },
   contact: {
     eyebrow: "Yhteys",
-    title: "Haluatko puhua käytännön ohjelmisto- tai tekoälyongelmasta?",
-    text: "Olen hyödyllisimmilläni, kun työ vaatii tuoteajattelua, syvää toteutusosaamista ja polun prototyypistä tuotantoon.",
+    title: "Ota yhteyttä, jaa idea tai verkostoidutaan.",
+    text: "Kuulen mielelläni ihmisistä, jotka rakentavat jotain, opiskelevat teknologiaa, tekevät töitä tekoälyn parissa tai haluavat vaihtaa ajatuksia. Sähköposti toimii parhaiten; LinkedIn käy myös. Seinäjoella kahvi tai burgeri toimii aina.",
     email: "Lähetä sähköpostia",
-    linkedin: "LinkedIn",
+    linkedin: "Verkostoidu LinkedInissä",
     actionsLabel: "Yhteydenottotavat",
   },
 };
