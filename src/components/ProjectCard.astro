@@ -52,6 +52,9 @@ const actions = [
           />
         </span>
         <div class="project-card-body">
+          <div class="project-card-topline">
+            <span>{project.year}</span>
+          </div>
           <h3>{project.title}</h3>
           <div class="project-card-copy">
             {selectedParagraphs.map((paragraph) => <p>{paragraph}</p>)}
