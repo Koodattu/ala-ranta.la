@@ -2043,11 +2043,6 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   margin-top: auto;
 }
 
-.writing-row {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
 .writing-item {
   display: grid;
   grid-template-columns: minmax(280px, 0.96fr) minmax(360px, 1.24fr) max-content;
