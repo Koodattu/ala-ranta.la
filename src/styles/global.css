@@ -1722,7 +1722,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 
 .timeline-content-clickable:hover,
 .timeline-content-clickable:focus-within {
-  background: color-mix(in srgb, var(--accent) 8%, var(--panel-strong));
+  background: color-mix(in srgb, var(--panel-strong) 95%, #ffffff 5%);
 }
 
 .page-hero,
