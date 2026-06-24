@@ -1680,6 +1680,8 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 .timeline-list-compact .timeline-content {
   grid-column: 3;
   padding: 16px 18px;
+  border-radius: 0;
+  background: transparent;
   box-shadow: none;
 }
 
@@ -1765,6 +1767,11 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 .timeline-content-clickable:hover .timeline-read-more svg,
 .timeline-content-clickable:focus-within .timeline-read-more svg {
   translate: 2px 0;
+}
+
+.timeline-list-compact .timeline-content-clickable:hover,
+.timeline-list-compact .timeline-content-clickable:focus-within {
+  background: color-mix(in srgb, var(--panel-strong) 72%, transparent);
 }
 
 .page-hero,
