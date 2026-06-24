@@ -115,10 +115,17 @@ const alternates = [
       </div>
       <div class="focus-grid focus-grid-current" data-reveal-group>
         {copy.focus.items.map((area) => (
-          <article class="focus-card">
+          <a class="focus-card focus-card-link" href={area.href} aria-label={`${copy.focus.readMore}: ${area.title}`}>
             <h3>{area.title}</h3>
             <p>{area.text}</p>
-          </article>
+            <span class="timeline-read-more focus-read-more" aria-hidden="true">
+              <span>{copy.focus.readMore}</span>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </span>
+          </a>
         ))}
       </div>
     </section>

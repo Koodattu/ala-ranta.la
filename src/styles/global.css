@@ -791,6 +791,45 @@ dd {
   padding: clamp(18px, 2.2vw, 26px) clamp(24px, 3vw, 34px);
 }
 
+.focus-card-link {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition-property: background-color, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+.focus-card-link:hover,
+.focus-card-link:focus-visible {
+  background: color-mix(in srgb, var(--panel-strong) 58%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent),
+    0 18px 44px rgba(0, 0, 0, 0.18);
+}
+
+.focus-card-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.focus-read-more {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.focus-card-link:hover .focus-read-more,
+.focus-card-link:focus-visible .focus-read-more {
+  color: var(--accent);
+}
+
+.focus-card-link:hover .focus-read-more svg,
+.focus-card-link:focus-visible .focus-read-more svg {
+  translate: 2px 0;
+}
+
 .focus-card:first-child {
   padding-left: 0;
 }

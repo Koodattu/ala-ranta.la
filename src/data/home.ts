@@ -27,9 +27,11 @@ type HomeCopy = {
     eyebrow: string;
     title: string;
     about: string;
+    readMore: string;
     items: {
       title: string;
       text: string;
+      href: string;
     }[];
   };
   projects: {
@@ -100,18 +102,22 @@ const en: HomeCopy = {
     eyebrow: "Current focus",
     title: "Where my time goes",
     about: "Read more about me",
+    readMore: "Read more",
     items: [
       {
         title: "Product and engineering ownership at Clevoy",
         text: "Setting technical direction while staying close to the build: product architecture, apps, backend services, infrastructure, and admin tooling.",
+        href: "/about/clevoy/",
       },
       {
         title: "A long trail of side project experiments",
         text: "AI tools, Twitch bots, game utilities, food apps, trackers, workshop demos, and small products built because the idea would not leave me alone.",
+        href: "/projects/",
       },
       {
-        title: "Applied AI that earns its place",
-        text: "Testing language, voice, vision, and local-model workflows against real product problems, not demos built around the model.",
+        title: "Personal life and hobbies",
+        text: "A more personal snapshot: life in Seinäjoki, hobbies, side projects, and the things outside work that keep me curious, practical, and grounded.",
+        href: "/about/",
       },
     ],
   },
@@ -190,18 +196,22 @@ const fi: HomeCopy = {
     eyebrow: "Nykyinen fokus",
     title: "Mihin aikani menee",
     about: "Lue lisää minusta",
+    readMore: "Lue lisää",
     items: [
       {
         title: "Tuotteen ja teknologian omistajuus Clevoylla",
         text: "Vien teknistä suuntaa eteenpäin pysyen lähellä toteutusta: tuotearkkitehtuuri, sovellukset, backend-palvelut, infrastruktuuri ja hallintatyökalut.",
+        href: "/about/clevoy/",
       },
       {
         title: "Pitkä jono sivuprojektikokeiluja",
         text: "Tekoälytyökaluja, Twitch-botteja, pelityökaluja, ruoka-appeja, dataseurantaa, workshop-demoja ja pieniä tuotteita, koska idea ei jättänyt rauhaan.",
+        href: "/projects/",
       },
       {
-        title: "Soveltava tekoäly, joka ansaitsee paikkansa",
-        text: "Testaan kieli-, puhe-, kuva- ja paikallismallityönkulkuja todellisia tuoteongelmia vasten, en mallin ympärille rakennettuina demoina.",
+        title: "Oma elämä ja harrastukset",
+        text: "Henkilökohtaisempi katsaus elämään Seinäjoella, harrastuksiin, sivuprojekteihin ja asioihin työn ulkopuolella, jotka pitävät arjen uteliaana ja maanläheisenä.",
+        href: "/about/",
       },
     ],
   },
