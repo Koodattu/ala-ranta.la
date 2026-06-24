@@ -63,6 +63,8 @@ type HomeCopy = {
     experienceTitle: string;
     educationEyebrow: string;
     educationTitle: string;
+    readMore: string;
+    readMoreAriaPrefix: string;
   };
   contact: {
     eyebrow: string;
@@ -148,6 +150,8 @@ const en: HomeCopy = {
     experienceTitle: "Work history",
     educationEyebrow: "Education",
     educationTitle: "Studies",
+    readMore: "Read more",
+    readMoreAriaPrefix: "Read more about",
   },
   contact: {
     eyebrow: "Contact",
@@ -287,6 +291,8 @@ const fi: HomeCopy = {
     experienceTitle: "Työhistoria",
     educationEyebrow: "Koulutus",
     educationTitle: "Opinnot",
+    readMore: "Lue lisää",
+    readMoreAriaPrefix: "Lue lisää kohteesta",
   },
   contact: {
     eyebrow: "Yhteys",

@@ -5,9 +5,11 @@ import { getBackgroundSlug, type BackgroundItem } from "../utils";
 interface Props {
   items: BackgroundItem[];
   compact?: boolean;
+  readMoreLabel?: string;
+  readMoreAriaPrefix?: string;
 }
 
-const { items, compact = false } = Astro.props;
+const { items, compact = false, readMoreLabel = "Read more", readMoreAriaPrefix = "Read more about" } = Astro.props;
 const getCompactDates = (period: string) => {
   const [start, end = ""] = period.split(" - ");
   return { start, end };
@@ -31,7 +33,7 @@ const getCompactDates = (period: string) => {
         <div class:list={["timeline-marker", compact && "timeline-marker-start"]} aria-hidden="true"></div>
         {compact && <div class="timeline-marker timeline-marker-end" aria-hidden="true"></div>}
         <div class="timeline-content timeline-content-clickable">
-          <a class="timeline-card-link" href={detailHref} aria-label={`Read more about ${item.organization}`}></a>
+          <a class="timeline-card-link" href={detailHref} aria-label={`${readMoreAriaPrefix} ${item.organization}`}></a>
           <div class="timeline-heading">
             <div>
               {compact ? (
@@ -54,7 +56,18 @@ const getCompactDates = (period: string) => {
               loading="lazy"
             />
           </div>
-          {compact && <p>{item.summary}</p>}
+          {compact && (
+            <>
+              <p>{item.summary}</p>
+              <span class="timeline-read-more" aria-hidden="true">
+                <span>{readMoreLabel}</span>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </span>
+            </>
+          )}
           {!compact && (
             <>
               <p>{item.summary}</p>

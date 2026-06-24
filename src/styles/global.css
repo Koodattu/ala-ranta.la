@@ -1720,9 +1720,51 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   max-width: 840px;
 }
 
+.timeline-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: var(--faint);
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+  transition-property: color;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
+.timeline-read-more svg {
+  width: 0.98em;
+  height: 0.98em;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+  translate: 0 0;
+  transition-property: translate;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
 .timeline-content-clickable:hover,
 .timeline-content-clickable:focus-within {
   background: color-mix(in srgb, var(--panel-strong) 95%, #ffffff 5%);
+}
+
+.timeline-content-clickable:hover .timeline-read-more,
+.timeline-content-clickable:focus-within .timeline-read-more {
+  color: var(--accent);
+}
+
+.timeline-content-clickable:hover .timeline-read-more svg,
+.timeline-content-clickable:focus-within .timeline-read-more svg {
+  translate: 2px 0;
 }
 
 .page-hero,

@@ -184,14 +184,14 @@ const alternates = [
             <p class="eyebrow">{copy.timeline.experienceEyebrow}</p>
             <h2 id="work-history-preview-title">{copy.timeline.experienceTitle}</h2>
           </div>
-          <Timeline items={localizedExperience[locale]} compact />
+          <Timeline items={localizedExperience[locale]} compact readMoreLabel={copy.timeline.readMore} readMoreAriaPrefix={copy.timeline.readMoreAriaPrefix} />
         </section>
         <section class="timeline-preview" aria-labelledby="studies-preview-title">
           <div class="timeline-preview-heading" data-reveal>
             <p class="eyebrow">{copy.timeline.educationEyebrow}</p>
             <h2 id="studies-preview-title">{copy.timeline.educationTitle}</h2>
           </div>
-          <Timeline items={localizedEducation[locale]} compact />
+          <Timeline items={localizedEducation[locale]} compact readMoreLabel={copy.timeline.readMore} readMoreAriaPrefix={copy.timeline.readMoreAriaPrefix} />
         </section>
       </div>
     </section>
