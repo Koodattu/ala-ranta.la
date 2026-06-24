@@ -1544,6 +1544,11 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   align-items: start;
 }
 
+#work,
+#studies {
+  scroll-margin-top: 112px;
+}
+
 .sticky-heading {
   position: sticky;
   top: 92px;
@@ -1623,6 +1628,29 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 
 .timeline-preview-heading {
   padding-top: 2px;
+}
+
+.timeline-preview-heading-link {
+  display: block;
+  min-height: 40px;
+  padding: 12px 14px;
+  margin: -12px -14px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition-property: background-color;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+.timeline-preview-heading-link:hover,
+.timeline-preview-heading-link:focus-visible {
+  background: color-mix(in srgb, var(--panel-strong) 72%, transparent);
+}
+
+.timeline-preview-heading-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .timeline-preview-heading h2 {
@@ -1863,6 +1891,20 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   transition-property: translate;
   transition-duration: 160ms;
   transition-timing-function: ease;
+}
+
+.timeline-heading-read-more {
+  margin-top: 14px;
+}
+
+.timeline-preview-heading-link:hover .timeline-heading-read-more,
+.timeline-preview-heading-link:focus-visible .timeline-heading-read-more {
+  color: var(--accent);
+}
+
+.timeline-preview-heading-link:hover .timeline-heading-read-more svg,
+.timeline-preview-heading-link:focus-visible .timeline-heading-read-more svg {
+  translate: 2px 0;
 }
 
 .timeline-content-clickable:hover,

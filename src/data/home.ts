@@ -64,8 +64,10 @@ type HomeCopy = {
     ariaLabel: string;
     experienceEyebrow: string;
     experienceTitle: string;
+    experienceAction: string;
     educationEyebrow: string;
     educationTitle: string;
+    educationAction: string;
     readMore: string;
     readMoreAriaPrefix: string;
   };
@@ -156,8 +158,10 @@ const en: HomeCopy = {
     ariaLabel: "Background preview",
     experienceEyebrow: "Experience",
     experienceTitle: "Work history",
+    experienceAction: "View work history",
     educationEyebrow: "Education",
     educationTitle: "Studies",
+    educationAction: "Explore studies",
     readMore: "Read more",
     readMoreAriaPrefix: "Read more about",
   },
@@ -302,8 +306,10 @@ const fi: HomeCopy = {
     ariaLabel: "Taustan esikatselu",
     experienceEyebrow: "Kokemus",
     experienceTitle: "Työhistoria",
+    experienceAction: "Katso työhistoria",
     educationEyebrow: "Koulutus",
     educationTitle: "Opinnot",
+    educationAction: "Tutustu opintoihin",
     readMore: "Lue lisää",
     readMoreAriaPrefix: "Lue lisää kohteesta",
   },
