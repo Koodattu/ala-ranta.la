@@ -115,8 +115,8 @@ const en: HomeCopy = {
         href: "/projects/",
       },
       {
-        title: "The person behind the projects",
-        text: "A quieter look at the context around the work: life in Seinäjoki, hobbies, photos, and the interests that shape how I think, build, and spend time away from the screen.",
+        title: "Life outside the build",
+        text: "Games, gym sessions, streams, and good food. Simple ways to switch off when I am not working or chasing the next side project.",
         href: "/about/",
       },
     ],
@@ -209,8 +209,8 @@ const fi: HomeCopy = {
         href: "/projects/",
       },
       {
-        title: "Ihminen projektien takana",
-        text: "Rauhallisempi katsaus työn ympärillä olevaan arkeen: elämään Seinäjoella, harrastuksiin, kuviin ja kiinnostuksenkohteisiin, jotka vaikuttavat siihen, miten ajattelen ja rakennan.",
+        title: "Elämä projektien ulkopuolella",
+        text: "Pelejä, salitreenejä, striimejä ja hyvää ruokaa. Yksinkertaisia tapoja nollata, kun en ole töissä tai viemässä seuraavaa sivuprojektia eteenpäin.",
         href: "/about/",
       },
     ],
