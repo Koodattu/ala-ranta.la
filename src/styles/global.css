@@ -701,6 +701,43 @@ dd {
   margin-bottom: 22px;
 }
 
+.section-heading-link {
+  padding: 14px 18px;
+  margin: -14px -18px 2px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition-property: background-color;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+.section-heading-link:hover,
+.section-heading-link:focus-visible {
+  background: color-mix(in srgb, var(--panel-strong) 58%, transparent);
+}
+
+.section-heading-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.section-heading-link-action {
+  transition-property: color;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
+.section-heading-link:hover .section-heading-link-action,
+.section-heading-link:focus-visible .section-heading-link-action {
+  color: #36e0cb;
+}
+
+.section-heading-link:hover .section-heading-link-action svg,
+.section-heading-link:focus-visible .section-heading-link-action svg {
+  translate: 2px -2px;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -787,6 +824,7 @@ dd {
 }
 
 .focus-card {
+  position: relative;
   min-width: 0;
   padding: clamp(18px, 2.2vw, 26px) clamp(24px, 3vw, 34px);
 }
@@ -836,8 +874,15 @@ dd {
   padding-right: 0;
 }
 
-.focus-card + .focus-card {
-  border-left: 1px solid var(--border);
+.focus-card + .focus-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--border);
+  pointer-events: none;
 }
 
 .focus-grid-current .focus-card {
@@ -2492,9 +2537,13 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
     padding: 20px 0;
   }
 
-  .focus-card + .focus-card {
-    border-top: 1px solid var(--border);
-    border-left: 0;
+  .focus-card + .focus-card::before {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 1px;
   }
 
   .timeline-preview {

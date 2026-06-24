@@ -100,19 +100,19 @@ const alternates = [
     </section>
 
     <section class="section-shell compact-section" aria-labelledby="focus-title">
-      <div class="section-heading section-heading-row section-heading-action-row" data-reveal>
+      <a class="section-heading section-heading-row section-heading-action-row section-heading-link" href="/about/" data-reveal>
         <div>
           <p class="eyebrow">{copy.focus.eyebrow}</p>
           <h2 id="focus-title">{copy.focus.title}</h2>
         </div>
-        <a class="text-link text-link-outbound" href="/about/">
+        <span class="text-link text-link-outbound section-heading-link-action">
           <span>{copy.focus.about}</span>
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
             <path d="M7 17 17 7" />
             <path d="M9 7h8v8" />
           </svg>
-        </a>
-      </div>
+        </span>
+      </a>
       <div class="focus-grid focus-grid-current" data-reveal-group>
         {copy.focus.items.map((area) => (
           <a class="focus-card focus-card-link" href={area.href} aria-label={`${copy.focus.readMore}: ${area.title}`}>
