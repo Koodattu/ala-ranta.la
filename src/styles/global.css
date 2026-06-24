@@ -1900,6 +1900,16 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   translate: 2px 0;
 }
 
+@media (max-width: 760px), (hover: none) {
+  .timeline-read-more {
+    color: var(--accent);
+  }
+
+  .timeline-read-more svg {
+    translate: 2px 0;
+  }
+}
+
 .page-hero,
 .post-hero,
 .about-detail-hero,
