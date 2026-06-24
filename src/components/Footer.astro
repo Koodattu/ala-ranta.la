@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { lang = "en" } = Astro.props;
-const copy = {
+const footerCopy = {
   en: {
     built: "Built as a static Astro site. Source code is available on",
     repoLabel: "GitHub",
@@ -17,15 +17,21 @@ const copy = {
     repoLabel: "GitHubissa",
     links: "Alatunnisteen linkit",
   },
-}[lang];
+};
+
+const copy = footerCopy[lang];
 ---
 
 <footer class="site-footer">
   <p>
-    {copy.built}
-    <a href={profile.repo} target="_blank" rel="noreferrer">{copy.repoLabel}</a>.
+    <span data-language-copy="en">{footerCopy.en.built}</span>
+    <span data-language-copy="fi">{footerCopy.fi.built}</span>
+    <a href={profile.repo} target="_blank" rel="noreferrer">
+      <span data-language-copy="en">{footerCopy.en.repoLabel}</span>
+      <span data-language-copy="fi">{footerCopy.fi.repoLabel}</span>
+    </a>.
   </p>
-  <nav aria-label={copy.links}>
+  <nav aria-label={copy.links} data-language-aria-en={footerCopy.en.links} data-language-aria-fi={footerCopy.fi.links}>
     {profile.socials.map((social) => (
       <a href={social.href} target={social.href.startsWith("http") ? "_blank" : undefined} rel={social.href.startsWith("http") ? "noreferrer" : undefined}>
         {social.label}

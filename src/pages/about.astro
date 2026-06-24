@@ -2,64 +2,187 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TechTag from "../components/TechTag.astro";
 import Timeline from "../components/Timeline.astro";
-import { education, experience, focusAreas, profile, skillGroups } from "../data/profile";
+import { localizedEducation, localizedExperience, type Locale } from "../data/home";
+import { focusAreas, profile, skillGroups } from "../data/profile";
 
-const principles = [
-  {
-    title: "Build past the demo",
-    text: "The first working version matters, but the real test is whether the system can be debugged, changed, and trusted later.",
+const aboutCopy = {
+  en: {
+    title: `About ${profile.name}`,
+    description: "A short background on Juha Ala-Rantala's software engineering work, education, and technical interests.",
+    heroEyebrow: "About",
+    heroText:
+      "I am a software engineer from Seinäjoki, Finland. My work has moved through industrial desktop software, university AI research, and now technology leadership at Clevoy Oy.",
+    profileEyebrow: "Profile",
+    profileTitle: "How I work",
+    profileParagraphs: [
+      "I care about building software that can survive contact with real users, real constraints, and real maintenance work. I enjoy the full path from early product thinking to implementation, deployment, debugging, and iteration.",
+      "Recently my focus has been on full-stack product development and applied AI: language models, voice interfaces, image workflows, local inference, and tools that make the technology useful instead of merely impressive.",
+    ],
+    focusAreas,
+    workEyebrow: "Experience",
+    workTitle: "Work history",
+    studiesEyebrow: "Education",
+    studiesTitle: "Studies",
+    principlesEyebrow: "How I work",
+    principlesTitle: "What I optimize for",
+    principlesIntro: "The tools change, but these constraints keep the work grounded when product, engineering, and AI meet.",
+    principles: [
+      {
+        title: "Build past the demo",
+        text: "The first working version matters, but the real test is whether the system can be debugged, changed, and trusted later.",
+      },
+      {
+        title: "Make AI practical",
+        text: "AI work should connect to a real workflow: language, vision, or speech used where it removes friction or opens a useful path.",
+      },
+      {
+        title: "Own the whole path",
+        text: "Good product engineering connects requirements, implementation, deployment, cost, support, and the next improvement.",
+      },
+      {
+        title: "Keep systems understandable",
+        text: "Architecture should make the next decision easier, not bury the team under abstractions that only made sense once.",
+      },
+    ],
+    stackEyebrow: "Stack",
+    stackTitle: "Tools I reach for",
+    stackIntro:
+      "The list changes over time, but the pattern is stable: use the boring tool when it is enough, and keep the experimental work contained until it proves itself.",
+    skillGroups,
+    careerEyebrow: "Career spine",
+    careerTitle: "The through-line is ownership",
+    careerSpine: [
+      {
+        year: "2018",
+        title: "Industrial software",
+        text: "Desktop applications, machine interfaces, diagnostics, and internal tools at Prima Power.",
+      },
+      {
+        year: "2024",
+        title: "Applied AI research",
+        text: "Language models, machine vision, optimization, reporting, and prototypes at Tampere University.",
+      },
+      {
+        year: "2026",
+        title: "Technology leadership",
+        text: "CTO ownership across product, architecture, infrastructure, and delivery at Clevoy.",
+      },
+      {
+        year: "Now",
+        title: "End-to-end product engineering",
+        text: "Practical software and AI systems that are useful before they are impressive.",
+      },
+    ],
+    readMoreAriaPrefix: "Read more about",
   },
-  {
-    title: "Make AI practical",
-    text: "AI work should connect to a real workflow: language, vision, or speech used where it removes friction or opens a useful path.",
+  fi: {
+    title: `Tietoa ${profile.name}sta`,
+    description:
+      "Lyhyt tausta Juha Ala-Rantalan ohjelmistokehitystyöstä, koulutuksesta ja teknisistä kiinnostuksenkohteista.",
+    heroEyebrow: "Tietoa",
+    heroText:
+      "Olen ohjelmistokehittäjä Seinäjoelta. Työni on kulkenut teollisuuden työpöytäohjelmistoista yliopiston tekoälytutkimukseen ja nykyiseen teknologiajohtamiseen Clevoy Oy:ssä.",
+    profileEyebrow: "Profiili",
+    profileTitle: "Miten teen töitä",
+    profileParagraphs: [
+      "Välitän ohjelmistoista, jotka kestävät oikeat käyttäjät, oikeat rajoitteet ja oikean ylläpitotyön. Pidän koko polusta: varhaisesta tuoteajattelusta toteutukseen, julkaisuun, virheiden selvittämiseen ja iterointiin.",
+      "Viime aikoina fokukseni on ollut full-stack-tuotekehityksessä ja soveltavassa tekoälyssä: kielimallit, puhekäyttöliittymät, kuvantyönkulut, paikallinen inferenssi ja työkalut, jotka tekevät teknologiasta hyödyllistä pelkän näyttävyyden sijaan.",
+    ],
+    focusAreas: [
+      {
+        title: "Tuoteohjelmistot",
+        text: "Kokonaisten ohjelmistotuotteiden suunnittelu, rakentaminen, julkaisu ja ylläpito mobiiliasiakkaista backend-järjestelmiin.",
+      },
+      {
+        title: "Soveltava tekoäly",
+        text: "Kieli-, kuva-, puhe- ja paikallismallityönkulkujen tutkiminen konkreettisiin käyttäjä- ja liiketoimintaongelmiin.",
+      },
+      {
+        title: "Pragmaattiset järjestelmät",
+        text: "Arkkitehtuurin pitäminen ymmärrettävänä, kustannusten näkyvinä ja toimituksen fokus seuraavassa hyödyllisessä parannuksessa.",
+      },
+    ],
+    workEyebrow: "Kokemus",
+    workTitle: "Työhistoria",
+    studiesEyebrow: "Koulutus",
+    studiesTitle: "Opinnot",
+    principlesEyebrow: "Työtapa",
+    principlesTitle: "Mihin optimoin",
+    principlesIntro: "Työkalut muuttuvat, mutta nämä rajoitteet pitävät työn maanläheisenä tuotteen, teknologian ja tekoälyn kohdatessa.",
+    principles: [
+      {
+        title: "Rakenna demon ohi",
+        text: "Ensimmäinen toimiva versio on tärkeä, mutta todellinen testi on, pystyykö järjestelmää debuggaamaan, muuttamaan ja luottamaan siihen myöhemmin.",
+      },
+      {
+        title: "Tee tekoälystä käytännöllistä",
+        text: "Tekoälytyön pitää liittyä oikeaan työnkulkuun: kieltä, kuvaa tai puhetta käytetään siellä, missä se poistaa kitkaa tai avaa hyödyllisen reitin.",
+      },
+      {
+        title: "Omista koko polku",
+        text: "Hyvä tuoteohjelmistotyö yhdistää vaatimukset, toteutuksen, käyttöönoton, kustannukset, tuen ja seuraavan parannuksen.",
+      },
+      {
+        title: "Pidä järjestelmät ymmärrettävinä",
+        text: "Arkkitehtuurin pitäisi helpottaa seuraavaa päätöstä, ei haudata tiimiä abstraktioihin, jotka tuntuivat järkeviltä vain kerran.",
+      },
+    ],
+    stackEyebrow: "Teknologiat",
+    stackTitle: "Työkalut, joihin tartun",
+    stackIntro:
+      "Lista muuttuu ajan myötä, mutta kaava pysyy: käytä tylsää työkalua, kun se riittää, ja pidä kokeellinen työ rajattuna, kunnes se todistaa hyötynsä.",
+    skillGroups: [
+      { ...skillGroups[0], title: "Kielet" },
+      { ...skillGroups[1], title: "Käyttöliittymät" },
+      { ...skillGroups[2], title: "Backend" },
+      { ...skillGroups[3], title: "Työkalut" },
+      { ...skillGroups[4], title: "Tekoäly" },
+    ],
+    careerEyebrow: "Uran runko",
+    careerTitle: "Punainen lanka on omistajuus",
+    careerSpine: [
+      {
+        year: "2018",
+        title: "Teollisuusohjelmistot",
+        text: "Työpöytäsovelluksia, koneliittymiä, diagnostiikkaa ja sisäisiä työkaluja Prima Powerilla.",
+      },
+      {
+        year: "2024",
+        title: "Soveltavan tekoälyn tutkimus",
+        text: "Kielimalleja, konenäköä, optimointia, raportointia ja prototyyppejä Tampereen yliopistolla.",
+      },
+      {
+        year: "2026",
+        title: "Teknologiajohtaminen",
+        text: "CTO-vastuu tuotteesta, arkkitehtuurista, infrastruktuurista ja toimituksesta Clevoylla.",
+      },
+      {
+        year: "Nyt",
+        title: "Kokonaisvaltainen tuoteohjelmistokehitys",
+        text: "Käytännöllisiä ohjelmisto- ja tekoälyjärjestelmiä, jotka ovat hyödyllisiä ennen kuin ne ovat vaikuttavia.",
+      },
+    ],
+    readMoreAriaPrefix: "Lue lisää kohteesta",
   },
-  {
-    title: "Own the whole path",
-    text: "Good product engineering connects requirements, implementation, deployment, cost, support, and the next improvement.",
-  },
-  {
-    title: "Keep systems understandable",
-    text: "Architecture should make the next decision easier, not bury the team under abstractions that only made sense once.",
-  },
-];
+};
 
-const careerSpine = [
-  {
-    year: "2018",
-    title: "Industrial software",
-    text: "Desktop applications, machine interfaces, diagnostics, and internal tools at Prima Power.",
-  },
-  {
-    year: "2024",
-    title: "Applied AI research",
-    text: "Language models, machine vision, optimization, reporting, and prototypes at Tampere University.",
-  },
-  {
-    year: "2026",
-    title: "Technology leadership",
-    text: "CTO ownership across product, architecture, infrastructure, and delivery at Clevoy.",
-  },
-  {
-    year: "Now",
-    title: "End-to-end product engineering",
-    text: "Practical software and AI systems that are useful before they are impressive.",
-  },
-];
+const locales: Locale[] = ["en", "fi"];
 ---
 
 <BaseLayout
-  title={`About ${profile.name}`}
-  description="A short background on Juha Ala-Rantala's software engineering work, education, and technical interests."
+  title={aboutCopy.en.title}
+  description={aboutCopy.en.description}
 >
   <main>
     <section class="page-hero about-hero section-shell reveal">
       <div class="about-hero-copy">
-        <p class="eyebrow">About</p>
-        <h1>{profile.name}</h1>
-        <p>
-          I am a software engineer from Seinäjoki, Finland. My work has moved through industrial desktop software,
-          university AI research, and now technology leadership at Clevoy Oy.
+        <p class="eyebrow">
+          <span data-language-copy="en">{aboutCopy.en.heroEyebrow}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.heroEyebrow}</span>
         </p>
+        <h1>{profile.name}</h1>
+        <p data-language-block="en">{aboutCopy.en.heroText}</p>
+        <p data-language-block="fi">{aboutCopy.fi.heroText}</p>
       </div>
       <div class="about-hero-visual" aria-hidden="true">
         <div class="about-photo-stack">
@@ -78,102 +201,158 @@ const careerSpine = [
 
     <section class="section-shell split-section">
       <div class="section-heading sticky-heading" data-reveal>
-        <p class="eyebrow">Profile</p>
-        <h2>How I work</h2>
+        <p class="eyebrow">
+          <span data-language-copy="en">{aboutCopy.en.profileEyebrow}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.profileEyebrow}</span>
+        </p>
+        <h2>
+          <span data-language-copy="en">{aboutCopy.en.profileTitle}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.profileTitle}</span>
+        </h2>
       </div>
       <div class="prose-block" data-reveal-group>
-        <p>
-          I care about building software that can survive contact with real users, real constraints, and real maintenance
-          work. I enjoy the full path from early product thinking to implementation, deployment, debugging, and iteration.
-        </p>
-        <p>
-          Recently my focus has been on full-stack product development and applied AI: language models, voice interfaces,
-          image workflows, local inference, and tools that make the technology useful instead of merely impressive.
-        </p>
-        <div class="focus-grid">
-          {focusAreas.map((area) => (
-            <article class="focus-card">
-              <h3>{area.title}</h3>
-              <p>{area.text}</p>
-            </article>
-          ))}
-        </div>
+        {locales.map((locale) => (
+          <div data-language-block={locale}>
+            {aboutCopy[locale].profileParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+            <div class="focus-grid">
+              {aboutCopy[locale].focusAreas.map((area) => (
+                <article class="focus-card">
+                  <h3>{area.title}</h3>
+                  <p>{area.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
     <section class="section-shell split-section" id="work" aria-labelledby="work-title">
       <div class="section-heading sticky-heading" data-reveal>
-        <p class="eyebrow">Experience</p>
-        <h2 id="work-title">Work history</h2>
+        <p class="eyebrow">
+          <span data-language-copy="en">{aboutCopy.en.workEyebrow}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.workEyebrow}</span>
+        </p>
+        <h2 id="work-title">
+          <span data-language-copy="en">{aboutCopy.en.workTitle}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.workTitle}</span>
+        </h2>
       </div>
-      <Timeline items={experience} />
+      <div data-language-block="en">
+        <Timeline items={localizedExperience.en} readMoreAriaPrefix={aboutCopy.en.readMoreAriaPrefix} />
+      </div>
+      <div data-language-block="fi">
+        <Timeline items={localizedExperience.fi} readMoreAriaPrefix={aboutCopy.fi.readMoreAriaPrefix} />
+      </div>
     </section>
 
     <section class="section-shell split-section" id="studies" aria-labelledby="studies-title">
       <div class="section-heading sticky-heading" data-reveal>
-        <p class="eyebrow">Education</p>
-        <h2 id="studies-title">Studies</h2>
+        <p class="eyebrow">
+          <span data-language-copy="en">{aboutCopy.en.studiesEyebrow}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.studiesEyebrow}</span>
+        </p>
+        <h2 id="studies-title">
+          <span data-language-copy="en">{aboutCopy.en.studiesTitle}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.studiesTitle}</span>
+        </h2>
       </div>
-      <Timeline items={education} />
+      <div data-language-block="en">
+        <Timeline items={localizedEducation.en} readMoreAriaPrefix={aboutCopy.en.readMoreAriaPrefix} />
+      </div>
+      <div data-language-block="fi">
+        <Timeline items={localizedEducation.fi} readMoreAriaPrefix={aboutCopy.fi.readMoreAriaPrefix} />
+      </div>
     </section>
 
     <section class="section-shell principles-section" aria-labelledby="principles-title">
       <div class="section-heading section-heading-row" data-reveal>
         <div>
-          <p class="eyebrow">How I work</p>
-          <h2 id="principles-title">What I optimize for</h2>
+          <p class="eyebrow">
+            <span data-language-copy="en">{aboutCopy.en.principlesEyebrow}</span>
+            <span data-language-copy="fi">{aboutCopy.fi.principlesEyebrow}</span>
+          </p>
+          <h2 id="principles-title">
+            <span data-language-copy="en">{aboutCopy.en.principlesTitle}</span>
+            <span data-language-copy="fi">{aboutCopy.fi.principlesTitle}</span>
+          </h2>
         </div>
         <p>
-          The tools change, but these constraints keep the work grounded when product, engineering, and AI meet.
+          <span data-language-copy="en">{aboutCopy.en.principlesIntro}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.principlesIntro}</span>
         </p>
       </div>
-      <div class="principles-grid" data-reveal-group>
-        {principles.map((principle) => (
-          <article class="principle-item">
-            <h3>{principle.title}</h3>
-            <p>{principle.text}</p>
-          </article>
-        ))}
-      </div>
+      {locales.map((locale) => (
+        <div data-language-block={locale}>
+          <div class="principles-grid" data-reveal-group>
+            {aboutCopy[locale].principles.map((principle) => (
+              <article class="principle-item">
+                <h3>{principle.title}</h3>
+                <p>{principle.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
 
     <section class="section-shell split-section" aria-labelledby="skills-title">
       <div class="section-heading sticky-heading" data-reveal>
-        <p class="eyebrow">Stack</p>
-        <h2 id="skills-title">Tools I reach for</h2>
+        <p class="eyebrow">
+          <span data-language-copy="en">{aboutCopy.en.stackEyebrow}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.stackEyebrow}</span>
+        </p>
+        <h2 id="skills-title">
+          <span data-language-copy="en">{aboutCopy.en.stackTitle}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.stackTitle}</span>
+        </h2>
         <p>
-          The list changes over time, but the pattern is stable: use the boring tool when it is enough, and keep the
-          experimental work contained until it proves itself.
+          <span data-language-copy="en">{aboutCopy.en.stackIntro}</span>
+          <span data-language-copy="fi">{aboutCopy.fi.stackIntro}</span>
         </p>
       </div>
-      <div class="skill-groups" data-reveal-group>
-        {skillGroups.map((group) => (
-          <section class="skill-group" aria-labelledby={`skill-${group.title.toLowerCase()}`}>
-            <h3 id={`skill-${group.title.toLowerCase()}`}>{group.title}</h3>
-            <div class="tag-list">
-              {group.skills.map((skill) => <TechTag tag={skill} />)}
-            </div>
-          </section>
-        ))}
-      </div>
+      {locales.map((locale) => (
+        <div data-language-block={locale}>
+          <div class="skill-groups" data-reveal-group>
+            {aboutCopy[locale].skillGroups.map((group) => (
+              <section class="skill-group" aria-labelledby={`skill-${locale}-${group.title.toLowerCase().replaceAll(" ", "-")}`}>
+                <h3 id={`skill-${locale}-${group.title.toLowerCase().replaceAll(" ", "-")}`}>{group.title}</h3>
+                <div class="tag-list">
+                  {group.skills.map((skill) => <TechTag tag={skill} />)}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
 
     <section class="section-shell" aria-labelledby="career-title">
       <div class="section-heading section-heading-row" data-reveal>
         <div>
-          <p class="eyebrow">Career spine</p>
-          <h2 id="career-title">The through-line is ownership</h2>
+          <p class="eyebrow">
+            <span data-language-copy="en">{aboutCopy.en.careerEyebrow}</span>
+            <span data-language-copy="fi">{aboutCopy.fi.careerEyebrow}</span>
+          </p>
+          <h2 id="career-title">
+            <span data-language-copy="en">{aboutCopy.en.careerTitle}</span>
+            <span data-language-copy="fi">{aboutCopy.fi.careerTitle}</span>
+          </h2>
         </div>
       </div>
-      <div class="career-spine" data-reveal-group>
-        {careerSpine.map((item) => (
-          <article class="career-step">
-            <p class="career-year">{item.year}</p>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </article>
-        ))}
-      </div>
+      {locales.map((locale) => (
+        <div data-language-block={locale}>
+          <div class="career-spine" data-reveal-group>
+            {aboutCopy[locale].careerSpine.map((item) => (
+              <article class="career-step">
+                <p class="career-year">{item.year}</p>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
   </main>
 </BaseLayout>

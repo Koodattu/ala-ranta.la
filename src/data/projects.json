@@ -9,6 +9,11 @@
         "Pairs an AI chat workflow with instant live preview",
         "Adds workshop sessions, passwords, and usage limits for classroom use"
       ],
+      "featuresFi": [
+        "Striimaa generoitua HTML-, CSS- ja JavaScript-koodia Monaco-editoriin",
+        "Yhdistää tekoälychatin ja välittömän live-esikatselun",
+        "Lisää workshop-sessiot, salasanat ja käyttörajat opetuskäyttöön"
+      ],
       "source": "https://github.com/Koodattu/ai-workshop-playground",
       "blog": "",
       "demo": "https://playground.koodattu.dev",
@@ -23,6 +28,11 @@
         "Responds to Twitch chat with a channel-specific AI personality",
         "Stores conversation context for more coherent stream interactions",
         "Uses OCR, FFmpeg, and Streamlink for ad detection and screenshot analysis"
+      ],
+      "featuresFi": [
+        "Vastaa Twitch-chattiin kanavalle sovitetulla tekoälypersoonalla",
+        "Tallentaa keskustelukontekstia käyttäjäkohtaisesti johdonmukaisempia striimivuorovaikutuksia varten",
+        "Käyttää OCR:ää, FFmpegiä ja Streamlinkiä mainosten tunnistukseen ja ruutukaappausten analyysiin"
       ],
       "source": "https://github.com/Koodattu/ai-vaarabot-ttv",
       "blog": "",
@@ -39,6 +49,11 @@
         "Aggregates WarcraftLogs, Raider.IO, Battle.net, and Twitch data",
         "Adds prediction competitions, guild profiles, and raid performance analytics"
       ],
+      "featuresFi": [
+        "Seuraa useita kiltoja eri raid-tiereissä etenemislistojen avulla",
+        "Yhdistää WarcraftLogs-, Raider.IO-, Battle.net- ja Twitch-dataa",
+        "Lisää veikkauskilpailut, kiltaprofiilit ja raid-suoritusten analytiikan"
+      ],
       "source": "https://github.com/Koodattu/wow-guild-progress-tracker",
       "blog": "",
       "demo": "https://suomiwow.vaarattu.tv",
@@ -53,6 +68,11 @@
         "Synchronizes Warcraft Logs reports with VOD timestamps",
         "Lets users jump from deaths and boss events to the matching video moment",
         "Includes manual sync controls and Battle.net boss assets"
+      ],
+      "featuresFi": [
+        "Synkronoi Warcraft Logs -raportit VOD-aikaleimojen kanssa",
+        "Antaa käyttäjän hypätä kuolemista ja bossitapahtumista vastaavaan videohetkeen",
+        "Sisältää manuaaliset synkronointisäätimet ja Battle.netin bossimateriaalit"
       ],
       "source": "https://github.com/Koodattu/wcl-vod-review",
       "blog": "",
@@ -69,6 +89,11 @@
         "Uses Gemini-backed prompt handling for image creation and editing",
         "Gives educators moderation and usage-limit controls"
       ],
+      "featuresFi": [
+        "Tukee englannin- ja suomenkielisiä kuvakehotteita ilman käyttäjätilejä",
+        "Käyttää Gemini-pohjaista kehotteiden käsittelyä kuvien luontiin ja muokkaukseen",
+        "Tarjoaa opettajille moderointi- ja käyttörajoitustyökalut"
+      ],
       "source": "https://github.com/Koodattu/generative-imagining",
       "blog": "",
       "demo": "https://imagine.koodattu.dev",
@@ -83,6 +108,11 @@
         "Tracks watch time, emotes, channel points, and chat activity",
         "Generates Finnish viewer biographies from stream behavior",
         "Runs as a self-hosted, containerized multi-service application"
+      ],
+      "featuresFi": [
+        "Seuraa katseluaikaa, emoteja, kanavapisteitä ja chat-aktiivisuutta",
+        "Generoi suomenkielisiä katsojabiografioita striimikäyttäytymisen perusteella",
+        "Toimii itse hostattuna, kontitettuna monipalvelusovelluksena"
       ],
       "source": "https://github.com/Koodattu/vaarattu.tv",
       "blog": "",
@@ -99,6 +129,11 @@
         "Supports image generation and editing through conversation",
         "Includes webcam-based Rock-Paper-Scissors and multilingual conversations"
       ],
+      "featuresFi": [
+        "Käyttää push-to-talk-puheohjausta, puhuttuja vastauksia ja animoituja avatar-eleitä",
+        "Tukee kuvien luontia ja muokkausta keskustelun kautta",
+        "Sisältää webcamilla toimivan kivi-paperi-sakset-pelin ja monikieliset keskustelut"
+      ],
       "source": "https://github.com/Koodattu/unity-3d-ai-assistant",
       "blog": "",
       "demo": "",
@@ -113,6 +148,11 @@
         "Tracks individual and team scoring across multiple sports",
         "Updates spectator views with a lightweight polling loop",
         "Includes PIN-protected admin tools for team setup and scoring"
+      ],
+      "featuresFi": [
+        "Seuraa henkilö- ja joukkuepisteitä useissa lajeissa",
+        "Päivittää katsomonäkymät kevyellä kyselysilmukalla",
+        "Sisältää PIN-suojatut hallintatyökalut joukkueiden luontiin ja pisteytykseen"
       ],
       "source": "https://github.com/Koodattu/TUNI-Projects/tree/main/gpt-lab-score-keeper",
       "blog": "",
@@ -130,6 +170,11 @@
         "Supports image generation, audio transcription, and document processing",
         "Stores longer-running conversation context in a local database"
       ],
+      "featuresFi": [
+        "Integroi kielimallit suoraan WhatsAppiin Neonizen kautta",
+        "Tukee kuvien generointia, äänen litterointia ja dokumenttien käsittelyä",
+        "Tallentaa pitkäkestoisempaa keskustelukontekstia paikalliseen tietokantaan"
+      ],
       "source": "https://github.com/Koodattu/whats-ai-assistant",
       "blog": "",
       "demo": "",
@@ -144,6 +189,11 @@
         "Integrates speech recognition, conversational AI, and speech synthesis",
         "Provides a flexible voice interface framework for custom assistants",
         "Keeps memory management separate from platform-specific integrations"
+      ],
+      "featuresFi": [
+        "Yhdistää puheentunnistuksen, keskustelutekoälyn ja puhesynteesin",
+        "Tarjoaa joustavan puhekäyttöliittymärungon omille avustajille",
+        "Pitää muistinhallinnan erillään alustakohtaisista integraatioista"
       ],
       "source": "https://github.com/Koodattu/TUNI-Projects/tree/main/voice-ai-assistant-framework",
       "blog": "",
@@ -160,6 +210,11 @@
         "Aggregates social media workflows into a single demo experience",
         "Includes an AI marketing assistant powered by Gemini"
       ],
+      "featuresFi": [
+        "Visualisoi liikevaihtoa, SEO:ta ja markkinoinnin suorituskykyä mobiilidashboardissa",
+        "Kokoaa sosiaalisen median työnkulut yhteen demokokemukseen",
+        "Sisältää Gemini-pohjaisen tekoälymarkkinointiavustajan"
+      ],
       "source": "https://github.com/Koodattu/aihio-digital-demo",
       "blog": "",
       "demo": "",
@@ -174,6 +229,11 @@
         "Supports push-to-talk commands for image generation and editing",
         "Routes work between cloud services and local inference backends",
         "Includes session limits, persistent galleries, and queue progress updates"
+      ],
+      "featuresFi": [
+        "Tukee push-to-talk-komentoja kuvien luontiin ja muokkaukseen",
+        "Ohjaa työn pilvipalveluiden ja paikallisten inferenssitaustojen välillä",
+        "Sisältää sessiorajat, pysyvät galleriat ja jonon etenemispäivitykset"
       ],
       "source": "https://github.com/Koodattu/voice-guided-imaging",
       "blog": "",
@@ -190,6 +250,11 @@
         "Supports favorites, restaurant type filters, and upcoming menus",
         "Uses automated metadata updates for location-aware sorting"
       ],
+      "featuresFi": [
+        "Näyttää yli sadan Sodexo-ravintolan ruokalistat eri puolilta Suomea",
+        "Tukee suosikkeja, ravintolatyyppisuodattimia ja tulevia ruokalistoja",
+        "Käyttää automaattisia metatietopäivityksiä sijaintitietoiseen järjestykseen"
+      ],
       "source": "https://github.com/Koodattu/sodexo-flutter-lunch-app",
       "blog": "",
       "demo": "https://sdx.koodattu.dev",
@@ -204,6 +269,11 @@
         "Tracks price-to-craft data across World of Warcraft regions",
         "Visualizes material prices and regional price history",
         "Shows daily and cumulative acquisition trends by class"
+      ],
+      "featuresFi": [
+        "Seuraa valmistuskustannusdataa World of Warcraftin eri alueilla",
+        "Visualisoi materiaalihintoja ja alueellista hintahistoriaa",
+        "Näyttää päivittäiset ja kumulatiiviset hankintatrendit luokittain"
       ],
       "source": "https://github.com/Koodattu/fyralath-data-tracker",
       "blog": "",
@@ -220,6 +290,11 @@
         "Generates blog posts, RSS, sitemap, and project pages as static HTML",
         "Keeps the site fast, local, and simple to maintain"
       ],
+      "featuresFi": [
+        "Näyttää ammatillisen taustan, CV-linkit, valikoidut työt ja projektisivut",
+        "Generoi blogikirjoitukset, RSS-syötteen, sivukartan ja projektisivut staattiseksi HTML:ksi",
+        "Pitää sivuston nopeana, paikallisena ja yksinkertaisena ylläpitää"
+      ],
       "source": "https://github.com/Koodattu/ala-ranta.la",
       "blog": "/blog/portfolio-v2/",
       "demo": "https://ala-ranta.la/",
@@ -234,6 +309,11 @@
         "Reads song requests from Twitch Channel Point reward redemptions",
         "Supports Spotify playback and an integrated YouTube player",
         "Handles unavailable requests with automatic point refunds"
+      ],
+      "featuresFi": [
+        "Lukee biisipyynnöt Twitchin Channel Point -lunastuksista",
+        "Tukee Spotify-toistoa ja sisäänrakennettua YouTube-soitinta",
+        "Käsittelee soittokelvottomat pyynnöt automaattisilla pistepalautuksilla"
       ],
       "source": "https://github.com/Koodattu/twitch-song-request-desktop",
       "blog": "",
@@ -250,6 +330,11 @@
         "Runs the request UI as a local HTML browser source in OBS",
         "Searches Spotify, manages playback, and reports failed requests in chat"
       ],
+      "featuresFi": [
+        "Käyttää Pythonia vain alkuperäisten Twitch- ja Spotify-tokenien luontiin",
+        "Ajaa pyyntönäkymän paikallisena HTML-selainlähteenä OBS:ssä",
+        "Hakee Spotifysta, hallitsee toistoa ja raportoi epäonnistuneet pyynnöt chattiin"
+      ],
       "source": "https://github.com/Koodattu/twitch-spotify-song-request",
       "blog": "",
       "demo": "",
@@ -265,6 +350,11 @@
         "Stores menu data and history in PostgreSQL",
         "Adds Flutter mobile views, course voting, and menu statistics"
       ],
+      "featuresFi": [
+        "Parsii viikoittaiset ruokalistadokumentit Java Spring Boot -backendin kautta",
+        "Tallentaa ruokalistadatan ja historian PostgreSQL:ään",
+        "Lisää Flutter-mobiilinäkymät, annosäänestyksen ja ruokalistatilastot"
+      ],
       "source": "https://github.com/Koodattu/lunch-menu-app",
       "blog": "",
       "demo": "",
@@ -276,6 +366,7 @@
       "description": "Räccis SeAMK Food Royale is a small Android lunch-menu app built to compare two SeAMK-area restaurants side by side. Its value is in the practical data stitching: it pulls Sodexo menus from JSON APIs, scrapes Eventti menu HTML, and presents both daily menus in one quick mobile view for students choosing where to eat.",
       "descriptionFi": "Räccis SeAMK Food Royale on pieni Android-lounaslistasovellus, joka rakennettiin kahden SeAMK-alueen ravintolan vertailuun rinnakkain. Sen arvo on käytännöllisessä datan yhdistelyssä: sovellus hakee Sodexon ruokalistat JSON-rajapinnoista, parsii Eventin menut HTML-sivulta ja näyttää molemmat päivän lounaat yhdessä nopeassa mobiilinäkymässä opiskelijoille, jotka valitsevat ruokapaikkaa.",
       "features": ["Displays two daily restaurant menus side by side", "Fetches Sodexo lunch menus from an API", "Scrapes Eventti menu content from HTML"],
+      "featuresFi": ["Näyttää kahden ravintolan päivän ruokalistat rinnakkain", "Hakee Sodexon lounaslistat API:sta", "Parsii Eventin ruokalistasisällön HTML:stä"],
       "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/jere-food-royale-android",
       "blog": "",
       "demo": "",
@@ -290,6 +381,11 @@
         "Shows coffee shop products in a mobile catalogue",
         "Fetches catalogue data from Google Sheets",
         "Aggregates recent social media posts from Facebook and Instagram"
+      ],
+      "featuresFi": [
+        "Näyttää kahvilatuotteet mobiilikatalogissa",
+        "Hakee katalogidatan Google Sheetsistä",
+        "Kokoaa tuoreita sosiaalisen median julkaisuja Facebookista ja Instagramista"
       ],
       "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/tsumppi-coffee-shop",
       "blog": "",
@@ -306,6 +402,11 @@
         "Supports custom study baskets and empty-room search",
         "Includes weekly lunch menus from student restaurants"
       ],
+      "featuresFi": [
+        "Näyttää opiskelijaryhmien päivä-, viikko- ja periodilukujärjestykset",
+        "Tukee omia opintokoreja ja tyhjien huoneiden hakua",
+        "Sisältää opiskelijaravintoloiden viikoittaiset lounaslistat"
+      ],
       "source": "https://github.com/Koodattu/SeAMK-Lukkari",
       "blog": "",
       "demo": "",
@@ -317,6 +418,7 @@
       "description": "SeAMK WinhaWille is an Android study-registry client for SeAMK students that scraped the campus WinhaWille portal to show GPA, credits, completed courses, and grades. As a student-built utility, it turned a web-only registry into a focused mobile view for the information students checked most often.",
       "descriptionFi": "SeAMK WinhaWille on Android-opintorekisterisovellus SeAMK-opiskelijoille, joka parsi kampuksen WinhaWille-portaalia ja näytti keskiarvon, opintopisteet, suoritetut kurssit ja arvosanat. Opiskelijan rakentamana hyötysovelluksena se muutti vain webissä toimineen rekisterin kohdennetuksi mobiilinäkymäksi tiedoille, joita opiskelijat tarkistivat useimmin.",
       "features": ["Shows GPA and accumulated student credits", "Lists completed courses and grades", "Parses study registry data from campus portal HTML"],
+      "featuresFi": ["Näyttää keskiarvon ja kertyneet opintopisteet", "Listaa suoritetut kurssit ja arvosanat", "Parsii opintorekisteridatan kampusportaalin HTML:stä"],
       "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/seamk-winhawille",
       "blog": "",
       "demo": "",
@@ -331,6 +433,11 @@
         "Displays weekly lunch menus from SeAMK student restaurants",
         "Fetches restaurant data through REST API calls",
         "Parses JSON menu data into a simple mobile view"
+      ],
+      "featuresFi": [
+        "Näyttää SeAMKin opiskelijaravintoloiden viikoittaiset lounaslistat",
+        "Hakee ravintoladataa REST API -kutsujen kautta",
+        "Parsii JSON-ruokalistadatan yksinkertaiseen mobiilinäkymään"
       ],
       "source": "https://github.com/Koodattu/SeAMK-Projects/tree/main/seamk-ruoka",
       "blog": "",

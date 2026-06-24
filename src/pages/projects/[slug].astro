@@ -21,10 +21,11 @@ export function getStaticPaths() {
 const { project } = Astro.props as { project: Project };
 const image = projectImagePath(project);
 const actions = [
-  { label: "Source", href: project.source, external: true, className: "button button-primary" },
-  { label: "Blog", href: project.blog, external: false, className: "button" },
-  { label: "Demo", href: project.demo, external: true, className: "button" },
+  { label: { en: "Source", fi: "Lähdekoodi" }, href: project.source, external: true, className: "button button-primary" },
+  { label: { en: "Blog", fi: "Blogi" }, href: project.blog, external: false, className: "button" },
+  { label: { en: "Demo", fi: "Demo" }, href: project.demo, external: true, className: "button" },
 ];
+const featuresFi = project.featuresFi ?? project.features;
 const schema = {
   "@type": "CreativeWork",
   name: project.title,
@@ -39,7 +40,14 @@ const schema = {
 
 <BaseLayout title={project.title} description={project.description} image={image} schema={schema}>
   <main>
-    <DetailBackNav sectionHref="/projects/" sectionLabel="Back to projects" ariaLabel="Project navigation" />
+    <DetailBackNav
+      sectionHref="/projects/"
+      sectionLabel="Back to projects"
+      sectionLabelFi="Takaisin projekteihin"
+      ariaLabel="Project navigation"
+      ariaLabelFi="Projektinavigaatio"
+      previousLabelFi="Takaisin edelliselle sivulle"
+    />
     <article>
       <header class="project-detail-hero section-shell">
         <div class="reveal">
@@ -59,10 +67,14 @@ const schema = {
                     target={action.external ? "_blank" : undefined}
                     rel={action.external ? "noreferrer" : undefined}
                   >
-                    {action.label}
+                    <span data-language-copy="en">{action.label.en}</span>
+                    <span data-language-copy="fi">{action.label.fi}</span>
                   </a>
                 ) : (
-                  <span class={`${action.className} is-disabled`} aria-disabled="true">{action.label}</span>
+                  <span class={`${action.className} is-disabled`} aria-disabled="true">
+                    <span data-language-copy="en">{action.label.en}</span>
+                    <span data-language-copy="fi">{action.label.fi}</span>
+                  </span>
                 )
               )}
             </div>
@@ -73,12 +85,21 @@ const schema = {
 
       <section class="section-shell split-section">
         <div class="section-heading sticky-heading" data-reveal>
-          <p class="eyebrow">Details</p>
-          <h2>What it does</h2>
+          <p class="eyebrow">
+            <span data-language-copy="en">Details</span>
+            <span data-language-copy="fi">Tiedot</span>
+          </p>
+          <h2>
+            <span data-language-copy="en">What it does</span>
+            <span data-language-copy="fi">Mitä se tekee</span>
+          </h2>
         </div>
         <div class="prose-block" data-reveal-group>
-          <ul class="feature-list feature-list-large">
+          <ul class="feature-list feature-list-large" data-language-block="en">
             {project.features.map((feature) => <li>{feature}</li>)}
+          </ul>
+          <ul class="feature-list feature-list-large" data-language-block="fi">
+            {featuresFi.map((feature) => <li>{feature}</li>)}
           </ul>
         </div>
       </section>

@@ -35,10 +35,22 @@ const headerCopy = {
 
 const copy = headerCopy[lang];
 const navItems = [
-  { href: lang === "fi" ? "/fi/" : "/", label: copy.homeLabel },
-  { href: "/projects/", label: copy.projectsLabel },
-  { href: "/blog/", label: copy.blogLabel },
-  { href: "/about/", label: copy.aboutLabel },
+  {
+    href: { en: "/", fi: "/fi/" },
+    label: { en: headerCopy.en.homeLabel, fi: headerCopy.fi.homeLabel },
+  },
+  {
+    href: { en: "/projects/", fi: "/projects/" },
+    label: { en: headerCopy.en.projectsLabel, fi: headerCopy.fi.projectsLabel },
+  },
+  {
+    href: { en: "/blog/", fi: "/blog/" },
+    label: { en: headerCopy.en.blogLabel, fi: headerCopy.fi.blogLabel },
+  },
+  {
+    href: { en: "/about/", fi: "/about/" },
+    label: { en: headerCopy.en.aboutLabel, fi: headerCopy.fi.aboutLabel },
+  },
 ];
 
 const isActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -56,21 +68,60 @@ const languageHref = (targetLang: "en" | "fi") => {
 ---
 
 <header class="site-header">
-  <a class="brand" href={lang === "fi" ? "/fi/" : "/"} aria-label={copy.homeAria}>
+  <a
+    class="brand"
+    href={lang === "fi" ? "/fi/" : "/"}
+    aria-label={copy.homeAria}
+    data-language-aria-en={headerCopy.en.homeAria}
+    data-language-aria-fi={headerCopy.fi.homeAria}
+    data-language-href-en="/"
+    data-language-href-fi="/fi/"
+  >
     <span class="brand-text">{profile.handle}</span>
   </a>
-  <nav class="site-nav" aria-label={copy.navLabel}>
+  <nav
+    class="site-nav"
+    aria-label={copy.navLabel}
+    data-language-aria-en={headerCopy.en.navLabel}
+    data-language-aria-fi={headerCopy.fi.navLabel}
+  >
     {navItems.map((item) => (
-      <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
-        {item.label}
+      <a
+        href={item.href[lang]}
+        aria-current={isActive(item.href[lang]) ? "page" : undefined}
+        data-language-href-en={item.href.en}
+        data-language-href-fi={item.href.fi}
+      >
+        <span data-language-copy="en">{item.label.en}</span>
+        <span data-language-copy="fi">{item.label.fi}</span>
       </a>
     ))}
   </nav>
-  <div class="header-actions" aria-label={copy.actionsLabel}>
-    <nav class="language-switcher" aria-label={copy.languageLabel}>
+  <div
+    class="header-actions"
+    aria-label={copy.actionsLabel}
+    data-language-aria-en={headerCopy.en.actionsLabel}
+    data-language-aria-fi={headerCopy.fi.actionsLabel}
+  >
+    <nav
+      class="language-switcher"
+      aria-label={copy.languageLabel}
+      data-language-aria-en={headerCopy.en.languageLabel}
+      data-language-aria-fi={headerCopy.fi.languageLabel}
+    >
       <a href={languageHref("en")} data-language-choice="en" aria-current={lang === "en" ? "true" : undefined}>EN</a>
       <a href={languageHref("fi")} data-language-choice="fi" aria-current={lang === "fi" ? "true" : undefined}>FI</a>
     </nav>
-    <a class="icon-link" href={profile.cv[lang]} aria-label={copy.cvAria}>CV</a>
+    <a
+      class="icon-link"
+      href={profile.cv[lang]}
+      aria-label={copy.cvAria}
+      data-language-aria-en={headerCopy.en.cvAria}
+      data-language-aria-fi={headerCopy.fi.cvAria}
+      data-language-href-en={profile.cv.en}
+      data-language-href-fi={profile.cv.fi}
+    >
+      CV
+    </a>
   </div>
 </header>

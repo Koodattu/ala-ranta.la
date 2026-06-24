@@ -2,7 +2,8 @@
 import TechTag from "../../components/TechTag.astro";
 import DetailBackNav from "../../components/DetailBackNav.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { education, experience, profile } from "../../data/profile";
+import { localizedEducation, localizedExperience, type Locale } from "../../data/home";
+import { profile } from "../../data/profile";
 import { getBackgroundSlug, type BackgroundItem } from "../../utils";
 
 type BackgroundKind = "company" | "school";
@@ -16,53 +17,113 @@ type BackgroundGroup = {
   items: BackgroundEntry[];
 };
 
+type LocalizedBackgroundGroups = Record<Locale, BackgroundGroup>;
+
+const locales: Locale[] = ["en", "fi"];
+const backgroundCopy = {
+  en: {
+    categories: {
+      combined: "Workplace and school",
+      school: "School",
+      company: "Company",
+    },
+    metaLabelSuffix: "background summary",
+    officialSite: "Official site",
+    backgroundEyebrow: "Background",
+    multipleItemsTitle: "Roles and studies",
+    singleItemTitle: "Role",
+    workLabel: "Work",
+    educationLabel: "Education",
+  },
+  fi: {
+    categories: {
+      combined: "Työpaikka ja koulu",
+      school: "Koulu",
+      company: "Yritys",
+    },
+    metaLabelSuffix: "taustan yhteenveto",
+    officialSite: "Virallinen sivusto",
+    backgroundEyebrow: "Tausta",
+    multipleItemsTitle: "Roolit ja opinnot",
+    singleItemTitle: "Rooli",
+    workLabel: "Työ",
+    educationLabel: "Koulutus",
+  },
+};
+
+const getCategoryLabel = (group: BackgroundGroup, locale: Locale) => {
+  const isCompany = group.kinds.includes("company");
+  const isSchool = group.kinds.includes("school");
+
+  if (isCompany && isSchool) return backgroundCopy[locale].categories.combined;
+  if (isSchool) return backgroundCopy[locale].categories.school;
+  return backgroundCopy[locale].categories.company;
+};
+
+const getHeroSummary = (group: BackgroundGroup, locale: Locale) => {
+  if (group.items.length === 1) return group.items[0].summary;
+
+  const roles = group.items.map((item) => item.role).join("; ");
+
+  return locale === "fi"
+    ? `Taustani organisaatiossa ${group.organization} sisältää sekä työtä että opintoja: ${roles}.`
+    : `My background with ${group.organization} includes both work and studies: ${roles}.`;
+};
+
 export function getStaticPaths() {
-  const backgroundItems: BackgroundEntry[] = [
-    ...experience.map((item) => ({ ...item, kind: "company" as const })),
-    ...education.map((item) => ({ ...item, kind: "school" as const })),
-  ];
-  const groups = new Map<string, BackgroundGroup>();
+  const createBackgroundGroups = (experienceItems: BackgroundItem[], educationItems: BackgroundItem[]) => {
+    const backgroundItems: BackgroundEntry[] = [
+      ...experienceItems.map((item) => ({ ...item, kind: "company" as const })),
+      ...educationItems.map((item) => ({ ...item, kind: "school" as const })),
+    ];
+    const groups = new Map<string, BackgroundGroup>();
 
-  for (const item of backgroundItems) {
-    const slug = getBackgroundSlug(item);
-    const group = groups.get(slug);
+    for (const item of backgroundItems) {
+      const slug = getBackgroundSlug(item);
+      const group = groups.get(slug);
 
-    if (group) {
-      group.items.push(item);
+      if (group) {
+        group.items.push(item);
 
-      if (!group.kinds.includes(item.kind)) {
-        group.kinds.push(item.kind);
+        if (!group.kinds.includes(item.kind)) {
+          group.kinds.push(item.kind);
+        }
+
+        continue;
       }
 
-      continue;
+      groups.set(slug, {
+        slug,
+        organization: item.organization,
+        logo: item.logo,
+        url: item.url,
+        kinds: [item.kind],
+        items: [item],
+      });
     }
 
-    groups.set(slug, {
-      slug,
-      organization: item.organization,
-      logo: item.logo,
-      url: item.url,
-      kinds: [item.kind],
-      items: [item],
-    });
-  }
+    return groups;
+  };
 
-  return [...groups.values()].map((group) => ({
+  const englishGroups = createBackgroundGroups(localizedExperience.en, localizedEducation.en);
+  const finnishGroups = createBackgroundGroups(localizedExperience.fi, localizedEducation.fi);
+
+  return [...englishGroups.values()].map((group) => ({
     params: { slug: group.slug },
-    props: { group },
+    props: {
+      groups: {
+        en: group,
+        fi: finnishGroups.get(group.slug) ?? group,
+      },
+    },
   }));
 }
 
-const { group } = Astro.props as { group: BackgroundGroup };
+const { groups } = Astro.props as { groups: LocalizedBackgroundGroups };
+const group = groups.en;
 const isCompany = group.kinds.includes("company");
 const isSchool = group.kinds.includes("school");
-const categoryLabel = isCompany && isSchool ? "Workplace and school" : isSchool ? "School" : "Company";
-const heroSummary =
-  group.items.length === 1
-    ? group.items[0].summary
-    : `My background with ${group.organization} includes both work and studies: ${group.items
-        .map((item) => item.role)
-        .join("; ")}.`;
+const categoryLabel = getCategoryLabel(group, "en");
 const description = `Background page for ${profile.name}'s ${categoryLabel.toLowerCase()} experience at ${group.organization}.`;
 const schema = {
   "@type": isSchool && !isCompany ? "CollegeOrUniversity" : "Organization",
@@ -74,21 +135,38 @@ const schema = {
 
 <BaseLayout title={group.organization} description={description} image={group.logo} schema={schema}>
   <main>
-    <DetailBackNav sectionHref="/about/" sectionLabel="Back to about" ariaLabel="Background navigation" />
+    <DetailBackNav
+      sectionHref="/about/"
+      sectionLabel="Back to about"
+      sectionLabelFi="Takaisin tietoa-sivulle"
+      ariaLabel="Background navigation"
+      ariaLabelFi="Taustanavigaatio"
+      previousLabelFi="Takaisin edelliselle sivulle"
+    />
     <article>
       <header class="about-detail-hero section-shell">
         <div class="reveal">
-          <p class="eyebrow">{categoryLabel}</p>
+          <p class="eyebrow">
+            <span data-language-copy="en">{getCategoryLabel(groups.en, "en")}</span>
+            <span data-language-copy="fi">{getCategoryLabel(groups.fi, "fi")}</span>
+          </p>
           <h1>{group.organization}</h1>
-          <p>{heroSummary}</p>
-          <ul class="about-detail-meta" aria-label={`${group.organization} background summary`}>
-            {group.items.map((item) => (
-              <li>{item.period}</li>
-            ))}
-          </ul>
+          {locales.map((locale) => (
+            <p data-language-block={locale}>{getHeroSummary(groups[locale], locale)}</p>
+          ))}
+          {locales.map((locale) => (
+            <ul class="about-detail-meta" aria-label={`${groups[locale].organization} ${backgroundCopy[locale].metaLabelSuffix}`} data-language-block={locale}>
+              {groups[locale].items.map((item) => (
+                <li>{item.period}</li>
+              ))}
+            </ul>
+          ))}
           <div class="hero-actions">
             <div class="hero-action-row">
-              <a class="button button-primary" href={group.url} target="_blank" rel="noreferrer">Official site</a>
+              <a class="button button-primary" href={group.url} target="_blank" rel="noreferrer">
+                <span data-language-copy="en">{backgroundCopy.en.officialSite}</span>
+                <span data-language-copy="fi">{backgroundCopy.fi.officialSite}</span>
+              </a>
             </div>
           </div>
         </div>
@@ -103,29 +181,43 @@ const schema = {
 
       <section class="section-shell split-section">
         <div class="section-heading sticky-heading" data-reveal>
-          <p class="eyebrow">Background</p>
-          <h2>{group.items.length > 1 ? "Roles and studies" : "Role"}</h2>
+          <p class="eyebrow">
+            <span data-language-copy="en">{backgroundCopy.en.backgroundEyebrow}</span>
+            <span data-language-copy="fi">{backgroundCopy.fi.backgroundEyebrow}</span>
+          </p>
+          <h2>
+            <span data-language-copy="en">
+              {group.items.length > 1 ? backgroundCopy.en.multipleItemsTitle : backgroundCopy.en.singleItemTitle}
+            </span>
+            <span data-language-copy="fi">
+              {groups.fi.items.length > 1 ? backgroundCopy.fi.multipleItemsTitle : backgroundCopy.fi.singleItemTitle}
+            </span>
+          </h2>
         </div>
-        <div class="background-entry-list" data-reveal-group>
-          {group.items.map((item) => (
-            <article class="background-entry">
-              <div class="background-entry-header">
-                <div>
-                  <p class="timeline-period">{item.kind === "company" ? "Work" : "Education"}</p>
-                  <h3>{item.role}</h3>
-                </div>
-                <p class="background-entry-period">{item.period}</p>
-              </div>
-              <p>{item.summary}</p>
-              <ul class="feature-list">
-                {item.details.map((detail) => <li>{detail}</li>)}
-              </ul>
-              <div class="tag-list">
-                {item.tags.map((tag) => <TechTag tag={tag} muted />)}
-              </div>
-            </article>
-          ))}
-        </div>
+        {locales.map((locale) => (
+          <div data-language-block={locale}>
+            <div class="background-entry-list" data-reveal-group>
+              {groups[locale].items.map((item) => (
+                <article class="background-entry">
+                  <div class="background-entry-header">
+                    <div>
+                      <p class="timeline-period">{item.kind === "company" ? backgroundCopy[locale].workLabel : backgroundCopy[locale].educationLabel}</p>
+                      <h3>{item.role}</h3>
+                    </div>
+                    <p class="background-entry-period">{item.period}</p>
+                  </div>
+                  <p>{item.summary}</p>
+                  <ul class="feature-list">
+                    {item.details.map((detail) => <li>{detail}</li>)}
+                  </ul>
+                  <div class="tag-list">
+                    {item.tags.map((tag) => <TechTag tag={tag} muted />)}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
       </section>
     </article>
   </main>

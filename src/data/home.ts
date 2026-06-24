@@ -333,18 +333,30 @@ export const localizedExperience = {
       role: "Teknologiajohtaja",
       period: "1/2026 - Nyt",
       summary: "Johdan teknologiastrategiaa ja rakennan full-stack-alustaa, joka kattaa mobiilin, backendin, infrastruktuurin ja hallintatyökalut.",
+      details: [
+        "Vastaan arkkitehtuurista ja toteutuksesta SaaS-, B2B- ja B2C-tuotepinnoilla.",
+        "Työskentelen vaatimuksista ja sidosryhmäsuunnittelusta käyttöönottoon, kustannusoptimointiin, ylläpitoon ja iterointiin.",
+      ],
     },
     {
       ...experience[1],
       role: "Tutkimusassistentti",
       period: "6/2024 - 12/2025",
       summary: "Työskentelin GPT Lab Seinäjoki -projektissa ja tutkin suurten kielimallien sekä soveltavan tekoälyn käyttötapoja paikallisille yrityksille.",
+      details: [
+        "Rakensin prototyyppejä, joissa hyödynnettiin kielimalleja, konenäköä, optimointia ja ohjelmistokehityksen työnkulkuja.",
+        "Osallistuin tutkimukseen, raportointiin, viestintään ja tapahtumien järjestämiseen.",
+      ],
     },
     {
       ...experience[2],
       role: "Ohjelmistosuunnittelija",
       period: "4/2018 - 11/2022",
       summary: "Kehitin Windows-työpöytäsovelluksia, sisäisiä työkaluja, käyttöliittymiä ja parametrointityönkulkuja.",
+      details: [
+        "Rakensin C#-, .NET Framework-, WinForms- ja WPF-sovelluksia teollisiin ohjelmistoympäristöihin.",
+        "Paransin testausta, diagnostiikkaa, asennusta ja sisäisiä tuottavuustyökaluja.",
+      ],
     },
   ],
 };
@@ -357,12 +369,20 @@ export const localizedEducation = {
       role: "Tekniikan maisteri - tietotekniikka",
       period: "8/2023 - 12/2025",
       summary: "Painotus laajamittaisessa ohjelmistokehityksessä, ohjelmistotuotannon prosesseissa, projektinhallinnassa ja tietopohjaisissa web-järjestelmissä.",
+      details: [
+        "Tein diplomityön parhaalla arvosanalla.",
+        "Opiskelin ohjelmistoprosesseja, projektinhallintaa ja web-järjestelmien suunnittelua teollisuuslähtöisestä näkökulmasta.",
+      ],
     },
     {
       ...education[1],
       role: "Insinööri (AMK) - tietotekniikka",
       period: "9/2015 - 5/2019",
       summary: "Erikoistuin ohjelmointiin ja ohjelmistokehitykseen rakentamalla käytännön mobiili- ja työpöytäsovelluksia.",
+      details: [
+        "Valmistuin painotetulla keskiarvolla 4,24 asteikolla 0-5.",
+        "Sain opinnäytetyöstä parhaan arvosanan.",
+      ],
     },
   ],
 };

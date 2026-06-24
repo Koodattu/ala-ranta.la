@@ -4,6 +4,7 @@ export type Project = {
   description: string;
   descriptionFi?: string;
   features: string[];
+  featuresFi?: string[];
   source: string;
   blog?: string;
   demo?: string;

@@ -3,20 +3,41 @@ interface Props {
   sectionHref: string;
   sectionLabel: string;
   ariaLabel: string;
+  sectionLabelFi?: string;
+  ariaLabelFi?: string;
+  previousLabel?: string;
+  previousLabelFi?: string;
 }
 
-const { sectionHref, sectionLabel, ariaLabel } = Astro.props;
+const {
+  sectionHref,
+  sectionLabel,
+  ariaLabel,
+  sectionLabelFi = sectionLabel,
+  ariaLabelFi = ariaLabel,
+  previousLabel = "Back to previous",
+  previousLabelFi = previousLabel,
+} = Astro.props;
 ---
 
-<nav class="detail-back-nav section-shell" aria-label={ariaLabel}>
+<nav
+  class="detail-back-nav section-shell"
+  aria-label={ariaLabel}
+  data-language-aria-en={ariaLabel}
+  data-language-aria-fi={ariaLabelFi}
+>
   <button class="button button-quiet detail-previous-button" type="button" data-previous-page disabled>
     <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M19 12H5" />
       <path d="M12 19l-7-7 7-7" />
     </svg>
-    Back to previous
+    <span data-language-copy="en">{previousLabel}</span>
+    <span data-language-copy="fi">{previousLabelFi}</span>
   </button>
-  <a class="button button-quiet" href={sectionHref}>{sectionLabel}</a>
+  <a class="button button-quiet" href={sectionHref}>
+    <span data-language-copy="en">{sectionLabel}</span>
+    <span data-language-copy="fi">{sectionLabelFi}</span>
+  </a>
 </nav>
 
 <script>
