@@ -167,8 +167,15 @@ button {
 .brand {
   position: relative;
   min-height: 40px;
+  margin-left: -11px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  color: var(--muted);
   font-weight: 850;
   text-decoration: none;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
 }
 
 .brand-text {
@@ -215,6 +222,7 @@ button {
 }
 
 .site-nav a:hover,
+.brand:hover,
 .icon-link:hover {
   background: var(--panel);
   color: var(--text);
@@ -237,8 +245,8 @@ button {
 }
 
 .brand[aria-current="page"]::after {
-  right: 0;
-  left: 0;
+  right: 11px;
+  left: 11px;
 }
 
 .site-nav a[aria-current="page"]::after {
