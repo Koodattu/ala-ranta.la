@@ -23,6 +23,8 @@ export type BackgroundItem = {
   tags: string[];
 };
 
+export type BackgroundDetailKind = "work" | "education";
+
 export const slugify = (value: string) =>
   value
     .toLowerCase()
@@ -34,6 +36,9 @@ export const slugify = (value: string) =>
 export const getProjectSlug = (project: Project) => project.slug ?? slugify(project.title);
 
 export const getBackgroundSlug = (item: Pick<BackgroundItem, "organization">) => slugify(item.organization);
+
+export const getBackgroundDetailHref = (kind: BackgroundDetailKind, item: Pick<BackgroundItem, "organization">) =>
+  `/${kind}/${getBackgroundSlug(item)}/`;
 
 export const assetPath = (path: string) => encodeURI(path).replaceAll("'", "%27");
 

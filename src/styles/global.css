@@ -2415,6 +2415,14 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
   color: var(--text);
 }
 
+.background-writeup-content {
+  min-width: 0;
+}
+
+.background-writeup-content .post-body > :first-child {
+  margin-top: 0;
+}
+
 .prose-block {
   max-width: 820px;
 }

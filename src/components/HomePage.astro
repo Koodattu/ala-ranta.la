@@ -7,7 +7,7 @@ import { getBlogPostHref, getPreferredBlogPost, groupBlogPostTranslations } from
 import { homeCopy, localizedEducation, localizedExperience, type Locale } from "../data/home";
 import { education, experience, profile } from "../data/profile";
 import projectsData from "../data/projects.json";
-import { getBackgroundSlug, sortNewestProjects, type Project } from "../utils";
+import { getBackgroundDetailHref, sortNewestProjects, type Project } from "../utils";
 
 interface Props {
   locale?: Locale;
@@ -29,8 +29,11 @@ const posts = groupBlogPostTranslations(await getCollection("blog", ({ data }) =
   .slice(0, 3);
 const linkedinUrl = profile.socials.find((social) => social.label === "LinkedIn")?.href ?? "/";
 const currentLogo = experience[0];
-const previousLogos = [...experience.slice(1), ...education].filter(
-  (item, index, items) => items.findIndex((candidate) => candidate.organization === item.organization) === index,
+const previousLogos = [
+  ...experience.slice(1).map((item) => ({ item, detailKind: "work" as const })),
+  ...education.map((item) => ({ item, detailKind: "education" as const })),
+].filter(
+  (entry, index, entries) => entries.findIndex((candidate) => candidate.item.organization === entry.item.organization) === index,
 );
 const alternates = [
   { lang: "en", href: "/" },
@@ -73,7 +76,7 @@ const alternates = [
             <dt>{copy.hero.current}</dt>
             <dd>
               <div class="proof-logo-list">
-                <a class="proof-logo proof-logo-current" href={`/about/${getBackgroundSlug(currentLogo)}/`} aria-label={currentLogo.organization}>
+                <a class="proof-logo proof-logo-current" href={getBackgroundDetailHref("work", currentLogo)} aria-label={currentLogo.organization}>
                   <img src={currentLogo.logo} alt="" loading="lazy" />
                 </a>
               </div>
@@ -83,8 +86,8 @@ const alternates = [
             <dt>{copy.hero.previous}</dt>
             <dd>
               <div class="proof-logo-list">
-                {previousLogos.map((item) => (
-                  <a class="proof-logo" href={`/about/${getBackgroundSlug(item)}/`} aria-label={item.organization}>
+                {previousLogos.map(({ item, detailKind }) => (
+                  <a class="proof-logo" href={getBackgroundDetailHref(detailKind, item)} aria-label={item.organization}>
                     <img src={item.logo} alt="" loading="lazy" />
                   </a>
                 ))}
@@ -211,7 +214,7 @@ const alternates = [
               </span>
             </a>
           </div>
-          <Timeline items={localizedExperience[locale]} compact readMoreLabel={copy.timeline.readMore} readMoreAriaPrefix={copy.timeline.readMoreAriaPrefix} />
+          <Timeline items={localizedExperience[locale]} compact readMoreLabel={copy.timeline.readMore} readMoreAriaPrefix={copy.timeline.readMoreAriaPrefix} detailKind="work" />
         </section>
         <section class="timeline-preview" aria-labelledby="studies-preview-title">
           <div class="timeline-preview-heading" data-reveal>
@@ -227,7 +230,7 @@ const alternates = [
               </span>
             </a>
           </div>
-          <Timeline items={localizedEducation[locale]} compact readMoreLabel={copy.timeline.readMore} readMoreAriaPrefix={copy.timeline.readMoreAriaPrefix} />
+          <Timeline items={localizedEducation[locale]} compact readMoreLabel={copy.timeline.readMore} readMoreAriaPrefix={copy.timeline.readMoreAriaPrefix} detailKind="education" />
         </section>
       </div>
     </section>

@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import BackgroundDetail from "../../components/BackgroundDetail.astro";
+import {
+  getBackgroundEntrySlug,
+  getPreferredBackgroundEntry,
+  groupBackgroundTranslations,
+  type BackgroundTranslations,
+} from "../../background";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("background", ({ data }) => data.kind === "education" && !data.draft);
+  const groups = groupBackgroundTranslations(entries);
+  const paths = [];
+
+  for (const translations of groups) {
+    const entry = getPreferredBackgroundEntry(translations);
+
+    if (!entry) continue;
+
+    paths.push({
+      params: { slug: getBackgroundEntrySlug(entry) },
+      props: { translations },
+    });
+  }
+
+  return paths;
+}
+
+const { translations } = Astro.props as { translations: BackgroundTranslations };
+---
+
+<BackgroundDetail kind="education" translations={translations} />

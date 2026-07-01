@@ -1,0 +1,191 @@
+---
+import { render } from "astro:content";
+import DetailBackNav from "./DetailBackNav.astro";
+import TechTag from "./TechTag.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  backgroundLocales,
+  getPreferredBackgroundEntry,
+  type BackgroundEntry,
+  type BackgroundKind,
+  type BackgroundLocale,
+  type BackgroundTranslations,
+} from "../background";
+
+interface Props {
+  kind: BackgroundKind;
+  translations: BackgroundTranslations;
+}
+
+const { kind, translations } = Astro.props;
+const entry = getPreferredBackgroundEntry(translations);
+
+if (!entry) {
+  throw new Error(`Missing ${kind} background entry.`);
+}
+
+const renderedEntries = (
+  await Promise.all(
+    backgroundLocales.map(async (locale) => {
+      const localizedEntry = translations[locale];
+
+      if (!localizedEntry) return undefined;
+
+      const { Content } = await render(localizedEntry);
+
+      return { locale, entry: localizedEntry, Content };
+    })
+  )
+).filter(Boolean) as {
+  locale: BackgroundLocale;
+  entry: BackgroundEntry;
+  Content: any;
+}[];
+
+const backgroundCopy = {
+  en: {
+    categories: {
+      work: "Workplace",
+      education: "School",
+    },
+    officialSite: "Official site",
+    backToAbout: "Back to about",
+    navigationLabel: "Background navigation",
+    backgroundEyebrow: "Background",
+    workTitle: "Role",
+    educationTitle: "Studies",
+    writeupEyebrow: "Writeup",
+    workWriteupTitle: "Notes from the role",
+    educationWriteupTitle: "Notes from the studies",
+    metaLabelSuffix: "background summary",
+  },
+  fi: {
+    categories: {
+      work: "Työpaikka",
+      education: "Koulu",
+    },
+    officialSite: "Virallinen sivusto",
+    backToAbout: "Takaisin tietoa-sivulle",
+    navigationLabel: "Taustanavigaatio",
+    backgroundEyebrow: "Tausta",
+    workTitle: "Rooli",
+    educationTitle: "Opinnot",
+    writeupEyebrow: "Kirjoitus",
+    workWriteupTitle: "Muistiinpanoja roolista",
+    educationWriteupTitle: "Muistiinpanoja opinnoista",
+    metaLabelSuffix: "taustan yhteenveto",
+  },
+};
+
+const schema = {
+  "@type": kind === "education" ? "CollegeOrUniversity" : "Organization",
+  name: entry.data.organization,
+  url: entry.data.url,
+  logo: new URL(entry.data.logo, Astro.site).toString(),
+};
+---
+
+<BaseLayout title={entry.data.organization} description={entry.data.summary} image={entry.data.logo} schema={schema}>
+  <main>
+    <DetailBackNav
+      sectionHref="/about/"
+      sectionLabel={backgroundCopy.en.backToAbout}
+      sectionLabelFi={backgroundCopy.fi.backToAbout}
+      ariaLabel={backgroundCopy.en.navigationLabel}
+      ariaLabelFi={backgroundCopy.fi.navigationLabel}
+      previousLabelFi="Takaisin edelliselle sivulle"
+    />
+    <article class="background-detail-article">
+      <header class="about-detail-hero section-shell">
+        <div class="reveal">
+          <p class="eyebrow">
+            <span data-language-copy="en">{backgroundCopy.en.categories[kind]}</span>
+            <span data-language-copy="fi">{backgroundCopy.fi.categories[kind]}</span>
+          </p>
+          <h1>{entry.data.organization}</h1>
+          {renderedEntries.map(({ locale, entry: localizedEntry }) => (
+            <p data-language-block={locale}>{localizedEntry.data.summary}</p>
+          ))}
+          {renderedEntries.map(({ locale, entry: localizedEntry }) => (
+            <div data-language-block={locale}>
+              <ul class="about-detail-meta" aria-label={`${localizedEntry.data.organization} ${backgroundCopy[locale].metaLabelSuffix}`}>
+                <li>{localizedEntry.data.role}</li>
+                <li>{localizedEntry.data.period}</li>
+              </ul>
+            </div>
+          ))}
+          <div class="hero-actions">
+            <div class="hero-action-row">
+              <a class="button button-primary" href={entry.data.url} target="_blank" rel="noreferrer">
+                <span data-language-copy="en">{backgroundCopy.en.officialSite}</span>
+                <span data-language-copy="fi">{backgroundCopy.fi.officialSite}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="about-detail-logo-card" aria-hidden="true">
+          <img
+            class:list={["about-detail-logo", entry.data.logo.includes("clevoy") && "about-detail-logo-wide"]}
+            src={entry.data.logo}
+            alt=""
+          />
+        </div>
+      </header>
+
+      <section class="section-shell split-section">
+        <div class="section-heading sticky-heading" data-reveal>
+          <p class="eyebrow">
+            <span data-language-copy="en">{backgroundCopy.en.backgroundEyebrow}</span>
+            <span data-language-copy="fi">{backgroundCopy.fi.backgroundEyebrow}</span>
+          </p>
+          <h2>
+            <span data-language-copy="en">{kind === "work" ? backgroundCopy.en.workTitle : backgroundCopy.en.educationTitle}</span>
+            <span data-language-copy="fi">{kind === "work" ? backgroundCopy.fi.workTitle : backgroundCopy.fi.educationTitle}</span>
+          </h2>
+        </div>
+        <div class="background-entry-list" data-reveal-group>
+          {renderedEntries.map(({ locale, entry: localizedEntry }) => (
+            <div data-language-block={locale}>
+              <article class="background-entry">
+                <div class="background-entry-header">
+                  <div>
+                    <p class="timeline-period">{backgroundCopy[locale].categories[kind]}</p>
+                    <h3>{localizedEntry.data.role}</h3>
+                  </div>
+                  <p class="background-entry-period">{localizedEntry.data.period}</p>
+                </div>
+                <p>{localizedEntry.data.summary}</p>
+                <ul class="feature-list">
+                  {localizedEntry.data.details.map((detail) => <li>{detail}</li>)}
+                </ul>
+                <div class="tag-list">
+                  {localizedEntry.data.tags.map((tag) => <TechTag tag={tag} muted />)}
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-shell split-section background-writeup-section">
+        <div class="section-heading sticky-heading" data-reveal>
+          <p class="eyebrow">
+            <span data-language-copy="en">{backgroundCopy.en.writeupEyebrow}</span>
+            <span data-language-copy="fi">{backgroundCopy.fi.writeupEyebrow}</span>
+          </p>
+          <h2>
+            <span data-language-copy="en">{kind === "work" ? backgroundCopy.en.workWriteupTitle : backgroundCopy.en.educationWriteupTitle}</span>
+            <span data-language-copy="fi">{kind === "work" ? backgroundCopy.fi.workWriteupTitle : backgroundCopy.fi.educationWriteupTitle}</span>
+          </h2>
+        </div>
+        <div class="background-writeup-content" data-reveal-group>
+          {renderedEntries.map(({ locale, Content }) => (
+            <div class="prose-block post-body" data-language-block={locale}>
+              <Content />
+            </div>
+          ))}
+        </div>
+      </section>
+    </article>
+  </main>
+</BaseLayout>

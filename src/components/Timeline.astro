@@ -1,15 +1,16 @@
 ---
 import TechTag from "./TechTag.astro";
-import { getBackgroundSlug, type BackgroundItem } from "../utils";
+import { getBackgroundDetailHref, type BackgroundDetailKind, type BackgroundItem } from "../utils";
 
 interface Props {
   items: BackgroundItem[];
   compact?: boolean;
   readMoreLabel?: string;
   readMoreAriaPrefix?: string;
+  detailKind?: BackgroundDetailKind;
 }
 
-const { items, compact = false, readMoreLabel = "Read more", readMoreAriaPrefix = "Read more about" } = Astro.props;
+const { items, compact = false, readMoreLabel = "Read more", readMoreAriaPrefix = "Read more about", detailKind = "work" } = Astro.props;
 const getCompactDates = (period: string) => {
   const [start, end = ""] = period.split(" - ");
   return { start, end };
@@ -19,8 +20,7 @@ const getCompactDates = (period: string) => {
 <ol class:list={["timeline-list", compact && "timeline-list-compact"]} data-reveal-group>
   {items.map((item) => {
     const dates = getCompactDates(item.period);
-    const slug = getBackgroundSlug(item);
-    const detailHref = `/about/${slug}/`;
+    const detailHref = getBackgroundDetailHref(detailKind, item);
 
     return (
       <li class="timeline-item">

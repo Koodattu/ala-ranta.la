@@ -1,0 +1,85 @@
+{
+  "title": "Background pages",
+  "slug": "background-pages",
+  "created_at": "2026-07-01T16:56:25.6397787+03:00",
+  "updated_at": "2026-07-01T17:04:17.8125017+03:00",
+  "status": "complete",
+  "mode": "workflow",
+  "baseline_ref": "eb9ac74a6cf329b496ad962743caa40c92b1856e",
+  "risk_level": "medium",
+  "eval_contract": {
+    "level": "inline",
+    "path": null,
+    "status": "ready"
+  },
+  "approval": {
+    "required": false,
+    "granted": null,
+    "notes": "No destructive operation, dependency change, deployment, or credential handling planned."
+  },
+  "delegation": {
+    "native_agent_available": true,
+    "native_agent_planned": false,
+    "native_agent_used": false,
+    "agent_count": 0,
+    "wave_count": 0,
+    "no_delegation_reason": "The route, content schema, renderer, and link updates are tightly coupled and are faster and safer to integrate in the parent session.",
+    "notes": "Explicit Ultracode workflow used with local packets only."
+  },
+  "packets": [
+    {
+      "id": "01-content-model",
+      "status": "complete",
+      "owner": "parent",
+      "write_scope": [
+        "src/content.config.ts",
+        "src/background.ts",
+        "src/components/BackgroundDetail.astro",
+        "src/content/background/"
+      ],
+      "result_path": "results/01-content-model.md"
+    },
+    {
+      "id": "02-route-links",
+      "status": "complete",
+      "owner": "parent",
+      "write_scope": [
+        "src/pages/work/[slug].astro",
+        "src/pages/education/[slug].astro",
+        "src/pages/about/[slug].astro",
+        "src/components/Timeline.astro",
+        "src/components/HomePage.astro",
+        "src/pages/about.astro",
+        "src/data/home.ts",
+        "src/styles/global.css"
+      ],
+      "result_path": "results/02-route-links.md"
+    },
+    {
+      "id": "03-verification",
+      "status": "complete",
+      "owner": "parent",
+      "write_scope": [],
+      "result_path": "results/03-verification.md"
+    }
+  ],
+  "verification": {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "stale about detail links",
+        "command": "rg \"/about/\\$|/about/\\$\\{|/about/[a-z]\" src",
+        "required": true,
+        "status": "pass",
+        "evidence": "No stale /about/{slug} detail links found in src."
+      },
+      {
+        "name": "static build",
+        "command": "$env:ASTRO_TELEMETRY_DISABLED='1'; npx astro build",
+        "required": true,
+        "status": "pass",
+        "evidence": "Astro build completed successfully and generated 38 pages, including /work/tampere-university/ and /education/tampere-university/."
+      }
+    ]
+  }
+}

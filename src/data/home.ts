@@ -109,7 +109,7 @@ const en: HomeCopy = {
       {
         title: "Product and engineering ownership at Clevoy",
         text: "Setting technical direction while staying close to the build: product architecture, apps, backend services, infrastructure, and admin tooling.",
-        href: "/about/clevoy/",
+        href: "/work/clevoy/",
       },
       {
         title: "A long trail of side project experiments",
@@ -205,7 +205,7 @@ const fi: HomeCopy = {
       {
         title: "Tuotteen ja teknologian omistajuus Clevoylla",
         text: "Vien teknistä suuntaa eteenpäin pysyen lähellä toteutusta: tuotearkkitehtuuri, sovellukset, backend-palvelut, infrastruktuuri ja hallintatyökalut.",
-        href: "/about/clevoy/",
+        href: "/work/clevoy/",
       },
       {
         title: "Pitkä jono sivuprojektikokeiluja",
