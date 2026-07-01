@@ -176,8 +176,10 @@ const jsonLd = {
   </head>
   <body>
     <Header lang={lang} languageHrefs={languageHrefs} />
-    <slot />
-    <Footer lang={lang} />
+    <div class="page-transition-content">
+      <slot />
+      <Footer lang={lang} />
+    </div>
     <script>
       const syncPreferredLanguage = (language: string | undefined) => {
         if (language !== "en" && language !== "fi") return;
