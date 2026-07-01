@@ -31,7 +31,7 @@ const postGroups = groupBlogPostTranslations(await getCollection("blog", ({ data
       </p>
     </section>
 
-    <section class="section-shell">
+    <section class="section-shell blog-list-section">
       <div class="post-grid" data-reveal-group>
         {postGroups.length > 0 ? postGroups.map((translations) => <PostCard translations={translations} />) : (
           <p>
