@@ -188,7 +188,7 @@ button {
   color: var(--muted);
   font-weight: 850;
   text-decoration: none;
-  transition-property: background-color, color, box-shadow;
+  transition-property: background-color, box-shadow;
   transition-duration: 160ms;
   transition-timing-function: ease;
 }
@@ -248,14 +248,15 @@ button {
   color: var(--text);
 }
 
-.brand[aria-current="page"]::after,
-.site-nav a[aria-current="page"]::after {
+.brand::after,
+.site-nav a::after {
   content: "";
   position: absolute;
   bottom: 5px;
   height: 2px;
   border-radius: 999px;
   background: var(--accent);
+  opacity: 0;
   box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 70%, transparent);
 }
 
@@ -267,6 +268,11 @@ button {
 .site-nav a[aria-current="page"]::after {
   right: 11px;
   left: 11px;
+}
+
+.brand[aria-current="page"]::after,
+.site-nav a[aria-current="page"]::after {
+  opacity: 1;
 }
 
 .icon-link {
