@@ -5,6 +5,9 @@ import { z } from "astro/zod";
 const blog = defineCollection({
   loader: glob({ base: "./src/content/blog", pattern: "**/[^_]*.{md,mdx}" }),
   schema: z.object({
+    lang: z.enum(["en", "fi"]).default("en"),
+    translationKey: z.string().optional(),
+    slug: z.string().optional(),
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),

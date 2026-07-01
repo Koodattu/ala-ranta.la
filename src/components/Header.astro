@@ -3,9 +3,10 @@ import { profile } from "../data/profile";
 
 interface Props {
   lang?: "en" | "fi";
+  languageHrefs?: Partial<Record<"en" | "fi", string>>;
 }
 
-const { lang = "en" } = Astro.props;
+const { lang = "en", languageHrefs = {} } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const headerCopy = {
@@ -55,6 +56,12 @@ const navItems = [
 
 const isActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
 const languageHref = (targetLang: "en" | "fi") => {
+  const localizedHref = languageHrefs[targetLang];
+
+  if (localizedHref) {
+    return localizedHref;
+  }
+
   if (pathname === "/") {
     return targetLang === "fi" ? "/fi/" : "/?lang=en";
   }

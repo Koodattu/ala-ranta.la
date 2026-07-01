@@ -2,10 +2,9 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostCard from "../../components/PostCard.astro";
+import { groupBlogPostTranslations } from "../../blog";
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const postGroups = groupBlogPostTranslations(await getCollection("blog", ({ data }) => !data.draft));
 ---
 
 <BaseLayout
@@ -14,14 +13,32 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 >
   <main>
     <section class="page-hero section-shell reveal">
-      <p class="eyebrow">Blog</p>
-      <h1>Technical notes and project write-ups</h1>
-      <p>Markdown posts are compiled into static pages with RSS and sitemap entries generated at build time.</p>
+      <p class="eyebrow">
+        <span data-language-copy="en">Blog</span>
+        <span data-language-copy="fi">Blogi</span>
+      </p>
+      <h1>
+        <span data-language-copy="en">Technical notes and project write-ups</span>
+        <span data-language-copy="fi">Teknisiä muistiinpanoja ja projektikirjoituksia</span>
+      </h1>
+      <p>
+        <span data-language-copy="en">
+          Markdown posts are compiled into static pages with RSS and sitemap entries generated at build time.
+        </span>
+        <span data-language-copy="fi">
+          Markdown-kirjoitukset käännetään staattisiksi sivuiksi, ja RSS sekä sivukartta syntyvät buildin aikana.
+        </span>
+      </p>
     </section>
 
     <section class="section-shell">
       <div class="post-grid" data-reveal-group>
-        {posts.length > 0 ? posts.map((post) => <PostCard post={post} />) : <p>No published posts yet.</p>}
+        {postGroups.length > 0 ? postGroups.map((translations) => <PostCard translations={translations} />) : (
+          <p>
+            <span data-language-copy="en">No published posts yet.</span>
+            <span data-language-copy="fi">Ei julkaistuja kirjoituksia vielä.</span>
+          </p>
+        )}
       </div>
     </section>
   </main>

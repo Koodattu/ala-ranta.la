@@ -1,12 +1,13 @@
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
+import { getBlogPostHref, getPreferredBlogPost, groupBlogPostTranslations } from "../blog";
 import { profile } from "../data/profile";
 
 export async function GET(context: APIContext) {
-  const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+  const posts = groupBlogPostTranslations(await getCollection("blog", ({ data }) => !data.draft))
+    .map((translations) => getPreferredBlogPost(translations, "en"))
+    .filter((post): post is NonNullable<typeof post> => Boolean(post));
 
   return rss({
     title: `${profile.siteName} Blog`,
@@ -16,7 +17,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.pubDate,
-      link: `/blog/${post.id}/`,
+      link: getBlogPostHref(post),
       categories: post.data.tags,
     })),
     customData: "<language>en</language>",

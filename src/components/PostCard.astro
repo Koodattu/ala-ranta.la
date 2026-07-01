@@ -1,20 +1,64 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import TechTag from "./TechTag.astro";
-import { formatDate } from "../utils";
+import {
+  getBlogPostHrefForLocale,
+  getPreferredBlogPost,
+  type BlogPostTranslations,
+} from "../blog";
+import { formatDateForLocale } from "../utils";
 
 interface Props {
-  post: CollectionEntry<"blog">;
+  translations?: BlogPostTranslations;
+  post?: CollectionEntry<"blog">;
 }
 
-const { post } = Astro.props;
+const { post, translations: providedTranslations } = Astro.props;
+const translations = providedTranslations ?? (post ? { [post.data.lang]: post } : {});
+const enPost = getPreferredBlogPost(translations, "en");
+const fiPost = getPreferredBlogPost(translations, "fi");
+const defaultPost = enPost ?? fiPost;
+const enHref = getBlogPostHrefForLocale(translations, "en");
+const fiHref = getBlogPostHrefForLocale(translations, "fi");
 ---
 
-<article class="post-card">
-  <p class="post-meta">{formatDate(post.data.pubDate)}</p>
-  <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
-  <p>{post.data.description}</p>
-  <div class="tag-list">
-    {post.data.tags.map((tag) => <TechTag tag={tag} muted />)}
-  </div>
-</article>
+{defaultPost && (
+  <article class="post-card">
+    <a
+      class="post-card-link"
+      href={enHref}
+      aria-label={`Read ${enPost?.data.title ?? defaultPost.data.title}`}
+      data-language-aria-en={`Read ${enPost?.data.title ?? defaultPost.data.title}`}
+      data-language-aria-fi={`Lue ${fiPost?.data.title ?? defaultPost.data.title}`}
+      data-language-href-en={enHref}
+      data-language-href-fi={fiHref}
+    >
+      <p class="post-meta">
+        <span data-language-copy="en">{formatDateForLocale(enPost?.data.pubDate ?? defaultPost.data.pubDate, "en")}</span>
+        <span data-language-copy="fi">{formatDateForLocale(fiPost?.data.pubDate ?? defaultPost.data.pubDate, "fi")}</span>
+      </p>
+      <h3>
+        <span data-language-copy="en">{enPost?.data.title ?? defaultPost.data.title}</span>
+        <span data-language-copy="fi">{fiPost?.data.title ?? defaultPost.data.title}</span>
+      </h3>
+      <p>
+        <span data-language-copy="en">{enPost?.data.description ?? defaultPost.data.description}</span>
+        <span data-language-copy="fi">{fiPost?.data.description ?? defaultPost.data.description}</span>
+      </p>
+      <div class="tag-list" data-language-block="en">
+        {(enPost?.data.tags ?? defaultPost.data.tags).map((tag) => <TechTag tag={tag} muted />)}
+      </div>
+      <div class="tag-list" data-language-block="fi">
+        {(fiPost?.data.tags ?? defaultPost.data.tags).map((tag) => <TechTag tag={tag} muted />)}
+      </div>
+      <span class="timeline-read-more post-card-read-more" aria-hidden="true">
+        <span data-language-copy="en">Read post</span>
+        <span data-language-copy="fi">Lue kirjoitus</span>
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M5 12h14" />
+          <path d="m13 6 6 6-6 6" />
+        </svg>
+      </span>
+    </a>
+  </article>
+)}

@@ -40,12 +40,14 @@ export const assetPath = (path: string) => encodeURI(path).replaceAll("'", "%27"
 export const projectImagePath = (project: Project) =>
   assetPath(project.image ?? `/images/${project.title.toLowerCase().replaceAll(" ", "-")}.webp`);
 
-export const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat("en", {
+export const formatDateForLocale = (date: Date, locale: "en" | "fi" = "en") =>
+  new Intl.DateTimeFormat(locale === "fi" ? "fi-FI" : "en", {
     year: "numeric",
     month: "long",
     day: "numeric",
   }).format(date);
+
+export const formatDate = (date: Date) => formatDateForLocale(date, "en");
 
 export const sortNewestProjects = (projects: Project[]) =>
   projects

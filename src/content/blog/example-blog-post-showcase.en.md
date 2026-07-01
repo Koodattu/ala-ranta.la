@@ -1,4 +1,7 @@
 ---
+lang: en
+translationKey: "example-blog-post-showcase"
+slug: "example-blog-post-showcase"
 title: "Example blog post showcase"
 description: "A compact Markdown showcase for blog metadata, media, lists, quotes, tables, code, and checklist states."
 pubDate: 2026-06-30
@@ -16,7 +19,7 @@ This is the single published example post for the site. It is not a base templat
 
 A post can mix **strong emphasis**, _subtle emphasis_, [internal links](/projects/), and inline code such as `getCollection("blog")` without needing custom components.
 
-- Frontmatter controls the title, summary, publish date, updated date, tags, draft state, and preview image.
+- Frontmatter controls the language, translation key, URL slug, title, summary, publish date, updated date, tags, draft state, and preview image.
 - Markdown handles headings, images, lists, tables, quotes, and fenced code blocks.
 - The blog index, detail pages, RSS feed, sitemap, and article metadata are generated from the same content entry.
 
@@ -29,9 +32,10 @@ A post can mix **strong emphasis**, _subtle emphasis_, [internal links](/project
 
 ## A short workflow
 
-1. Write the post in `src/content/blog`.
-2. Add practical tags and a concise description.
-3. Run the build so Astro validates the content collection.
+1. Write one Markdown file per language.
+2. Give the translated files the same `translationKey`.
+3. Use language-specific `slug`, `title`, `description`, and `tags`.
+4. Run the build so Astro validates the content collection.
 
 > Good examples are specific enough to test the layout, but small enough that the real content can replace them without a cleanup project.
 
@@ -39,7 +43,7 @@ A post can mix **strong emphasis**, _subtle emphasis_, [internal links](/project
 
 ```ts
 const postFeatures = {
-  metadata: ["title", "description", "pubDate", "updatedDate", "tags", "heroImage"],
+  metadata: ["lang", "translationKey", "slug", "title", "description", "pubDate", "updatedDate", "tags", "heroImage"],
   markdown: ["images", "lists", "tables", "quotes", "code"],
   output: ["static page", "RSS item", "sitemap URL", "article schema"],
 };
@@ -51,9 +55,9 @@ export const isShowcaseReady = postFeatures.markdown.includes("tables");
 
 | Feature | Where it comes from | Used for |
 | --- | --- | --- |
-| Title and description | Frontmatter | SEO, RSS, cards, and page headers |
+| `translationKey` | Shared frontmatter | Groups English and Finnish versions together |
+| `slug` | Per-language frontmatter | Creates the public URL for that language |
 | Tags | Frontmatter array | Topic labels on cards and detail pages |
-| Hero image | Frontmatter and Markdown | Link previews and visible article media |
 | Code fences | Markdown body | Technical examples with horizontal scrolling |
 
 ## Secondary media

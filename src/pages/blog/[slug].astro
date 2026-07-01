@@ -2,13 +2,22 @@
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import TechTag from "../../components/TechTag.astro";
-import { formatDate } from "../../utils";
+import {
+  blogLocales,
+  getBlogPostHref,
+  getBlogPostHrefForLocale,
+  getBlogPostKey,
+  getBlogPostSlug,
+  groupBlogPostTranslations,
+  type BlogLocale,
+} from "../../blog";
+import { formatDateForLocale } from "../../utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
 
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: getBlogPostSlug(post) },
     props: { post },
   }));
 }
@@ -16,10 +25,31 @@ export async function getStaticPaths() {
 const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 const { Content } = await render(post);
 const image = post.data.heroImage ?? "/images/preview.jpg";
+const locale = post.data.lang as BlogLocale;
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const translations =
+  groupBlogPostTranslations(allPosts).find((group) => blogLocales.some((lang) => group[lang] && getBlogPostKey(group[lang]) === getBlogPostKey(post))) ?? {};
+const languageHrefs = {
+  en: getBlogPostHrefForLocale(translations, "en"),
+  fi: getBlogPostHrefForLocale(translations, "fi"),
+};
+const alternates = blogLocales
+  .map((lang) => translations[lang] && { lang, href: getBlogPostHref(translations[lang]) })
+  .filter(Boolean) as { lang: string; href: string }[];
 const updatedDate =
   post.data.updatedDate && post.data.updatedDate.valueOf() !== post.data.pubDate.valueOf()
     ? post.data.updatedDate
     : undefined;
+const postCopy = {
+  en: {
+    published: "Published",
+    updated: "Updated",
+  },
+  fi: {
+    published: "Julkaistu",
+    updated: "Päivitetty",
+  },
+}[locale];
 const schema = {
   "@type": "BlogPosting",
   headline: post.data.title,
@@ -34,13 +64,23 @@ const schema = {
 };
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description} image={image} type="article" schema={schema}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={image}
+  type="article"
+  schema={schema}
+  lang={locale}
+  alternates={alternates}
+  xDefaultHref={languageHrefs.en}
+  languageHrefs={languageHrefs}
+>
   <main>
     <article class="blog-post">
       <header class="post-hero section-shell reveal">
         <p class="eyebrow">
-          <span>Published {formatDate(post.data.pubDate)}</span>
-          {updatedDate && <span>Updated {formatDate(updatedDate)}</span>}
+          <span>{postCopy.published} {formatDateForLocale(post.data.pubDate, locale)}</span>
+          {updatedDate && <span>{postCopy.updated} {formatDateForLocale(updatedDate, locale)}</span>}
         </p>
         <h1>{post.data.title}</h1>
         <p>{post.data.description}</p>

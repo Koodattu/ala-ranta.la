@@ -1248,10 +1248,6 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   max-width: 760px;
 }
 
-.post-card h3 a {
-  text-decoration: none;
-}
-
 .project-card p,
 .project-detail-description p,
 .focus-card p,
@@ -2169,13 +2165,77 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 }
 
 .post-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 230px;
+  padding: 0;
+  translate: 0 0;
+  transition-property: translate, background-color, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+.post-card:hover,
+.post-card:focus-within {
+  background: color-mix(in srgb, var(--panel-strong) 82%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 28%, transparent),
+    0 18px 42px rgba(0, 0, 0, 0.24);
+  translate: 0 -3px;
+}
+
+.post-card-link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 230px;
+  padding: 22px;
+  border-radius: inherit;
+  color: inherit;
+  text-decoration: none;
+  scale: 1;
+  transition-property: scale;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
+.post-card-link:active {
+  scale: 0.96;
+}
+
+.post-card h3 {
+  transition-property: color;
+  transition-duration: 160ms;
+  transition-timing-function: ease;
+}
+
+.post-card:hover h3,
+.post-card:focus-within h3 {
+  color: var(--accent);
 }
 
 .post-card .tag-list {
+  margin-top: 18px;
+}
+
+html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"] {
+  display: flex;
+}
+
+.post-card-read-more {
   margin-top: auto;
+  padding-top: 18px;
+}
+
+.post-card:hover .post-card-read-more,
+.post-card:focus-within .post-card-read-more {
+  color: var(--accent);
+}
+
+.post-card:hover .post-card-read-more svg,
+.post-card:focus-within .post-card-read-more svg {
+  translate: 2px 0;
 }
 
 .writing-item {

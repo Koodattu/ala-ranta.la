@@ -15,6 +15,7 @@ interface Props {
   alternates?: { lang: string; href: string }[];
   xDefaultHref?: string;
   enableLocaleRedirect?: boolean;
+  languageHrefs?: Partial<Record<"en" | "fi", string>>;
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   alternates = [],
   xDefaultHref,
   enableLocaleRedirect = false,
+  languageHrefs,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -173,7 +175,7 @@ const jsonLd = {
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
   </head>
   <body>
-    <Header lang={lang} />
+    <Header lang={lang} languageHrefs={languageHrefs} />
     <slot />
     <Footer lang={lang} />
     <script>
