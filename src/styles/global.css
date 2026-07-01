@@ -1924,6 +1924,10 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   padding-bottom: 46px;
 }
 
+.page-hero:not(.not-found) {
+  padding-top: 48px;
+}
+
 .page-hero h1,
 .post-hero h1,
 .about-detail-hero h1,
@@ -1951,6 +1955,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 }
 
 .about-hero-copy {
+  align-self: start;
   min-width: 0;
 }
 
@@ -2514,6 +2519,10 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
     padding-bottom: 50px;
   }
 
+  .page-hero:not(.not-found) {
+    padding-top: 38px;
+  }
+
   h1 {
     font-size: 4.25rem;
   }
@@ -2584,6 +2593,10 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
     grid-template-columns: minmax(0, 1fr) minmax(230px, 0.55fr);
     gap: 30px;
     min-height: auto;
+    padding-top: 42px;
+  }
+
+  .page-hero:not(.not-found) {
     padding-top: 42px;
   }
 
@@ -2871,6 +2884,10 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
     align-items: start;
     padding-top: 28px;
     padding-bottom: 58px;
+  }
+
+  .page-hero:not(.not-found) {
+    padding-top: 28px;
   }
 
   .hero-copy {
