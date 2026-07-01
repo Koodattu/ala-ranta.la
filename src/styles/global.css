@@ -1936,6 +1936,16 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   font-size: 3.4rem;
 }
 
+.post-hero .eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.post-hero .eyebrow span + span {
+  color: var(--faint);
+}
+
 .about-hero {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(440px, 0.75fr);
@@ -2255,6 +2265,11 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
 
 .post-body li {
   margin-bottom: 0.45em;
+}
+
+.post-body input[type="checkbox"] {
+  margin-right: 0.45em;
+  accent-color: var(--accent);
 }
 
 .post-body code {
