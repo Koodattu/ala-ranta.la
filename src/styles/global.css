@@ -172,9 +172,18 @@ button {
 }
 
 .brand-text {
+  display: inline-flex;
+  align-items: baseline;
   font-size: clamp(1.12rem, 1.35vw, 1.28rem);
   letter-spacing: 0.01em;
+  line-height: 1;
   white-space: nowrap;
+}
+
+.brand-prefix {
+  display: inline-block;
+  margin-right: 0.1em;
+  transform: translateY(-0.16em);
 }
 
 .site-nav {
@@ -1856,11 +1865,7 @@ html[data-preferred-language="fi"] [data-project-description-lang="fi"] {
   gap: 6px;
   margin-top: 12px;
   color: var(--faint);
-  font-family:
-    "SFMono-Regular",
-    Consolas,
-    "Liberation Mono",
-    monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.76rem;
   font-weight: 700;
   line-height: 1;
@@ -2557,7 +2562,6 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
   .hero-photo {
     max-height: 410px;
   }
-
 }
 
 @media (max-width: 980px) {
@@ -3540,7 +3544,6 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
   .career-step::before {
     left: -20px;
   }
-
 }
 
 @media (max-width: 420px) {

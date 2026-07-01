@@ -33,6 +33,9 @@ const headerCopy = {
 };
 
 const copy = headerCopy[lang];
+const hasBrandPrefix = profile.handle.startsWith("_");
+const brandPrefix = hasBrandPrefix ? "_" : "";
+const brandName = hasBrandPrefix ? profile.handle.slice(1) : profile.handle;
 const navItems = [
   {
     href: { en: "/projects/", fi: "/projects/" },
@@ -80,7 +83,10 @@ const languageHref = (targetLang: "en" | "fi") => {
     data-language-href-en="/"
     data-language-href-fi="/fi/"
   >
-    <span class="brand-text">{profile.handle}</span>
+    <span class="brand-text">
+      {brandPrefix && <span class="brand-prefix">{brandPrefix}</span>}
+      <span>{brandName}</span>
+    </span>
   </a>
   <nav
     class="site-nav"
