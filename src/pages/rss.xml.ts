@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: `${profile.siteName} Blog`,
-    description: "Technical notes, project write-ups, and longer-form posts by Juha Ala-Rantala.",
+    description: "Longer-form writing by Juha Ala-Rantala about software projects, product decisions, and lessons learned while building.",
     site: context.site ?? "https://ala-ranta.la",
     items: posts.map((post) => ({
       title: post.data.title,
