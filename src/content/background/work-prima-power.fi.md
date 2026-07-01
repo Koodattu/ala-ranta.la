@@ -16,12 +16,18 @@ tags: ["C#", ".NET Framework", "WPF", "WinForms", "SQL"]
 draft: false
 ---
 
-## Mitä rakensin
+## Luonnoksen avaus
 
-Prima Power oli paikka, jossa opin paljon tavoista, jotka vaikuttavat edelleen siihen, miten rakennan ohjelmistoja. Työ oli kiinni teollisissa ympäristöissä: työpöytäsovelluksissa, koneisiin liittyvissä työkaluissa, parametroinnissa, diagnostiikassa, asennuksessa ja sisäisissä tuottavuusparannuksissa.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tämä paikkateksti varaa tilan pidemmälle kirjoitukselle Prima Powerin vuosista, teollisesta ohjelmistosta ja siirtymästä opintojen ohjelmistoharjoituksista tuotantolähtöisempään insinöörityöhön.
 
-Tekninen pino oli pääosin C#, .NET Framework, WinForms, WPF ja SQL. Tärkeintä ei silti ollut pelkkä teknologia, vaan odotus siitä, että ohjelmiston pitää tukea oikeita koneita, oikeita käyttäjiä ja oikeaa ylläpitotyötä.
+Valmis versio voi avata ympäristöllä: Windows-työpöytäsovelluksilla, koneisiin liittyvillä työkaluilla, parametroinnilla, diagnostiikalla, asennuksella ja sisäisillä järjestelmillä, jotka tukivat oikeaa käyttöympäristöä.
 
-## Mitä jäi mukaan
+## Täydennettävä tausta
 
-Tämä jakso teki luotettavuudesta konkreettista. Hyödyllinen sisäinen työkalu ei ole valmis silloin, kun se aukeaa, vaan silloin, kun sitä voi ymmärtää, debugata, asentaa, ylläpitää ja käyttää luottavaisesti.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Tähän kohtaan voi lisätä konkreettisia esimerkkejä C#-, .NET Framework-, WinForms-, WPF- ja SQL-työstä. Tavoite ei ole listata jokaista työkalua, vaan näyttää, miten ohjelmiston piti sopia koneisiin, käyttäjiin, ylläpitoon ja arjen luotettavuuteen.
+
+Osioon voi lisätä yhden tarinan debuggaamisesta, käyttöönotosta tai pienestä sisäisestä työkalusta, joka teki työstä sujuvampaa. Hyvän lopullisen version pitäisi tehdä rajoitteet näkyviksi ilman, että sivusta tulee tekninen luettelo.
+
+## Muistiinpanot lopulliseen versioon
+
+Curabitur facilisis, mi at gravida pretium, neque lorem fermentum nunc, vitae luctus ipsum lorem sed sem. Lopetus voi keskittyä luotettavuuteen: ohjelmistoon, jonka voi asentaa, ymmärtää, ylläpitää, diagnosoida ja ottaa luottavaisesti käyttöön.

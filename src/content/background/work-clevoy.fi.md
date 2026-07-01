@@ -16,12 +16,18 @@ tags: ["Flutter", "Backend", "Infrastruktuuri", "Tuote"]
 draft: false
 ---
 
-## Mihin keskityn
+## Luonnoksen avaus
 
-Clevoy on nykyinen kokonaisvastuun painopiste työssäni. Rooli yhdistää tuotesuunnan, teknisen arkkitehtuurin, toteutuksen, infrastruktuurin ja arjen valinnat, joita tarvitaan, kun tuoteideasta tehdään käyttäjille toimiva järjestelmä.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tämä paikkateksti varaa tilan pidemmälle kirjoitukselle Clevoystä, teknologiajohtajan roolista ja siitä, miten tuotesuunta muutetaan rakennettavaksi, julkaistavaksi ja ylläpidettäväksi järjestelmäksi.
 
-Hyödyllisin osa työstä on pysyä lähellä koko polkua. Mobiilisovellukset, backend-palvelut, hallintatyökalut, käyttöönotto ja kustannukset vaikuttavat toisiinsa, joten työ ei ole vain yksittäisiä ominaisuuksia vaan järjestelmän pitämistä ymmärrettävänä sen kasvaessa.
+Valmis versio voi avata konkreettisella tilanteella: mitä tuote tarvitsi, miltä tekninen kokonaisuus näytti ja miten rooli yhdisti strategian, arkkitehtuurin, toteutuksen, infrastruktuurin ja toimituksen.
 
-## Mitä tämä on opettanut
+## Täydennettävä tausta
 
-Tärkein oppi on, että teknologiajohtaminen toimii parhaiten, kun se pysyy kiinni toteutuksessa. Arkkitehtuuri, suunnittelu ja toimitus pysyvät terveempinä, kun suuntaa antava ihminen ymmärtää myös, missä koodi on terävää, missä operointi on hauras ja missä käyttäjä oikeasti tuntee tuotteen.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Tähän kohtaan voi kirjoittaa työn käytännön yksityiskohdista: mobiilisovelluksista, backend-palveluista, hallintatyökaluista, käyttöönotosta, kustannusvalinnoista ja alustaa muovanneista kompromisseista.
+
+Tämä on myös hyvä paikka konkreettiselle esimerkille. Myöhempi luonnos voi kuvata yhden tuotepäätöksen, yhden teknisen rajoitteen ja yhden tilanteen, jossa koko järjestelmän näkeminen muutti lopputulosta.
+
+## Muistiinpanot lopulliseen versioon
+
+Curabitur facilisis, mi at gravida pretium, neque lorem fermentum nunc, vitae luctus ipsum lorem sed sem. Lopetus voi keskittyä siihen, mitä teknologiajohtaminen tarkoitti käytännössä: pysymistä lähellä toteutusta, päätöksiä operoinnin todellisuus huomioiden ja tuotteen pitämistä ymmärrettävänä sen kasvaessa.

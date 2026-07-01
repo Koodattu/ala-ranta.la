@@ -16,12 +16,18 @@ tags: ["Python", "Tekoäly", "Kielimallit", "Konenäkö", "Flask"]
 draft: false
 ---
 
-## Mitä tein
+## Luonnoksen avaus
 
-Työni Tampereen yliopistolla liittyi GPT Lab Seinäjoki -projektiin ja käytännön soveltavaan tekoälyyn. Hyödylliset kysymykset eivät yleensä olleet vain "osaako malli tämän?" vaan enemmän "voiko tämä työnkulku auttaa yritystä ymmärtämään, testaamaan tai parantamaan jotain oikeaa?"
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tämä paikkateksti varaa tilan pidemmälle kirjoitukselle Tampereen yliopiston tutkimusassistentin työstä ja GPT Lab Seinäjoki -projektiin liittyvästä soveltavan tekoälyn ympäristöstä.
 
-Se johti prototyyppeihin, joissa käytettiin kielimalleja, konenäköä, optimointia, raportointia ja ohjelmistokehityksen työnkulkuja. Osa työstä oli teknistä tutkimista, osa viestintää ja tapahtumia, ja osa rauhallisempaa työtä tulosten tekemiseksi ymmärrettäviksi muille.
+Valmis versio voi alkaa työn käytännön kysymyksestä: miten kielimallit, konenäkö, optimointi ja ohjelmistoprototyypit voivat auttaa paikallisia yrityksiä testaamaan ideoita, ymmärtämään työnkulkuja tai arvioimaan uusia teknisiä mahdollisuuksia.
 
-## Miksi se oli tärkeää
+## Täydennettävä tausta
 
-Tutkimusassistentin rooli rakensi hyvän sillan kokeilujen ja käytännön ohjelmistotyön väliin. Tekoäly alkoi tuntua vähemmän erilliseltä kategoriana ja enemmän yhtenä teknisenä materiaalina: voimakas oikeassa kohdassa, kallis tai hauras väärässä kohdassa ja hyödyllinen vasta, kun se sopii oikeaan työnkulkuun.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Tähän kohtaan voi kuvata työn muotoa: tutkimustehtäviä, prototyyppien rakentamista, raportointia, viestintää, tapahtumia ja kokeilujen muuttamista muille ymmärrettävään muotoon.
+
+Osioon voi lisätä yhden esimerkkiprototyypin. Hyvä luonnos voisi selittää ongelman, käytetyn tekoäly- tai ohjelmistotekniikan sekä sen, mikä teki tuloksesta lupaavan, rajallisen tai jatkotestaamisen arvoisen.
+
+## Muistiinpanot lopulliseen versioon
+
+Curabitur facilisis, mi at gravida pretium, neque lorem fermentum nunc, vitae luctus ipsum lorem sed sem. Lopetus voi pohtia soveltavaa tekoälyä teknisenä materiaalina: hyödyllistä silloin, kun se sopii oikeaan työnkulkuun, haurasta silloin kun se ei sovi ja arvokkainta silloin, kun kokeilua voi arvioida selkeästi.
