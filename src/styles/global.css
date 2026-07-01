@@ -165,6 +165,7 @@ button {
 }
 
 .brand {
+  position: relative;
   min-height: 40px;
   font-weight: 850;
   text-decoration: none;
@@ -210,20 +211,30 @@ button {
   color: var(--text);
 }
 
+.brand[aria-current="page"],
 .site-nav a[aria-current="page"] {
   color: var(--text);
 }
 
+.brand[aria-current="page"]::after,
 .site-nav a[aria-current="page"]::after {
   content: "";
   position: absolute;
-  right: 11px;
   bottom: 5px;
-  left: 11px;
   height: 2px;
   border-radius: 999px;
   background: var(--accent);
   box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+.brand[aria-current="page"]::after {
+  right: 0;
+  left: 0;
+}
+
+.site-nav a[aria-current="page"]::after {
+  right: 11px;
+  left: 11px;
 }
 
 .icon-link {
@@ -3077,11 +3088,12 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
 
 @media (max-width: 520px) {
   .site-header {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
   }
 
   .brand {
-    display: none;
+    justify-self: start;
+    min-width: 0;
   }
 
   .site-nav {
@@ -3412,8 +3424,22 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
 }
 
 @media (max-width: 360px) {
-  .header-actions .icon-link {
-    display: none;
+  .site-header {
+    gap: 4px;
+    padding-inline: 8px;
+  }
+
+  .brand-text {
+    font-size: 0.94rem;
+  }
+
+  .site-nav a {
+    padding-inline: 3px;
+    font-size: 0.72rem;
+  }
+
+  .header-actions {
+    gap: 3px;
   }
 
   .hero-actions,

@@ -14,7 +14,6 @@ const headerCopy = {
     navLabel: "Primary navigation",
     actionsLabel: "Header actions",
     languageLabel: "Language",
-    homeLabel: "Home",
     projectsLabel: "Projects",
     blogLabel: "Blog",
     aboutLabel: "About",
@@ -25,7 +24,6 @@ const headerCopy = {
     navLabel: "Päänavigaatio",
     actionsLabel: "Yläosan toiminnot",
     languageLabel: "Kieli",
-    homeLabel: "Etusivu",
     projectsLabel: "Projektit",
     blogLabel: "Blogi",
     aboutLabel: "Tietoa",
@@ -36,10 +34,6 @@ const headerCopy = {
 
 const copy = headerCopy[lang];
 const navItems = [
-  {
-    href: { en: "/", fi: "/fi/" },
-    label: { en: headerCopy.en.homeLabel, fi: headerCopy.fi.homeLabel },
-  },
   {
     href: { en: "/projects/", fi: "/projects/" },
     label: { en: headerCopy.en.projectsLabel, fi: headerCopy.fi.projectsLabel },
@@ -55,6 +49,7 @@ const navItems = [
 ];
 
 const isActive = (href: string) => href === "/" ? pathname === "/" : pathname.startsWith(href);
+const homeHref = lang === "fi" ? "/fi/" : "/";
 const languageHref = (targetLang: "en" | "fi") => {
   const localizedHref = languageHrefs[targetLang];
 
@@ -77,8 +72,9 @@ const languageHref = (targetLang: "en" | "fi") => {
 <header class="site-header">
   <a
     class="brand"
-    href={lang === "fi" ? "/fi/" : "/"}
+    href={homeHref}
     aria-label={copy.homeAria}
+    aria-current={isActive(homeHref) ? "page" : undefined}
     data-language-aria-en={headerCopy.en.homeAria}
     data-language-aria-fi={headerCopy.fi.homeAria}
     data-language-href-en="/"
