@@ -29,12 +29,14 @@ const posts = groupBlogPostTranslations(await getCollection("blog", ({ data }) =
   .slice(0, 3);
 const linkedinUrl = profile.socials.find((social) => social.label === "LinkedIn")?.href ?? "/";
 const currentLogo = experience[0];
-const previousLogos = [
-  ...experience.slice(1).map((item) => ({ item, detailKind: "work" as const })),
-  ...education.map((item) => ({ item, detailKind: "education" as const })),
-].filter(
-  (entry, index, entries) => entries.findIndex((candidate) => candidate.item.organization === entry.item.organization) === index,
-);
+const previousGroups = [
+  { detailKind: "work" as const, items: experience.slice(1) },
+  { detailKind: "education" as const, items: education },
+];
+const proofKindLabels = {
+  en: { work: "work", education: "education" },
+  fi: { work: "työ", education: "koulutus" },
+};
 const alternates = [
   { lang: "en", href: "/" },
   { lang: "fi", href: "/fi/" },
@@ -86,10 +88,31 @@ const alternates = [
             <dt>{copy.hero.previous}</dt>
             <dd>
               <div class="proof-logo-list">
-                {previousLogos.map(({ item, detailKind }) => (
-                  <a class="proof-logo" href={getBackgroundDetailHref(detailKind, item)} aria-label={item.organization}>
-                    <img src={item.logo} alt="" loading="lazy" />
-                  </a>
+                {previousGroups.map(({ detailKind, items }) => (
+                  <span class="proof-logo-group">
+                    <span class:list={["proof-logo-group-icon", `proof-logo-group-icon-${detailKind}`]} aria-hidden="true">
+                      {detailKind === "work" ? (
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path fill="currentColor" d="M10 5a3 3 0 0 0-3 3H5a2 2 0 0 0-2 2v3.2c2.55 1.05 5.54 1.58 9 1.58s6.45-.53 9-1.58V10a2 2 0 0 0-2-2h-2a3 3 0 0 0-3-3h-4Zm0 2h4a1 1 0 0 1 1 1H9a1 1 0 0 1 1-1Z" />
+                          <path fill="currentColor" d="M21 15.31V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2.69c2.65.98 5.64 1.47 9 1.47s6.35-.49 9-1.47Z" />
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path fill="currentColor" d="M12 3 2 8.5 12 14l8-4.4V15h2V8.5L12 3Z" />
+                          <path fill="currentColor" d="M6 12.08V16c0 2.21 2.69 4 6 4s6-1.79 6-4v-3.92l-6 3.3-6-3.3Z" />
+                        </svg>
+                      )}
+                    </span>
+                    {items.map((item) => (
+                      <a
+                        class="proof-logo"
+                        href={getBackgroundDetailHref(detailKind, item)}
+                        aria-label={`${item.organization} ${proofKindLabels[locale][detailKind]}`}
+                      >
+                        <img src={item.logo} alt="" loading="lazy" />
+                      </a>
+                    ))}
+                  </span>
                 ))}
               </div>
             </dd>
