@@ -3102,6 +3102,185 @@ html[data-preferred-language="fi"] .post-card .tag-list[data-language-block="fi"
   }
 }
 
+@media (min-width: 701px) and (max-width: 760px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 0.55fr);
+    gap: 30px;
+    align-items: center;
+    padding-top: 42px;
+    padding-bottom: 50px;
+  }
+
+  .hero-copy {
+    display: block;
+  }
+
+  .hero .eyebrow {
+    grid-column: auto;
+    margin-bottom: 6px;
+    font-size: 0.78rem;
+    line-height: inherit;
+  }
+
+  .hero h1 {
+    grid-column: auto;
+    margin-bottom: 18px;
+    font-size: clamp(2.6rem, 5.3vw, 5.1rem);
+  }
+
+  .hero-statement {
+    grid-column: auto;
+    font-size: 1.72rem;
+  }
+
+  .hero-lede {
+    grid-column: auto;
+    font-size: 1.16rem;
+  }
+
+  .hero-visual {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: auto;
+    justify-content: flex-end;
+  }
+
+  .hero-actions,
+  .hero-proof {
+    grid-column: auto;
+  }
+
+  .hero-actions {
+    margin-top: 28px;
+  }
+
+  .hero-proof {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 34px;
+    padding-top: 20px;
+  }
+
+  .hero-portrait-panel {
+    width: min(100%, 430px);
+    min-height: 340px;
+  }
+
+  .hero-portrait-panel::before,
+  .hero-portrait-panel::after {
+    inset: 28px 0 0 8px;
+  }
+
+  .hero-photo {
+    right: 0;
+    max-height: 335px;
+    translate: 0 0;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 700px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(clamp(150px, 32vw, 224px), 32vw);
+    gap: clamp(12px, 2.5vw, 18px) clamp(12px, 2.4vw, 16px);
+    padding-top: clamp(28px, 5vw, 36px);
+    padding-bottom: clamp(36px, 6vw, 50px);
+  }
+
+  .hero h1 {
+    margin-bottom: 6px;
+    font-size: clamp(2.45rem, 6.4vw, 2.7rem);
+  }
+
+  .hero-statement {
+    font-size: clamp(1.26rem, 3.6vw, 1.4rem);
+  }
+
+  .hero-lede {
+    font-size: clamp(0.98rem, 2.35vw, 1rem);
+  }
+
+  .hero-portrait-panel {
+    min-height: clamp(220px, 40vw, 260px);
+  }
+
+  .hero-photo {
+    max-height: clamp(214px, 39vw, 252px);
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    gap: 8px;
+    margin-top: clamp(8px, 2.8vw, 16px);
+  }
+
+  .hero-action-row {
+    gap: 8px;
+  }
+
+  .hero-action-row-primary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-action-row-secondary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-action-row-primary .button,
+  .hero-action-row-secondary .button {
+    min-width: 0;
+  }
+
+  .hero-actions .button {
+    min-height: 42px;
+    gap: 5px;
+    padding-inline: clamp(5px, 1.8vw, 10px);
+    font-size: clamp(0.74rem, 2vw, 0.9rem);
+    line-height: 1.05;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-actions .button-logo {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-proof {
+    gap: clamp(10px, 2vw, 16px);
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  .hero-proof > div {
+    gap: 6px;
+  }
+
+  .hero-proof dt {
+    font-size: 0.68rem;
+  }
+
+  .proof-logo-list {
+    gap: 8px;
+  }
+
+  .proof-logo {
+    min-width: 28px;
+    min-height: 34px;
+    padding: 2px 0;
+  }
+
+  .proof-logo img {
+    max-width: clamp(64px, 15vw, 86px);
+    max-height: 24px;
+  }
+
+  .proof-logo-current img {
+    max-width: clamp(66px, 16vw, 96px);
+  }
+}
+
 @media (max-width: 520px) {
   .site-header {
     grid-template-columns: auto minmax(0, 1fr) auto;
